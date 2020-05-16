@@ -2,10 +2,9 @@ import {StyleSheet, Text, View} from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
-import { PozitionButtons } from '../PozitionButtons'
-import type { PozitionButtonParentProps } from '../PozitionButton'
-
-import type { ControlPanelProps } from './types'
+import type { ControlPanelProps } from '../types'
+import { PozitionButtons } from '../../PozitionButtons'
+import type { PozitionButtonParentProps } from '../../PozitionButton'
 
 const styles = StyleSheet.create({
   controlPanel: {

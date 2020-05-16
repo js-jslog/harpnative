@@ -2,7 +2,8 @@ import React from 'react'
 import { PozitionIds } from 'harpstrata'
 import { render, fireEvent, NativeTestEvent } from '@testing-library/react-native'
 
-import type { ControlPanelProps } from './types'
+import type { ControlPanelProps } from '../types'
+
 import { ControlPanel } from './index'
 
 
