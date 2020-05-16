@@ -13,7 +13,7 @@ export function HoleNumber(props: HoleNumberProps): ReactElement {
       backgroundColor: 'yellow',
       justifyContent: 'center',
       alignItems: 'center',
-      width: 50,
+      width: 20,
     },
   })
 
