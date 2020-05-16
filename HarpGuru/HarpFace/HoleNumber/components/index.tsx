@@ -10,10 +10,10 @@ export function HoleNumber(props: HoleNumberProps): ReactElement {
 
   const styles = StyleSheet.create({
     cell: {
+      backgroundColor: 'yellow',
       justifyContent: 'center',
       alignItems: 'center',
-      width: 20,
-      height: 20,
+      width: 50,
     },
   })
 
