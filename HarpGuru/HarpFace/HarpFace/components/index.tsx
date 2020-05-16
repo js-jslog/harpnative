@@ -1,5 +1,5 @@
-import React from 'react'
 import {StyleSheet, View} from 'react-native'
+import React from 'react'
 
 import type {HarpFaceProps} from '../types'
 import { HoleNumberRow } from '../../HoleNumberRow'
@@ -7,12 +7,11 @@ import { getHarpRows } from '../../HarpRows'
 
 const styles = StyleSheet.create({
   face: {
-    flex: 1,
+    flex: 5,
     flexDirection: 'column',
     backgroundColor: 'black',
     justifyContent: 'space-between',
     alignItems: 'stretch',
-    width: 500,
   },
 })
 
