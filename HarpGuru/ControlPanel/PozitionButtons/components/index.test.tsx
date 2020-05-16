@@ -2,13 +2,13 @@ import React from 'react'
 import { PozitionIds } from 'harpstrata'
 import { render, fireEvent, NativeTestEvent } from '@testing-library/react-native'
 
-import type { PozitionButtonsProps } from '../types'
+import type { PozitionButtonParentProps } from '../../PozitionButton'
 
 import { PozitionButtons } from './index'
 
 test('PozitionButtons renders a dom element with a \'Harp Position\' label', () => {
   const setPozitionId = jest.fn()
-  const pozitionButtonsProps: PozitionButtonsProps = { setPozitionId }
+  const pozitionButtonsProps: PozitionButtonParentProps = { setPozitionId }
 
   const { getByText } = render(<PozitionButtons {...pozitionButtonsProps } />)
   expect(getByText('Harp Position')).toBeTruthy()
@@ -16,7 +16,7 @@ test('PozitionButtons renders a dom element with a \'Harp Position\' label', () 
 
 test('PozitionButtons renders a first position button which calls the passed function parameter when clicked', () => {
   const setPozitionId = jest.fn()
-  const pozitionButtonsProps: PozitionButtonsProps = { setPozitionId }
+  const pozitionButtonsProps: PozitionButtonParentProps = { setPozitionId }
 
   const { getByText } = render(<PozitionButtons {...pozitionButtonsProps } />)
 
