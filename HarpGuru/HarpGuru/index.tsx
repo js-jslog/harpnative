@@ -9,16 +9,19 @@ import type { HarpFaceProps } from '../HarpFace'
 import { ControlPanel } from '../ControlPanel'
 import type { ControlPanelProps } from '../ControlPanel'
 
-const [ apparatusId ] = getApparatusIds()
-const [ pozitionId ] = getPozitionIds()
-const [ pitchId ] = getPitchIds()
-const activeIds: ActiveIds = []
+const [ initialApparatusId ] = getApparatusIds()
+const [ initialPozitionId ] = getPozitionIds()
+const [ initialPitchId ] = getPitchIds()
+const initialActiveIds: ActiveIds = []
 
-const harpStrataProps: HarpStrataProps = {
-  apparatusId, pozitionId, keyPitchId: pitchId, activeIds
+const initialHarpStrataProps: HarpStrataProps = {
+  apparatusId: initialApparatusId,
+  pozitionId: initialPozitionId,
+  keyPitchId: initialPitchId,
+  activeIds: initialActiveIds,
 }
-const initialHarpStrata: HarpStrata = getHarpStrata(harpStrataProps)
-const { Degree: displayMode } = DisplayModes
+const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
+const { Degree: initialDisplayMode } = DisplayModes
 
 const styles = StyleSheet.create({
   guru: {
@@ -32,12 +35,13 @@ const styles = StyleSheet.create({
 
 export const HarpGuru = (): ReactElement => {
   const [ activeHarpStrata, setHarpStrata ] = useState(initialHarpStrata)
-  const [ activePozitionId, setActivePozitionId ] = useState(pozitionId)
+  const [ activePozitionId, setActivePozitionId ] = useState(initialPozitionId)
 
   const getBaseHarpStrataProps = (): HarpStrataProps => {
     const { apparatus: { id: apparatusId }} = activeHarpStrata
     const pozitionId = activePozitionId
-    const keyPitchId = pitchId
+    const keyPitchId = initialPitchId
+    const activeIds = initialActiveIds
 
     return { apparatusId, pozitionId, keyPitchId, activeIds }
   }
@@ -49,7 +53,7 @@ export const HarpGuru = (): ReactElement => {
   }
 
   const controlPanelProps: ControlPanelProps = { setPozitionId }
-  const harpFaceProps: HarpFaceProps = { harpStrata: activeHarpStrata, displayMode }
+  const harpFaceProps: HarpFaceProps = { harpStrata: activeHarpStrata, displayMode: initialDisplayMode }
 
   return (
     <View style={styles.guru}>
