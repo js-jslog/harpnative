@@ -17,7 +17,7 @@ const initialActiveIds: ActiveIds = []
 const initialHarpStrataProps: HarpStrataProps = {
   apparatusId: initialApparatusId,
   pozitionId: initialPozitionId,
-  keyPitchId: initialPitchId,
+  harpKeyId: initialPitchId,
   activeIds: initialActiveIds,
 }
 const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
@@ -41,10 +41,10 @@ export const HarpGuru = (): ReactElement => {
   const getBaseHarpStrataProps = (): HarpStrataProps => {
     const { apparatus: { id: apparatusId }} = activeHarpStrata
     const pozitionId = activePozitionId
-    const keyPitchId = initialPitchId
+    const harpKeyId = initialPitchId
     const activeIds = initialActiveIds
 
-    return { apparatusId, pozitionId, keyPitchId, activeIds }
+    return { apparatusId, pozitionId, harpKeyId, activeIds }
   }
 
   const setPozitionId = (pozitionId: PozitionIds): void => {

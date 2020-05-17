@@ -8,7 +8,7 @@ import { DisplayModes } from '../index'
 const harpStrataProps: HarpStrataProps = {
   apparatusId: ApparatusIds.MajorDiatonic,
   pozitionId: PozitionIds.First,
-  keyPitchId: PitchIds.C,
+  harpKeyId: PitchIds.C,
   activeIds: [] as ActiveIds,
 }
 const harpStrata = getHarpStrata(harpStrataProps)
