@@ -1,12 +1,13 @@
 import {StyleSheet, View} from 'react-native'
 import React, { useState } from 'react'
 import type { ReactElement } from 'react'
-import { PitchIds, PozitionIds, getApparatusIds, getPozitionIds, getPitchIds, getHarpStrata } from 'harpstrata'
+import { getApparatusIds, getPozitionIds, getPitchIds, getHarpStrata } from 'harpstrata'
 import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
-import {HarpFace, DisplayModes} from '../HarpFace'
+import { HarpGuruHome } from '../HarpGuruHome'
+import {DisplayModes} from '../HarpFace'
 import type { HarpFaceProps } from '../HarpFace'
-import { PozitionButton, PitchButton, DisplayModeToggler } from '../Controls'
+import { PozitionControlPanel } from '../Controls'
 
 const styles = StyleSheet.create({
   guru: {
@@ -37,23 +38,13 @@ export const HarpGuru = (): ReactElement => {
   const [ activeDisplayMode, setDisplayMode ] = useState(initialDisplayMode)
 
   const harpFaceProps: HarpFaceProps = { harpStrata: activeHarpStrata, displayMode: activeDisplayMode }
-
-  const displayModeTogglerProps = { setDisplayMode }
-
-  const firstPozitionButtonProps = { id: PozitionIds.First, activeHarpStrata, setActiveHarpStrata }
-  const secondPozitionButtonProps = { id: PozitionIds.Second, activeHarpStrata, setActiveHarpStrata }
-
-  const keyCHarpButtonProps = { id: PitchIds.C, activeHarpStrata, setActiveHarpStrata }
-  const keyDHarpButtonProps = { id: PitchIds.D, activeHarpStrata, setActiveHarpStrata }
+  const harpGuruHomeProps = {...harpFaceProps, setDisplayMode}
+  const harpStrataControlProps = { activeHarpStrata, setActiveHarpStrata }
 
   return (
     <View style={styles.guru}>
-      <HarpFace {...harpFaceProps} />
-      <DisplayModeToggler {...displayModeTogglerProps} />
-      <PozitionButton {...firstPozitionButtonProps} />
-      <PozitionButton {...secondPozitionButtonProps} />
-      <PitchButton {...keyCHarpButtonProps} />
-      <PitchButton {...keyDHarpButtonProps} />
+      <HarpGuruHome {...harpGuruHomeProps} />
+      <PozitionControlPanel {...harpStrataControlProps} />
     </View>
   )
 }
