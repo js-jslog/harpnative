@@ -6,8 +6,8 @@ import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
 import {HarpFace, DisplayModes} from '../HarpFace'
 import type { HarpFaceProps } from '../HarpFace'
-import { ControlPanel } from '../ControlPanel'
-import type { ControlPanelProps } from '../ControlPanel'
+import { ControlPanel } from '../Controls'
+import type { ControlPanelProps } from '../Controls'
 
 const [ initialApparatusId ] = getApparatusIds()
 const [ initialPozitionId ] = getPozitionIds()
