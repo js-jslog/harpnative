@@ -1,6 +1,8 @@
 import {StyleSheet, Text, View} from 'react-native'
 import React from 'react'
 
+import { DisplayModes } from '../HarpFace'
+
 import { analysePosition } from './analysePosition'
 import type { PositionFacts } from './analysePosition'
 
@@ -18,12 +20,16 @@ const styles = StyleSheet.create({
 
 export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   const positionFacts: PositionFacts = analysePosition(props)
-  const { thisDegree } = positionFacts
+  const { displayMode } = props
+  const { thisDegree, thisPitch } = positionFacts
   const { id: degreeId } = thisDegree || { id: undefined }
+  const { id: pitchId } = thisPitch || { id: undefined }
+
+  const displayValue = (displayMode === DisplayModes.Degree ? degreeId : pitchId)
 
   return (
     <View style={styles.cell}>
-      <Text>{degreeId}</Text>
+      <Text>{displayValue}</Text>
     </View>
   )
 }
