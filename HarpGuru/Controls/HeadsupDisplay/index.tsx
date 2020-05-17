@@ -6,7 +6,11 @@ import type { HarpStrata } from 'harpstrata'
 export const HeadsupDisplay = (activeHarpStrata: HarpStrata): ReactElement => {
   const { apparatus: { id }} = activeHarpStrata
   return (
-    <View>
+    <View
+      accessible={true}
+      accessibilityLabel='Active Apparatus'
+    >
+      <Text>Apparatus</Text>
       <Text>{id}</Text>
     </View>
   )
