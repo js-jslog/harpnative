@@ -1,6 +1,3 @@
-export { ControlPanel } from './ControlPanel'
-export type { ControlPanelProps } from './ControlPanel'
-
 export { DisplayModeToggler } from './DisplayModeToggler'
 export type { DisplayModeTogglerProps } from './DisplayModeToggler'
 
