@@ -5,7 +5,7 @@ import type { HarpStrata } from 'harpstrata'
 
 export const HeadsupDisplay = (activeHarpStrata: HarpStrata): ReactElement => {
   const { apparatus: { id: apparatusId }} = activeHarpStrata
-  const { pozitionId, harpKeyId } = activeHarpStrata
+  const { pozitionId, harpKeyId, rootPitchId } = activeHarpStrata
 
   return (
     <>
@@ -22,6 +22,13 @@ export const HeadsupDisplay = (activeHarpStrata: HarpStrata): ReactElement => {
       >
         <Text>Harp Key</Text>
         <Text>{harpKeyId}</Text>
+      </View>
+      <View
+        accessible={true}
+        accessibilityLabel='Active Root Pitch'
+      >
+        <Text>Root Pitch</Text>
+        <Text>{rootPitchId}</Text>
       </View>
       <View
         accessible={true}
