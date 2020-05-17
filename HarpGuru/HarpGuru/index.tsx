@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
 export const HarpGuru = (): ReactElement => {
   const [ activeHarpStrata, setHarpStrata ] = useState(initialHarpStrata)
   const [ activePozitionId, setActivePozitionId ] = useState(initialPozitionId)
+  const [ activeDisplayMode, setDisplayMode ] = useState(initialDisplayMode)
 
   const getBaseHarpStrataProps = (): HarpStrataProps => {
     const { apparatus: { id: apparatusId }} = activeHarpStrata
@@ -52,8 +53,8 @@ export const HarpGuru = (): ReactElement => {
     setHarpStrata(getHarpStrata(harpStrataProps))
   }
 
-  const controlPanelProps: ControlPanelProps = { setPozitionId }
-  const harpFaceProps: HarpFaceProps = { harpStrata: activeHarpStrata, displayMode: initialDisplayMode }
+  const controlPanelProps: ControlPanelProps = { setPozitionId, setDisplayMode }
+  const harpFaceProps: HarpFaceProps = { harpStrata: activeHarpStrata, displayMode: activeDisplayMode }
 
   return (
     <View style={styles.guru}>
