@@ -5,16 +5,7 @@ import type {HarpFaceProps, DisplayModes} from '../HarpFace'
 import { HarpFace } from '../HarpFace'
 import { DisplayModeToggler } from '../Controls'
 
-export type HarpGuruHomeProps = HarpFaceProps & {
-  readonly setDisplayMode: (displayMode: DisplayModes) => void;
-}
-
-export const HarpGuruHome = (props: HarpGuruHomeProps): React.ReactElement => {
-  const { setDisplayMode } = props
-  const { harpStrata, displayMode } = props
-  const harpFaceProps = {
-    harpStrata, displayMode
-  }
+export const HarpGuruHome = (harpFaceProps: HarpFaceProps, setDisplayMode: (displayMode: DisplayModes) => void): React.ReactElement => {
   const displayModeTogglerProps = { setDisplayMode }
   return (
     <View>
