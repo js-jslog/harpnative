@@ -1,2 +1,2 @@
-export { PozitionButton } from './components'
-export type { PozitionButtonProps, PozitionButtonParentProps } from './types'
+export { PitchButton } from './components'
+export type { PitchButtonProps } from './types'
