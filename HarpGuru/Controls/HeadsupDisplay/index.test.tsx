@@ -9,12 +9,12 @@ import {HeadsupDisplay} from './index'
 
 const { activeHarpStrata } = exampleHarpStrataControlProps
 
-test('A component is rendered with Apparatus info', () => {
+test('A component is rendered with Apparatus & Pozition info', () => {
   const { getByA11yLabel, getByText } = render(<HeadsupDisplay {...activeHarpStrata} />)
 
-  const container = getByA11yLabel('Active Apparatus')
-  const apparatusLabel = getByText(ApparatusIds.MajorDiatonic)
+  const apparatusContainer = getByA11yLabel('Active Apparatus')
+  const activeApparatus = getByText(ApparatusIds.MajorDiatonic)
 
-  expect(container).toBeTruthy()
-  expect(apparatusLabel).toBeTruthy()
+  expect(apparatusContainer).toBeTruthy()
+  expect(activeApparatus).toBeTruthy()
 })
