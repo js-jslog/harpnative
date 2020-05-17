@@ -6,8 +6,8 @@ import { exampleHarpStrataControlProps }  from '../testResources'
 
 import { PozitionControlPanel } from './index'
 
-test('A component is rendered with a first pozition button present', () => {
+test('A componenet is rendered', () => {
   const { getByText } = render(<PozitionControlPanel {...exampleHarpStrataControlProps} />)
 
-  expect(getByText(PozitionIds.First)).toBeTruthy()
+  expect(getByText(PozitionIds.Second)).toBeTruthy()
 })

@@ -5,6 +5,7 @@ import { PozitionIds } from 'harpstrata'
 
 import { HarpStrataControlProps } from '../types'
 import { PozitionButton } from '../PozitionButton'
+import { HeadsupDisplay } from '../HeadsupDisplay'
 
 export const PozitionControlPanel = (props: HarpStrataControlProps): ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata } = props
@@ -14,6 +15,7 @@ export const PozitionControlPanel = (props: HarpStrataControlProps): ReactElemen
 
   return (
     <View>
+      <HeadsupDisplay {...activeHarpStrata} />
       <PozitionButton {...firstPozitionButtonProps} />
       <PozitionButton {...secondPozitionButtonProps} />
     </View>
