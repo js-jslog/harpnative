@@ -1,13 +1,22 @@
 import {StyleSheet, View} from 'react-native'
 import React, { useState } from 'react'
 import type { ReactElement } from 'react'
-import { PozitionIds, getApparatusIds, getPozitionIds, getPitchIds, getHarpStrata } from 'harpstrata'
+import { PitchIds, PozitionIds, getApparatusIds, getPozitionIds, getPitchIds, getHarpStrata } from 'harpstrata'
 import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
 import {HarpFace, DisplayModes} from '../HarpFace'
 import type { HarpFaceProps } from '../HarpFace'
-import { ControlPanel } from '../Controls'
-import type { ControlPanelProps } from '../Controls'
+import { PozitionButton, PitchButton, DisplayModeToggler } from '../Controls'
+
+const styles = StyleSheet.create({
+  guru: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    justifyContent: 'space-between',
+    alignItems: 'stretch',
+  },
+})
 
 const [ initialApparatusId ] = getApparatusIds()
 const [ initialPozitionId ] = getPozitionIds()
@@ -23,43 +32,28 @@ const initialHarpStrataProps: HarpStrataProps = {
 const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
 const { Degree: initialDisplayMode } = DisplayModes
 
-const styles = StyleSheet.create({
-  guru: {
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: 'white',
-    justifyContent: 'space-between',
-    alignItems: 'stretch',
-  },
-})
-
 export const HarpGuru = (): ReactElement => {
-  const [ activeHarpStrata, setHarpStrata ] = useState(initialHarpStrata)
-  const [ activePozitionId, setActivePozitionId ] = useState(initialPozitionId)
+  const [ activeHarpStrata, setActiveHarpStrata ] = useState(initialHarpStrata)
   const [ activeDisplayMode, setDisplayMode ] = useState(initialDisplayMode)
 
-  const getBaseHarpStrataProps = (): HarpStrataProps => {
-    const { apparatus: { id: apparatusId }} = activeHarpStrata
-    const pozitionId = activePozitionId
-    const harpKeyId = initialPitchId
-    const activeIds = initialActiveIds
-
-    return { apparatusId, pozitionId, harpKeyId, activeIds }
-  }
-
-  const setPozitionId = (pozitionId: PozitionIds): void => {
-    const harpStrataProps: HarpStrataProps = { ...getBaseHarpStrataProps(), pozitionId }
-    setActivePozitionId(pozitionId)
-    setHarpStrata(getHarpStrata(harpStrataProps))
-  }
-
-  const controlPanelProps: ControlPanelProps = { setPozitionId, setDisplayMode }
   const harpFaceProps: HarpFaceProps = { harpStrata: activeHarpStrata, displayMode: activeDisplayMode }
+
+  const displayModeTogglerProps = { setDisplayMode }
+
+  const firstPozitionButtonProps = { id: PozitionIds.First, activeHarpStrata, setActiveHarpStrata }
+  const secondPozitionButtonProps = { id: PozitionIds.Second, activeHarpStrata, setActiveHarpStrata }
+
+  const keyCHarpButtonProps = { id: PitchIds.C, activeHarpStrata, setActiveHarpStrata }
+  const keyDHarpButtonProps = { id: PitchIds.D, activeHarpStrata, setActiveHarpStrata }
 
   return (
     <View style={styles.guru}>
       <HarpFace {...harpFaceProps} />
-      <ControlPanel {...controlPanelProps} />
+      <DisplayModeToggler {...displayModeTogglerProps} />
+      <PozitionButton {...firstPozitionButtonProps} />
+      <PozitionButton {...secondPozitionButtonProps} />
+      <PitchButton {...keyCHarpButtonProps} />
+      <PitchButton {...keyDHarpButtonProps} />
     </View>
   )
 }

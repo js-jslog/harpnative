@@ -7,13 +7,11 @@ import { DisplayModes } from '../HarpFace'
 import { HarpGuru } from './index'
 
 test('a component is rendered with a visible Root degree', () => {
-  const { getAllByText, getByText } = render(<HarpGuru />)
+  const { getAllByText } = render(<HarpGuru />)
 
   const [ root ] = getAllByText(DegreeIds.Root)
-  const controlPanel = getByText('Control Panel')
 
   expect(root).toBeTruthy()
-  expect(controlPanel).toBeTruthy()
 })
 
 test('The HarpFace presents shifting DegreeIds when the relevant Pozitions are selected', () => {
