@@ -7,5 +7,4 @@ export type { PitchButtonProps } from './PitchButton'
 export { PozitionButton } from './PozitionButton'
 export type { PozitionButtonProps } from './PozitionButton'
 
-export { PozitionControlPanel } from './PozitionControlPanel'
 export { HeadsupDisplay } from './HeadsupDisplay'
