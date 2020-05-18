@@ -1,13 +1,10 @@
 import {StyleSheet, View} from 'react-native'
 import React from 'react'
 
+import type { ScreenProps } from '../types'
 import { NavToPozitionControl } from '../../Navigation'
-import type {HarpFaceProps} from '../../HarpFace'
 import { HarpFace } from '../../HarpFace'
 import { DisplayModeToggler } from '../../Controls'
-import type { DisplayModeTogglerProps } from '../../Controls'
-
-type HarpGuruHomeProps = HarpFaceProps & DisplayModeTogglerProps
 
 const styles = StyleSheet.create({
   guruhome: {
@@ -20,9 +17,9 @@ const styles = StyleSheet.create({
 })
 
 
-export const HarpGuruHome = (props: HarpGuruHomeProps): React.ReactElement => {
-  const { harpStrata, displayMode, setDisplayMode } = props
-  const harpFaceProps = { harpStrata, displayMode }
+export const HomeScreen = (props: ScreenProps): React.ReactElement => {
+  const { activeHarpStrata, activeDisplayMode, setDisplayMode } = props
+  const harpFaceProps = { harpStrata: activeHarpStrata, displayMode: activeDisplayMode }
   const displayModeTogglerProps = { setDisplayMode }
   return (
     <View style={styles.guruhome}>
