@@ -40,10 +40,10 @@ export const HarpGuru = (): ReactElement => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name='HarpGuruHome'>
-          {(props): ReactElement => <HarpGuruHome {...props} {...harpGuruHomeProps} />}
+          {(): ReactElement => <HarpGuruHome {...harpGuruHomeProps} />}
         </Stack.Screen>
         <Stack.Screen name='PozitionControlPanel'>
-          {(props): ReactElement => <PozitionControlPanel {...props} {...harpStrataControlProps} />}
+          {(): ReactElement => <PozitionControlPanel {...harpStrataControlProps} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
