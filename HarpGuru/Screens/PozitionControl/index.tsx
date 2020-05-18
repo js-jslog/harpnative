@@ -3,10 +3,10 @@ import React from 'react'
 import type { ReactElement } from 'react'
 import { PozitionIds } from 'harpstrata'
 
-import { HarpStrataControlProps } from '../types'
-import { PozitionButton } from '../PozitionButton'
+import type { ScreenProps } from '../types'
+import { PozitionButton, HeadsupDisplay } from '../../Controls'
 
-export const PozitionControlPanel = (props: HarpStrataControlProps): ReactElement => {
+export const PozitionControlScreen = (props: ScreenProps): ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata } = props
 
   const firstPozitionButtonProps = { id: PozitionIds.First, activeHarpStrata, setActiveHarpStrata }
@@ -14,6 +14,7 @@ export const PozitionControlPanel = (props: HarpStrataControlProps): ReactElemen
 
   return (
     <View>
+      <HeadsupDisplay {...activeHarpStrata} />
       <PozitionButton {...firstPozitionButtonProps} />
       <PozitionButton {...secondPozitionButtonProps} />
     </View>

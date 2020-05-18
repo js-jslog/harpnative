@@ -1,22 +1,14 @@
-import {StyleSheet, View} from 'react-native'
+import 'react-native-gesture-handler'
+
 import React, { useState } from 'react'
 import type { ReactElement } from 'react'
-import { PitchIds, PozitionIds, getApparatusIds, getPozitionIds, getPitchIds, getHarpStrata } from 'harpstrata'
+import { getApparatusIds, getPozitionIds, getPitchIds, getHarpStrata } from 'harpstrata'
 import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
+import { createStackNavigator } from '@react-navigation/stack'
+import { NavigationContainer } from '@react-navigation/native'
 
-import {HarpFace, DisplayModes} from '../HarpFace'
-import type { HarpFaceProps } from '../HarpFace'
-import { PozitionButton, PitchButton, DisplayModeToggler } from '../Controls'
-
-const styles = StyleSheet.create({
-  guru: {
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: 'white',
-    justifyContent: 'space-between',
-    alignItems: 'stretch',
-  },
-})
+import { HomeScreen, PozitionControlScreen } from '../Screens'
+import {DisplayModes} from '../HarpFace'
 
 const [ initialApparatusId ] = getApparatusIds()
 const [ initialPozitionId ] = getPozitionIds()
@@ -32,28 +24,24 @@ const initialHarpStrataProps: HarpStrataProps = {
 const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
 const { Degree: initialDisplayMode } = DisplayModes
 
+const Stack = createStackNavigator()
+
 export const HarpGuru = (): ReactElement => {
   const [ activeHarpStrata, setActiveHarpStrata ] = useState(initialHarpStrata)
   const [ activeDisplayMode, setDisplayMode ] = useState(initialDisplayMode)
 
-  const harpFaceProps: HarpFaceProps = { harpStrata: activeHarpStrata, displayMode: activeDisplayMode }
-
-  const displayModeTogglerProps = { setDisplayMode }
-
-  const firstPozitionButtonProps = { id: PozitionIds.First, activeHarpStrata, setActiveHarpStrata }
-  const secondPozitionButtonProps = { id: PozitionIds.Second, activeHarpStrata, setActiveHarpStrata }
-
-  const keyCHarpButtonProps = { id: PitchIds.C, activeHarpStrata, setActiveHarpStrata }
-  const keyDHarpButtonProps = { id: PitchIds.D, activeHarpStrata, setActiveHarpStrata }
+  const screenProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setDisplayMode }
 
   return (
-    <View style={styles.guru}>
-      <HarpFace {...harpFaceProps} />
-      <DisplayModeToggler {...displayModeTogglerProps} />
-      <PozitionButton {...firstPozitionButtonProps} />
-      <PozitionButton {...secondPozitionButtonProps} />
-      <PitchButton {...keyCHarpButtonProps} />
-      <PitchButton {...keyDHarpButtonProps} />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='HarpGuruHome'>
+          {(): ReactElement => <HomeScreen {...screenProps} />}
+        </Stack.Screen>
+        <Stack.Screen name='PozitionControlPanel'>
+          {(): ReactElement => <PozitionControlScreen {...screenProps} />}
+        </Stack.Screen>
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
