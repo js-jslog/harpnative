@@ -1,4 +1,4 @@
-import {StyleSheet, View} from 'react-native'
+import {Button, StyleSheet, View} from 'react-native'
 import React from 'react'
 
 import type {HarpFaceProps} from '../HarpFace'
@@ -22,11 +22,18 @@ const styles = StyleSheet.create({
 export const HarpGuruHome = (props: HarpGuruHomeProps): React.ReactElement => {
   const { harpStrata, displayMode, setDisplayMode } = props
   const harpFaceProps = { harpStrata, displayMode }
+  const { navigation } = props
   const displayModeTogglerProps = { setDisplayMode }
   return (
     <View style={styles.guruhome}>
       <HarpFace {...harpFaceProps} />
       <DisplayModeToggler {...displayModeTogglerProps} />
+      <Button
+        title='Change pozition'
+        onPress={() =>
+          navigation.navigate('PozitionControlPanel')
+        }
+      />
     </View>
   )
 }
