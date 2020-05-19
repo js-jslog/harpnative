@@ -1,3 +1,4 @@
+import {render as renderAlt} from 'react-native-testing-library'
 import React from 'react'
 import { PitchIds, DegreeIds } from 'harpstrata'
 import {render, fireEvent, NativeTestEvent} from '@testing-library/react-native'
@@ -16,6 +17,13 @@ test('A component is rendered with the Degree or Pitch value in its text view de
   rerender(<HarpCell {...harpFaceProps} displayMode={DisplayModes.Pitch} yxCoord={[3,0]} />)
 
   expect(getByText(PitchIds.D)).toBeTruthy()
+})
+
+test('A component is rendered with an a11y role of button', () => {
+  const harpFaceProps = { ...exampleHarpFaceProps, displayMode: DisplayModes.Degree }
+  const { getByA11yRole  } = renderAlt(<HarpCell {...harpFaceProps} yxCoord={[3,0]} />)
+
+  expect(getByA11yRole('button')).toBeTruthy()
 })
 
 test('A press of the componenet results in toggled active ids in the harpstrata passed to the paramaterised setter', () => {

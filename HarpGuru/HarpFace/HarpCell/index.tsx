@@ -46,7 +46,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   }
 
   return (
-    <View style={styles.cell}>
+    <View accessible={true} accessibilityRole='button' style={styles.cell}>
       <Button onPress={(): void => toggleActiveIdsIfHoleExists()} title={displayValue || ''} />
     </View>
   )
