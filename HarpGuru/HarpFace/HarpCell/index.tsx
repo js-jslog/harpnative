@@ -1,7 +1,7 @@
 import {View, StyleSheet, Button} from 'react-native'
 import React from 'react'
 import { getHarpStrata } from 'harpstrata'
-import type { HarpStrataProps } from 'harpstrata'
+import type { HarpStrata, HarpStrataProps, DegreeIds } from 'harpstrata'
 
 import { DisplayModes } from '../HarpFace'
 
@@ -21,6 +21,20 @@ const styles = StyleSheet.create({
   },
 })
 
+const setNewHarpStrata = (activeHarpStrata: HarpStrata, setActiveHarpStrata: (activeHarpStrata: HarpStrata) => void, toggledDegreeId: DegreeIds): void => {
+  const { apparatus: { id: apparatusId }, pozitionId, harpKeyId, isActiveComplex: { activeDegreeIds }} = activeHarpStrata
+
+  const newActiveDegreeIds = getToggledActiveDegreeIds(toggledDegreeId, activeDegreeIds)
+  const activeIds = newActiveDegreeIds
+
+  const newHarpStrataProps: HarpStrataProps = {
+    apparatusId, pozitionId, harpKeyId, activeIds
+  }
+  const newHarpStrata = getHarpStrata(newHarpStrataProps)
+  setActiveHarpStrata(newHarpStrata)
+
+}
+
 export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   const positionFacts: PositionFacts = analysePosition(props)
   const { setActiveHarpStrata, harpStrata, displayMode } = props
@@ -30,19 +44,10 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
 
   const displayValue = (displayMode === DisplayModes.Degree ? degreeId : pitchId)
 
-  const { apparatus: { id: apparatusId }, pozitionId, harpKeyId, isActiveComplex: { activeDegreeIds }} = harpStrata
 
   const toggleActiveIdsIfHoleExists = (): void => {
     if (degreeId === undefined) return
-
-    const newActiveDegreeIds = getToggledActiveDegreeIds(degreeId, activeDegreeIds)
-    const activeIds = newActiveDegreeIds
-
-    const newHarpStrataProps: HarpStrataProps = {
-      apparatusId, pozitionId, harpKeyId, activeIds
-    }
-    const newHarpStrata = getHarpStrata(newHarpStrataProps)
-    setActiveHarpStrata(newHarpStrata)
+    setNewHarpStrata(harpStrata, setActiveHarpStrata, degreeId)
   }
 
   const accessibleContent = 
