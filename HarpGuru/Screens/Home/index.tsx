@@ -2,7 +2,6 @@ import {StyleSheet, View} from 'react-native'
 import React from 'react'
 
 import type { ScreenProps } from '../types'
-import { NavToPozitionControl } from '../../Navigation'
 import { HarpFace } from '../../HarpFace'
 import { DisplayModeToggler } from '../../Controls'
 
@@ -25,7 +24,6 @@ export const HomeScreen = (props: ScreenProps): React.ReactElement => {
     <View style={styles.guruhome}>
       <HarpFace {...harpFaceProps} />
       <DisplayModeToggler {...displayModeTogglerProps} />
-      <NavToPozitionControl />
     </View>
   )
 }
