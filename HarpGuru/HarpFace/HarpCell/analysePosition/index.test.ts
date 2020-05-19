@@ -1,5 +1,5 @@
+import type { YXCoord } from '../types'
 import { exampleHarpFaceProps } from '../../HarpFace/testResources'
-import type { YXCoord } from '../../HarpFace'
 
 import { analysePosition } from './index'
 
