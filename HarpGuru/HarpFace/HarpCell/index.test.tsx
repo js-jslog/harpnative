@@ -1,7 +1,7 @@
-import {render as renderAlt} from 'react-native-testing-library'
+import {render as renderAlt, fireEvent} from 'react-native-testing-library'
 import React from 'react'
 import { PitchIds, DegreeIds } from 'harpstrata'
-import {render, fireEvent, NativeTestEvent} from '@testing-library/react-native'
+import {render} from '@testing-library/react-native'
 
 import { DisplayModes } from '../HarpFace'
 import { exampleHarpFaceProps } from '../HarpFace'
@@ -37,9 +37,9 @@ test('A press of the componenet results in toggled active ids in the harpstrata 
   const setActiveHarpStrata = jest.fn()
   const harpFaceProps = { ...exampleHarpFaceProps, displayMode: DisplayModes.Degree, setActiveHarpStrata }
 
-  const {getByText} = render(<HarpCell {...harpFaceProps} yxCoord={[3,0]} />)
+  const {getByA11yRole} = renderAlt(<HarpCell {...harpFaceProps} yxCoord={[3,0]} />)
 
-  fireEvent(getByText(DegreeIds.Second), new NativeTestEvent('press'))
+  fireEvent.press(getByA11yRole('button'))
 
   const { mock: { calls: [[ newHarpStrata ]]}} = setActiveHarpStrata
   const { isActiveComplex: { activeDegreeIds: newDegreeIds, activePitchIds: newPitchIds }} = newHarpStrata
