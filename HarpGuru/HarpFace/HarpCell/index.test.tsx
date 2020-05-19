@@ -26,6 +26,13 @@ test('A component is rendered with an a11y role of button', () => {
   expect(getByA11yRole('button')).toBeTruthy()
 })
 
+test('A component is rendered without an a11y role of button if it has no content', () => {
+  const harpFaceProps = { ...exampleHarpFaceProps, displayMode: DisplayModes.Degree }
+  const { queryByA11yRole  } = renderAlt(<HarpCell {...harpFaceProps} yxCoord={[0,0]} />)
+
+  expect(queryByA11yRole('button')).toBeNull()
+})
+
 test('A press of the componenet results in toggled active ids in the harpstrata passed to the paramaterised setter', () => {
   const setActiveHarpStrata = jest.fn()
   const harpFaceProps = { ...exampleHarpFaceProps, displayMode: DisplayModes.Degree, setActiveHarpStrata }

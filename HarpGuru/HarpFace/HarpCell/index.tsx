@@ -45,11 +45,18 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
     setActiveHarpStrata(newHarpStrata)
   }
 
-  return (
+  const accessibleContent = 
     <View accessible={true} accessibilityRole='button' style={styles.cell}>
       <Button onPress={(): void => toggleActiveIdsIfHoleExists()} title={displayValue || ''} />
     </View>
-  )
+
+  const inAccessibleContent = 
+    <View accessible={false} style={styles.cell}>
+    </View>
+
+  const content = (thisDegree === undefined ? inAccessibleContent : accessibleContent)
+
+  return content
 }
 
 export type { YXCoord } from './types'
