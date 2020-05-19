@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 import type { ReactElement } from 'react'
 import { getApparatusIds, getPozitionIds, getPitchIds, getHarpStrata } from 'harpstrata'
 import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
-import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
+import { createDrawerNavigator } from '@react-navigation/drawer'
 
 import { HomeScreen, PozitionControlScreen } from '../Screens'
 import {DisplayModes} from '../HarpFace'
@@ -24,7 +24,7 @@ const initialHarpStrataProps: HarpStrataProps = {
 const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
 const { Degree: initialDisplayMode } = DisplayModes
 
-const Stack = createStackNavigator()
+const Drawer = createDrawerNavigator()
 
 export const HarpGuru = (): ReactElement => {
   const [ activeHarpStrata, setActiveHarpStrata ] = useState(initialHarpStrata)
@@ -34,14 +34,14 @@ export const HarpGuru = (): ReactElement => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name='HarpGuruHome'>
+      <Drawer.Navigator initialRouteName='HarpGuruHome'>
+        <Drawer.Screen name='HarpGuruHome'>
           {(): ReactElement => <HomeScreen {...screenProps} />}
-        </Stack.Screen>
-        <Stack.Screen name='PozitionControlPanel'>
+        </Drawer.Screen>
+        <Drawer.Screen name='PozitionControlPanel'>
           {(): ReactElement => <PozitionControlScreen {...screenProps} />}
-        </Stack.Screen>
-      </Stack.Navigator>
+        </Drawer.Screen>
+      </Drawer.Navigator>
     </NavigationContainer>
   )
 }
