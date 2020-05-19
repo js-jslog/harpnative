@@ -34,12 +34,13 @@ export const HarpGuru = (): ReactElement => {
 
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName='HarpGuruHome'>
-        <Drawer.Screen name='HarpGuruHome'>
+      <Drawer.Navigator
+        drawerPosition='left'
+        drawerContent={(): ReactElement => <PozitionControlScreen {...screenProps} />}
+        drawerType='slide'
+      >
+        <Drawer.Screen name='HomeScreen'>
           {(): ReactElement => <HomeScreen {...screenProps} />}
-        </Drawer.Screen>
-        <Drawer.Screen name='PozitionControlPanel'>
-          {(): ReactElement => <PozitionControlScreen {...screenProps} />}
         </Drawer.Screen>
       </Drawer.Navigator>
     </NavigationContainer>
