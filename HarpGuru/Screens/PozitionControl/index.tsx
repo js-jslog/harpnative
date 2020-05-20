@@ -11,12 +11,22 @@ export const PozitionControlScreen = (props: ScreenProps): ReactElement => {
 
   const firstPozitionButtonProps = { id: PozitionIds.First, activeHarpStrata, setActiveHarpStrata }
   const secondPozitionButtonProps = { id: PozitionIds.Second, activeHarpStrata, setActiveHarpStrata }
+  const thirdPozitionButtonProps = { id: PozitionIds.Third, activeHarpStrata, setActiveHarpStrata }
+  const fourthPozitionButtonProps = { id: PozitionIds.Fourth, activeHarpStrata, setActiveHarpStrata }
+  const fifthPozitionButtonProps = { id: PozitionIds.Fifth, activeHarpStrata, setActiveHarpStrata }
+  const sixthPozitionButtonProps = { id: PozitionIds.Sixth, activeHarpStrata, setActiveHarpStrata }
+  const seventhPozitionButtonProps = { id: PozitionIds.Seventh, activeHarpStrata, setActiveHarpStrata }
 
   return (
     <View>
       <HeadsupDisplay {...activeHarpStrata} />
       <PozitionButton {...firstPozitionButtonProps} />
       <PozitionButton {...secondPozitionButtonProps} />
+      <PozitionButton {...thirdPozitionButtonProps} />
+      <PozitionButton {...fourthPozitionButtonProps} />
+      <PozitionButton {...fifthPozitionButtonProps} />
+      <PozitionButton {...sixthPozitionButtonProps} />
+      <PozitionButton {...seventhPozitionButtonProps} />
     </View>
   )
 }
