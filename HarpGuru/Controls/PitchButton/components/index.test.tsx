@@ -33,3 +33,17 @@ test('PitchButton renders a component which set\'s the expected harp strata to t
   expect(setActiveHarpStrata.mock.calls.length).toBe(1)
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(keyCHarpStrata)
 })
+
+test('PitchButton renders a disabled component if it\'s id matches the active harp pitch', () => {
+  const setActiveHarpStrata = jest.fn()
+  const activeHarpStrata = keyCHarpStrata
+  const { C: id } = PitchIds
+
+  const pitchButtonProps: PitchButtonProps = { id, activeHarpStrata, setActiveHarpStrata }
+
+  const { getByText } = render(<PitchButton {...pitchButtonProps} />)
+
+  fireEvent(getByText(id), new NativeTestEvent('press'))
+
+  expect(setActiveHarpStrata.mock.calls.length).toBe(0)
+})

@@ -19,8 +19,14 @@ const getNewHarpStrata = (props: PitchButtonProps): void => {
   setActiveHarpStrata(getHarpStrata(harpStrataProps))
 }
 
+const isDisabled = (props: PitchButtonProps): boolean => {
+  const { activeHarpStrata: { harpKeyId }, id: buttonId } = props
+
+  return (harpKeyId === buttonId)
+}
+
 export function PitchButton(props: PitchButtonProps): ReactElement {
   return (
-    <Button onPress={(): void => getNewHarpStrata(props)} title={props.id} />
+    <Button onPress={(): void => getNewHarpStrata(props)} title={props.id} disabled={isDisabled(props)} />
   )
 }
