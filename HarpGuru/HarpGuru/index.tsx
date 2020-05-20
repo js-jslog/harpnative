@@ -7,7 +7,7 @@ import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 import { NavigationContainer } from '@react-navigation/native'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 
-import { HomeScreen, PozitionControlScreen } from '../Screens'
+import { HomeScreen, ControlPanel } from '../Screens'
 import {DisplayModes} from '../HarpFace'
 
 const [ initialApparatusId ] = getApparatusIds()
@@ -36,7 +36,7 @@ export const HarpGuru = (): ReactElement => {
     <NavigationContainer>
       <Drawer.Navigator
         drawerPosition='left'
-        drawerContent={(): ReactElement => <PozitionControlScreen {...screenProps} />}
+        drawerContent={(): ReactElement => <ControlPanel {...screenProps} />}
         drawerType='slide'
       >
         <Drawer.Screen name='HomeScreen'>

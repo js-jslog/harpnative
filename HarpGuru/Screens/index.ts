@@ -1,3 +1,3 @@
 export { HomeScreen } from './Home'
-export { PozitionControlScreen } from './PozitionControl'
+export { ControlPanel } from './ControlPanel'
 export type { ScreenProps } from './types'

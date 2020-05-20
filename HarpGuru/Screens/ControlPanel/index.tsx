@@ -6,7 +6,7 @@ import { PozitionIds, PitchIds } from 'harpstrata'
 import type { ScreenProps } from '../types'
 import { PozitionButton, PitchButton, HeadsupDisplay } from '../../Controls'
 
-export const PozitionControlScreen = (props: ScreenProps): ReactElement => {
+export const ControlPanel = (props: ScreenProps): ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata } = props
 
   const firstPozitionButtonProps = { id: PozitionIds.First, activeHarpStrata, setActiveHarpStrata }
