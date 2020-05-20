@@ -19,8 +19,14 @@ const getNewHarpStrata = (props: PozitionButtonProps): void => {
   setActiveHarpStrata(getHarpStrata(harpStrataProps))
 }
 
+const isDisabled = (props: PozitionButtonProps): boolean => {
+  const { activeHarpStrata: { pozitionId }, id: buttonId } = props
+
+  return (pozitionId === buttonId)
+}
+
 export function PozitionButton(props: PozitionButtonProps): ReactElement {
   return (
-    <Button onPress={(): void => getNewHarpStrata(props)} title={props.id} />
+    <Button onPress={(): void => getNewHarpStrata(props)} title={props.id} disabled={isDisabled(props)} />
   )
 }

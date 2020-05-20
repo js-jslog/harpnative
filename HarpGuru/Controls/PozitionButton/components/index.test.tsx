@@ -33,3 +33,16 @@ test('PozitionButton renders a component which set\'s the expected harp strata t
   expect(setActiveHarpStrata.mock.calls.length).toBe(1)
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(secondPozitionHarpStrata)
 })
+
+test('PozitionButton renders a disabled component if it\'s id matches the active pozition', () => {
+  const setActiveHarpStrata = jest.fn()
+  const activeHarpStrata = firstPozitionHarpStrata
+  const { First: id } = PozitionIds
+
+  const pozitionButtonProps: PozitionButtonProps = { id, activeHarpStrata, setActiveHarpStrata }
+
+  const { getByText } = render(<PozitionButton {...pozitionButtonProps} />)
+
+  fireEvent(getByText(id), new NativeTestEvent('press'))
+  expect(setActiveHarpStrata.mock.calls.length).toBe(0)
+})
