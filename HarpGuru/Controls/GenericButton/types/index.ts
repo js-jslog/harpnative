@@ -1,15 +1,15 @@
 import type { HarpStrata, PozitionIds, PitchIds } from 'harpstrata'
 
-type PozitionUpdateProps = {
+type CommonGenericUpdateProps = {
+  readonly activeHarpStrata: HarpStrata;
+}
+type PozitionUpdateProps = CommonGenericUpdateProps & {
   readonly updateCategory: UpdateCategories.Pozition;
   readonly updateId: PozitionIds;
 }
-type HarpKeyUpdateProps = {
+type HarpKeyUpdateProps = CommonGenericUpdateProps & {
   readonly updateCategory: UpdateCategories.HarpKey;
   readonly updateId: PitchIds;
-}
-type GenericAugmentProps = {
-  readonly activeHarpStrata: HarpStrata;
 }
 
 export enum UpdateCategories {
@@ -17,4 +17,4 @@ export enum UpdateCategories {
   HarpKey = 'HARP_KEY',
 }
 
-export type GenericUpdateProps = ( PozitionUpdateProps & GenericAugmentProps ) | ( HarpKeyUpdateProps & GenericAugmentProps )
+export type GenericUpdateProps = PozitionUpdateProps | HarpKeyUpdateProps
