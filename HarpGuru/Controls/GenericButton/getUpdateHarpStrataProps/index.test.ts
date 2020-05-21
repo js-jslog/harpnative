@@ -1,13 +1,13 @@
 import { PozitionIds, PitchIds } from 'harpstrata'
 
-import { keyCHarpStrata } from '../testResources'
+import { firstPozitionHarpStrata, keyCHarpStrata } from '../testResources'
 import { getPropsForHarpStrata } from '../getPropsForHarpStrata'
 
 import { getUpdateHarpStrataProps } from './index'
 import type { GenericUpdateProps } from './index'
 
 test('getUpdateHarpStrataProps provides amended HarpStrataProps for a given Pozition update', () => {
-  const sourceHarpStrata = keyCHarpStrata
+  const sourceHarpStrata = firstPozitionHarpStrata
 
   const baseHarpStrataProps = getPropsForHarpStrata(sourceHarpStrata)
 
