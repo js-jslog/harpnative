@@ -2,6 +2,7 @@ import type { HarpStrata, PozitionIds, PitchIds } from 'harpstrata'
 
 type CommonGenericUpdateProps = {
   readonly activeHarpStrata: HarpStrata;
+  readonly setActiveHarpStrata: (harpStrata: HarpStrata) => void;
 }
 type PozitionUpdateProps = CommonGenericUpdateProps & {
   readonly updateCategory: UpdateCategories.Pozition;

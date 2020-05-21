@@ -17,6 +17,7 @@ test('getUpdateHarpStrataProps provides amended HarpStrataProps for a given Pozi
   const { Pozition: updateCategory } = UpdateCategories
   const pozitionUpdateProps: GenericUpdateProps = {
     activeHarpStrata: keyCHarpStrata,
+    setActiveHarpStrata: jest.fn(),
     updateCategory,
     updateId: PozitionIds.Third,
   }
@@ -35,6 +36,7 @@ test('getUpdateHarpStrataProps provides amended HarpStrataProps for a given Harp
   const { HarpKey: updateCategory } = UpdateCategories
   const harpKeyUpdateProps: GenericUpdateProps = {
     activeHarpStrata: keyCHarpStrata,
+    setActiveHarpStrata: jest.fn(),
     updateCategory,
     updateId: PitchIds.D,
   }

@@ -10,10 +10,13 @@ import { GenericUpdateButton } from './index'
 
 test('GenericButton renders a component with the parameter label on it', () => {
   const activeHarpStrata = keyCHarpStrata
-
+  const setActiveHarpStrata = jest.fn()
   const { HarpKey: updateCategory } = UpdateCategories
   const { C: updateId } = PitchIds
-  const harpKeyUpdateProps: GenericUpdateProps = { activeHarpStrata, updateCategory, updateId }
+
+  const harpKeyUpdateProps: GenericUpdateProps = {
+    activeHarpStrata, setActiveHarpStrata, updateCategory, updateId
+  }
 
   const { getByText } = render(<GenericUpdateButton {...harpKeyUpdateProps} />)
 
