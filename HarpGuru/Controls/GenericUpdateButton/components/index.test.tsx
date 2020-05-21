@@ -40,3 +40,20 @@ test('GenericUpdateButton renders a component which set\'s the expected harp str
   expect(setActiveHarpStrata.mock.calls.length).toBe(1)
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(keyCHarpStrata)
 })
+
+test('GenericUpdateButton renders a disabled component if it\'s id matches the active id in that category', () => {
+  const setActiveHarpStrata = jest.fn()
+  const activeHarpStrata = keyCHarpStrata
+  const { C: updateId } = PitchIds
+  const { HarpKey: updateCategory } = UpdateCategories
+
+  const harpKeyUpdateProps: GenericUpdateProps = {
+    activeHarpStrata, setActiveHarpStrata, updateCategory, updateId
+  }
+
+  const { getByText } = render(<GenericUpdateButton {...harpKeyUpdateProps} />)
+
+  fireEvent(getByText(updateId), new NativeTestEvent('press'))
+
+  expect(setActiveHarpStrata.mock.calls.length).toBe(0)
+})
