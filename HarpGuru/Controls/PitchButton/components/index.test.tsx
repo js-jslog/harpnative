@@ -12,7 +12,9 @@ test('PitchButton renders a component with the parameter label on it', () => {
   const activeHarpStrata = keyDHarpStrata
   const { C: id } = PitchIds
 
-  const pitchButtonProps: PitchButtonProps = { id, activeHarpStrata, setActiveHarpStrata }
+  const pitchButtonProps: PitchButtonProps = {
+    id, activeHarpStrata, setActiveHarpStrata
+  }
 
   const { getByText } = render(<PitchButton {...pitchButtonProps} />)
 
@@ -24,7 +26,9 @@ test('PitchButton renders a component which set\'s the expected harp strata to t
   const activeHarpStrata = keyDHarpStrata
   const { C: id } = PitchIds
 
-  const pitchButtonProps: PitchButtonProps = { id, activeHarpStrata, setActiveHarpStrata }
+  const pitchButtonProps: PitchButtonProps = {
+    id, activeHarpStrata, setActiveHarpStrata
+  }
 
   const { getByText } = render(<PitchButton {...pitchButtonProps} />)
 
@@ -39,7 +43,9 @@ test('PitchButton renders a disabled component if it\'s id matches the active ha
   const activeHarpStrata = keyCHarpStrata
   const { C: id } = PitchIds
 
-  const pitchButtonProps: PitchButtonProps = { id, activeHarpStrata, setActiveHarpStrata }
+  const pitchButtonProps: PitchButtonProps = {
+    id, activeHarpStrata, setActiveHarpStrata
+  }
 
   const { getByText } = render(<PitchButton {...pitchButtonProps} />)
 
