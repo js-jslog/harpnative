@@ -1,5 +1,6 @@
 import { PozitionIds, PitchIds } from 'harpstrata'
 
+import { UpdateCategories } from '../types'
 import { firstPozitionHarpStrata, keyCHarpStrata } from '../testResources'
 import { getPropsForHarpStrata } from '../getPropsForHarpStrata'
 
@@ -13,10 +14,10 @@ test('getUpdateHarpStrataProps provides amended HarpStrataProps for a given Pozi
 
   const expectedHarpStrataProps = { ...baseHarpStrataProps, pozitionId: PozitionIds.Third }
 
-  const POZITION: 'POZITION' = 'POZITION'
+  const { Pozition: updateCategory } = UpdateCategories
   const pozitionUpdateProps: GenericUpdateProps = {
     activeHarpStrata: keyCHarpStrata,
-    updateCategory: POZITION,
+    updateCategory,
     updateId: PozitionIds.Third,
   }
   const actualHarpStrataProps = getUpdateHarpStrataProps(pozitionUpdateProps)
@@ -31,10 +32,10 @@ test('getUpdateHarpStrataProps provides amended HarpStrataProps for a given Harp
 
   const expectedHarpStrataProps = { ...baseHarpStrataProps, harpKeyId: PitchIds.D }
 
-  const HARP_KEY: 'HARP_KEY' = 'HARP_KEY'
+  const { HarpKey: updateCategory } = UpdateCategories
   const harpKeyUpdateProps: GenericUpdateProps = {
     activeHarpStrata: keyCHarpStrata,
-    updateCategory: HARP_KEY,
+    updateCategory,
     updateId: PitchIds.D,
   }
   const actualHarpStrataProps = getUpdateHarpStrataProps(harpKeyUpdateProps)
