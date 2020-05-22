@@ -10,7 +10,7 @@ const View = styled.View`
   background-color: #333;
   flex: 0.4;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 `
 
 export const HoleNumberRow = (props: HarpFaceProps): ReactElement => {
