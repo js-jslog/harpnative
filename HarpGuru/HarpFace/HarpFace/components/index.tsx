@@ -1,24 +1,22 @@
-import {StyleSheet, View} from 'react-native'
+import styled from 'styled-components/native'
 import React from 'react'
 
 import type {HarpFaceProps} from '../types'
 import { HoleNumberRow } from '../../HoleNumberRow'
 import { getHarpRows } from '../../HarpRows'
 
-const styles = StyleSheet.create({
-  face: {
-    flex: 5,
-    flexDirection: 'column',
-    backgroundColor: 'black',
-    justifyContent: 'space-between',
-    alignItems: 'stretch',
-  },
-})
+const View = styled.View`
+  background-color: transparent;
+  flex: 5;
+  flexDirection: column;
+  justify-content: space-between;
+  align-items: stretch;
+`
 
 export const HarpFace = (props: HarpFaceProps): React.ReactElement => {
   const harpRows = getHarpRows(props)
   return (
-    <View style={styles.face}>
+    <View>
       { harpRows.top }
       <HoleNumberRow {...props} />
       { harpRows.bottom }
