@@ -15,6 +15,7 @@ const Text = styled.Text`
 `
 const baseStyle = css`
   background-color: #b00;
+  border-radius: 8px;
   justify-content: center;
   align-items: center;
   width: 30px;
