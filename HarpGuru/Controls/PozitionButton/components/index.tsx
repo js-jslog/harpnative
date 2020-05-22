@@ -1,32 +1,15 @@
-import {Button} from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
-import type { HarpStrataProps } from 'harpstrata'
-import { getHarpStrata } from 'harpstrata'
 
-import type { PozitionButtonProps } from '../../GenericButton'
-
-const getNewHarpStrata = (props: PozitionButtonProps): void => {
-  const { activeHarpStrata, setActiveHarpStrata, id: newPozitionId } = props
-
-  const { apparatus: { id: apparatusId }} = activeHarpStrata
-  const pozitionId = newPozitionId
-  const { harpKeyId } = activeHarpStrata
-  const { isActiveComplex: { activeDegreeIds: activeIds }} = activeHarpStrata
-
-  const harpStrataProps: HarpStrataProps = { apparatusId, pozitionId, harpKeyId, activeIds }
-
-  setActiveHarpStrata(getHarpStrata(harpStrataProps))
-}
-
-const isDisabled = (props: PozitionButtonProps): boolean => {
-  const { activeHarpStrata: { pozitionId }, id: buttonId } = props
-
-  return (pozitionId === buttonId)
-}
+import { GenericButton, UpdateCategories } from '../../GenericButton'
+import type { PozitionButtonProps, PozitionButtonGenericProps } from '../../GenericButton'
 
 export function PozitionButton(props: PozitionButtonProps): ReactElement {
+  const { Pozition: updateCategory } = UpdateCategories
+  const { setActiveHarpStrata, activeHarpStrata, id } = props
+  const genericProps: PozitionButtonGenericProps = {
+    setActiveHarpStrata, activeHarpStrata, id, updateCategory }
   return (
-    <Button onPress={(): void => getNewHarpStrata(props)} title={props.id} disabled={isDisabled(props)} />
+    <GenericButton {...genericProps} />
   )
 }
