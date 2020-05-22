@@ -20,7 +20,7 @@ const isDisabled = (props: GenericButtonProps): boolean => {
   return (id === activeId)
 }
 
-export function GenericUpdateButton(props: GenericButtonProps): ReactElement {
+export function GenericButton(props: GenericButtonProps): ReactElement {
   return (
     <Button onPress={(): void => {setNewHarpStrata(props)}} title={props.id} disabled={isDisabled(props)} />
   )

@@ -4,7 +4,7 @@ import type { ReactElement } from 'react'
 import type { HarpStrataProps } from 'harpstrata'
 import { getHarpStrata } from 'harpstrata'
 
-import type { PozitionButtonProps } from '../../GenericUpdateButton'
+import type { PozitionButtonProps } from '../../GenericButton'
 
 const getNewHarpStrata = (props: PozitionButtonProps): void => {
   const { activeHarpStrata, setActiveHarpStrata, id: newPozitionId } = props

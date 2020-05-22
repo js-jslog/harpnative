@@ -6,9 +6,9 @@ import { UpdateCategories } from '../types'
 import type { GenericButtonProps } from '../types'
 import { keyCHarpStrata, keyDHarpStrata } from '../testResources'
 
-import { GenericUpdateButton } from './index'
+import { GenericButton } from './index'
 
-test('GenericUpdateButton renders a component with the parameter label on it', () => {
+test('GenericButton renders a component with the parameter label on it', () => {
   const activeHarpStrata = keyCHarpStrata
   const setActiveHarpStrata = jest.fn()
   const { HarpKey: updateCategory } = UpdateCategories
@@ -18,12 +18,12 @@ test('GenericUpdateButton renders a component with the parameter label on it', (
     activeHarpStrata, setActiveHarpStrata, updateCategory, id
   }
 
-  const { getByText } = render(<GenericUpdateButton {...harpKeyUpdateProps} />)
+  const { getByText } = render(<GenericButton {...harpKeyUpdateProps} />)
 
   expect(getByText(id)).toBeTruthy()
 })
 
-test('GenericUpdateButton renders a component which set\'s the expected harp strata to the paramaterised function', () => {
+test('GenericButton renders a component which set\'s the expected harp strata to the paramaterised function', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyDHarpStrata
   const { HarpKey: updateCategory } = UpdateCategories
@@ -33,7 +33,7 @@ test('GenericUpdateButton renders a component which set\'s the expected harp str
     activeHarpStrata, setActiveHarpStrata, updateCategory, id
   }
 
-  const { getByText } = render(<GenericUpdateButton {...harpKeyUpdateProps} />)
+  const { getByText } = render(<GenericButton {...harpKeyUpdateProps} />)
 
   fireEvent(getByText(id), new NativeTestEvent('press'))
 
@@ -41,7 +41,7 @@ test('GenericUpdateButton renders a component which set\'s the expected harp str
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(keyCHarpStrata)
 })
 
-test('GenericUpdateButton renders a disabled component if it\'s id matches the active id in that category', () => {
+test('GenericButton renders a disabled component if it\'s id matches the active id in that category', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyCHarpStrata
   const { C: id } = PitchIds
@@ -51,7 +51,7 @@ test('GenericUpdateButton renders a disabled component if it\'s id matches the a
     activeHarpStrata, setActiveHarpStrata, updateCategory, id
   }
 
-  const { getByText } = render(<GenericUpdateButton {...harpKeyUpdateProps} />)
+  const { getByText } = render(<GenericButton {...harpKeyUpdateProps} />)
 
   fireEvent(getByText(id), new NativeTestEvent('press'))
 

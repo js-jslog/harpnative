@@ -3,7 +3,7 @@ import { PitchIds } from 'harpstrata'
 import { render, fireEvent, NativeTestEvent } from '@testing-library/react-native'
 
 import { keyCHarpStrata, keyDHarpStrata } from '../testResources'
-import type { HarpKeyButtonProps } from '../../GenericUpdateButton'
+import type { HarpKeyButtonProps } from '../../GenericButton'
 
 import { HarpKeyButton } from './index'
 
