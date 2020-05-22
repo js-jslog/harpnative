@@ -37,7 +37,7 @@ const setNewHarpStrata = (activeHarpStrata: HarpStrata, setActiveHarpStrata: (ac
 
 export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   const positionFacts: PositionFacts = analysePosition(props)
-  const { setActiveHarpStrata, harpStrata, displayMode } = props
+  const { setActiveHarpStrata, activeHarpStrata, displayMode } = props
   const { thisDegree, thisPitch } = positionFacts
   const { id: degreeId } = thisDegree || { id: undefined }
   const { id: pitchId } = thisPitch || { id: undefined }
@@ -47,7 +47,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
 
   const toggleActiveIdsIfHoleExists = (): void => {
     if (degreeId === undefined) return
-    setNewHarpStrata(harpStrata, setActiveHarpStrata, degreeId)
+    setNewHarpStrata(activeHarpStrata, setActiveHarpStrata, degreeId)
   }
 
   const accessibleContent = 

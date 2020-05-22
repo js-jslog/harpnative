@@ -11,8 +11,8 @@ export type PositionFacts = {
 }
 
 export const analysePosition = (props: HarpCellProps): PositionFacts => {
-  const { harpStrata: { degreeMatrix, pitchMatrix, isActiveComplex: { isActiveMatrix }}} = props
-  const { harpStrata: { apparatus: {interactionMatrix}}} = props
+  const { activeHarpStrata: { degreeMatrix, pitchMatrix, isActiveComplex: { isActiveMatrix }}} = props
+  const { activeHarpStrata: { apparatus: {interactionMatrix}}} = props
   const { yxCoord: [ yCoord, xCoord ]} = props
   const { [yCoord]: {[xCoord]: thisDegree} } = degreeMatrix
   const { [yCoord]: {[xCoord]: thisPitch} } = pitchMatrix

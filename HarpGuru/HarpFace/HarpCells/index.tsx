@@ -6,7 +6,7 @@ import type { YXCoord } from '../HarpCell'
 
 
 export const getHarpCells = (props: HarpRowProps): React.ReactElement[] => {
-  const { harpStrata: { degreeMatrix }} = props
+  const { activeHarpStrata: { degreeMatrix }} = props
   const { yCoord } = props
 
   const [ matrixRow ] = degreeMatrix

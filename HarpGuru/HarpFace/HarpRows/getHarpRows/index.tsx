@@ -8,7 +8,7 @@ import type { HarpFaceProps } from '../../HarpFace'
 
 
 export const getHarpRows = (props: HarpFaceProps): HarpRows => {
-  const { harpStrata: { apparatus: { interactionMatrix }}} = props
+  const { activeHarpStrata: { apparatus: { interactionMatrix }}} = props
   const blowDrawIdsMap = interactionMatrix.map(mapRowToBlowDrawIds)
 
   const drawIndex = blowDrawIdsMap.indexOf(InteractionIds.Draw)

@@ -3,11 +3,11 @@ import { exampleHarpFaceProps } from '../../HarpFace/testResources'
 
 import { analysePosition } from './index'
 
-const { harpStrata } = exampleHarpFaceProps
-const { degreeMatrix: [,,,[,,,ourDegree]]} = harpStrata
-const { pitchMatrix: [,,,[,,,ourPitch]]} = harpStrata
-const { isActiveComplex: { isActiveMatrix: [,,,[,,,ourIsActive]]}} = harpStrata
-const { apparatus: { interactionMatrix: [,,,[,,,ourInteraction]]}} = harpStrata
+const { activeHarpStrata } = exampleHarpFaceProps
+const { degreeMatrix: [,,,[,,,ourDegree]]} = activeHarpStrata
+const { pitchMatrix: [,,,[,,,ourPitch]]} = activeHarpStrata
+const { isActiveComplex: { isActiveMatrix: [,,,[,,,ourIsActive]]}} = activeHarpStrata
+const { apparatus: { interactionMatrix: [,,,[,,,ourInteraction]]}} = activeHarpStrata
 
 test('leftmost is true if the provided coord has is 0 in the x axis and false otherwise', () => {
   const yxCoordLeftmostTrue: YXCoord = [ 0, 0 ]

@@ -11,7 +11,7 @@ const harpStrataProps: HarpStrataProps = {
   harpKeyId: PitchIds.C,
   activeIds: [] as ActiveIds,
 }
-const harpStrata = getHarpStrata(harpStrataProps)
+const activeHarpStrata = getHarpStrata(harpStrataProps)
 const { Degree: displayMode } = DisplayModes
 // TODO: If I add a jest.fn() here rather than this nonesense function
 // the gradle build fails. I need to figure out to make the testResources
@@ -19,7 +19,7 @@ const { Degree: displayMode } = DisplayModes
 const setActiveHarpStrata = (activeHarpStrata: HarpStrata): void => {console.log(activeHarpStrata)}
 
 export const exampleHarpFaceProps: HarpFaceProps = {
-  harpStrata,
+  activeHarpStrata,
   displayMode,
   setActiveHarpStrata,
 }
