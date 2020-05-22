@@ -1,4 +1,4 @@
-import styled from 'styled-components/native'
+import styled, { css } from 'styled-components/native'
 import React from 'react'
 import { getHarpStrata } from 'harpstrata'
 import type { HarpStrata, HarpStrataProps, DegreeIds } from 'harpstrata'
@@ -13,12 +13,22 @@ import {HarpCellProps} from './types'
 
 const Text = styled.Text`
 `
-const TouchableOpacity = styled.TouchableOpacity`
+const baseStyle = css`
   background-color: #b00;
   justify-content: center;
   align-items: center;
   width: 30px;
   height:30px;
+`
+const transparent = css`
+  background-color: transparent;
+`
+const TouchableOpacity = styled.TouchableOpacity`
+  ${baseStyle}
+`
+const InvisibleTouchableOpacity = styled.TouchableOpacity`
+  ${baseStyle}
+  ${transparent}
 `
 
 const setNewHarpStrata = (activeHarpStrata: HarpStrata, setActiveHarpStrata: (activeHarpStrata: HarpStrata) => void, toggledDegreeId: DegreeIds): void => {
@@ -58,9 +68,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
       <Text>{displayValue}</Text>
     </TouchableOpacity>
 
-  const inAccessibleContent = 
-    <TouchableOpacity disabled={true} accessible={false} >
-    </TouchableOpacity>
+  const inAccessibleContent = <InvisibleTouchableOpacity disabled={true} accessible={false} />
 
   const content = (thisDegree === undefined ? inAccessibleContent : accessibleContent)
 
