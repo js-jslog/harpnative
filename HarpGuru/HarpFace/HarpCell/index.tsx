@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native'
+import styled from 'styled-components/native'
 import React from 'react'
 import { getHarpStrata } from 'harpstrata'
 import type { HarpStrata, HarpStrataProps, DegreeIds } from 'harpstrata'
@@ -11,15 +11,15 @@ import type { PositionFacts } from './analysePosition'
 
 import {HarpCellProps} from './types'
 
-const styles = StyleSheet.create({
-  cell: {
-    backgroundColor: 'skyblue',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 30,
-    height: 30,
-  },
-})
+const Text = styled.Text`
+`
+const TouchableOpacity = styled.TouchableOpacity`
+  background-color: #b00;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height:30px;
+`
 
 const setNewHarpStrata = (activeHarpStrata: HarpStrata, setActiveHarpStrata: (activeHarpStrata: HarpStrata) => void, toggledDegreeId: DegreeIds): void => {
   const { apparatus: { id: apparatusId }, pozitionId, harpKeyId, isActiveComplex: { activeDegreeIds }} = activeHarpStrata
@@ -54,14 +54,13 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
     <TouchableOpacity
       accessible={true}
       accessibilityRole='button'
-      style={styles.cell}
       onPress={(): void => toggleActiveIdsIfHoleExists()} >
       <Text>{displayValue}</Text>
     </TouchableOpacity>
 
   const inAccessibleContent = 
-    <View accessible={false} style={styles.cell}>
-    </View>
+    <TouchableOpacity disabled={true} accessible={false} >
+    </TouchableOpacity>
 
   const content = (thisDegree === undefined ? inAccessibleContent : accessibleContent)
 
