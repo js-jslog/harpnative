@@ -8,9 +8,10 @@ import { getHoleNumbers } from './getHoleNumbers'
 
 const View = styled.View`
   background-color: #333;
-  flex: 0.4;
+  flex: 0;
   flex-direction: row;
   justify-content: space-around;
+  z-index: 10;
 `
 
 export const HoleNumberRow = (props: HarpFaceProps): ReactElement => {
