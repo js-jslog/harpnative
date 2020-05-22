@@ -55,8 +55,8 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
       accessible={true}
       accessibilityRole='button'
       style={styles.cell}
-      onPress={(): void => toggleActiveIdsIfHoleExists()} >
-      <Text>{displayValue}</Text>
+    >
+      <Text onPress={(): void => toggleActiveIdsIfHoleExists()}>{displayValue}</Text>
     </TouchableOpacity>
 
   const inAccessibleContent = 
