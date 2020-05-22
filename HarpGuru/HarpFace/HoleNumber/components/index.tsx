@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native'
+import styled from 'styled-components/native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
@@ -8,17 +8,16 @@ export function HoleNumber(props: HoleNumberProps): ReactElement {
   const { xCoord } = props
   const holeNumber: HoleNumberIds = `${xCoord + 1}` as HoleNumberIds
 
-  const styles = StyleSheet.create({
-    cell: {
-      backgroundColor: 'yellow',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: 30,
-    },
-  })
+  const Text = styled.Text``
+  const View = styled.View`
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+  `
 
   return (
-    <View style={styles.cell}>
+    <View>
       <Text>{holeNumber}</Text>
     </View>
   )
