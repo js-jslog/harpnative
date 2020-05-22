@@ -4,7 +4,7 @@ import type { ReactElement } from 'react'
 import { PozitionIds, PitchIds } from 'harpstrata'
 
 import type { ScreenProps } from '../types'
-import { PozitionButton, HarpKeyUpdateButton, HeadsupDisplay } from '../../Controls'
+import { PozitionButton, HarpKeyButton, HeadsupDisplay } from '../../Controls'
 
 export const ControlPanel = (props: ScreenProps): ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata } = props
@@ -61,13 +61,13 @@ export const ControlPanel = (props: ScreenProps): ReactElement => {
           <PozitionButton {...seventhPozitionButtonProps} />
         </View>
         <View style={styles.column}>
-          <HarpKeyUpdateButton {...cHarpKeyButtonProps} />
-          <HarpKeyUpdateButton {...dHarpKeyButtonProps} />
-          <HarpKeyUpdateButton {...eHarpKeyButtonProps} />
-          <HarpKeyUpdateButton {...fHarpKeyButtonProps} />
-          <HarpKeyUpdateButton {...gHarpKeyButtonProps} />
-          <HarpKeyUpdateButton {...aHarpKeyButtonProps} />
-          <HarpKeyUpdateButton {...bHarpKeyButtonProps} />
+          <HarpKeyButton {...cHarpKeyButtonProps} />
+          <HarpKeyButton {...dHarpKeyButtonProps} />
+          <HarpKeyButton {...eHarpKeyButtonProps} />
+          <HarpKeyButton {...fHarpKeyButtonProps} />
+          <HarpKeyButton {...gHarpKeyButtonProps} />
+          <HarpKeyButton {...aHarpKeyButtonProps} />
+          <HarpKeyButton {...bHarpKeyButtonProps} />
         </View>
       </View>
     </>

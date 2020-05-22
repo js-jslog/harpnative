@@ -1,7 +1,7 @@
 export { DisplayModeToggler } from './DisplayModeToggler'
 export type { DisplayModeTogglerProps } from './DisplayModeToggler'
 
-export { HarpKeyUpdateButton } from './HarpKeyUpdateButton'
+export { HarpKeyButton } from './HarpKeyButton'
 
 export { PozitionButton } from './PozitionButton'
 

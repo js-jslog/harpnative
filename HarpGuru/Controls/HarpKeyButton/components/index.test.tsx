@@ -5,9 +5,9 @@ import { render, fireEvent, NativeTestEvent } from '@testing-library/react-nativ
 import { keyCHarpStrata, keyDHarpStrata } from '../testResources'
 import type { HarpKeyButtonProps } from '../../GenericUpdateButton'
 
-import { HarpKeyUpdateButton } from './index'
+import { HarpKeyButton } from './index'
 
-test('HarpKeyUpdateButton renders a component with the parameter label on it', () => {
+test('HarpKeyButton renders a component with the parameter label on it', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyDHarpStrata
   const { C: id } = PitchIds
@@ -16,12 +16,12 @@ test('HarpKeyUpdateButton renders a component with the parameter label on it', (
     id, activeHarpStrata, setActiveHarpStrata
   }
 
-  const { getByText } = render(<HarpKeyUpdateButton {...pitchButtonProps} />)
+  const { getByText } = render(<HarpKeyButton {...pitchButtonProps} />)
 
   expect(getByText(id)).toBeTruthy()
 })
 
-test('HarpKeyUpdateButton renders a component which set\'s the expected harp strata to the paramaterised function', () => {
+test('HarpKeyButton renders a component which set\'s the expected harp strata to the paramaterised function', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyDHarpStrata
   const { C: id } = PitchIds
@@ -30,7 +30,7 @@ test('HarpKeyUpdateButton renders a component which set\'s the expected harp str
     id, activeHarpStrata, setActiveHarpStrata
   }
 
-  const { getByText } = render(<HarpKeyUpdateButton {...pitchButtonProps} />)
+  const { getByText } = render(<HarpKeyButton {...pitchButtonProps} />)
 
   fireEvent(getByText(id), new NativeTestEvent('press'))
 
@@ -38,7 +38,7 @@ test('HarpKeyUpdateButton renders a component which set\'s the expected harp str
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(keyCHarpStrata)
 })
 
-test('HarpKeyUpdateButton renders a disabled component if it\'s id matches the active harp pitch', () => {
+test('HarpKeyButton renders a disabled component if it\'s id matches the active harp pitch', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyCHarpStrata
   const { C: id } = PitchIds
@@ -47,7 +47,7 @@ test('HarpKeyUpdateButton renders a disabled component if it\'s id matches the a
     id, activeHarpStrata, setActiveHarpStrata
   }
 
-  const { getByText } = render(<HarpKeyUpdateButton {...pitchButtonProps} />)
+  const { getByText } = render(<HarpKeyButton {...pitchButtonProps} />)
 
   fireEvent(getByText(id), new NativeTestEvent('press'))
 
