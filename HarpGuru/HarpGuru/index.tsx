@@ -28,9 +28,9 @@ const Drawer = createDrawerNavigator()
 
 export const HarpGuru = (): ReactElement => {
   const [ activeHarpStrata, setActiveHarpStrata ] = useState(initialHarpStrata)
-  const [ activeDisplayMode, setDisplayMode ] = useState(initialDisplayMode)
+  const [ activeDisplayMode, setActiveDisplayMode ] = useState(initialDisplayMode)
 
-  const screenProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setDisplayMode }
+  const screenProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode }
 
   return (
     <NavigationContainer>

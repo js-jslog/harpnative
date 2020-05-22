@@ -17,9 +17,9 @@ const styles = StyleSheet.create({
 
 
 export const HomeScreen = (props: ScreenProps): React.ReactElement => {
-  const { activeHarpStrata, activeDisplayMode, setActiveHarpStrata, setDisplayMode } = props
-  const harpFaceProps = { activeHarpStrata, setActiveHarpStrata, displayMode: activeDisplayMode }
-  const displayModeTogglerProps = { setDisplayMode }
+  const { activeHarpStrata, activeDisplayMode, setActiveHarpStrata, setActiveDisplayMode } = props
+  const harpFaceProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode }
+  const displayModeTogglerProps = { setActiveDisplayMode }
   return (
     <View style={styles.guruhome}>
       <HarpFace {...harpFaceProps} />

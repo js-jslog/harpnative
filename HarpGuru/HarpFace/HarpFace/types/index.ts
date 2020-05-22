@@ -8,5 +8,5 @@ export enum DisplayModes {
 export type HarpFaceProps = {
   readonly activeHarpStrata: HarpStrata;
   readonly setActiveHarpStrata: (harpStrata: HarpStrata) => void;
-  readonly displayMode: DisplayModes;
+  readonly activeDisplayMode: DisplayModes;
 }

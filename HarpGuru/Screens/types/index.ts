@@ -6,5 +6,5 @@ export type ScreenProps = {
   readonly activeHarpStrata: HarpStrata;
   readonly activeDisplayMode: DisplayModes;
   readonly setActiveHarpStrata: (activeHarpStrata: HarpStrata) => void;
-  readonly setDisplayMode: (displayMode: DisplayModes) => void;
+  readonly setActiveDisplayMode: (displayMode: DisplayModes) => void;
 }

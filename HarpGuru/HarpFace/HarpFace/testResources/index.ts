@@ -12,7 +12,7 @@ const harpStrataProps: HarpStrataProps = {
   activeIds: [] as ActiveIds,
 }
 const activeHarpStrata = getHarpStrata(harpStrataProps)
-const { Degree: displayMode } = DisplayModes
+const { Degree: activeDisplayMode } = DisplayModes
 // TODO: If I add a jest.fn() here rather than this nonesense function
 // the gradle build fails. I need to figure out to make the testResources
 // folders ignored in the build
@@ -20,6 +20,6 @@ const setActiveHarpStrata = (activeHarpStrata: HarpStrata): void => {console.log
 
 export const exampleHarpFaceProps: HarpFaceProps = {
   activeHarpStrata,
-  displayMode,
+  activeDisplayMode,
   setActiveHarpStrata,
 }
