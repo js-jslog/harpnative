@@ -2,7 +2,7 @@ import React from 'react'
 import { PitchIds } from 'harpstrata'
 import { render, fireEvent, NativeTestEvent } from '@testing-library/react-native'
 
-import type { HarpKeyUpdateButtonProps } from '../types'
+import type { HarpKeyButtonProps } from '../types'
 import { keyCHarpStrata, keyDHarpStrata } from '../testResources'
 
 import { HarpKeyUpdateButton } from './index'
@@ -12,7 +12,7 @@ test('HarpKeyUpdateButton renders a component with the parameter label on it', (
   const activeHarpStrata = keyDHarpStrata
   const { C: id } = PitchIds
 
-  const pitchButtonProps: HarpKeyUpdateButtonProps = {
+  const pitchButtonProps: HarpKeyButtonProps = {
     id, activeHarpStrata, setActiveHarpStrata
   }
 
@@ -26,7 +26,7 @@ test('HarpKeyUpdateButton renders a component which set\'s the expected harp str
   const activeHarpStrata = keyDHarpStrata
   const { C: id } = PitchIds
 
-  const pitchButtonProps: HarpKeyUpdateButtonProps = {
+  const pitchButtonProps: HarpKeyButtonProps = {
     id, activeHarpStrata, setActiveHarpStrata
   }
 
@@ -43,7 +43,7 @@ test('HarpKeyUpdateButton renders a disabled component if it\'s id matches the a
   const activeHarpStrata = keyCHarpStrata
   const { C: id } = PitchIds
 
-  const pitchButtonProps: HarpKeyUpdateButtonProps = {
+  const pitchButtonProps: HarpKeyButtonProps = {
     id, activeHarpStrata, setActiveHarpStrata
   }
 

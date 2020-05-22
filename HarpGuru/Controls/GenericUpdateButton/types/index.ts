@@ -1,10 +1,10 @@
 import type { PozitionButtonProps } from '../../PozitionButton'
-import type { HarpKeyUpdateButtonProps } from '../../HarpKeyUpdateButton'
+import type { HarpKeyButtonProps } from '../../HarpKeyUpdateButton'
 
 export type PozitionButtonGenericProps = PozitionButtonProps & {
   readonly updateCategory: UpdateCategories.Pozition;
 }
-export type HarpKeyButtonGenericProps = HarpKeyUpdateButtonProps & {
+export type HarpKeyButtonGenericProps = HarpKeyButtonProps & {
   readonly updateCategory: UpdateCategories.HarpKey;
 }
 

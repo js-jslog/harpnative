@@ -17,13 +17,13 @@ export const ControlPanel = (props: ScreenProps): ReactElement => {
   const sixthPozitionButtonProps = { id: PozitionIds.Sixth, activeHarpStrata, setActiveHarpStrata }
   const seventhPozitionButtonProps = { id: PozitionIds.Seventh, activeHarpStrata, setActiveHarpStrata }
 
-  const cHarpKeyUpdateButtonProps = { id: PitchIds.C, activeHarpStrata, setActiveHarpStrata }
-  const dHarpKeyUpdateButtonProps = { id: PitchIds.D, activeHarpStrata, setActiveHarpStrata }
-  const eHarpKeyUpdateButtonProps = { id: PitchIds.E, activeHarpStrata, setActiveHarpStrata }
-  const fHarpKeyUpdateButtonProps = { id: PitchIds.F, activeHarpStrata, setActiveHarpStrata }
-  const gHarpKeyUpdateButtonProps = { id: PitchIds.G, activeHarpStrata, setActiveHarpStrata }
-  const aHarpKeyUpdateButtonProps = { id: PitchIds.A, activeHarpStrata, setActiveHarpStrata }
-  const bHarpKeyUpdateButtonProps = { id: PitchIds.B, activeHarpStrata, setActiveHarpStrata }
+  const cHarpKeyButtonProps = { id: PitchIds.C, activeHarpStrata, setActiveHarpStrata }
+  const dHarpKeyButtonProps = { id: PitchIds.D, activeHarpStrata, setActiveHarpStrata }
+  const eHarpKeyButtonProps = { id: PitchIds.E, activeHarpStrata, setActiveHarpStrata }
+  const fHarpKeyButtonProps = { id: PitchIds.F, activeHarpStrata, setActiveHarpStrata }
+  const gHarpKeyButtonProps = { id: PitchIds.G, activeHarpStrata, setActiveHarpStrata }
+  const aHarpKeyButtonProps = { id: PitchIds.A, activeHarpStrata, setActiveHarpStrata }
+  const bHarpKeyButtonProps = { id: PitchIds.B, activeHarpStrata, setActiveHarpStrata }
 
 
   const styles = StyleSheet.create({
@@ -61,13 +61,13 @@ export const ControlPanel = (props: ScreenProps): ReactElement => {
           <PozitionButton {...seventhPozitionButtonProps} />
         </View>
         <View style={styles.column}>
-          <HarpKeyUpdateButton {...cHarpKeyUpdateButtonProps} />
-          <HarpKeyUpdateButton {...dHarpKeyUpdateButtonProps} />
-          <HarpKeyUpdateButton {...eHarpKeyUpdateButtonProps} />
-          <HarpKeyUpdateButton {...fHarpKeyUpdateButtonProps} />
-          <HarpKeyUpdateButton {...gHarpKeyUpdateButtonProps} />
-          <HarpKeyUpdateButton {...aHarpKeyUpdateButtonProps} />
-          <HarpKeyUpdateButton {...bHarpKeyUpdateButtonProps} />
+          <HarpKeyUpdateButton {...cHarpKeyButtonProps} />
+          <HarpKeyUpdateButton {...dHarpKeyButtonProps} />
+          <HarpKeyUpdateButton {...eHarpKeyButtonProps} />
+          <HarpKeyUpdateButton {...fHarpKeyButtonProps} />
+          <HarpKeyUpdateButton {...gHarpKeyButtonProps} />
+          <HarpKeyUpdateButton {...aHarpKeyButtonProps} />
+          <HarpKeyUpdateButton {...bHarpKeyButtonProps} />
         </View>
       </View>
     </>

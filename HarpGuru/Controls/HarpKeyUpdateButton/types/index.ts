@@ -2,6 +2,6 @@ import type { PitchIds } from 'harpstrata'
 
 import type { HarpStrataControlProps } from '../../types'
 
-export type HarpKeyUpdateButtonProps = HarpStrataControlProps & {
+export type HarpKeyButtonProps = HarpStrataControlProps & {
   readonly id: PitchIds;
 }
