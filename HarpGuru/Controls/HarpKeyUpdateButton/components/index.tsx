@@ -1,9 +1,8 @@
 import React from 'react'
 import type { ReactElement } from 'react'
 
-import type { HarpKeyButtonProps } from '../types'
 import { GenericUpdateButton, UpdateCategories } from '../../GenericUpdateButton'
-import type { HarpKeyButtonGenericProps } from '../../GenericUpdateButton'
+import type { HarpKeyButtonProps, HarpKeyButtonGenericProps } from '../../GenericUpdateButton'
 
 export function HarpKeyUpdateButton(props: HarpKeyButtonProps): ReactElement {
   const { HarpKey: updateCategory } = UpdateCategories

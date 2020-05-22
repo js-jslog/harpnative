@@ -2,8 +2,8 @@ import React from 'react'
 import { PozitionIds } from 'harpstrata'
 import { render, fireEvent, NativeTestEvent } from '@testing-library/react-native'
 
-import type { PozitionButtonProps } from '../types'
 import { firstPozitionHarpStrata, secondPozitionHarpStrata } from '../testResources'
+import type { PozitionButtonProps } from '../../GenericUpdateButton'
 
 import { PozitionButton } from './index'
 

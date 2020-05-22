@@ -1,5 +1,14 @@
-import type { PozitionButtonProps } from '../../PozitionButton'
-import type { HarpKeyButtonProps } from '../../HarpKeyUpdateButton'
+import type { PitchIds, PozitionIds } from 'harpstrata'
+
+import type { HarpStrataControlProps } from '../../types'
+
+export type PozitionButtonProps = HarpStrataControlProps & {
+  readonly id: PozitionIds;
+}
+
+export type HarpKeyButtonProps = HarpStrataControlProps & {
+  readonly id: PitchIds;
+}
 
 export type PozitionButtonGenericProps = PozitionButtonProps & {
   readonly updateCategory: UpdateCategories.Pozition;
