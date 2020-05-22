@@ -5,13 +5,13 @@ import type { GenericUpdateProps } from '../types'
 import { getPropsForHarpStrata } from '../getPropsForHarpStrata'
 
 export const getUpdateHarpStrataProps = (genericUpdateProps: GenericUpdateProps): HarpStrataProps => {
-  const { activeHarpStrata, updateCategory, updateId } = genericUpdateProps
+  const { activeHarpStrata, updateCategory, id } = genericUpdateProps
   const baseHarpStrataProps = getPropsForHarpStrata(activeHarpStrata)
   if (updateCategory === UpdateCategories.HarpKey) {
-    const harpKeyId = updateId as PitchIds
+    const harpKeyId = id as PitchIds
     return { ...baseHarpStrataProps, harpKeyId }
   } else {
-    const pozitionId = updateId as PozitionIds
+    const pozitionId = id as PozitionIds
     return { ...baseHarpStrataProps, pozitionId }
   }
 }

@@ -19,7 +19,7 @@ test('getUpdateHarpStrataProps provides amended HarpStrataProps for a given Pozi
     activeHarpStrata: keyCHarpStrata,
     setActiveHarpStrata: jest.fn(),
     updateCategory,
-    updateId: PozitionIds.Third,
+    id: PozitionIds.Third,
   }
   const actualHarpStrataProps = getUpdateHarpStrataProps(pozitionUpdateProps)
 
@@ -38,7 +38,7 @@ test('getUpdateHarpStrataProps provides amended HarpStrataProps for a given Harp
     activeHarpStrata: keyCHarpStrata,
     setActiveHarpStrata: jest.fn(),
     updateCategory,
-    updateId: PitchIds.D,
+    id: PitchIds.D,
   }
   const actualHarpStrataProps = getUpdateHarpStrataProps(harpKeyUpdateProps)
 

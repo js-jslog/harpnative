@@ -15,13 +15,13 @@ const setNewHarpStrata = (props: GenericUpdateProps): void => {
 
 const isDisabled = (props: GenericUpdateProps): boolean => {
   const activeId = getActiveIdForUpdateCategory(props)
-  const { updateId } = props
+  const { id } = props
 
-  return (updateId === activeId)
+  return (id === activeId)
 }
 
 export function GenericUpdateButton(props: GenericUpdateProps): ReactElement {
   return (
-    <Button onPress={(): void => {setNewHarpStrata(props)}} title={props.updateId} disabled={isDisabled(props)} />
+    <Button onPress={(): void => {setNewHarpStrata(props)}} title={props.id} disabled={isDisabled(props)} />
   )
 }

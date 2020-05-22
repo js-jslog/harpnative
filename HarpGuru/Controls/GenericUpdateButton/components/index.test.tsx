@@ -12,30 +12,30 @@ test('GenericUpdateButton renders a component with the parameter label on it', (
   const activeHarpStrata = keyCHarpStrata
   const setActiveHarpStrata = jest.fn()
   const { HarpKey: updateCategory } = UpdateCategories
-  const { C: updateId } = PitchIds
+  const { C: id } = PitchIds
 
   const harpKeyUpdateProps: GenericUpdateProps = {
-    activeHarpStrata, setActiveHarpStrata, updateCategory, updateId
+    activeHarpStrata, setActiveHarpStrata, updateCategory, id
   }
 
   const { getByText } = render(<GenericUpdateButton {...harpKeyUpdateProps} />)
 
-  expect(getByText(updateId)).toBeTruthy()
+  expect(getByText(id)).toBeTruthy()
 })
 
 test('GenericUpdateButton renders a component which set\'s the expected harp strata to the paramaterised function', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyDHarpStrata
   const { HarpKey: updateCategory } = UpdateCategories
-  const { C: updateId } = PitchIds
+  const { C: id } = PitchIds
 
   const harpKeyUpdateProps: GenericUpdateProps = {
-    activeHarpStrata, setActiveHarpStrata, updateCategory, updateId
+    activeHarpStrata, setActiveHarpStrata, updateCategory, id
   }
 
   const { getByText } = render(<GenericUpdateButton {...harpKeyUpdateProps} />)
 
-  fireEvent(getByText(updateId), new NativeTestEvent('press'))
+  fireEvent(getByText(id), new NativeTestEvent('press'))
 
   expect(setActiveHarpStrata.mock.calls.length).toBe(1)
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(keyCHarpStrata)
@@ -44,16 +44,16 @@ test('GenericUpdateButton renders a component which set\'s the expected harp str
 test('GenericUpdateButton renders a disabled component if it\'s id matches the active id in that category', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyCHarpStrata
-  const { C: updateId } = PitchIds
+  const { C: id } = PitchIds
   const { HarpKey: updateCategory } = UpdateCategories
 
   const harpKeyUpdateProps: GenericUpdateProps = {
-    activeHarpStrata, setActiveHarpStrata, updateCategory, updateId
+    activeHarpStrata, setActiveHarpStrata, updateCategory, id
   }
 
   const { getByText } = render(<GenericUpdateButton {...harpKeyUpdateProps} />)
 
-  fireEvent(getByText(updateId), new NativeTestEvent('press'))
+  fireEvent(getByText(id), new NativeTestEvent('press'))
 
   expect(setActiveHarpStrata.mock.calls.length).toBe(0)
 })

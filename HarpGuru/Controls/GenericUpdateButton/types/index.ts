@@ -1,17 +1,11 @@
-import type { HarpStrata, PozitionIds, PitchIds } from 'harpstrata'
+import type { PozitionButtonProps } from '../../PozitionButton'
+import type { HarpKeyUpdateButtonProps } from '../../HarpKeyUpdateButton'
 
-type CommonGenericUpdateProps = {
-  readonly activeHarpStrata: HarpStrata;
-  readonly setActiveHarpStrata: (harpStrata: HarpStrata) => void;
-}
-
-export type PozitionUpdateProps = CommonGenericUpdateProps & {
+export type PozitionUpdateProps = PozitionButtonProps & {
   readonly updateCategory: UpdateCategories.Pozition;
-  readonly updateId: PozitionIds;
 }
-export type HarpKeyUpdateProps = CommonGenericUpdateProps & {
+export type HarpKeyUpdateProps = HarpKeyUpdateButtonProps & {
   readonly updateCategory: UpdateCategories.HarpKey;
-  readonly updateId: PitchIds;
 }
 
 export type GenericUpdateProps = PozitionUpdateProps | HarpKeyUpdateProps
