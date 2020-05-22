@@ -7,9 +7,9 @@ import type { HarpKeyButtonProps, HarpKeyButtonGenericProps } from '../../Generi
 export function HarpKeyButton(props: HarpKeyButtonProps): ReactElement {
   const { HarpKey: updateCategory } = UpdateCategories
   const { setActiveHarpStrata, activeHarpStrata, id } = props
-  const harpKeyUpdateProps: HarpKeyButtonGenericProps = {
+  const genericProps: HarpKeyButtonGenericProps = {
     setActiveHarpStrata, activeHarpStrata, id, updateCategory }
   return (
-    <GenericButton {...harpKeyUpdateProps} />
+    <GenericButton {...genericProps} />
   )
 }
