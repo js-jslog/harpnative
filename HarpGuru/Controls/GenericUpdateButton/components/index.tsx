@@ -3,24 +3,24 @@ import React from 'react'
 import type { ReactElement } from 'react'
 import { getHarpStrata } from 'harpstrata'
 
-import type { GenericUpdateProps } from '../types'
+import type { GenericButtonProps } from '../types'
 import { getUpdateHarpStrataProps } from '../getUpdateHarpStrataProps'
 import { getActiveIdForUpdateCategory } from '../getActiveIdForUpdateCategory'
 
-const setNewHarpStrata = (props: GenericUpdateProps): void => {
+const setNewHarpStrata = (props: GenericButtonProps): void => {
   const { setActiveHarpStrata } = props
   const newHarpStrata = getHarpStrata(getUpdateHarpStrataProps(props))
   setActiveHarpStrata(newHarpStrata)
 }
 
-const isDisabled = (props: GenericUpdateProps): boolean => {
+const isDisabled = (props: GenericButtonProps): boolean => {
   const activeId = getActiveIdForUpdateCategory(props)
   const { id } = props
 
   return (id === activeId)
 }
 
-export function GenericUpdateButton(props: GenericUpdateProps): ReactElement {
+export function GenericUpdateButton(props: GenericButtonProps): ReactElement {
   return (
     <Button onPress={(): void => {setNewHarpStrata(props)}} title={props.id} disabled={isDisabled(props)} />
   )

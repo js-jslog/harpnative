@@ -3,7 +3,7 @@ import { PitchIds } from 'harpstrata'
 import { render, fireEvent, NativeTestEvent } from '@testing-library/react-native'
 
 import { UpdateCategories } from '../types'
-import type { GenericUpdateProps } from '../types'
+import type { GenericButtonProps } from '../types'
 import { keyCHarpStrata, keyDHarpStrata } from '../testResources'
 
 import { GenericUpdateButton } from './index'
@@ -14,7 +14,7 @@ test('GenericUpdateButton renders a component with the parameter label on it', (
   const { HarpKey: updateCategory } = UpdateCategories
   const { C: id } = PitchIds
 
-  const harpKeyUpdateProps: GenericUpdateProps = {
+  const harpKeyUpdateProps: GenericButtonProps = {
     activeHarpStrata, setActiveHarpStrata, updateCategory, id
   }
 
@@ -29,7 +29,7 @@ test('GenericUpdateButton renders a component which set\'s the expected harp str
   const { HarpKey: updateCategory } = UpdateCategories
   const { C: id } = PitchIds
 
-  const harpKeyUpdateProps: GenericUpdateProps = {
+  const harpKeyUpdateProps: GenericButtonProps = {
     activeHarpStrata, setActiveHarpStrata, updateCategory, id
   }
 
@@ -47,7 +47,7 @@ test('GenericUpdateButton renders a disabled component if it\'s id matches the a
   const { C: id } = PitchIds
   const { HarpKey: updateCategory } = UpdateCategories
 
-  const harpKeyUpdateProps: GenericUpdateProps = {
+  const harpKeyUpdateProps: GenericButtonProps = {
     activeHarpStrata, setActiveHarpStrata, updateCategory, id
   }
 

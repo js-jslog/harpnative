@@ -1,7 +1,7 @@
 import { PozitionIds, PitchIds } from 'harpstrata'
 
 import { UpdateCategories } from '../types'
-import type { GenericUpdateProps } from '../types'
+import type { GenericButtonProps } from '../types'
 import { firstPozitionHarpStrata, keyCHarpStrata } from '../testResources'
 import { getPropsForHarpStrata } from '../getPropsForHarpStrata'
 
@@ -15,7 +15,7 @@ test('getUpdateHarpStrataProps provides amended HarpStrataProps for a given Pozi
   const expectedHarpStrataProps = { ...baseHarpStrataProps, pozitionId: PozitionIds.Third }
 
   const { Pozition: updateCategory } = UpdateCategories
-  const pozitionUpdateProps: GenericUpdateProps = {
+  const pozitionUpdateProps: GenericButtonProps = {
     activeHarpStrata: keyCHarpStrata,
     setActiveHarpStrata: jest.fn(),
     updateCategory,
@@ -34,7 +34,7 @@ test('getUpdateHarpStrataProps provides amended HarpStrataProps for a given Harp
   const expectedHarpStrataProps = { ...baseHarpStrataProps, harpKeyId: PitchIds.D }
 
   const { HarpKey: updateCategory } = UpdateCategories
-  const harpKeyUpdateProps: GenericUpdateProps = {
+  const harpKeyUpdateProps: GenericButtonProps = {
     activeHarpStrata: keyCHarpStrata,
     setActiveHarpStrata: jest.fn(),
     updateCategory,
