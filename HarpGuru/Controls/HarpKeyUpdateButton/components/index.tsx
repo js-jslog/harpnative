@@ -1,11 +1,11 @@
 import React from 'react'
 import type { ReactElement } from 'react'
 
-import type { PitchButtonProps } from '../types'
+import type { HarpKeyUpdateButtonProps } from '../types'
 import { GenericUpdateButton, UpdateCategories } from '../../GenericUpdateButton'
 import type { HarpKeyUpdateProps } from '../../GenericUpdateButton'
 
-export function PitchButton(props: PitchButtonProps): ReactElement {
+export function HarpKeyUpdateButton(props: HarpKeyUpdateButtonProps): ReactElement {
   const { HarpKey: updateCategory } = UpdateCategories
   const { setActiveHarpStrata, activeHarpStrata, id: updateId } = props
   const harpKeyUpdateProps: HarpKeyUpdateProps = {

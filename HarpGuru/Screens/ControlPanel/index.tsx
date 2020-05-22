@@ -4,7 +4,7 @@ import type { ReactElement } from 'react'
 import { PozitionIds, PitchIds } from 'harpstrata'
 
 import type { ScreenProps } from '../types'
-import { PozitionButton, PitchButton, HeadsupDisplay } from '../../Controls'
+import { PozitionButton, HarpKeyUpdateButton, HeadsupDisplay } from '../../Controls'
 
 export const ControlPanel = (props: ScreenProps): ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata } = props
@@ -17,13 +17,13 @@ export const ControlPanel = (props: ScreenProps): ReactElement => {
   const sixthPozitionButtonProps = { id: PozitionIds.Sixth, activeHarpStrata, setActiveHarpStrata }
   const seventhPozitionButtonProps = { id: PozitionIds.Seventh, activeHarpStrata, setActiveHarpStrata }
 
-  const cPitchButtonProps = { id: PitchIds.C, activeHarpStrata, setActiveHarpStrata }
-  const dPitchButtonProps = { id: PitchIds.D, activeHarpStrata, setActiveHarpStrata }
-  const ePitchButtonProps = { id: PitchIds.E, activeHarpStrata, setActiveHarpStrata }
-  const fPitchButtonProps = { id: PitchIds.F, activeHarpStrata, setActiveHarpStrata }
-  const gPitchButtonProps = { id: PitchIds.G, activeHarpStrata, setActiveHarpStrata }
-  const aPitchButtonProps = { id: PitchIds.A, activeHarpStrata, setActiveHarpStrata }
-  const bPitchButtonProps = { id: PitchIds.B, activeHarpStrata, setActiveHarpStrata }
+  const cHarpKeyUpdateButtonProps = { id: PitchIds.C, activeHarpStrata, setActiveHarpStrata }
+  const dHarpKeyUpdateButtonProps = { id: PitchIds.D, activeHarpStrata, setActiveHarpStrata }
+  const eHarpKeyUpdateButtonProps = { id: PitchIds.E, activeHarpStrata, setActiveHarpStrata }
+  const fHarpKeyUpdateButtonProps = { id: PitchIds.F, activeHarpStrata, setActiveHarpStrata }
+  const gHarpKeyUpdateButtonProps = { id: PitchIds.G, activeHarpStrata, setActiveHarpStrata }
+  const aHarpKeyUpdateButtonProps = { id: PitchIds.A, activeHarpStrata, setActiveHarpStrata }
+  const bHarpKeyUpdateButtonProps = { id: PitchIds.B, activeHarpStrata, setActiveHarpStrata }
 
 
   const styles = StyleSheet.create({
@@ -61,13 +61,13 @@ export const ControlPanel = (props: ScreenProps): ReactElement => {
           <PozitionButton {...seventhPozitionButtonProps} />
         </View>
         <View style={styles.column}>
-          <PitchButton {...cPitchButtonProps} />
-          <PitchButton {...dPitchButtonProps} />
-          <PitchButton {...ePitchButtonProps} />
-          <PitchButton {...fPitchButtonProps} />
-          <PitchButton {...gPitchButtonProps} />
-          <PitchButton {...aPitchButtonProps} />
-          <PitchButton {...bPitchButtonProps} />
+          <HarpKeyUpdateButton {...cHarpKeyUpdateButtonProps} />
+          <HarpKeyUpdateButton {...dHarpKeyUpdateButtonProps} />
+          <HarpKeyUpdateButton {...eHarpKeyUpdateButtonProps} />
+          <HarpKeyUpdateButton {...fHarpKeyUpdateButtonProps} />
+          <HarpKeyUpdateButton {...gHarpKeyUpdateButtonProps} />
+          <HarpKeyUpdateButton {...aHarpKeyUpdateButtonProps} />
+          <HarpKeyUpdateButton {...bHarpKeyUpdateButtonProps} />
         </View>
       </View>
     </>
