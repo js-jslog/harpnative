@@ -1,4 +1,4 @@
-import {Text, StyleSheet, TouchableWithoutFeedback} from 'react-native'
+import {Text, View, StyleSheet, TouchableWithoutFeedback} from 'react-native'
 import React from 'react'
 import { getHarpStrata } from 'harpstrata'
 import type { HarpStrata, HarpStrataProps, DegreeIds } from 'harpstrata'
@@ -13,7 +13,7 @@ import {HarpCellProps} from './types'
 
 const styles = StyleSheet.create({
   cell: {
-    backgroundColor: 'blue',
+    backgroundColor: 'skyblue',
     justifyContent: 'center',
     alignItems: 'center',
     width: 30,
@@ -54,15 +54,19 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
     <TouchableWithoutFeedback
       accessible={true}
       accessibilityRole='button'
-      style={styles.cell}
       onPress={(): void => toggleActiveIdsIfHoleExists()}>
-      <Text>
-        {displayValue}
-      </Text>
+      <View
+        style={styles.cell}>
+        <Text>
+          {displayValue}
+        </Text>
+      </View>
     </TouchableWithoutFeedback>
 
   const inAccessibleContent = 
-    <TouchableWithoutFeedback disabled={true} accessible={false} style={styles.cell} />
+    <TouchableWithoutFeedback disabled={true} accessible={false} style={styles.cell} >
+      <View style={styles.cell} />
+    </TouchableWithoutFeedback>
 
   const content = (thisDegree === undefined ? inAccessibleContent : accessibleContent)
 
