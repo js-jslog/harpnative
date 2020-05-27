@@ -5,7 +5,7 @@ import { CovariantTypes } from '../types'
 
 import { getPozitionControlVars } from './index'
 
-test('getPozitionControlVars returns an array of PozitionControlVars for a locked harp key', () => {
+test('getPozitionControlVars returns a PozitionControlVars for a locked harp key', () => {
   const { HarpKey: lockedType } = CovariantTypes
   const { RootPitch: variedType } = CovariantTypes
   const { D: lockedValue } = PitchIds
@@ -21,7 +21,7 @@ test('getPozitionControlVars returns an array of PozitionControlVars for a locke
   expect(actualControlVars).toEqual(expectedControlVars)
 })
 
-test('getPozitionControlVars returns an array of PozitionControlVars for a locked root pitch', () => {
+test('getPozitionControlVars returns a PozitionControlVars for a locked root pitch', () => {
   const { RootPitch: lockedType } = CovariantTypes
   const { HarpKey: variedType } = CovariantTypes
   const { Eb: lockedValue } = PitchIds
