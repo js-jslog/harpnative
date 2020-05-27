@@ -1,15 +1,16 @@
-import { PitchIds, PozitionIds } from 'harpstrata'
+import { PitchIds } from 'harpstrata'
+import type { PozitionControlVars } from 'harpstrata'
 
 import { CovariantTypes } from '../types'
 
 import { getControlVarsList } from './index'
 
-test('getControlVarsList returns an array of control variables', () => {
+test('getControlVarsList returns an array of PozitionControlVars for a locked harp key', () => {
   const { HarpKey: lockedType } = CovariantTypes
   const { C: lockedValue } = PitchIds
   const { RootPitch: variableType } = CovariantTypes
 
-  const expectedControlVarsList = [{
+  const expectedControlVarsList: ReadonlyArray<PozitionControlVars> = [{
     harpKeyId: PitchIds.C,
     rootPitchId: PitchIds.C,
   }]
