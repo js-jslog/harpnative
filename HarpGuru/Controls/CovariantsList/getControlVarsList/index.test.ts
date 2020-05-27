@@ -19,3 +19,18 @@ test('getControlVarsList returns an array of PozitionControlVars for a locked ha
 
   expect(actualControlVarsList).toEqual(expectedControlVarsList)
 })
+
+test('getControlVarsList returns an array of PozitionControlVars for a locked root pitch', () => {
+  const { RootPitch: lockedType } = CovariantTypes
+  const { C: lockedValue } = PitchIds
+  const { HarpKey: variableType } = CovariantTypes
+
+  const expectedControlVarsList: ReadonlyArray<PozitionControlVars> = [{
+    harpKeyId: PitchIds.C,
+    rootPitchId: PitchIds.C,
+  }]
+
+  const actualControlVarsList = getControlVarsList({lockedType, lockedValue, variableType})
+
+  expect(actualControlVarsList).toEqual(expectedControlVarsList)
+})

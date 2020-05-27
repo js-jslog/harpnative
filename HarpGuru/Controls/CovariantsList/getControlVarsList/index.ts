@@ -10,7 +10,12 @@ type HarpKeyLockedRootPitchVariable = {
   readonly variableType: CovariantTypes.RootPitch;
   readonly lockedValue: PitchIds;
 }
-type PozitionControlVarsListPrimer = HarpKeyLockedRootPitchVariable
+type RootPitchLockedHarpKeyVariable = {
+  readonly lockedType: CovariantTypes.RootPitch;
+  readonly variableType: CovariantTypes.HarpKey;
+  readonly lockedValue: PitchIds;
+}
+type PozitionControlVarsListPrimer = HarpKeyLockedRootPitchVariable | RootPitchLockedHarpKeyVariable
 
 export const getControlVarsList = (props: ControlVarsListPrimer): ReadonlyArray<CovariantControlVars> => {
   const { lockedValue } = props
