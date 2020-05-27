@@ -18,11 +18,19 @@ type RootPitchLockedHarpKeyVariable = {
 type PozitionControlVarsListPrimer = HarpKeyLockedRootPitchVariable | RootPitchLockedHarpKeyVariable
 
 export const getControlVarsList = (props: ControlVarsListPrimer): ReadonlyArray<CovariantControlVars> => {
-  const { lockedValue } = props
+  const { lockedValue, lockedType } = props
 
-  const controlVars: CovariantControlVars = {
-    harpKeyId: PitchIds.C,
-    rootPitchId: lockedValue,
+  if ( lockedType === CovariantTypes.RootPitch ) {
+    const controlVars: CovariantControlVars = {
+      harpKeyId: PitchIds.C,
+      rootPitchId: lockedValue,
+    }
+    return [ controlVars ]
+  } else {
+    const controlVars: CovariantControlVars = {
+      harpKeyId: lockedValue,
+      rootPitchId: PitchIds.C,
+    }
+    return [ controlVars ]
   }
-  return [ controlVars ]
 }

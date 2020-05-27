@@ -7,11 +7,11 @@ import { getControlVarsList } from './index'
 
 test('getControlVarsList returns an array of PozitionControlVars for a locked harp key', () => {
   const { HarpKey: lockedType } = CovariantTypes
-  const { C: lockedValue } = PitchIds
+  const { D: lockedValue } = PitchIds
   const { RootPitch: variableType } = CovariantTypes
 
   const expectedControlVarsList: ReadonlyArray<PozitionControlVars> = [{
-    harpKeyId: PitchIds.C,
+    harpKeyId: PitchIds.D,
     rootPitchId: PitchIds.C,
   }]
 
@@ -22,12 +22,12 @@ test('getControlVarsList returns an array of PozitionControlVars for a locked ha
 
 test('getControlVarsList returns an array of PozitionControlVars for a locked root pitch', () => {
   const { RootPitch: lockedType } = CovariantTypes
-  const { C: lockedValue } = PitchIds
+  const { D: lockedValue } = PitchIds
   const { HarpKey: variableType } = CovariantTypes
 
   const expectedControlVarsList: ReadonlyArray<PozitionControlVars> = [{
     harpKeyId: PitchIds.C,
-    rootPitchId: PitchIds.C,
+    rootPitchId: PitchIds.D,
   }]
 
   const actualControlVarsList = getControlVarsList({lockedType, lockedValue, variableType})
