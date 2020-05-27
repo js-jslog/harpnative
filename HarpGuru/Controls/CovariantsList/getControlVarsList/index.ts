@@ -3,11 +3,14 @@ import type { CovariantControlVars } from 'harpstrata'
 
 import { CovariantTypes } from '../types'
 
-type ControlVarsListPrimer = {
-  readonly lockedType: CovariantTypes;
+type ControlVarsListPrimer = PozitionControlVarsListPrimer
+
+type HarpKeyLockedRootPitchVariable = {
+  readonly lockedType: CovariantTypes.HarpKey;
+  readonly variableType: CovariantTypes.RootPitch;
   readonly lockedValue: PitchIds;
-  readonly variableType: CovariantTypes;
 }
+type PozitionControlVarsListPrimer = HarpKeyLockedRootPitchVariable
 
 export const getControlVarsList = (props: ControlVarsListPrimer): ReadonlyArray<CovariantControlVars> => {
   const { lockedValue } = props
