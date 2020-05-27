@@ -33,3 +33,5 @@ export type HarpKeyControlPrimerLockedHarpKey = {
   readonly variedValue: PitchIds;
 }
 export type HarpKeyControlPrimer = HarpKeyControlPrimerLockedRootPitch | HarpKeyControlPrimerLockedHarpKey
+
+export type ControlVarsPrimer = PozitionControlPrimer | HarpKeyControlPrimer
