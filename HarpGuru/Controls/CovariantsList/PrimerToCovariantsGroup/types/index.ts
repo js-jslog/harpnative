@@ -1,4 +1,4 @@
-import type { PitchIds } from 'harpstrata'
+import type { PitchIds, PozitionIds } from 'harpstrata'
 
 export enum CovariantTypes {
   HarpKey = 'harpKeyId',
@@ -19,3 +19,17 @@ export type PozitionControlPrimerLockedHarpKey = {
   readonly variedValue: PitchIds;
 }
 export type PozitionControlPrimer = PozitionControlPrimerLockedRootPitch | PozitionControlPrimerLockedHarpKey
+
+export type HarpKeyControlPrimerLockedRootPitch = {
+  readonly lockedType: CovariantTypes.RootPitch;
+  readonly variedType: CovariantTypes.Pozition;
+  readonly lockedValue: PitchIds;
+  readonly variedValue: PozitionIds;
+}
+export type HarpKeyControlPrimerLockedHarpKey = {
+  readonly lockedType: CovariantTypes.Pozition;
+  readonly variedType: CovariantTypes.RootPitch;
+  readonly lockedValue: PozitionIds;
+  readonly variedValue: PitchIds;
+}
+export type HarpKeyControlPrimer = HarpKeyControlPrimerLockedRootPitch | HarpKeyControlPrimerLockedHarpKey
