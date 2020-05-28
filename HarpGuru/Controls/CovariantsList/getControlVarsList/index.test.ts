@@ -53,3 +53,52 @@ test('getControlVarsList returns an array of PozitionControlVars when given Pozi
 
   expect(actualControlVarsList).toEqual(expectedControlVarsList)
 })
+
+test('getControlVarsList returns an array of PozitionControlVars when given PozitionControlPrimer for a locked root pitch', () => {
+  const { RootPitch: lockedType } = CovariantTypes
+  const { HarpKey: variedType } = CovariantTypes
+  const { D: lockedValue } = PitchIds
+  const { C: variedValue } = PitchIds
+
+  const expectedControlVarsList: ReadonlyArray<PozitionControlVars> = [{
+    rootPitchId: PitchIds.D,
+    harpKeyId: PitchIds.C,
+  },{
+    rootPitchId: PitchIds.D,
+    harpKeyId: PitchIds.Db,
+  },{
+    rootPitchId: PitchIds.D,
+    harpKeyId: PitchIds.D,
+  },{
+    rootPitchId: PitchIds.D,
+    harpKeyId: PitchIds.Eb,
+  },{
+    rootPitchId: PitchIds.D,
+    harpKeyId: PitchIds.E,
+  },{
+    rootPitchId: PitchIds.D,
+    harpKeyId: PitchIds.F,
+  },{
+    rootPitchId: PitchIds.D,
+    harpKeyId: PitchIds.Gb,
+  },{
+    rootPitchId: PitchIds.D,
+    harpKeyId: PitchIds.G,
+  },{
+    rootPitchId: PitchIds.D,
+    harpKeyId: PitchIds.Ab,
+  },{
+    rootPitchId: PitchIds.D,
+    harpKeyId: PitchIds.A,
+  },{
+    rootPitchId: PitchIds.D,
+    harpKeyId: PitchIds.Bb,
+  },{
+    rootPitchId: PitchIds.D,
+    harpKeyId: PitchIds.B,
+  }]
+
+  const actualControlVarsList = getControlVarsList({lockedType, variedType, lockedValue, variedValue})
+
+  expect(actualControlVarsList).toEqual(expectedControlVarsList)
+})
