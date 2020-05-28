@@ -1,5 +1,5 @@
 import { PitchIds, PozitionIds } from 'harpstrata'
-import type { HarpKeyControlVars, PozitionControlVars } from 'harpstrata'
+import type { HarpKeyControlVars, PozitionControlVars, RootPitchControlVars } from 'harpstrata'
 
 import { CovariantTypes } from '../types'
 
@@ -62,6 +62,22 @@ test('getControlVars returns a PozitionControlVars for a locked root pitch', () 
   const expectedControlVars: PozitionControlVars = {
     harpKeyId: PitchIds.A,
     rootPitchId: PitchIds.Eb,
+  }
+
+  const actualControlVars = getControlVars({lockedType, variedType, lockedValue, variedValue})
+
+  expect(actualControlVars).toEqual(expectedControlVars)
+})
+
+test('getControlVars returns a RootPitchControlVars for a locked pozition', () => {
+  const { Pozition: lockedType } = CovariantTypes
+  const { HarpKey: variedType } = CovariantTypes
+  const { Fifth: lockedValue } = PozitionIds
+  const { A: variedValue } = PitchIds
+
+  const expectedControlVars: RootPitchControlVars = {
+    harpKeyId: PitchIds.A,
+    pozitionId: PozitionIds.Fifth,
   }
 
   const actualControlVars = getControlVars({lockedType, variedType, lockedValue, variedValue})

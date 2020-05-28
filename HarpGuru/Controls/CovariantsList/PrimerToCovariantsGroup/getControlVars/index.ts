@@ -1,7 +1,8 @@
 import type { CovariantControlVars } from 'harpstrata'
 
-import { isHarpKeyControlPrimer, isPozitionControlPrimer } from '../types'
+import { isRootPitchControlPrimer, isHarpKeyControlPrimer, isPozitionControlPrimer } from '../types'
 import type { ControlVarsPrimer } from '../types'
+import { getRootPitchControlVars } from '../getRootPitchControlVars'
 import { getPozitionControlVars } from '../getPozitionControlVars'
 import { getHarpKeyControlVars } from '../getHarpKeyControlVars'
 
@@ -11,6 +12,9 @@ export const getControlVars = (props: ControlVarsPrimer): CovariantControlVars =
     return controlVars
   } else if (isPozitionControlPrimer(props)) {
     const controlVars = getPozitionControlVars(props)
+    return controlVars
+  } else if (isRootPitchControlPrimer(props)) {
+    const controlVars = getRootPitchControlVars(props)
     return controlVars
   }
 
