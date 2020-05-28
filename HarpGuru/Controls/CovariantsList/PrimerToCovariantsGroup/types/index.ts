@@ -26,13 +26,13 @@ export type HarpKeyControlPrimerLockedRootPitch = {
   readonly lockedValue: PitchIds;
   readonly variedValue: PozitionIds;
 }
-export type HarpKeyControlPrimerLockedHarpKey = {
+export type HarpKeyControlPrimerLockedPozition = {
   readonly lockedType: CovariantTypes.Pozition;
   readonly variedType: CovariantTypes.RootPitch;
   readonly lockedValue: PozitionIds;
   readonly variedValue: PitchIds;
 }
-export type HarpKeyControlPrimer = HarpKeyControlPrimerLockedRootPitch | HarpKeyControlPrimerLockedHarpKey
+export type HarpKeyControlPrimer = HarpKeyControlPrimerLockedRootPitch | HarpKeyControlPrimerLockedPozition
 
 export type ControlVarsPrimer = PozitionControlPrimer | HarpKeyControlPrimer
 
