@@ -1,36 +1,22 @@
-import { PitchIds } from 'harpstrata'
-import type { CovariantControlVars } from 'harpstrata'
+import { PitchIds, getPitchIds } from 'harpstrata'
+import type { PozitionControlVars } from 'harpstrata'
 
-import { CovariantTypes } from '../types'
+import { getControlVars } from '../PrimerToCovariantsGroup'
+import type { ControlVarsPrimer } from '../PrimerToCovariantsGroup'
 
-type ControlVarsListPrimer = PozitionControlVarsListPrimer
+export const getControlVarsList = (props: ControlVarsPrimer): ReadonlyArray<PozitionControlVars> => {
+  const { variedValue } = props
 
-type HarpKeyLockedRootPitchVariable = {
-  readonly lockedType: CovariantTypes.HarpKey;
-  readonly variableType: CovariantTypes.RootPitch;
-  readonly lockedValue: PitchIds;
-}
-type RootPitchLockedHarpKeyVariable = {
-  readonly lockedType: CovariantTypes.RootPitch;
-  readonly variableType: CovariantTypes.HarpKey;
-  readonly lockedValue: PitchIds;
-}
-type PozitionControlVarsListPrimer = HarpKeyLockedRootPitchVariable | RootPitchLockedHarpKeyVariable
+  if ( Object.keys(PitchIds).includes(variedValue) ) {
+    const variedArray = getPitchIds(variedValue as PitchIds)
 
-export const getControlVarsList = (props: ControlVarsListPrimer): ReadonlyArray<CovariantControlVars> => {
-  const { lockedValue, lockedType } = props
+    const covariantControlVarsList = variedArray.map((variedValue) => {
+      const variedPrimer = { ...props, variedValue } as ControlVarsPrimer
+      return getControlVars(variedPrimer)
+    }) as ReadonlyArray<PozitionControlVars>
 
-  if ( lockedType === CovariantTypes.RootPitch ) {
-    const controlVars: CovariantControlVars = {
-      harpKeyId: PitchIds.C,
-      rootPitchId: lockedValue,
-    }
-    return [ controlVars ]
-  } else {
-    const controlVars: CovariantControlVars = {
-      harpKeyId: lockedValue,
-      rootPitchId: PitchIds.C,
-    }
-    return [ controlVars ]
+    return covariantControlVarsList
   }
+
+  throw new Error('Not set up to handle varied pozitions yet')
 }
