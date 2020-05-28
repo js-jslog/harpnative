@@ -34,7 +34,21 @@ export type HarpKeyControlPrimerLockedPozition = {
 }
 export type HarpKeyControlPrimer = HarpKeyControlPrimerLockedRootPitch | HarpKeyControlPrimerLockedPozition
 
-export type ControlVarsPrimer = PozitionControlPrimer | HarpKeyControlPrimer
+export type RootPitchControlPrimerLockedHarpKey = {
+  readonly lockedType: CovariantTypes.HarpKey;
+  readonly variedType: CovariantTypes.Pozition;
+  readonly lockedValue: PitchIds;
+  readonly variedValue: PozitionIds;
+}
+export type RootPitchControlPrimerLockedPozition = {
+  readonly lockedType: CovariantTypes.Pozition;
+  readonly variedType: CovariantTypes.HarpKey;
+  readonly lockedValue: PozitionIds;
+  readonly variedValue: PitchIds;
+}
+export type RootPitchControlPrimer = RootPitchControlPrimerLockedHarpKey | RootPitchControlPrimerLockedPozition
+
+export type ControlVarsPrimer = PozitionControlPrimer | HarpKeyControlPrimer | RootPitchControlPrimer
 
 const containsSpecificCovariantTypes = (controlVarsPrimer: ControlVarsPrimer, covariantTypeOne: CovariantTypes, covariantTypeTwo: CovariantTypes): boolean => {
   const { lockedType, variedType } = controlVarsPrimer
@@ -55,4 +69,10 @@ export const isPozitionControlPrimer = (props: ControlVarsPrimer): props is Pozi
   const { HarpKey, RootPitch } = CovariantTypes
 
   return containsSpecificCovariantTypes(props, HarpKey, RootPitch)
+}
+
+export const isRootPitchControlPrimer = (props: ControlVarsPrimer): props is RootPitchControlPrimer => {
+  const { HarpKey, Pozition } = CovariantTypes
+
+  return containsSpecificCovariantTypes(props, HarpKey, Pozition)
 }
