@@ -1,5 +1,5 @@
-import { PitchIds } from 'harpstrata'
-import type { PozitionControlVars } from 'harpstrata'
+import { PitchIds, PozitionIds } from 'harpstrata'
+import type { HarpKeyControlVars, PozitionControlVars } from 'harpstrata'
 
 import { CovariantTypes } from '../types'
 
@@ -96,6 +96,55 @@ test('getControlVarsList returns an array of PozitionControlVars when given Pozi
   },{
     rootPitchId: PitchIds.D,
     harpKeyId: PitchIds.B,
+  }]
+
+  const actualControlVarsList = getControlVarsList({lockedType, variedType, lockedValue, variedValue})
+
+  expect(actualControlVarsList).toEqual(expectedControlVarsList)
+})
+
+test('getControlVarsList returns an array of HarpKeyControlProps when given HarpKeyControlPrimer for a locked pozition', () => {
+  const { Pozition: lockedType } = CovariantTypes
+  const { RootPitch: variedType } = CovariantTypes
+  const { Second: lockedValue } = PozitionIds
+  const { C: variedValue } = PitchIds
+
+  const expectedControlVarsList: ReadonlyArray<HarpKeyControlVars> = [{
+    pozitionId: PozitionIds.Second,
+    rootPitchId: PitchIds.C,
+  },{
+    pozitionId: PozitionIds.Second,
+    rootPitchId: PitchIds.Db,
+  },{
+    pozitionId: PozitionIds.Second,
+    rootPitchId: PitchIds.D,
+  },{
+    pozitionId: PozitionIds.Second,
+    rootPitchId: PitchIds.Eb,
+  },{
+    pozitionId: PozitionIds.Second,
+    rootPitchId: PitchIds.E,
+  },{
+    pozitionId: PozitionIds.Second,
+    rootPitchId: PitchIds.F,
+  },{
+    pozitionId: PozitionIds.Second,
+    rootPitchId: PitchIds.Gb,
+  },{
+    pozitionId: PozitionIds.Second,
+    rootPitchId: PitchIds.G,
+  },{
+    pozitionId: PozitionIds.Second,
+    rootPitchId: PitchIds.Ab,
+  },{
+    pozitionId: PozitionIds.Second,
+    rootPitchId: PitchIds.A,
+  },{
+    pozitionId: PozitionIds.Second,
+    rootPitchId: PitchIds.Bb,
+  },{
+    pozitionId: PozitionIds.Second,
+    rootPitchId: PitchIds.B,
   }]
 
   const actualControlVarsList = getControlVarsList({lockedType, variedType, lockedValue, variedValue})
