@@ -36,22 +36,23 @@ export type HarpKeyControlPrimer = HarpKeyControlPrimerLockedRootPitch | HarpKey
 
 export type ControlVarsPrimer = PozitionControlPrimer | HarpKeyControlPrimer
 
-export const isHarpKeyControlPrimer = (props: ControlVarsPrimer): props is HarpKeyControlPrimer => {
-  const { lockedType, variedType } = props
-  const { Pozition, RootPitch } = CovariantTypes
-
-  const oneWay = (lockedType === Pozition && variedType === RootPitch)
-  const theOther = (lockedType === RootPitch && variedType === Pozition)
+const containsSpecificCovariantTypes = (controlVarsPrimer: ControlVarsPrimer, covariantTypeOne: CovariantTypes, covariantTypeTwo: CovariantTypes): boolean => {
+  const { lockedType, variedType } = controlVarsPrimer
+  
+  const oneWay = (lockedType === covariantTypeOne && variedType === covariantTypeTwo)
+  const theOther = (lockedType === covariantTypeTwo && variedType === covariantTypeOne)
 
   return oneWay || theOther
 }
 
+export const isHarpKeyControlPrimer = (props: ControlVarsPrimer): props is HarpKeyControlPrimer => {
+  const { Pozition, RootPitch } = CovariantTypes
+
+  return containsSpecificCovariantTypes(props, Pozition, RootPitch)
+}
+
 export const isPozitionControlPrimer = (props: ControlVarsPrimer): props is PozitionControlPrimer => {
-  const { lockedType, variedType } = props
   const { HarpKey, RootPitch } = CovariantTypes
 
-  const oneWay = (lockedType === HarpKey && variedType === RootPitch)
-  const theOther = (lockedType === RootPitch && variedType === HarpKey)
-
-  return oneWay || theOther
+  return containsSpecificCovariantTypes(props, HarpKey, RootPitch)
 }
