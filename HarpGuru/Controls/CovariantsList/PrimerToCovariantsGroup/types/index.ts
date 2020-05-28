@@ -36,6 +36,16 @@ export type HarpKeyControlPrimer = HarpKeyControlPrimerLockedRootPitch | HarpKey
 
 export type ControlVarsPrimer = PozitionControlPrimer | HarpKeyControlPrimer
 
+export const isHarpKeyControlPrimer = (props: ControlVarsPrimer): props is HarpKeyControlPrimer => {
+  const { lockedType, variedType } = props
+  const { Pozition, RootPitch } = CovariantTypes
+
+  const oneWay = (lockedType === Pozition && variedType === RootPitch)
+  const theOther = (lockedType === RootPitch && variedType === Pozition)
+
+  return oneWay || theOther
+}
+
 export const isPozitionControlPrimer = (props: ControlVarsPrimer): props is PozitionControlPrimer => {
   const { lockedType, variedType } = props
   const { HarpKey, RootPitch } = CovariantTypes
