@@ -24,26 +24,16 @@ const isRootPitchControlVars = (props: CovariantControlVars): props is RootPitch
   return hasHarpKey && hasPozition
 }
 
-export const CovarianceButton = (props: CovarianceButtonProps): ReactElement => {
-  const { covariantControlVars } = props
+const getButtonTitle = (covariantControlVars: CovariantControlVars): string => {
   if (isRootPitchControlVars(covariantControlVars)) {
     const { harpKeyId, pozitionId } = covariantControlVars
-    const title = `${harpKeyId} ${pozitionId}`
-    return (
-      <Button onPress={(): void => {console.log('test')}} title={title} />
-    )
+    return `${harpKeyId} ${pozitionId}`
   } else if (isHarpKeyControlVars(covariantControlVars)) {
     const { pozitionId, rootPitchId } = covariantControlVars
-    const title = `${pozitionId} ${rootPitchId}`
-    return (
-      <Button onPress={(): void => {console.log('test')}} title={title} />
-    )
+    return `${pozitionId} ${rootPitchId}`
   } else if (isPozitionControlVars(covariantControlVars)) {
     const { harpKeyId, rootPitchId } = covariantControlVars
-    const title = `${harpKeyId} ${rootPitchId}`
-    return (
-      <Button onPress={(): void => {console.log('test')}} title={title} />
-    )
+    return `${harpKeyId} ${rootPitchId}`
   }
 
   const errorMessage = `
@@ -52,4 +42,13 @@ export const CovarianceButton = (props: CovarianceButtonProps): ReactElement => 
     ${JSON.stringify(covariantControlVars)}
   `
   throw new Error(errorMessage)
+}
+
+export const CovarianceButton = (props: CovarianceButtonProps): ReactElement => {
+  const { covariantControlVars } = props
+  const title = getButtonTitle(covariantControlVars)
+
+  return (
+    <Button onPress={(): void => {console.log('test')}} title={title} />
+  )
 }
