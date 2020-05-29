@@ -6,13 +6,15 @@ import { keyCHarpStrata } from '../testResources'
 
 import { CovarianceButtonList } from './index'
 
-test('A list is produced with a RootPitchControlVars CovarianceButton in it', () => {
+test('A list is produced with multiple RootPitchControlVars CovarianceButton in it', () => {
   const harpStrataControlProps = {
     setActiveHarpStrata: jest.fn(),
     activeHarpStrata: keyCHarpStrata, 
   }
   const { getByText } = render(<CovarianceButtonList {...harpStrataControlProps} />)
 
-  const expectedText = `${PitchIds.C} ${PozitionIds.First}`
-  expect(getByText(expectedText)).toBeTruthy()
+  const expectedText1 = `${PitchIds.C} ${PozitionIds.First}`
+  const expectedText2 = `${PitchIds.C} ${PozitionIds.Tenth}`
+  expect(getByText(expectedText1)).toBeTruthy()
+  expect(getByText(expectedText2)).toBeTruthy()
 })

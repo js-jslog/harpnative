@@ -1,21 +1,28 @@
 import React from 'react'
 import type { ReactElement } from 'react'
 import { PozitionIds, PitchIds } from 'harpstrata'
-import type { RootPitchControlVars } from 'harpstrata'
 
+import { getControlVarsList } from '../getControlVarsList'
+import { CovariantTypes } from '../PrimerToCovariantsGroup'
+import type { ControlVarsPrimer } from '../PrimerToCovariantsGroup'
 import { CovarianceButton } from '../CovarianceButton'
 import { HarpStrataControlProps } from '../../types'
 
 const getCovarianceButtons = (props: HarpStrataControlProps): ReadonlyArray<ReactElement> => {
-  const rootPitchControlVars: RootPitchControlVars = {
-    harpKeyId: PitchIds.C,
-    pozitionId: PozitionIds.First,
+  const rootPitchControlPrimer: ControlVarsPrimer = {
+    lockedType: CovariantTypes.HarpKey,
+    variedType: CovariantTypes.Pozition,
+    lockedValue: PitchIds.C,
+    variedValue: PozitionIds.First,
   }
-  const covarianceButtonProps = { ...props, covariantControlVars: rootPitchControlVars }
+  const controlVarsList = getControlVarsList(rootPitchControlPrimer)
 
-  return (
-    [ <CovarianceButton key={0} {...covarianceButtonProps} /> ]
-  )
+  const componentArray = controlVarsList.map((controlVars, index) => {
+    const covarianceButtonProps = { ...props, covariantControlVars: controlVars }
+    return <CovarianceButton key={index} { ...covarianceButtonProps } />
+  })
+
+  return componentArray
 }
 
 export const CovarianceButtonList = (props: HarpStrataControlProps): ReactElement => {
