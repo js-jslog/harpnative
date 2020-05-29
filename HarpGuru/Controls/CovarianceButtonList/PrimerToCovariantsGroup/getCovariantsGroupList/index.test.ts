@@ -81,3 +81,28 @@ test('getCovariantsGroupList returns a complete mapping of the control covariant
 
   expect(actualCovariantsGroupList).toStrictEqual(expectedCovariantsGroupList)
 })
+
+test('getCovariantsGroupList returns a complete mapping of the control covariants to the dependent covariant', () => {
+  const controlVarsPrimer: ControlVarsPrimer = {
+    lockedType: CovariantTypes.RootPitch,
+    variedType: CovariantTypes.HarpKey,
+    lockedValue: PitchIds.G,
+    variedValue: PitchIds.G,
+  }
+
+  const expectedCovariantGroupsIncludes= [
+    {
+      harpKeyId: PitchIds.G,
+      pozitionId: PozitionIds.First,
+      rootPitchId: PitchIds.G,
+    }, {
+      harpKeyId: PitchIds.C,
+      pozitionId: PozitionIds.Second,
+      rootPitchId: PitchIds.G,
+    }
+  ]
+
+  const actualCovariantsGroupList = getCovariantsGroupList(controlVarsPrimer)
+
+  expect(actualCovariantsGroupList).toEqual(expect.arrayContaining(expectedCovariantGroupsIncludes))
+})
