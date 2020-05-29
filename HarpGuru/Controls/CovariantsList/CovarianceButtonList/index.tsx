@@ -6,7 +6,7 @@ import type { RootPitchControlVars } from 'harpstrata'
 import { CovarianceButton } from '../CovarianceButton'
 import { HarpStrataControlProps } from '../../types'
 
-export const CovarianceButtonList = (props: HarpStrataControlProps): ReactElement => {
+const getCovarianceButtons = (props: HarpStrataControlProps): ReadonlyArray<ReactElement> => {
   const rootPitchControlVars: RootPitchControlVars = {
     harpKeyId: PitchIds.C,
     pozitionId: PozitionIds.First,
@@ -14,6 +14,14 @@ export const CovarianceButtonList = (props: HarpStrataControlProps): ReactElemen
   const covarianceButtonProps = { ...props, covariantControlVars: rootPitchControlVars }
 
   return (
-    <CovarianceButton {...covarianceButtonProps} />
+    [ <CovarianceButton key={0} {...covarianceButtonProps} /> ]
+  )
+}
+
+export const CovarianceButtonList = (props: HarpStrataControlProps): ReactElement => {
+  return (
+    <>
+      {getCovarianceButtons(props)}
+    </>
   )
 }
