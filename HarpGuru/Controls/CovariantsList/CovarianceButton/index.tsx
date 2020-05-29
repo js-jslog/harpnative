@@ -25,15 +25,15 @@ const isRootPitchControlVars = (props: CovariantControlVars): props is RootPitch
 }
 
 const getButtonTitle = (covariantControlVars: CovariantControlVars): string => {
-  if (isRootPitchControlVars(covariantControlVars)) {
-    const { harpKeyId, pozitionId } = covariantControlVars
-    return `${harpKeyId} ${pozitionId}`
-  } else if (isHarpKeyControlVars(covariantControlVars)) {
+  if (isHarpKeyControlVars(covariantControlVars)) {
     const { pozitionId, rootPitchId } = covariantControlVars
     return `${pozitionId} ${rootPitchId}`
   } else if (isPozitionControlVars(covariantControlVars)) {
     const { harpKeyId, rootPitchId } = covariantControlVars
     return `${harpKeyId} ${rootPitchId}`
+  } else if (isRootPitchControlVars(covariantControlVars)) {
+    const { harpKeyId, pozitionId } = covariantControlVars
+    return `${harpKeyId} ${pozitionId}`
   }
 
   const errorMessage = `
