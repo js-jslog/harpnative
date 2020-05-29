@@ -38,7 +38,18 @@ export const CovarianceButton = (props: CovarianceButtonProps): ReactElement => 
     return (
       <Button onPress={(): void => {console.log('test')}} title={title} />
     )
+  } else if (isPozitionControlVars(covariantControlVars)) {
+    const { harpKeyId, rootPitchId } = covariantControlVars
+    const title = `${harpKeyId} ${rootPitchId}`
+    return (
+      <Button onPress={(): void => {console.log('test')}} title={title} />
+    )
   }
 
-  throw Error ('harp key control vars not implemented yet')
+  const errorMessage = `
+    Expected the covariantControlVars property of component props to be a valid CovariantControlVar object but it wasn't.
+
+    ${JSON.stringify(covariantControlVars)}
+  `
+  throw new Error(errorMessage)
 }
