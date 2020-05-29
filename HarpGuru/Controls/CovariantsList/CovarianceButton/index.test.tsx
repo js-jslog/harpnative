@@ -1,9 +1,9 @@
 import React from 'react'
 import { PitchIds, PozitionIds } from 'harpstrata'
 import type { HarpKeyControlVars, PozitionControlVars, RootPitchControlVars } from 'harpstrata'
-import { render } from '@testing-library/react-native'
+import { render, fireEvent } from '@testing-library/react-native'
 
-import { keyCHarpStrata } from '../testResources'
+import { keyCHarpStrata, keyDHarpStrata } from '../testResources'
 
 import { CovarianceButton } from './index'
 
@@ -54,4 +54,25 @@ test('Displays a Harp Key and Pozition when a RootPitchControlVars object is giv
 
   const expectedTitle = `${PitchIds.C} ${PozitionIds.Second}`
   expect(getByText(expectedTitle)).toBeTruthy()
+})
+
+test('Calls setActiveHarpStrata with the expected new HarpStrata when given a RootPitchControlVars object in the params', () => {
+  const setActiveHarpStrata = jest.fn()
+  const activeHarpStrata = keyCHarpStrata
+  const covariantControlVars: RootPitchControlVars = {
+    harpKeyId: PitchIds.D,
+    pozitionId: keyCHarpStrata.pozitionId,
+  }
+
+  const covarianceButtonProps = { setActiveHarpStrata, activeHarpStrata, covariantControlVars }
+
+  const { getByText } = render(<CovarianceButton { ...covarianceButtonProps } />)
+
+  const expectedHarpStrata = keyDHarpStrata
+
+  const expectedTitle = `${PitchIds.D} ${PozitionIds.First}`
+  fireEvent.press(getByText(expectedTitle))
+
+  expect(setActiveHarpStrata.mock.calls.length).toBe(1)
+  expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(expectedHarpStrata)
 })
