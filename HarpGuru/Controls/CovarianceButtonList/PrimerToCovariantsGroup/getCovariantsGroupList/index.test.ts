@@ -6,7 +6,7 @@ import { CovariantTypes } from '../../types'
 
 import { getCovariantsGroupList } from './index'
 
-test('getCovariantsGroupList returns a single entry representing the first CovariantsGroup in the list', () => {
+test('getCovariantsGroupList returns a complete mapping of the control covariants to the dependent covariant', () => {
   const controlVarsPrimer: ControlVarsPrimer = {
     lockedType: CovariantTypes.Pozition,
     variedType: CovariantTypes.HarpKey,
