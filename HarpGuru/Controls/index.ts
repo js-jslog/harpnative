@@ -6,3 +6,5 @@ export { HarpKeyButton } from './HarpKeyButton'
 export { PozitionButton } from './PozitionButton'
 
 export { HeadsupDisplay } from './HeadsupDisplay'
+
+export { CovarianceButtonList } from './CovarianceButtonList'
