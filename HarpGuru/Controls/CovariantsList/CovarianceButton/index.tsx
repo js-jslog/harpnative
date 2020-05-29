@@ -37,7 +37,7 @@ const getButtonTitle = (covariantControlVars: CovariantControlVars): string => {
   }
 
   const errorMessage = `
-    Expected the covariantControlVars property of component props to be a valid CovariantControlVar object but it wasn't.
+    Expected the covariantControlVars property to be a valid CovariantControlVar object but it wasn't.
 
     ${JSON.stringify(covariantControlVars)}
   `
