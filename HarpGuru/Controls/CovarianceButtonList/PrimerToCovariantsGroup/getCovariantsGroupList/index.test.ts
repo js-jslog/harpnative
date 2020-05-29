@@ -19,7 +19,62 @@ test('getCovariantsGroupList returns a single entry representing the first Covar
       harpKeyId: PitchIds.C,
       pozitionId: PozitionIds.First,
       rootPitchId: PitchIds.C,
-    }
+    },
+    {
+      harpKeyId: PitchIds.Db,
+      pozitionId: PozitionIds.First,
+      rootPitchId: PitchIds.Db,
+    },
+    {
+      harpKeyId: PitchIds.D,
+      pozitionId: PozitionIds.First,
+      rootPitchId: PitchIds.D,
+    },
+    {
+      harpKeyId: PitchIds.Eb,
+      pozitionId: PozitionIds.First,
+      rootPitchId: PitchIds.Eb,
+    },
+    {
+      harpKeyId: PitchIds.E,
+      pozitionId: PozitionIds.First,
+      rootPitchId: PitchIds.E,
+    },
+    {
+      harpKeyId: PitchIds.F,
+      pozitionId: PozitionIds.First,
+      rootPitchId: PitchIds.F,
+    },
+    {
+      harpKeyId: PitchIds.Gb,
+      pozitionId: PozitionIds.First,
+      rootPitchId: PitchIds.Gb,
+    },
+    {
+      harpKeyId: PitchIds.G,
+      pozitionId: PozitionIds.First,
+      rootPitchId: PitchIds.G,
+    },
+    {
+      harpKeyId: PitchIds.Ab,
+      pozitionId: PozitionIds.First,
+      rootPitchId: PitchIds.Ab,
+    },
+    {
+      harpKeyId: PitchIds.A,
+      pozitionId: PozitionIds.First,
+      rootPitchId: PitchIds.A,
+    },
+    {
+      harpKeyId: PitchIds.Bb,
+      pozitionId: PozitionIds.First,
+      rootPitchId: PitchIds.Bb,
+    },
+    {
+      harpKeyId: PitchIds.B,
+      pozitionId: PozitionIds.First,
+      rootPitchId: PitchIds.B,
+    },
   ]
 
   const actualCovariantsGroupList = getCovariantsGroupList(controlVarsPrimer)
