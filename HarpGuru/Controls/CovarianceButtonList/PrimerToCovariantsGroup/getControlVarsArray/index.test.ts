@@ -1,11 +1,11 @@
 import { PitchIds, PozitionIds } from 'harpstrata'
-import type { HarpKeyControlVars } from 'harpstrata'
+import type { HarpKeyControlVars, PozitionControlVars } from 'harpstrata'
 
 import { CovariantTypes } from '../../types'
 
 import { getControlVarsArray } from './index'
 
-test('given a ui covariant control definition, an array of the possible covariant control vars is produced', () => {
+test('given a locked pozition and a C root pitch variance origin, an array of the possible covariant control vars is produced', () => {
   const { Pozition: lockedType } = CovariantTypes
   const { RootPitch: variedType } = CovariantTypes
   const { First: lockedValue } = PozitionIds
@@ -47,6 +47,55 @@ test('given a ui covariant control definition, an array of the possible covarian
   }, {
     pozitionId: PozitionIds.First,
     rootPitchId: PitchIds.B,
+  }]
+
+  const actualControlVarsArray = getControlVarsArray({lockedType, variedType, lockedValue, variedValue})
+
+  expect(actualControlVarsArray).toStrictEqual(expectedControlVarsArray)
+})
+
+test('given a locked root pitch at Gb and an F harp key variance origin, an array of the possible covariant control vars is produced', () => {
+  const { RootPitch: lockedType } = CovariantTypes
+  const { HarpKey: variedType } = CovariantTypes
+  const { Gb: lockedValue } = PitchIds
+  const { F: variedValue } = PitchIds
+
+  const expectedControlVarsArray: ReadonlyArray<PozitionControlVars> = [{
+    rootPitchId: PitchIds.Gb,
+    harpKeyId: PitchIds.F,
+  }, {
+    rootPitchId: PitchIds.Gb,
+    harpKeyId: PitchIds.Gb,
+  }, {
+    rootPitchId: PitchIds.Gb,
+    harpKeyId: PitchIds.G,
+  }, {
+    rootPitchId: PitchIds.Gb,
+    harpKeyId: PitchIds.Ab,
+  }, {
+    rootPitchId: PitchIds.Gb,
+    harpKeyId: PitchIds.A,
+  }, {
+    rootPitchId: PitchIds.Gb,
+    harpKeyId: PitchIds.Bb,
+  }, {
+    rootPitchId: PitchIds.Gb,
+    harpKeyId: PitchIds.B,
+  }, {
+    rootPitchId: PitchIds.Gb,
+    harpKeyId: PitchIds.C,
+  }, {
+    rootPitchId: PitchIds.Gb,
+    harpKeyId: PitchIds.Db,
+  }, {
+    rootPitchId: PitchIds.Gb,
+    harpKeyId: PitchIds.D,
+  }, {
+    rootPitchId: PitchIds.Gb,
+    harpKeyId: PitchIds.Eb,
+  }, {
+    rootPitchId: PitchIds.Gb,
+    harpKeyId: PitchIds.E,
   }]
 
   const actualControlVarsArray = getControlVarsArray({lockedType, variedType, lockedValue, variedValue})
