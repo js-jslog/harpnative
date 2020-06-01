@@ -1,7 +1,7 @@
 import { PitchIds, PozitionIds, getPitchIds, getPozitionIds } from 'harpstrata'
 import type { CovariantControlVars } from 'harpstrata'
 
-import { getControlVars } from '../../PrimerToCovariantsGroup'
+import { getControlVars } from '../../CovariantsGroupList'
 //import type { ControlVarsPrimer } from '../PrimerToCovariantsGroup'
 
 export enum CovariantTypes {
