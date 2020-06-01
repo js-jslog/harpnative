@@ -1,8 +1,7 @@
 import { PitchIds, PozitionIds } from 'harpstrata'
 import type { CovariantsGroup } from 'harpstrata'
 
-import { ControlVarsPrimer } from '../types'
-import { CovariantTypes } from '../../types'
+import { ControlVarsPrimer, CovariantTypes } from '../types'
 
 import { getCovariantsGroupList } from './index'
 

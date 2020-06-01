@@ -1,11 +1,15 @@
 import { PitchIds, PozitionIds } from 'harpstrata'
 import type { HarpKeyControlVars, PozitionControlVars, RootPitchControlVars } from 'harpstrata'
 
-import { CovariantTypes } from '../types'
+export enum CovariantTypes {
+  HarpKey = 'harpKeyId',
+  Pozition = 'pozitionId',
+  RootPitch = 'rootPitchId',
+}
 
 import { getControlVarsList } from './index'
 
-test('getControlVarsList returns an array of PozitionControlVars when given PozitionControlPrimer for a locked harp key', () => {
+test.skip('getControlVarsList returns an array of PozitionControlVars when given PozitionControlPrimer for a locked harp key', () => {
   const { HarpKey: lockedType } = CovariantTypes
   const { RootPitch: variedType } = CovariantTypes
   const { D: lockedValue } = PitchIds

@@ -1,7 +1,7 @@
 import { PitchIds, PozitionIds } from 'harpstrata'
 import type { HarpKeyControlVars } from 'harpstrata'
 
-import { CovariantTypes } from '../../types'
+import { CovariantTypes } from '../types'
 
 import { getHarpKeyControlVars } from './index'
 

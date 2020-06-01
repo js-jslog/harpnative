@@ -6,7 +6,7 @@ import { keyCHarpStrata } from '../testResources'
 
 import { CovarianceButtonList } from './index'
 
-test('A list is produced with multiple RootPitchControlVars CovarianceButton in it', () => {
+test.skip('A list is produced with multiple RootPitchControlVars CovarianceButton in it', () => {
   const harpStrataControlProps = {
     setActiveHarpStrata: jest.fn(),
     activeHarpStrata: keyCHarpStrata, 

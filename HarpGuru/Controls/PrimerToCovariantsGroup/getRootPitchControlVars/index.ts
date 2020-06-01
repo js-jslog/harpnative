@@ -1,7 +1,7 @@
 import type { RootPitchControlVars, PitchIds, PozitionIds } from 'harpstrata'
 
 import type { RootPitchControlPrimer } from '../types'
-import { CovariantTypes } from '../../types'
+import { CovariantTypes } from '../types'
 
 export const getRootPitchControlVars = (props: RootPitchControlPrimer): RootPitchControlVars => {
   const { lockedType, lockedValue, variedValue } = props

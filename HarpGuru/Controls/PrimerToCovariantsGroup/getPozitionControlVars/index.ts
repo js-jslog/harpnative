@@ -1,7 +1,7 @@
 import type { PozitionControlVars } from 'harpstrata'
 
 import type { PozitionControlPrimer } from '../types'
-import { CovariantTypes } from '../../types'
+import { CovariantTypes } from '../types'
 
 export const getPozitionControlVars = (props: PozitionControlPrimer): PozitionControlVars => {
   const { lockedType, lockedValue, variedValue } = props
