@@ -1,1 +1,1 @@
-export { CovarianceButtonList } from './CovarianceButtonList'
+export { CovarianceButtonList } from './components'
