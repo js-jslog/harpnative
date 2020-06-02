@@ -4,9 +4,8 @@ import type { ReactElement } from 'react'
 import { getHarpStrata } from 'harpstrata'
 import type { HarpStrataProps } from 'harpstrata'
 
-import { CovariantTypes } from '../CovariantsGroupList'
-
-import { CovarianceButtonProps } from './types'
+import { CovarianceButtonProps } from '../types'
+import { CovariantTypes } from '../../CovariantsGroupList'
 
 const getButtonTitle = (props: CovarianceButtonProps): string => {
   const { lockedType, variedType } = props
