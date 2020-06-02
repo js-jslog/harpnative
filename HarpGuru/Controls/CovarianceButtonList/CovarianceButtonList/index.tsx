@@ -52,7 +52,7 @@ export type RootPitchControlPrimer = RootPitchControlPrimerLockedHarpKey | RootP
 
 export type ControlVarsPrimer = PozitionControlPrimer | HarpKeyControlPrimer | RootPitchControlPrimer
 
-import { getControlVarsList } from '../getControlVarsList'
+//import { getControlVarsList } from '../getControlVarsList'
 //import type { ControlVarsPrimer } from '../PrimerToCovariantsGroup'
 import { CovarianceButton } from '../CovarianceButton'
 import { HarpStrataControlProps } from '../../types'
