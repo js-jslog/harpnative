@@ -1,9 +1,9 @@
 import React from 'react'
 import type { ReactElement } from 'react'
 
-import { CovarianceButton } from '../CovarianceButton'
 import { getCovariantsGroupList } from '../../CovariantsGroupList'
 import type { ControlVarsPrimer } from '../../CovariantsGroupList'
+import { CovarianceButton } from '../../CovarianceButton'
 
 import { CovarianceButtonListProps } from './types'
 

@@ -4,7 +4,7 @@ import type { ReactElement } from 'react'
 import { getHarpStrata } from 'harpstrata'
 import type { HarpStrataProps } from 'harpstrata'
 
-import { CovariantTypes } from '../../CovariantsGroupList'
+import { CovariantTypes } from '../CovariantsGroupList'
 
 import { CovarianceButtonProps } from './types'
 

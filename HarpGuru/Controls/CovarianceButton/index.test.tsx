@@ -4,8 +4,8 @@ import type { CovariantsGroup } from 'harpstrata'
 import { render } from '@testing-library/react-native'
 
 import { keyCHarpStrata } from '../testResources'
-import type { PozitionControlPrimerLockedRootPitch } from '../../CovariantsGroupList'
-import { CovariantTypes } from '../../CovariantsGroupList'
+import type { PozitionControlPrimerLockedRootPitch } from '../CovariantsGroupList'
+import { CovariantTypes } from '../CovariantsGroupList'
 
 import { CovarianceButton } from './index'
 
