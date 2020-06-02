@@ -5,15 +5,15 @@ import { PitchIds } from 'harpstrata'
 
 import type { ScreenProps } from '../types'
 // TODO: these imports should be from root if required
-import { CovariantTypes } from '../../Controls/CovariantsGroupList'
+import { CovarianceParts } from '../../Controls/CovariantsGroupList'
 import type { ControlVarsPrimer } from '../../Controls/CovariantsGroupList'
 import { CovarianceButtonList, HeadsupDisplay } from '../../Controls'
 
 export const ControlPanel = (props: ScreenProps): ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata } = props
   const pozitionControlPrimerLockedRootPitch: ControlVarsPrimer = {
-    lockedType: CovariantTypes.RootPitch,
-    variedType: CovariantTypes.HarpKey,
+    lockedType: CovarianceParts.RootPitch,
+    variedType: CovarianceParts.HarpKey,
     lockedValue: PitchIds.C,
     variedValue: PitchIds.C,
   }

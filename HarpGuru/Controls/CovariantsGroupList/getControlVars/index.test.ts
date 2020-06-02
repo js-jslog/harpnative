@@ -1,13 +1,13 @@
 import { PitchIds, PozitionIds } from 'harpstrata'
 import type { HarpKeyControlVars, PozitionControlVars, RootPitchControlVars } from 'harpstrata'
 
-import { CovariantTypes } from '../types'
+import { CovarianceParts } from '../types'
 
 import { getControlVars } from './index'
 
 test('getControlVars returns a HarpKeyControlVars for a locked pozition', () => {
-  const { Pozition: lockedType } = CovariantTypes
-  const { RootPitch: variedType } = CovariantTypes
+  const { Pozition: lockedType } = CovarianceParts
+  const { RootPitch: variedType } = CovarianceParts
   const { Second: lockedValue } = PozitionIds
   const { C: variedValue } = PitchIds
 
@@ -22,8 +22,8 @@ test('getControlVars returns a HarpKeyControlVars for a locked pozition', () => 
 })
 
 test('getControlVars returns a HarpKeyControlVars for a locked root pitch', () => {
-  const { RootPitch: lockedType } = CovariantTypes
-  const { Pozition: variedType } = CovariantTypes
+  const { RootPitch: lockedType } = CovarianceParts
+  const { Pozition: variedType } = CovarianceParts
   const { Eb: lockedValue } = PitchIds
   const { Fourth: variedValue } = PozitionIds
 
@@ -38,8 +38,8 @@ test('getControlVars returns a HarpKeyControlVars for a locked root pitch', () =
 })
 
 test('getControlVars returns a PozitionControlVars for a locked harp key', () => {
-  const { HarpKey: lockedType } = CovariantTypes
-  const { RootPitch: variedType } = CovariantTypes
+  const { HarpKey: lockedType } = CovarianceParts
+  const { RootPitch: variedType } = CovarianceParts
   const { D: lockedValue } = PitchIds
   const { C: variedValue } = PitchIds
 
@@ -54,8 +54,8 @@ test('getControlVars returns a PozitionControlVars for a locked harp key', () =>
 })
 
 test('getControlVars returns a PozitionControlVars for a locked root pitch', () => {
-  const { RootPitch: lockedType } = CovariantTypes
-  const { HarpKey: variedType } = CovariantTypes
+  const { RootPitch: lockedType } = CovarianceParts
+  const { HarpKey: variedType } = CovarianceParts
   const { Eb: lockedValue } = PitchIds
   const { A: variedValue } = PitchIds
 
@@ -70,8 +70,8 @@ test('getControlVars returns a PozitionControlVars for a locked root pitch', () 
 })
 
 test('getControlVars returns a RootPitchControlVars for a locked pozition', () => {
-  const { Pozition: lockedType } = CovariantTypes
-  const { HarpKey: variedType } = CovariantTypes
+  const { Pozition: lockedType } = CovarianceParts
+  const { HarpKey: variedType } = CovarianceParts
   const { Fifth: lockedValue } = PozitionIds
   const { A: variedValue } = PitchIds
 

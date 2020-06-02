@@ -1,14 +1,14 @@
 import { PitchIds, PozitionIds } from 'harpstrata'
 import type { CovariantsGroup } from 'harpstrata'
 
-import { ControlVarsPrimer, CovariantTypes } from '../types'
+import { ControlVarsPrimer, CovarianceParts } from '../types'
 
 import { getCovariantsGroupList } from './index'
 
 test('getCovariantsGroupList returns a complete mapping of the control covariants to the dependent covariant', () => {
   const controlVarsPrimer: ControlVarsPrimer = {
-    lockedType: CovariantTypes.Pozition,
-    variedType: CovariantTypes.HarpKey,
+    lockedType: CovarianceParts.Pozition,
+    variedType: CovarianceParts.HarpKey,
     lockedValue: PozitionIds.First,
     variedValue: PitchIds.C,
   }
@@ -83,8 +83,8 @@ test('getCovariantsGroupList returns a complete mapping of the control covariant
 
 test('getCovariantsGroupList returns a complete mapping of the control covariants to the dependent covariant', () => {
   const controlVarsPrimer: ControlVarsPrimer = {
-    lockedType: CovariantTypes.RootPitch,
-    variedType: CovariantTypes.HarpKey,
+    lockedType: CovarianceParts.RootPitch,
+    variedType: CovarianceParts.HarpKey,
     lockedValue: PitchIds.G,
     variedValue: PitchIds.G,
   }

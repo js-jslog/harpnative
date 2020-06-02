@@ -23,7 +23,7 @@ export const getControlVars = (props: ControlVarsPrimer): CovariantControlVars =
 
     Input: ${JSON.stringify(props)}
 
-    Two of the CovariantTypes properties need to be defined as lockedType and variedType.
+    Two of the CovarianceParts properties need to be defined as lockedType and variedType.
   `
   throw new Error(errorMessage)
 }

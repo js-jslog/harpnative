@@ -3,7 +3,7 @@ import { PitchIds, PozitionIds } from 'harpstrata'
 import { render } from '@testing-library/react-native'
 
 import { keyCHarpStrata } from '../../testResources'
-import { CovariantTypes } from '../../CovariantsGroupList'
+import { CovarianceParts } from '../../CovariantsGroupList'
 import type { PozitionControlPrimerLockedRootPitch } from '../../CovariantsGroupList'
 
 import { CovarianceButtonList } from './index'
@@ -14,8 +14,8 @@ test('A list is produced with multiple PozitionControlVars CovarianceButton in i
     activeHarpStrata: keyCHarpStrata, 
   }
   const pozitionControlPrimerLockedRootPitch: PozitionControlPrimerLockedRootPitch = {
-    lockedType: CovariantTypes.RootPitch,
-    variedType: CovariantTypes.HarpKey,
+    lockedType: CovarianceParts.RootPitch,
+    variedType: CovarianceParts.HarpKey,
     lockedValue: PitchIds.C,
     variedValue: PitchIds.C,
   }

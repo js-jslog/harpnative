@@ -5,7 +5,7 @@ import { render, fireEvent } from '@testing-library/react-native'
 
 import { keyCHarpStrata, keyDHarpStrata } from '../../testResources'
 import type { PozitionControlPrimerLockedRootPitch, HarpKeyControlPrimerLockedPozition } from '../../CovariantsGroupList'
-import { CovariantTypes } from '../../CovariantsGroupList'
+import { CovarianceParts } from '../../CovariantsGroupList'
 
 import { CovarianceButton } from './index'
 
@@ -14,8 +14,8 @@ test('Displays a Harp Key and Pozition when a PozitionControlPrimerLockedRootPit
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyCHarpStrata
   const pozitionControlPrimerLockedRootPitch: PozitionControlPrimerLockedRootPitch = {
-    lockedType: CovariantTypes.RootPitch,
-    variedType: CovariantTypes.HarpKey,
+    lockedType: CovarianceParts.RootPitch,
+    variedType: CovarianceParts.HarpKey,
     lockedValue: PitchIds.C,
     variedValue: PitchIds.C,
   }
@@ -37,8 +37,8 @@ test('Calls setActiveHarpStrata with the expected new HarpStrata when given a Ha
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyCHarpStrata
   const harpKeyControlPrimerLockedPozition: HarpKeyControlPrimerLockedPozition = {
-    lockedType: CovariantTypes.Pozition,
-    variedType: CovariantTypes.RootPitch,
+    lockedType: CovarianceParts.Pozition,
+    variedType: CovarianceParts.RootPitch,
     lockedValue: PozitionIds.First,
     variedValue: PitchIds.F,
   }

@@ -1,13 +1,13 @@
 import { PitchIds, PozitionIds } from 'harpstrata'
 import type { HarpKeyControlVars, PozitionControlVars, RootPitchControlVars } from 'harpstrata'
 
-import { CovariantTypes } from '../types'
+import { CovarianceParts } from '../types'
 
 import { getControlVarsArray } from './index'
 
 test('can get an array of HarpKeyControlVars with locked pozition', () => {
-  const { Pozition: lockedType } = CovariantTypes
-  const { RootPitch: variedType } = CovariantTypes
+  const { Pozition: lockedType } = CovarianceParts
+  const { RootPitch: variedType } = CovarianceParts
   const { First: lockedValue } = PozitionIds
   const { C: variedValue } = PitchIds
 
@@ -55,8 +55,8 @@ test('can get an array of HarpKeyControlVars with locked pozition', () => {
 })
 
 test('can get an array of PozitionControlVars with locked root pitch', () => {
-  const { RootPitch: lockedType } = CovariantTypes
-  const { HarpKey: variedType } = CovariantTypes
+  const { RootPitch: lockedType } = CovarianceParts
+  const { HarpKey: variedType } = CovarianceParts
   const { Gb: lockedValue } = PitchIds
   const { F: variedValue } = PitchIds
 
@@ -104,8 +104,8 @@ test('can get an array of PozitionControlVars with locked root pitch', () => {
 })
 
 test('can get an array of RootPitchControlVars with locked harp key', () => {
-  const { HarpKey: lockedType } = CovariantTypes
-  const { Pozition: variedType } = CovariantTypes
+  const { HarpKey: lockedType } = CovarianceParts
+  const { Pozition: variedType } = CovarianceParts
   const { B: lockedValue } = PitchIds
   const { Eighth: variedValue } = PozitionIds
 

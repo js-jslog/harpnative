@@ -1,13 +1,13 @@
 import { PitchIds, PozitionIds } from 'harpstrata'
 import type { RootPitchControlVars } from 'harpstrata'
 
-import { CovariantTypes } from '../types'
+import { CovarianceParts } from '../types'
 
 import { getRootPitchControlVars } from './index'
 
 test('getRootPitchControlVars returns a RootPitchControlVars for a locked harp key', () => {
-  const { HarpKey: lockedType } = CovariantTypes
-  const { Pozition: variedType } = CovariantTypes
+  const { HarpKey: lockedType } = CovarianceParts
+  const { Pozition: variedType } = CovarianceParts
   const { D: lockedValue } = PitchIds
   const { Second: variedValue } = PozitionIds
 
@@ -22,8 +22,8 @@ test('getRootPitchControlVars returns a RootPitchControlVars for a locked harp k
 })
 
 test('getRootPitchControlVars returns a RootPitchControlVars for a locked root pitch', () => {
-  const { Pozition: lockedType } = CovariantTypes
-  const { HarpKey: variedType } = CovariantTypes
+  const { Pozition: lockedType } = CovarianceParts
+  const { HarpKey: variedType } = CovarianceParts
   const { Eighth: lockedValue } = PozitionIds
   const { A: variedValue } = PitchIds
 

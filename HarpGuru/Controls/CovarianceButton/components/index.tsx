@@ -5,22 +5,22 @@ import { getHarpStrata } from 'harpstrata'
 import type { HarpStrataProps } from 'harpstrata'
 
 import { CovarianceButtonProps } from '../types'
-import { CovariantTypes } from '../../CovariantsGroupList'
+import { CovarianceParts } from '../../CovariantsGroupList'
 
 const getButtonTitle = (props: CovarianceButtonProps): string => {
   const { lockedType, variedType } = props
   const { harpKeyId, pozitionId, rootPitchId } = props
-  if ( lockedType === CovariantTypes.RootPitch && variedType === CovariantTypes.HarpKey ) {
+  if ( lockedType === CovarianceParts.RootPitch && variedType === CovarianceParts.HarpKey ) {
     return `${harpKeyId} ${pozitionId}`
-  } else if ( lockedType === CovariantTypes.RootPitch && variedType === CovariantTypes.Pozition ) {
+  } else if ( lockedType === CovarianceParts.RootPitch && variedType === CovarianceParts.Pozition ) {
     return `${pozitionId} ${harpKeyId}`
-  } else if ( lockedType === CovariantTypes.HarpKey && variedType === CovariantTypes.RootPitch ) {
+  } else if ( lockedType === CovarianceParts.HarpKey && variedType === CovarianceParts.RootPitch ) {
     return `${rootPitchId} ${pozitionId}`
-  } else if ( lockedType === CovariantTypes.HarpKey && variedType === CovariantTypes.Pozition ) {
+  } else if ( lockedType === CovarianceParts.HarpKey && variedType === CovarianceParts.Pozition ) {
     return `${pozitionId} ${rootPitchId}`
-  } else if ( lockedType === CovariantTypes.Pozition && variedType === CovariantTypes.HarpKey ) {
+  } else if ( lockedType === CovarianceParts.Pozition && variedType === CovarianceParts.HarpKey ) {
     return `${harpKeyId} ${rootPitchId}`
-  } else if ( lockedType === CovariantTypes.Pozition && variedType === CovariantTypes.RootPitch ) {
+  } else if ( lockedType === CovarianceParts.Pozition && variedType === CovarianceParts.RootPitch ) {
     return `${rootPitchId} ${harpKeyId}`
   }
 
