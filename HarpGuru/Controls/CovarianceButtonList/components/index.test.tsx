@@ -2,7 +2,7 @@ import React from 'react'
 import { PitchIds, PozitionIds } from 'harpstrata'
 import { render } from '@testing-library/react-native'
 
-import { keyCHarpStrata } from '../testResources'
+import { keyCHarpStrata } from '../../testResources'
 import { CovariantTypes } from '../../CovariantsGroupList'
 import type { PozitionControlPrimerLockedRootPitch } from '../../CovariantsGroupList'
 
