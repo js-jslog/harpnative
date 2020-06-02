@@ -10,16 +10,24 @@ import { CovariantTypes } from '../../CovariantsGroupList'
 const getButtonTitle = (props: CovarianceButtonProps): string => {
   const { lockedType, variedType } = props
   const { harpKeyId, pozitionId, rootPitchId } = props
-  if ( lockedType === CovariantTypes.RootPitch  && variedType === CovariantTypes.HarpKey ) {
+  if ( lockedType === CovariantTypes.RootPitch && variedType === CovariantTypes.HarpKey ) {
     return `${harpKeyId} ${pozitionId}`
+  } else if ( lockedType === CovariantTypes.RootPitch && variedType === CovariantTypes.Pozition ) {
+    return `${pozitionId} ${harpKeyId}`
   } else if ( lockedType === CovariantTypes.HarpKey && variedType === CovariantTypes.RootPitch ) {
     return `${rootPitchId} ${pozitionId}`
+  } else if ( lockedType === CovariantTypes.HarpKey && variedType === CovariantTypes.Pozition ) {
+    return `${pozitionId} ${rootPitchId}`
+  } else if ( lockedType === CovariantTypes.Pozition && variedType === CovariantTypes.HarpKey ) {
+    return `${harpKeyId} ${rootPitchId}`
+  } else if ( lockedType === CovariantTypes.Pozition && variedType === CovariantTypes.RootPitch ) {
+    return `${rootPitchId} ${harpKeyId}`
   }
 
   const errorMessage = `
     Expected lockedType and variedType to constitute a covariant controling pair but didn't.
 
-    ${JSON.stringify(props)}
+    ${JSON.stringify(props, undefined, 2)}
   `
   throw new Error(errorMessage)
 }

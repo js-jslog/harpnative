@@ -1,5 +1,6 @@
 export { getCovariantsGroupList } from './getCovariantsGroupList'
 export type { ControlVarsPrimer } from './types'
 
-export type { PozitionControlPrimerLockedRootPitch } from './types'
+// TODO: need to export all of the types here
+export type { PozitionControlPrimerLockedRootPitch, HarpKeyControlPrimerLockedPozition } from './types'
 export { CovariantTypes } from './types'
