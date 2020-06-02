@@ -4,7 +4,6 @@ import type { ReactElement } from 'react'
 import { PitchIds } from 'harpstrata'
 
 import type { ScreenProps } from '../types'
-// TODO: these imports should be from root if required
 import { CovarianceParts } from '../../Controls/CovariantsGroupList'
 import type { ControlVarsPrimer } from '../../Controls/CovariantsGroupList'
 import { CovarianceButtonList, HeadsupDisplay } from '../../Controls'
