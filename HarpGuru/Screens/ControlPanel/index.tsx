@@ -1,13 +1,23 @@
 import {StyleSheet, View} from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
+import { PitchIds } from 'harpstrata'
 
 import type { ScreenProps } from '../types'
+// TODO: these imports should be from root if required
+import { CovariantTypes } from '../../Controls/CovariantsGroupList'
+import type { ControlVarsPrimer } from '../../Controls/CovariantsGroupList'
 import { CovarianceButtonList, HeadsupDisplay } from '../../Controls'
 
 export const ControlPanel = (props: ScreenProps): ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata } = props
-  const covarianceButtonList = { activeHarpStrata, setActiveHarpStrata }
+  const pozitionControlPrimerLockedRootPitch: ControlVarsPrimer = {
+    lockedType: CovariantTypes.RootPitch,
+    variedType: CovariantTypes.HarpKey,
+    lockedValue: PitchIds.C,
+    variedValue: PitchIds.C,
+  }
+  const covarianceButtonListProps = { activeHarpStrata, setActiveHarpStrata, ...pozitionControlPrimerLockedRootPitch }
 
   const styles = StyleSheet.create({
     headsupdiplay: {
@@ -29,7 +39,7 @@ export const ControlPanel = (props: ScreenProps): ReactElement => {
         <HeadsupDisplay {...activeHarpStrata} />
       </View>
       <View style={styles.controls}>
-        <CovarianceButtonList {...covarianceButtonList} />
+        <CovarianceButtonList {...covarianceButtonListProps} />
       </View>
     </>
   )
