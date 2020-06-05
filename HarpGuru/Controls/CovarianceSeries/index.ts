@@ -3,7 +3,7 @@ export { CovariantMembers } from './types'
 export type {
   CovariancePrimer,
   HarpKeyCovariancePrimer, PozitionCovariancePrimer, RootPitchCovariancePrimer,
-  HarpKeyByRootPitchAtPozitionPrimer, HarpKeyByPozitionAtRootPitchPrimer,
-  PozitionByRootPitchAtHarpKeyPrimer, PozitionByHarpKeyAtRootPitchPrimer,
-  RootPitchByPozitionAtHarpKeyPrimer, RootPitchByHarpKeyAtPozitionPrimer,
+  KeyByRootAtPozitionPrimer, KeyByPozitionAtRootPrimer,
+  PozitionByRootAtKeyPrimer, PozitionByKeyAtRootPrimer,
+  RootByPozitionAtKeyPrimer, RootByKeyAtPozitionPrimer,
 } from './types'
