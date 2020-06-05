@@ -1,7 +1,7 @@
 import type { CovariantControllers } from 'harpstrata'
 
-import { isRootPitchCovariancePrimer, isHarpKeyCovariancePrimer, isPozitionCovariancePrimer } from '../types'
 import type { CovariancePrimer } from '../types'
+import { isRootPitchCovariancePrimer, isHarpKeyCovariancePrimer, isPozitionCovariancePrimer } from '../typeguards'
 import { getRootPitchControllers } from '../getRootPitchControllers'
 import { getPozitionControllers } from '../getPozitionControllers'
 import { getHarpKeyControllers } from '../getHarpKeyControllers'
