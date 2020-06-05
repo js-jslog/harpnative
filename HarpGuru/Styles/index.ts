@@ -15,7 +15,7 @@ export const themeSizes = {
   10: seedSize *76.013,
 } as const
 
-const degreeColours = {
+const degreeColors = {
   [DegreeIds.Root]: '#0f9d58',
   [DegreeIds.Flat2]: '#8ac926',
   [DegreeIds.Second]: '#323031',
@@ -30,13 +30,13 @@ const degreeColours = {
   [DegreeIds.Seventh]: '#db4437',
 } as const
 
-const homeRowsColour = '#e9ecef' as const
+const homeRowsColor = '#e9ecef' as const
 const inertOutline = '#ced4da' as const
-const holeNumbersColour = '#495057' as const
+const holeNumbersColor = '#495057' as const
 
-export const themeColours = {
-  degreeColours,
-  homeRowsColour,
+export const themeColors = {
+  degreeColors,
+  homeRowsColor,
   inertOutline,
-  holeNumbersColour,
+  holeNumbersColor,
 } as const

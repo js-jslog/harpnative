@@ -4,7 +4,7 @@ import { getHarpStrata, IsActiveIds } from 'harpstrata'
 import type { HarpStrata, HarpStrataProps, DegreeIds } from 'harpstrata'
 
 import { DisplayModes } from '../HarpFace'
-import { themeSizes, themeColours } from '../../Styles'
+import { themeSizes, themeColors } from '../../Styles'
 
 import { getToggledActiveDegreeIds } from './getToggledActiveDegreeIds'
 import { analysePosition } from './analysePosition'
@@ -38,18 +38,18 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
 
   const { 1: borderWidth, 5: borderRadius, 8: height, 8: width, 2: elevation } = themeSizes
   const { 6: fontSize } = themeSizes
-  const { degreeColours, inertOutline: borderColor } = themeColours
-  const cellColour = (isActive && degreeId) ? degreeColours[degreeId] : '#fff'
+  const { degreeColors, inertOutline: borderColor } = themeColors
+  const cellColor = (isActive && degreeId) ? degreeColors[degreeId] : '#fff'
 
   const styles = StyleSheet.create({
     cell: {
-      backgroundColor: cellColour,
+      backgroundColor: cellColor,
       justifyContent: 'center',
       alignItems: 'center',
       elevation: (isActive) ? elevation : 0,
       borderRadius,
       borderWidth: (degreeId) ? borderWidth : 0,
-      borderColor: (isActive) ? cellColour : borderColor,
+      borderColor: (isActive) ? cellColor : borderColor,
       width,
       height,
     },

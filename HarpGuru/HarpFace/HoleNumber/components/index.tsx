@@ -3,10 +3,10 @@ import React from 'react'
 import type { ReactElement } from 'react'
 
 import type { HoleNumberIds, HoleNumberProps } from '../types'
-import { themeSizes, themeColours } from '../../../Styles'
+import { themeSizes, themeColors } from '../../../Styles'
 
 const { 5: fontSize, 8: width } = themeSizes
-const { holeNumbersColour } = themeColours
+const { holeNumbersColor } = themeColors
 
 export function HoleNumber(props: HoleNumberProps): ReactElement {
   const { xCoord } = props
@@ -21,7 +21,7 @@ export function HoleNumber(props: HoleNumberProps): ReactElement {
     },
     text: {
       fontSize,
-      color: holeNumbersColour,
+      color: holeNumbersColor,
     },
   })
 
