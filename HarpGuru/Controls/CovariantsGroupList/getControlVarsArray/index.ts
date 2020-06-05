@@ -1,10 +1,10 @@
-import type { CovariantControlVars } from 'harpstrata'
+import type { CovariantControllers } from 'harpstrata'
 import { getPitchIds, getPozitionIds, isPitchId, isPozitionId } from 'harpstrata'
 
 import type { ControlVarsPrimer  } from '../types'
 import { getControlVars } from '../getControlVars'
 
-export const getControlVarsArray = (props: ControlVarsPrimer): ReadonlyArray<CovariantControlVars> => {
+export const getControlVarsArray = (props: ControlVarsPrimer): ReadonlyArray<CovariantControllers> => {
   const { variedValue } = props
   if ( isPitchId(variedValue) ) {
     const variedValues = getPitchIds(variedValue)

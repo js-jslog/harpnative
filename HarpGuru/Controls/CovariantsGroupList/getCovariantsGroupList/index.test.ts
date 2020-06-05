@@ -1,5 +1,5 @@
 import { PitchIds, PozitionIds } from 'harpstrata'
-import type { CovariantsGroup } from 'harpstrata'
+import type { CovariantSet } from 'harpstrata'
 
 import { ControlVarsPrimer, CovarianceParts } from '../types'
 
@@ -13,7 +13,7 @@ test('getCovariantsGroupList returns a complete mapping of the control covariant
     variedValue: PitchIds.C,
   }
 
-  const expectedCovariantsGroupList: ReadonlyArray<CovariantsGroup> = [
+  const expectedCovariantsGroupList: ReadonlyArray<CovariantSet> = [
     {
       harpKeyId: PitchIds.C,
       pozitionId: PozitionIds.First,

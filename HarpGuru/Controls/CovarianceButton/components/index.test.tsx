@@ -1,6 +1,6 @@
 import React from 'react'
 import { PitchIds, PozitionIds } from 'harpstrata'
-import type { CovariantsGroup } from 'harpstrata'
+import type { CovariantSet } from 'harpstrata'
 import { render, fireEvent } from '@testing-library/react-native'
 
 import { keyCHarpStrata, keyDHarpStrata } from '../../testResources'
@@ -19,7 +19,7 @@ test('Displays a Harp Key and Pozition when a PozitionControlPrimerLockedRootPit
     lockedValue: PitchIds.C,
     variedValue: PitchIds.C,
   }
-  const covariantsGroup: CovariantsGroup = {
+  const covariantsGroup: CovariantSet = {
     rootPitchId: PitchIds.C,
     harpKeyId: PitchIds.C,
     pozitionId: PozitionIds.First,
@@ -42,7 +42,7 @@ test('Calls setActiveHarpStrata with the expected new HarpStrata when given a Ha
     lockedValue: PozitionIds.First,
     variedValue: PitchIds.F,
   }
-  const covariantsGroup: CovariantsGroup = {
+  const covariantsGroup: CovariantSet = {
     rootPitchId: PitchIds.D,
     harpKeyId: PitchIds.D,
     pozitionId: PozitionIds.First,

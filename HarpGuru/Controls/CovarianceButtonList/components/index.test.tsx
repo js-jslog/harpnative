@@ -8,7 +8,7 @@ import type { PozitionControlPrimerLockedRootPitch } from '../../CovariantsGroup
 
 import { CovarianceButtonList } from './index'
 
-test('A list is produced with multiple PozitionControlVars CovarianceButton in it', () => {
+test('A list is produced with multiple PozitionControllers CovarianceButton in it', () => {
   const harpStrataControlProps = {
     setActiveHarpStrata: jest.fn(),
     activeHarpStrata: keyCHarpStrata, 

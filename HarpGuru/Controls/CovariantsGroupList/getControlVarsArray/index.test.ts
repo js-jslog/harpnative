@@ -1,17 +1,17 @@
 import { PitchIds, PozitionIds } from 'harpstrata'
-import type { HarpKeyControlVars, PozitionControlVars, RootPitchControlVars } from 'harpstrata'
+import type { HarpKeyControllers, PozitionControllers, RootPitchControllers } from 'harpstrata'
 
 import { CovarianceParts } from '../types'
 
 import { getControlVarsArray } from './index'
 
-test('can get an array of HarpKeyControlVars with locked pozition', () => {
+test('can get an array of HarpKeyControllers with locked pozition', () => {
   const { Pozition: lockedType } = CovarianceParts
   const { RootPitch: variedType } = CovarianceParts
   const { First: lockedValue } = PozitionIds
   const { C: variedValue } = PitchIds
 
-  const expectedControlVarsArray: ReadonlyArray<HarpKeyControlVars> = [{
+  const expectedControlVarsArray: ReadonlyArray<HarpKeyControllers> = [{
     pozitionId: PozitionIds.First,
     rootPitchId: PitchIds.C,
   }, {
@@ -54,13 +54,13 @@ test('can get an array of HarpKeyControlVars with locked pozition', () => {
   expect(actualControlVarsArray).toStrictEqual(expectedControlVarsArray)
 })
 
-test('can get an array of PozitionControlVars with locked root pitch', () => {
+test('can get an array of PozitionControllers with locked root pitch', () => {
   const { RootPitch: lockedType } = CovarianceParts
   const { HarpKey: variedType } = CovarianceParts
   const { Gb: lockedValue } = PitchIds
   const { F: variedValue } = PitchIds
 
-  const expectedControlVarsArray: ReadonlyArray<PozitionControlVars> = [{
+  const expectedControlVarsArray: ReadonlyArray<PozitionControllers> = [{
     rootPitchId: PitchIds.Gb,
     harpKeyId: PitchIds.F,
   }, {
@@ -103,48 +103,48 @@ test('can get an array of PozitionControlVars with locked root pitch', () => {
   expect(actualControlVarsArray).toStrictEqual(expectedControlVarsArray)
 })
 
-test('can get an array of RootPitchControlVars with locked harp key', () => {
+test('can get an array of RootPitchControllers with locked harp key', () => {
   const { HarpKey: lockedType } = CovarianceParts
   const { Pozition: variedType } = CovarianceParts
   const { B: lockedValue } = PitchIds
   const { Eighth: variedValue } = PozitionIds
 
-  const expectedControlVarsArray: ReadonlyArray<RootPitchControlVars> = [{
+  const expectedControlVarsArray: ReadonlyArray<RootPitchControllers> = [{
     harpKeyId: PitchIds.B,
     pozitionId: PozitionIds.Eighth,
-  }, {
-    harpKeyId: PitchIds.B,
-    pozitionId: PozitionIds.Third,
-  }, {
-    harpKeyId: PitchIds.B,
-    pozitionId: PozitionIds.Tenth,
-  }, {
-    harpKeyId: PitchIds.B,
-    pozitionId: PozitionIds.Fifth,
-  }, {
-    harpKeyId: PitchIds.B,
-    pozitionId: PozitionIds.Twelfth,
-  }, {
-    harpKeyId: PitchIds.B,
-    pozitionId: PozitionIds.Seventh,
-  }, {
-    harpKeyId: PitchIds.B,
-    pozitionId: PozitionIds.Second,
   }, {
     harpKeyId: PitchIds.B,
     pozitionId: PozitionIds.Ninth,
   }, {
     harpKeyId: PitchIds.B,
-    pozitionId: PozitionIds.Fourth,
+    pozitionId: PozitionIds.Tenth,
   }, {
     harpKeyId: PitchIds.B,
     pozitionId: PozitionIds.Eleventh,
   }, {
     harpKeyId: PitchIds.B,
-    pozitionId: PozitionIds.Sixth,
+    pozitionId: PozitionIds.Twelfth,
   }, {
     harpKeyId: PitchIds.B,
     pozitionId: PozitionIds.First,
+  }, {
+    harpKeyId: PitchIds.B,
+    pozitionId: PozitionIds.Second,
+  }, {
+    harpKeyId: PitchIds.B,
+    pozitionId: PozitionIds.Third,
+  }, {
+    harpKeyId: PitchIds.B,
+    pozitionId: PozitionIds.Fourth,
+  }, {
+    harpKeyId: PitchIds.B,
+    pozitionId: PozitionIds.Fifth,
+  }, {
+    harpKeyId: PitchIds.B,
+    pozitionId: PozitionIds.Sixth,
+  }, {
+    harpKeyId: PitchIds.B,
+    pozitionId: PozitionIds.Seventh,
   }]
 
   const actualControlVarsArray = getControlVarsArray({lockedType, variedType, lockedValue, variedValue})
