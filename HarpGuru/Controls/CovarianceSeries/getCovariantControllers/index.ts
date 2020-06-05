@@ -19,7 +19,7 @@ export const getCovariantControllers = (props: CovariancePrimer): CovariantContr
   }
 
   const errorMessage = `
-    Input args did not meet control variable primer expectations.
+    Input args did not meet CovariancePrimer expectations.
 
     Input: ${JSON.stringify(props)}
 
