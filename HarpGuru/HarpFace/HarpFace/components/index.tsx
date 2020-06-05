@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
   face: {
     flex: 5,
     flexDirection: 'column',
-    backgroundColor: 'black',
     justifyContent: 'space-between',
     alignItems: 'stretch',
   },
