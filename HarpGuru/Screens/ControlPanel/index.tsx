@@ -10,13 +10,13 @@ import { CovarianceButtonList, HeadsupDisplay } from '../../Controls'
 
 export const ControlPanel = (props: ScreenProps): ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata } = props
-  const pozitionControlPrimerLockedRootPitch: CovariancePrimer = {
+  const covarianceOriginPrimer: CovariancePrimer = {
     lockedType: CovariantMembers.RootPitch,
     variedType: CovariantMembers.HarpKey,
     lockedValue: PitchIds.C,
     variedValue: PitchIds.C,
   }
-  const covarianceButtonListProps = { activeHarpStrata, setActiveHarpStrata, ...pozitionControlPrimerLockedRootPitch }
+  const covarianceButtonListProps = { activeHarpStrata, setActiveHarpStrata, ...covarianceOriginPrimer }
 
   const styles = StyleSheet.create({
     headsupdiplay: {

@@ -13,7 +13,7 @@ import { CovarianceButton } from './index'
 test('Displays a Harp Key and Pozition when a PozitionByHarpKeyAtRootPitchPrimer given', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyCHarpStrata
-  const pozitionControlPrimerLockedRootPitch: PozitionByHarpKeyAtRootPitchPrimer = {
+  const pozitionByKeyAtPitchPrimer: PozitionByHarpKeyAtRootPitchPrimer = {
     lockedType: CovariantMembers.RootPitch,
     variedType: CovariantMembers.HarpKey,
     lockedValue: PitchIds.C,
@@ -25,7 +25,7 @@ test('Displays a Harp Key and Pozition when a PozitionByHarpKeyAtRootPitchPrimer
     pozitionId: PozitionIds.First,
   }
 
-  const covarianceButtonProps = { setActiveHarpStrata, activeHarpStrata, ...pozitionControlPrimerLockedRootPitch, ...covariantSet }
+  const covarianceButtonProps = { setActiveHarpStrata, activeHarpStrata, ...pozitionByKeyAtPitchPrimer, ...covariantSet }
 
   const { getByText } = render(<CovarianceButton { ...covarianceButtonProps } />)
 
@@ -36,7 +36,7 @@ test('Displays a Harp Key and Pozition when a PozitionByHarpKeyAtRootPitchPrimer
 test('Calls setActiveHarpStrata with the expected new HarpStrata when given a HarpKeyByRootPitchAtPozitionPrimer', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyCHarpStrata
-  const harpKeyControlPrimerLockedPozition: HarpKeyByRootPitchAtPozitionPrimer = {
+  const keyByPitchAtPozitionPrimer: HarpKeyByRootPitchAtPozitionPrimer = {
     lockedType: CovariantMembers.Pozition,
     variedType: CovariantMembers.RootPitch,
     lockedValue: PozitionIds.First,
@@ -48,7 +48,7 @@ test('Calls setActiveHarpStrata with the expected new HarpStrata when given a Ha
     pozitionId: PozitionIds.First,
   }
 
-  const covarianceButtonProps = { setActiveHarpStrata, activeHarpStrata, ...harpKeyControlPrimerLockedPozition, ...covariantSet }
+  const covarianceButtonProps = { setActiveHarpStrata, activeHarpStrata, ...keyByPitchAtPozitionPrimer, ...covariantSet }
 
   const { getByText } = render(<CovarianceButton { ...covarianceButtonProps } />)
 

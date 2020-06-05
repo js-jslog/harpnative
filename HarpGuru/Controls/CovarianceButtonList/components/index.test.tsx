@@ -13,13 +13,13 @@ test('A list is produced with multiple PozitionControllers CovarianceButton in i
     setActiveHarpStrata: jest.fn(),
     activeHarpStrata: keyCHarpStrata, 
   }
-  const pozitionControlPrimerLockedRootPitch: PozitionByHarpKeyAtRootPitchPrimer = {
+  const pozitionByKeyAtPitchPrimer: PozitionByHarpKeyAtRootPitchPrimer = {
     lockedType: CovariantMembers.RootPitch,
     variedType: CovariantMembers.HarpKey,
     lockedValue: PitchIds.C,
     variedValue: PitchIds.C,
   }
-  const covarianceButtonListProps = { ...harpStrataControlProps, ...pozitionControlPrimerLockedRootPitch }
+  const covarianceButtonListProps = { ...harpStrataControlProps, ...pozitionByKeyAtPitchPrimer }
   const { getByText } = render(<CovarianceButtonList {...covarianceButtonListProps} />)
 
   const expectedText1 = `${PitchIds.C} ${PozitionIds.First}`
