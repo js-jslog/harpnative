@@ -3,7 +3,7 @@ import type { RootPitchControllers, PitchIds, PozitionIds } from 'harpstrata'
 import type { RootPitchCovariancePrimer } from '../types'
 import { CovarianceParts } from '../types'
 
-export const getRootPitchControlVars = (props: RootPitchCovariancePrimer): RootPitchControllers => {
+export const getRootPitchControllers = (props: RootPitchCovariancePrimer): RootPitchControllers => {
   const { lockedType, lockedValue, variedValue } = props
 
   if ( lockedType === CovarianceParts.Pozition ) {

@@ -3,9 +3,9 @@ import type { HarpKeyControllers } from 'harpstrata'
 
 import { CovarianceParts } from '../types'
 
-import { getHarpKeyControlVars } from './index'
+import { getHarpKeyControllers } from './index'
 
-test('getHarpKeyControlVars returns a HarpKeyControllers for a locked pozition', () => {
+test('getHarpKeyControllers returns a HarpKeyControllers for a locked pozition', () => {
   const { Pozition: lockedType } = CovarianceParts
   const { RootPitch: variedType } = CovarianceParts
   const { Second: lockedValue } = PozitionIds
@@ -16,12 +16,12 @@ test('getHarpKeyControlVars returns a HarpKeyControllers for a locked pozition',
     rootPitchId: PitchIds.C,
   }
 
-  const actualControlVars = getHarpKeyControlVars({lockedType, variedType, lockedValue, variedValue})
+  const actualControlVars = getHarpKeyControllers({lockedType, variedType, lockedValue, variedValue})
 
   expect(actualControlVars).toEqual(expectedControlVars)
 })
 
-test('getHarpKeyControlVars returns a HarpKeyControllers for a locked root pitch', () => {
+test('getHarpKeyControllers returns a HarpKeyControllers for a locked root pitch', () => {
   const { RootPitch: lockedType } = CovarianceParts
   const { Pozition: variedType } = CovarianceParts
   const { Eb: lockedValue } = PitchIds
@@ -32,7 +32,7 @@ test('getHarpKeyControlVars returns a HarpKeyControllers for a locked root pitch
     rootPitchId: PitchIds.Eb,
   }
 
-  const actualControlVars = getHarpKeyControlVars({lockedType, variedType, lockedValue, variedValue})
+  const actualControlVars = getHarpKeyControllers({lockedType, variedType, lockedValue, variedValue})
 
   expect(actualControlVars).toEqual(expectedControlVars)
 })
