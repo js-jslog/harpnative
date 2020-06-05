@@ -2,9 +2,9 @@ import type { CovariantControllers } from 'harpstrata'
 
 import { isRootPitchCovariancePrimer, isHarpKeyCovariancePrimer, isPozitionCovariancePrimer } from '../types'
 import type { CovariancePrimer } from '../types'
-import { getRootPitchControllers } from '../getRootPitchControlVars'
-import { getPozitionControllers } from '../getPozitionControlVars'
-import { getHarpKeyControllers } from '../getHarpKeyControlVars'
+import { getRootPitchControllers } from '../getRootPitchControllers'
+import { getPozitionControllers } from '../getPozitionControllers'
+import { getHarpKeyControllers } from '../getHarpKeyControllers'
 
 export const getCovariantControllers = (props: CovariancePrimer): CovariantControllers => {
   if (isHarpKeyCovariancePrimer(props)) {
