@@ -1,4 +1,4 @@
-const seedSize = 1
+const seedSize = 1.1
 
 export const themeSizes = {
   1: seedSize *1,
