@@ -4,7 +4,7 @@ import type { CovariantSet } from 'harpstrata'
 import { render, fireEvent } from '@testing-library/react-native'
 
 import { keyCHarpStrata, keyDHarpStrata } from '../../testResources'
-import type { PozitionByKeyAtRootPrimer, KeyByRootAtPozitionPrimer } from '../../CovarianceSeries'
+import type { CovariancePrimer } from '../../CovarianceSeries'
 import { CovariantMembers } from '../../CovarianceSeries'
 
 import { CovarianceButton } from './index'
@@ -13,7 +13,7 @@ import { CovarianceButton } from './index'
 test('Displays a Harp Key and Pozition when a PozitionByKeyAtRootPrimer given', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyCHarpStrata
-  const pozitionByKeyAtRootPrimer: PozitionByKeyAtRootPrimer = {
+  const pozitionByKeyAtRootPrimer: CovariancePrimer = {
     lockedType: CovariantMembers.RootPitch,
     variedType: CovariantMembers.HarpKey,
     lockedValue: PitchIds.C,
@@ -36,7 +36,7 @@ test('Displays a Harp Key and Pozition when a PozitionByKeyAtRootPrimer given', 
 test('Calls setActiveHarpStrata with the expected new HarpStrata when given a KeyByRootAtPozitionPrimer', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyCHarpStrata
-  const keyByRootAtPozitionPrimer: KeyByRootAtPozitionPrimer = {
+  const keyByRootAtPozitionPrimer: CovariancePrimer = {
     lockedType: CovariantMembers.Pozition,
     variedType: CovariantMembers.RootPitch,
     lockedValue: PozitionIds.First,
