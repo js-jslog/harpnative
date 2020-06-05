@@ -1,4 +1,4 @@
 import type { HarpStrataControlProps } from '../../types'
-import type { ControlVarsPrimer } from '../../CovariantsGroupList'
+import type { CovariancePrimer } from '../../CovariantsGroupList'
 
-export type CovarianceButtonListProps = HarpStrataControlProps & ControlVarsPrimer
+export type CovarianceButtonListProps = HarpStrataControlProps & CovariancePrimer

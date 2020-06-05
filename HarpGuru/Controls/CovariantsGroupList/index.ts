@@ -1,7 +1,7 @@
 export { getCovariantsGroupList } from './getCovariantsGroupList'
 export { CovarianceParts } from './types'
 export type {
-  ControlVarsPrimer,
+  CovariancePrimer,
   HarpKeyControlPrimer, PozitionControlPrimer, RootPitchControlPrimer,
   HarpKeyControlPrimerLockedPozition, HarpKeyControlPrimerLockedRootPitch,
   PozitionControlPrimerLockedHarpKey, PozitionControlPrimerLockedRootPitch,

@@ -3,12 +3,12 @@ import type { ReactElement } from 'react'
 
 import { CovarianceButtonListProps } from '../types'
 import { getCovariantsGroupList } from '../../CovariantsGroupList'
-import type { ControlVarsPrimer } from '../../CovariantsGroupList'
+import type { CovariancePrimer } from '../../CovariantsGroupList'
 import { CovarianceButton } from '../../CovarianceButton'
 
 const getCovarianceButtons = (props: CovarianceButtonListProps): ReadonlyArray<ReactElement> => {
   const { lockedType, lockedValue, variedType, variedValue } = props
-  const controlVarsPrimer = { lockedType, lockedValue, variedType, variedValue } as ControlVarsPrimer
+  const controlVarsPrimer = { lockedType, lockedValue, variedType, variedValue } as CovariancePrimer
 
   const covariantsGroupList = getCovariantsGroupList({ ...controlVarsPrimer })
 

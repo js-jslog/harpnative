@@ -1,9 +1,9 @@
 import type { CovariantSet } from 'harpstrata'
 
 import type { HarpStrataControlProps } from '../../types'
-import type { ControlVarsPrimer } from '../../CovariantsGroupList'
+import type { CovariancePrimer } from '../../CovariantsGroupList'
 
 export type CovarianceButtonProps =
   HarpStrataControlProps
-& Pick<ControlVarsPrimer, 'lockedType' | 'variedType'>
+& Pick<CovariancePrimer, 'lockedType' | 'variedType'>
 & CovariantSet

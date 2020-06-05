@@ -48,9 +48,9 @@ export type RootPitchControlPrimerLockedPozition = {
 }
 export type RootPitchControlPrimer = RootPitchControlPrimerLockedHarpKey | RootPitchControlPrimerLockedPozition
 
-export type ControlVarsPrimer = PozitionControlPrimer | HarpKeyControlPrimer | RootPitchControlPrimer
+export type CovariancePrimer = PozitionControlPrimer | HarpKeyControlPrimer | RootPitchControlPrimer
 
-const containsSpecificCovarianceParts = (controlVarsPrimer: ControlVarsPrimer, covariantTypeOne: CovarianceParts, covariantTypeTwo: CovarianceParts): boolean => {
+const containsSpecificCovarianceParts = (controlVarsPrimer: CovariancePrimer, covariantTypeOne: CovarianceParts, covariantTypeTwo: CovarianceParts): boolean => {
   const { lockedType, variedType } = controlVarsPrimer
   
   const oneWay = (lockedType === covariantTypeOne && variedType === covariantTypeTwo)
@@ -59,19 +59,19 @@ const containsSpecificCovarianceParts = (controlVarsPrimer: ControlVarsPrimer, c
   return oneWay || theOther
 }
 
-export const isHarpKeyControlPrimer = (props: ControlVarsPrimer): props is HarpKeyControlPrimer => {
+export const isHarpKeyControlPrimer = (props: CovariancePrimer): props is HarpKeyControlPrimer => {
   const { Pozition, RootPitch } = CovarianceParts
 
   return containsSpecificCovarianceParts(props, Pozition, RootPitch)
 }
 
-export const isPozitionControlPrimer = (props: ControlVarsPrimer): props is PozitionControlPrimer => {
+export const isPozitionControlPrimer = (props: CovariancePrimer): props is PozitionControlPrimer => {
   const { HarpKey, RootPitch } = CovarianceParts
 
   return containsSpecificCovarianceParts(props, HarpKey, RootPitch)
 }
 
-export const isRootPitchControlPrimer = (props: ControlVarsPrimer): props is RootPitchControlPrimer => {
+export const isRootPitchControlPrimer = (props: CovariancePrimer): props is RootPitchControlPrimer => {
   const { HarpKey, Pozition } = CovarianceParts
 
   return containsSpecificCovarianceParts(props, HarpKey, Pozition)
