@@ -4,9 +4,10 @@ import React from 'react'
 import type {HarpRowProps} from '../types'
 import { isBlowOrDrawRow, isBlowRow, isDrawRow } from '../isBlowOrDrawRow'
 import { getHarpCells } from '../../HarpCells'
-import { themeSizes } from '../../../Styles'
+import { themeSizes, themeColours } from '../../../Styles'
 
-const { 6: borderRadius } = themeSizes
+const { 1: borderWidth, 6: borderRadius } = themeSizes
+const { homeRowsColour, homeRowsBorderColour } = themeColours
 
 
 export const HarpRow = (props: HarpRowProps): React.ReactElement => {
@@ -16,7 +17,12 @@ export const HarpRow = (props: HarpRowProps): React.ReactElement => {
       flexDirection: 'row',
       justifyContent: 'space-around',
       alignItems: 'center',
-      backgroundColor: isBlowOrDrawRow(props) ? '#ddd' : 'transparent',
+      borderColor: homeRowsBorderColour,
+      borderTopWidth: isBlowRow(props) ? borderWidth : 0,
+      borderBottomWidth: isDrawRow(props) ? borderWidth : 0,
+      borderRightWidth: isBlowOrDrawRow(props) ? borderWidth : 0,
+      borderLeftWidth: isBlowOrDrawRow(props) ? borderWidth : 0,
+      backgroundColor: isBlowOrDrawRow(props) ? homeRowsColour : 'transparent',
       borderTopLeftRadius: isBlowRow(props) ? borderRadius : 0,
       borderTopRightRadius: isBlowRow(props) ? borderRadius : 0,
       borderBottomLeftRadius: isDrawRow(props) ? borderRadius : 0,
