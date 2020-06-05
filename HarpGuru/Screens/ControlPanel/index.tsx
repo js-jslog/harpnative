@@ -4,8 +4,8 @@ import type { ReactElement } from 'react'
 import { PitchIds } from 'harpstrata'
 
 import type { ScreenProps } from '../types'
-import { CovarianceParts } from '../../Controls/CovariantsGroupList'
-import type { CovariancePrimer } from '../../Controls/CovariantsGroupList'
+import { CovarianceParts } from '../../Controls/CovarianceSeries'
+import type { CovariancePrimer } from '../../Controls/CovarianceSeries'
 import { CovarianceButtonList, HeadsupDisplay } from '../../Controls'
 
 export const ControlPanel = (props: ScreenProps): ReactElement => {

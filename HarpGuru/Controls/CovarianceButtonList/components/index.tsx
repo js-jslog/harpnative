@@ -2,8 +2,8 @@ import React from 'react'
 import type { ReactElement } from 'react'
 
 import { CovarianceButtonListProps } from '../types'
-import { getCovarianceSeries } from '../../CovariantsGroupList'
-import type { CovariancePrimer } from '../../CovariantsGroupList'
+import { getCovarianceSeries } from '../../CovarianceSeries'
+import type { CovariancePrimer } from '../../CovarianceSeries'
 import { CovarianceButton } from '../../CovarianceButton'
 
 const getCovarianceButtons = (props: CovarianceButtonListProps): ReadonlyArray<ReactElement> => {

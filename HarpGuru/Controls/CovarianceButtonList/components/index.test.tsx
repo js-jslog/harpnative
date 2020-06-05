@@ -3,8 +3,8 @@ import { PitchIds, PozitionIds } from 'harpstrata'
 import { render } from '@testing-library/react-native'
 
 import { keyCHarpStrata } from '../../testResources'
-import { CovarianceParts } from '../../CovariantsGroupList'
-import type { PozitionByHarpKeyAtRootPitchPrimer } from '../../CovariantsGroupList'
+import { CovarianceParts } from '../../CovarianceSeries'
+import type { PozitionByHarpKeyAtRootPitchPrimer } from '../../CovarianceSeries'
 
 import { CovarianceButtonList } from './index'
 

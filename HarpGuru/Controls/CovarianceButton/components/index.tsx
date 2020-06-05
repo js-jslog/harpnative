@@ -5,7 +5,7 @@ import { getHarpStrata } from 'harpstrata'
 import type { HarpStrataProps } from 'harpstrata'
 
 import { CovarianceButtonProps } from '../types'
-import { CovarianceParts } from '../../CovariantsGroupList'
+import { CovarianceParts } from '../../CovarianceSeries'
 
 const getButtonTitle = (props: CovarianceButtonProps): string => {
   const { lockedType, variedType } = props

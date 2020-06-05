@@ -4,8 +4,8 @@ import type { CovariantSet } from 'harpstrata'
 import { render, fireEvent } from '@testing-library/react-native'
 
 import { keyCHarpStrata, keyDHarpStrata } from '../../testResources'
-import type { PozitionByHarpKeyAtRootPitchPrimer, HarpKeyByRootPitchAtPozitionPrimer } from '../../CovariantsGroupList'
-import { CovarianceParts } from '../../CovariantsGroupList'
+import type { PozitionByHarpKeyAtRootPitchPrimer, HarpKeyByRootPitchAtPozitionPrimer } from '../../CovarianceSeries'
+import { CovarianceParts } from '../../CovarianceSeries'
 
 import { CovarianceButton } from './index'
 
