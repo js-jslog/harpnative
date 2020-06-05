@@ -4,7 +4,7 @@ import { getPitchIds, getPozitionIds, isPitchId, isPozitionId } from 'harpstrata
 import type { CovariancePrimer } from '../types'
 import { getCovariantControllers } from '../getCovariantControllers'
 
-export const getControlVarsArray = (props: CovariancePrimer): ReadonlyArray<CovariantControllers> => {
+export const getSeriesControllers = (props: CovariancePrimer): ReadonlyArray<CovariantControllers> => {
   const { variedValue } = props
   if ( isPitchId(variedValue) ) {
     const variedValues = getPitchIds(variedValue)

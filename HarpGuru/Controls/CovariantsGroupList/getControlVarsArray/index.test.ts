@@ -3,7 +3,7 @@ import type { HarpKeyControllers, PozitionControllers, RootPitchControllers } fr
 
 import { CovarianceParts } from '../types'
 
-import { getControlVarsArray } from './index'
+import { getSeriesControllers } from './index'
 
 test('can get an array of HarpKeyControllers with locked pozition', () => {
   const { Pozition: lockedType } = CovarianceParts
@@ -49,7 +49,7 @@ test('can get an array of HarpKeyControllers with locked pozition', () => {
     rootPitchId: PitchIds.B,
   }]
 
-  const actualControlVarsArray = getControlVarsArray({lockedType, variedType, lockedValue, variedValue})
+  const actualControlVarsArray = getSeriesControllers({lockedType, variedType, lockedValue, variedValue})
 
   expect(actualControlVarsArray).toStrictEqual(expectedControlVarsArray)
 })
@@ -98,7 +98,7 @@ test('can get an array of PozitionControllers with locked root pitch', () => {
     harpKeyId: PitchIds.E,
   }]
 
-  const actualControlVarsArray = getControlVarsArray({lockedType, variedType, lockedValue, variedValue})
+  const actualControlVarsArray = getSeriesControllers({lockedType, variedType, lockedValue, variedValue})
 
   expect(actualControlVarsArray).toStrictEqual(expectedControlVarsArray)
 })
@@ -147,7 +147,7 @@ test('can get an array of RootPitchControllers with locked harp key', () => {
     pozitionId: PozitionIds.Seventh,
   }]
 
-  const actualControlVarsArray = getControlVarsArray({lockedType, variedType, lockedValue, variedValue})
+  const actualControlVarsArray = getSeriesControllers({lockedType, variedType, lockedValue, variedValue})
 
   expect(actualControlVarsArray).toStrictEqual(expectedControlVarsArray)
 })
