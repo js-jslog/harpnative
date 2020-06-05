@@ -31,12 +31,12 @@ const degreeColours = {
 } as const
 
 const homeRowsColour = '#e9ecef' as const
-const homeRowsBorderColour = '#ced4da' as const
+const inertOutline = '#ced4da' as const
 const holeNumbersColour = '#495057' as const
 
 export const themeColours = {
   degreeColours,
   homeRowsColour,
-  homeRowsBorderColour,
+  inertOutline,
   holeNumbersColour,
 } as const

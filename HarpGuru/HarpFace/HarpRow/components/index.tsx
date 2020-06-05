@@ -7,7 +7,7 @@ import { getHarpCells } from '../../HarpCells'
 import { themeSizes, themeColours } from '../../../Styles'
 
 const { 1: borderWidth, 6: borderRadius } = themeSizes
-const { homeRowsColour, homeRowsBorderColour } = themeColours
+const { homeRowsColour, inertOutline } = themeColours
 
 
 export const HarpRow = (props: HarpRowProps): React.ReactElement => {
@@ -17,7 +17,7 @@ export const HarpRow = (props: HarpRowProps): React.ReactElement => {
       flexDirection: 'row',
       justifyContent: 'space-around',
       alignItems: 'center',
-      borderColor: homeRowsBorderColour,
+      borderColor: inertOutline,
       borderTopWidth: isBlowRow(props) ? borderWidth : 0,
       borderBottomWidth: isDrawRow(props) ? borderWidth : 0,
       borderRightWidth: isBlowOrDrawRow(props) ? borderWidth : 0,
