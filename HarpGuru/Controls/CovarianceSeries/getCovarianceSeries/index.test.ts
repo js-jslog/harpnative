@@ -13,7 +13,7 @@ test('getCovarianceSeries returns a complete series of CovariantSet\'s for an or
     variedValue: PitchIds.C,
   }
 
-  const expectedCovariantsGroupList: ReadonlyArray<CovariantSet> = [
+  const expectedCovarianceSeries: ReadonlyArray<CovariantSet> = [
     {
       harpKeyId: PitchIds.C,
       pozitionId: PozitionIds.First,
@@ -76,9 +76,9 @@ test('getCovarianceSeries returns a complete series of CovariantSet\'s for an or
     },
   ]
 
-  const actualCovariantsGroupList = getCovarianceSeries(covarianceOriginPrimer)
+  const actualCovarianceSeries = getCovarianceSeries(covarianceOriginPrimer)
 
-  expect(actualCovariantsGroupList).toStrictEqual(expectedCovariantsGroupList)
+  expect(actualCovarianceSeries).toStrictEqual(expectedCovarianceSeries)
 })
 
 test('getCovarianceSeries returns a complete series of CovariantSet\'s for a different origin primer', () => {
@@ -101,7 +101,7 @@ test('getCovarianceSeries returns a complete series of CovariantSet\'s for a dif
     }
   ]
 
-  const actualCovariantsGroupList = getCovarianceSeries(covarianceOriginPrimer)
+  const actualCovarianceSeries = getCovarianceSeries(covarianceOriginPrimer)
 
-  expect(actualCovariantsGroupList).toEqual(expect.arrayContaining(expectedCovariantGroupsIncludes))
+  expect(actualCovarianceSeries).toEqual(expect.arrayContaining(expectedCovariantGroupsIncludes))
 })

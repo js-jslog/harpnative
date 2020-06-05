@@ -11,10 +11,10 @@ const getCovarianceButtons = (props: CovarianceButtonListProps): ReadonlyArray<R
   // TODO: understand why I have to use type assertion here
   const covarianceOriginPrimer = { lockedType, lockedValue, variedType, variedValue } as CovariancePrimer
 
-  const covariantsGroupList = getCovarianceSeries({ ...covarianceOriginPrimer })
+  const covarianceSeries = getCovarianceSeries({ ...covarianceOriginPrimer })
 
-  const componentArray = covariantsGroupList.map((covariantsGroup, index) => {
-    const covarianceButtonProps = { ...props, ...covariantsGroup }
+  const componentArray = covarianceSeries.map((covariantSet, index) => {
+    const covarianceButtonProps = { ...props, ...covariantSet }
     return <CovarianceButton key={index} { ...covarianceButtonProps } />
   })
 
