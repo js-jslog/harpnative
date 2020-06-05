@@ -1,4 +1,4 @@
-export { getCovarianceSeries } from './getCovariantsGroupList'
+export { getCovarianceSeries } from './getCovarianceSeries'
 export { CovarianceParts } from './types'
 export type {
   CovariancePrimer,
