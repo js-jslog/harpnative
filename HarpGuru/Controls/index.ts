@@ -8,3 +8,6 @@ export { PozitionButton } from './PozitionButton'
 export { HeadsupDisplay } from './HeadsupDisplay'
 
 export { CovarianceButtonList } from './CovarianceButtonList'
+
+export { CovarianceParts } from './CovarianceSeries'
+export type { CovariancePrimer } from './CovarianceSeries'
