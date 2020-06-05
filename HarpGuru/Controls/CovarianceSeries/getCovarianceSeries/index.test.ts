@@ -1,7 +1,6 @@
 import { PitchIds, PozitionIds } from 'harpstrata'
-import type { CovariantSet } from 'harpstrata'
 
-import { CovariancePrimer, CovariantMembers } from '../types'
+import { CovarianceSeries, CovariancePrimer, CovariantMembers } from '../types'
 
 import { getCovarianceSeries } from './index'
 
@@ -13,7 +12,7 @@ test('getCovarianceSeries returns a complete series of CovariantSet\'s for an or
     variedValue: PitchIds.C,
   }
 
-  const expectedCovarianceSeries: ReadonlyArray<CovariantSet> = [
+  const expectedCovarianceSeries: CovarianceSeries = [
     {
       harpKeyId: PitchIds.C,
       pozitionId: PozitionIds.First,

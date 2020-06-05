@@ -1,4 +1,4 @@
-import type { PitchIds, PozitionIds } from 'harpstrata'
+import type { CovariantSet, PitchIds, PozitionIds } from 'harpstrata'
 
 export enum CovariantMembers {
   HarpKey = 'harpKeyId',
@@ -49,3 +49,5 @@ export type RootPitchByHarpKeyAtPozitionPrimer = {
 export type RootPitchCovariancePrimer = RootPitchByPozitionAtHarpKeyPrimer | RootPitchByHarpKeyAtPozitionPrimer
 
 export type CovariancePrimer = PozitionCovariancePrimer | HarpKeyCovariancePrimer | RootPitchCovariancePrimer
+
+export type CovarianceSeries = ReadonlyArray<CovariantSet>
