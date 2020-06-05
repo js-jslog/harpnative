@@ -2,7 +2,7 @@ import type { CovariantControllers } from 'harpstrata'
 import { getPitchIds, getPozitionIds, isPitchId, isPozitionId } from 'harpstrata'
 
 import type { CovariancePrimer } from '../types'
-import { getCovariantControllers } from '../getControlVars'
+import { getCovariantControllers } from '../getCovariantControllers'
 
 export const getControlVarsArray = (props: CovariancePrimer): ReadonlyArray<CovariantControllers> => {
   const { variedValue } = props
