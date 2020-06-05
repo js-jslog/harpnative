@@ -3,6 +3,9 @@ import React from 'react'
 import type { ReactElement } from 'react'
 
 import type { HoleNumberIds, HoleNumberProps } from '../types'
+import { themeSizes } from '../../../Styles'
+
+const { 5: fontSize, 8: width } = themeSizes
 
 export function HoleNumber(props: HoleNumberProps): ReactElement {
   const { xCoord } = props
@@ -12,11 +15,11 @@ export function HoleNumber(props: HoleNumberProps): ReactElement {
     cell: {
       justifyContent: 'center',
       alignItems: 'center',
-      width: 30,
+      width,
       height: 0,
     },
     text: {
-      fontSize: 10,
+      fontSize,
     },
   })
 

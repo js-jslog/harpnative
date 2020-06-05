@@ -37,6 +37,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   const displayValue = (activeDisplayMode === DisplayModes.Degree ? degreeId : pitchId)
 
   const { 5: borderRadius, 8: height, 8: width, 2: elevation } = themeSizes
+  const { 6: fontSize } = themeSizes
 
   const styles = StyleSheet.create({
     cell: {
@@ -50,6 +51,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
     },
     text: {
       color: (isActive) ? '#fff' : '#000',
+      fontSize,
     },
   })
 
