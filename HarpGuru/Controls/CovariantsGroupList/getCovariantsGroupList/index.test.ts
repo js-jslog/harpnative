@@ -3,9 +3,9 @@ import type { CovariantSet } from 'harpstrata'
 
 import { CovariancePrimer, CovarianceParts } from '../types'
 
-import { getCovariantsGroupList } from './index'
+import { getCovarianceSeries } from './index'
 
-test('getCovariantsGroupList returns a complete mapping of the control covariants to the dependent covariant', () => {
+test('getCovarianceSeries returns a complete series of CovariantSet\'s for an origin primer', () => {
   const controlVarsPrimer: CovariancePrimer = {
     lockedType: CovarianceParts.Pozition,
     variedType: CovarianceParts.HarpKey,
@@ -76,12 +76,12 @@ test('getCovariantsGroupList returns a complete mapping of the control covariant
     },
   ]
 
-  const actualCovariantsGroupList = getCovariantsGroupList(controlVarsPrimer)
+  const actualCovariantsGroupList = getCovarianceSeries(controlVarsPrimer)
 
   expect(actualCovariantsGroupList).toStrictEqual(expectedCovariantsGroupList)
 })
 
-test('getCovariantsGroupList returns a complete mapping of the control covariants to the dependent covariant', () => {
+test('getCovarianceSeries returns a complete series of CovariantSet\'s for a different origin primer', () => {
   const controlVarsPrimer: CovariancePrimer = {
     lockedType: CovarianceParts.RootPitch,
     variedType: CovarianceParts.HarpKey,
@@ -101,7 +101,7 @@ test('getCovariantsGroupList returns a complete mapping of the control covariant
     }
   ]
 
-  const actualCovariantsGroupList = getCovariantsGroupList(controlVarsPrimer)
+  const actualCovariantsGroupList = getCovarianceSeries(controlVarsPrimer)
 
   expect(actualCovariantsGroupList).toEqual(expect.arrayContaining(expectedCovariantGroupsIncludes))
 })
