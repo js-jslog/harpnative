@@ -1,9 +1,9 @@
 import type { PozitionControllers } from 'harpstrata'
 
-import type { PozitionControlPrimer } from '../types'
+import type { PozitionCovariancePrimer } from '../types'
 import { CovarianceParts } from '../types'
 
-export const getPozitionControlVars = (props: PozitionControlPrimer): PozitionControllers => {
+export const getPozitionControlVars = (props: PozitionCovariancePrimer): PozitionControllers => {
   const { lockedType, lockedValue, variedValue } = props
 
   if ( lockedType === CovarianceParts.RootPitch ) {

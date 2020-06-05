@@ -6,49 +6,49 @@ export enum CovarianceParts {
   RootPitch = 'rootPitchId',
 }
 
-export type PozitionControlPrimerLockedRootPitch = {
+export type PozitionByHarpKeyAtRootPitchPrimer = {
   readonly lockedType: CovarianceParts.RootPitch;
   readonly variedType: CovarianceParts.HarpKey;
   readonly lockedValue: PitchIds;
   readonly variedValue: PitchIds;
 }
-export type PozitionControlPrimerLockedHarpKey = {
+export type PozitionByRootPitchAtHarpKeyPrimer = {
   readonly lockedType: CovarianceParts.HarpKey;
   readonly variedType: CovarianceParts.RootPitch;
   readonly lockedValue: PitchIds;
   readonly variedValue: PitchIds;
 }
-export type PozitionControlPrimer = PozitionControlPrimerLockedRootPitch | PozitionControlPrimerLockedHarpKey
+export type PozitionCovariancePrimer = PozitionByHarpKeyAtRootPitchPrimer | PozitionByRootPitchAtHarpKeyPrimer
 
-export type HarpKeyControlPrimerLockedRootPitch = {
+export type HarpKeyByPozitionAtRootPitchPrimer = {
   readonly lockedType: CovarianceParts.RootPitch;
   readonly variedType: CovarianceParts.Pozition;
   readonly lockedValue: PitchIds;
   readonly variedValue: PozitionIds;
 }
-export type HarpKeyControlPrimerLockedPozition = {
+export type HarpKeyByRootPitchAtPozitionPrimer = {
   readonly lockedType: CovarianceParts.Pozition;
   readonly variedType: CovarianceParts.RootPitch;
   readonly lockedValue: PozitionIds;
   readonly variedValue: PitchIds;
 }
-export type HarpKeyControlPrimer = HarpKeyControlPrimerLockedRootPitch | HarpKeyControlPrimerLockedPozition
+export type HarpKeyCovariancePrimer = HarpKeyByPozitionAtRootPitchPrimer | HarpKeyByRootPitchAtPozitionPrimer
 
-export type RootPitchControlPrimerLockedHarpKey = {
+export type RootPitchByPozitionAtHarpKeyPrimer = {
   readonly lockedType: CovarianceParts.HarpKey;
   readonly variedType: CovarianceParts.Pozition;
   readonly lockedValue: PitchIds;
   readonly variedValue: PozitionIds;
 }
-export type RootPitchControlPrimerLockedPozition = {
+export type RootPitchByHarpKeyAtPozitionPrimer = {
   readonly lockedType: CovarianceParts.Pozition;
   readonly variedType: CovarianceParts.HarpKey;
   readonly lockedValue: PozitionIds;
   readonly variedValue: PitchIds;
 }
-export type RootPitchControlPrimer = RootPitchControlPrimerLockedHarpKey | RootPitchControlPrimerLockedPozition
+export type RootPitchCovariancePrimer = RootPitchByPozitionAtHarpKeyPrimer | RootPitchByHarpKeyAtPozitionPrimer
 
-export type CovariancePrimer = PozitionControlPrimer | HarpKeyControlPrimer | RootPitchControlPrimer
+export type CovariancePrimer = PozitionCovariancePrimer | HarpKeyCovariancePrimer | RootPitchCovariancePrimer
 
 const containsSpecificCovarianceParts = (controlVarsPrimer: CovariancePrimer, covariantTypeOne: CovarianceParts, covariantTypeTwo: CovarianceParts): boolean => {
   const { lockedType, variedType } = controlVarsPrimer
@@ -59,19 +59,19 @@ const containsSpecificCovarianceParts = (controlVarsPrimer: CovariancePrimer, co
   return oneWay || theOther
 }
 
-export const isHarpKeyControlPrimer = (props: CovariancePrimer): props is HarpKeyControlPrimer => {
+export const isHarpKeyCovariancePrimer = (props: CovariancePrimer): props is HarpKeyCovariancePrimer => {
   const { Pozition, RootPitch } = CovarianceParts
 
   return containsSpecificCovarianceParts(props, Pozition, RootPitch)
 }
 
-export const isPozitionControlPrimer = (props: CovariancePrimer): props is PozitionControlPrimer => {
+export const isPozitionCovariancePrimer = (props: CovariancePrimer): props is PozitionCovariancePrimer => {
   const { HarpKey, RootPitch } = CovarianceParts
 
   return containsSpecificCovarianceParts(props, HarpKey, RootPitch)
 }
 
-export const isRootPitchControlPrimer = (props: CovariancePrimer): props is RootPitchControlPrimer => {
+export const isRootPitchCovariancePrimer = (props: CovariancePrimer): props is RootPitchCovariancePrimer => {
   const { HarpKey, Pozition } = CovarianceParts
 
   return containsSpecificCovarianceParts(props, HarpKey, Pozition)

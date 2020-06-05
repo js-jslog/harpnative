@@ -2,8 +2,8 @@ export { getCovariantsGroupList } from './getCovariantsGroupList'
 export { CovarianceParts } from './types'
 export type {
   CovariancePrimer,
-  HarpKeyControlPrimer, PozitionControlPrimer, RootPitchControlPrimer,
-  HarpKeyControlPrimerLockedPozition, HarpKeyControlPrimerLockedRootPitch,
-  PozitionControlPrimerLockedHarpKey, PozitionControlPrimerLockedRootPitch,
-  RootPitchControlPrimerLockedHarpKey, RootPitchControlPrimerLockedPozition,
+  HarpKeyCovariancePrimer, PozitionCovariancePrimer, RootPitchCovariancePrimer,
+  HarpKeyByRootPitchAtPozitionPrimer, HarpKeyByPozitionAtRootPitchPrimer,
+  PozitionByRootPitchAtHarpKeyPrimer, PozitionByHarpKeyAtRootPitchPrimer,
+  RootPitchByPozitionAtHarpKeyPrimer, RootPitchByHarpKeyAtPozitionPrimer,
 } from './types'
