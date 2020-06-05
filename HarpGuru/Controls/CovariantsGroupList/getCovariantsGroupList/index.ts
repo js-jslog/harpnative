@@ -1,7 +1,7 @@
 import { getCovariantSet, CovariantSet } from 'harpstrata'
 
 import type { CovariancePrimer } from '../types'
-import { getSeriesControllers } from '../getControlVarsArray'
+import { getSeriesControllers } from '../getSeriesControllers'
 
 export const getCovariantsGroupList = (props: CovariancePrimer): ReadonlyArray<CovariantSet> => {
   const controlVarsArray = getSeriesControllers(props)
