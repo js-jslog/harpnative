@@ -32,6 +32,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   const { thisDegree, thisPitch, thisIsActive} = positionFacts
   const { id: degreeId } = thisDegree || { id: undefined }
   const { id: pitchId } = thisPitch || { id: undefined }
+  const isActive = (thisIsActive === IsActiveIds.Active)
 
   const displayValue = (activeDisplayMode === DisplayModes.Degree ? degreeId : pitchId)
 
@@ -39,14 +40,16 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
 
   const styles = StyleSheet.create({
     cell: {
-      backgroundColor: (thisIsActive === IsActiveIds.Active) ? '#46a' : '#fff',
+      backgroundColor: (isActive) ? '#46a' : '#fff',
       justifyContent: 'center',
       alignItems: 'center',
-      width, height, borderRadius,
-      elevation: (thisIsActive === IsActiveIds.Active) ? elevation : 0,
+      elevation: (isActive) ? elevation : 0,
+      borderRadius,
+      width,
+      height,
     },
     text: {
-      color: (thisIsActive === IsActiveIds.Active) ? '#fff' : '#000',
+      color: (isActive) ? '#fff' : '#000',
     },
   })
 
