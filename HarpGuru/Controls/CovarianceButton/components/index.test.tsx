@@ -19,13 +19,13 @@ test('Displays a Harp Key and Pozition when a PozitionByHarpKeyAtRootPitchPrimer
     lockedValue: PitchIds.C,
     variedValue: PitchIds.C,
   }
-  const covariantsGroup: CovariantSet = {
+  const covariantSet: CovariantSet = {
     rootPitchId: PitchIds.C,
     harpKeyId: PitchIds.C,
     pozitionId: PozitionIds.First,
   }
 
-  const covarianceButtonProps = { setActiveHarpStrata, activeHarpStrata, ...pozitionControlPrimerLockedRootPitch, ...covariantsGroup }
+  const covarianceButtonProps = { setActiveHarpStrata, activeHarpStrata, ...pozitionControlPrimerLockedRootPitch, ...covariantSet }
 
   const { getByText } = render(<CovarianceButton { ...covarianceButtonProps } />)
 
@@ -42,13 +42,13 @@ test('Calls setActiveHarpStrata with the expected new HarpStrata when given a Ha
     lockedValue: PozitionIds.First,
     variedValue: PitchIds.F,
   }
-  const covariantsGroup: CovariantSet = {
+  const covariantSet: CovariantSet = {
     rootPitchId: PitchIds.D,
     harpKeyId: PitchIds.D,
     pozitionId: PozitionIds.First,
   }
 
-  const covarianceButtonProps = { setActiveHarpStrata, activeHarpStrata, ...harpKeyControlPrimerLockedPozition, ...covariantsGroup }
+  const covarianceButtonProps = { setActiveHarpStrata, activeHarpStrata, ...harpKeyControlPrimerLockedPozition, ...covariantSet }
 
   const { getByText } = render(<CovarianceButton { ...covarianceButtonProps } />)
 

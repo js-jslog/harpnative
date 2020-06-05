@@ -80,7 +80,7 @@ test('getCovarianceSeries returns a complete series of CovariantSet\'s for an or
   expect(actualCovarianceSeries).toStrictEqual(expectedCovarianceSeries)
 })
 
-test('getCovarianceSeries returns a complete series of CovariantSet\'s for a different origin primer', () => {
+test('getCovarianceSeries returns a series of CovariantSet\'s for a different origin primer', () => {
   const covarianceOriginPrimer: CovariancePrimer = {
     lockedType: CovariantMembers.RootPitch,
     variedType: CovariantMembers.HarpKey,
@@ -88,7 +88,7 @@ test('getCovarianceSeries returns a complete series of CovariantSet\'s for a dif
     variedValue: PitchIds.G,
   }
 
-  const expectedCovariantGroupsIncludes= [
+  const expectedSeriesIncludes= [
     {
       harpKeyId: PitchIds.G,
       pozitionId: PozitionIds.First,
@@ -102,5 +102,5 @@ test('getCovarianceSeries returns a complete series of CovariantSet\'s for a dif
 
   const actualCovarianceSeries = getCovarianceSeries(covarianceOriginPrimer)
 
-  expect(actualCovarianceSeries).toEqual(expect.arrayContaining(expectedCovariantGroupsIncludes))
+  expect(actualCovarianceSeries).toEqual(expect.arrayContaining(expectedSeriesIncludes))
 })
