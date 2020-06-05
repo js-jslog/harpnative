@@ -3,9 +3,9 @@ import type { HarpKeyControllers, PozitionControllers, RootPitchControllers } fr
 
 import { CovarianceParts } from '../types'
 
-import { getControlVars } from './index'
+import { getCovariantControllers } from './index'
 
-test('getControlVars returns a HarpKeyControllers for a locked pozition', () => {
+test('getCovariantControllers returns a HarpKeyControllers for a locked pozition', () => {
   const { Pozition: lockedType } = CovarianceParts
   const { RootPitch: variedType } = CovarianceParts
   const { Second: lockedValue } = PozitionIds
@@ -16,12 +16,12 @@ test('getControlVars returns a HarpKeyControllers for a locked pozition', () => 
     rootPitchId: PitchIds.C,
   }
 
-  const actualControllers = getControlVars({lockedType, variedType, lockedValue, variedValue})
+  const actualControllers = getCovariantControllers({lockedType, variedType, lockedValue, variedValue})
 
   expect(actualControllers).toEqual(expectedControllers)
 })
 
-test('getControlVars returns a HarpKeyControllers for a locked root pitch', () => {
+test('getCovariantControllers returns a HarpKeyControllers for a locked root pitch', () => {
   const { RootPitch: lockedType } = CovarianceParts
   const { Pozition: variedType } = CovarianceParts
   const { Eb: lockedValue } = PitchIds
@@ -32,12 +32,12 @@ test('getControlVars returns a HarpKeyControllers for a locked root pitch', () =
     rootPitchId: PitchIds.Eb,
   }
 
-  const actualControllers = getControlVars({lockedType, variedType, lockedValue, variedValue})
+  const actualControllers = getCovariantControllers({lockedType, variedType, lockedValue, variedValue})
 
   expect(actualControllers).toEqual(expectedControllers)
 })
 
-test('getControlVars returns a PozitionControllers for a locked harp key', () => {
+test('getCovariantControllers returns a PozitionControllers for a locked harp key', () => {
   const { HarpKey: lockedType } = CovarianceParts
   const { RootPitch: variedType } = CovarianceParts
   const { D: lockedValue } = PitchIds
@@ -48,12 +48,12 @@ test('getControlVars returns a PozitionControllers for a locked harp key', () =>
     rootPitchId: PitchIds.C,
   }
 
-  const actualControllers = getControlVars({lockedType, variedType, lockedValue, variedValue})
+  const actualControllers = getCovariantControllers({lockedType, variedType, lockedValue, variedValue})
 
   expect(actualControllers).toEqual(expectedControllers)
 })
 
-test('getControlVars returns a PozitionControllers for a locked root pitch', () => {
+test('getCovariantControllers returns a PozitionControllers for a locked root pitch', () => {
   const { RootPitch: lockedType } = CovarianceParts
   const { HarpKey: variedType } = CovarianceParts
   const { Eb: lockedValue } = PitchIds
@@ -64,12 +64,12 @@ test('getControlVars returns a PozitionControllers for a locked root pitch', () 
     rootPitchId: PitchIds.Eb,
   }
 
-  const actualControllers = getControlVars({lockedType, variedType, lockedValue, variedValue})
+  const actualControllers = getCovariantControllers({lockedType, variedType, lockedValue, variedValue})
 
   expect(actualControllers).toEqual(expectedControllers)
 })
 
-test('getControlVars returns a RootPitchControllers for a locked pozition', () => {
+test('getCovariantControllers returns a RootPitchControllers for a locked pozition', () => {
   const { Pozition: lockedType } = CovarianceParts
   const { HarpKey: variedType } = CovarianceParts
   const { Fifth: lockedValue } = PozitionIds
@@ -80,7 +80,7 @@ test('getControlVars returns a RootPitchControllers for a locked pozition', () =
     pozitionId: PozitionIds.Fifth,
   }
 
-  const actualControllers = getControlVars({lockedType, variedType, lockedValue, variedValue})
+  const actualControllers = getCovariantControllers({lockedType, variedType, lockedValue, variedValue})
 
   expect(actualControllers).toEqual(expectedControllers)
 })

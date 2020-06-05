@@ -6,7 +6,7 @@ import { getRootPitchControlVars } from '../getRootPitchControlVars'
 import { getPozitionControlVars } from '../getPozitionControlVars'
 import { getHarpKeyControlVars } from '../getHarpKeyControlVars'
 
-export const getControlVars = (props: CovariancePrimer): CovariantControllers => {
+export const getCovariantControllers = (props: CovariancePrimer): CovariantControllers => {
   if (isHarpKeyCovariancePrimer(props)) {
     const controlVars = getHarpKeyControlVars(props)
     return controlVars
