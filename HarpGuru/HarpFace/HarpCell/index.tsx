@@ -54,7 +54,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
       height,
     },
     text: {
-      color: (isActive) ? '#fff' : '#000',
+      color: (isActive) ? '#fff' : borderColor,
       fontSize,
     },
   })
