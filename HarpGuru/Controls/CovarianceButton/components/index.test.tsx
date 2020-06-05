@@ -13,7 +13,7 @@ import { CovarianceButton } from './index'
 test('Displays a Harp Key and Pozition when a PozitionByKeyAtRootPrimer given', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyCHarpStrata
-  const pozitionByKeyAtPitchPrimer: PozitionByKeyAtRootPrimer = {
+  const pozitionByKeyAtRootPrimer: PozitionByKeyAtRootPrimer = {
     lockedType: CovariantMembers.RootPitch,
     variedType: CovariantMembers.HarpKey,
     lockedValue: PitchIds.C,
@@ -25,7 +25,7 @@ test('Displays a Harp Key and Pozition when a PozitionByKeyAtRootPrimer given', 
     pozitionId: PozitionIds.First,
   }
 
-  const covarianceButtonProps = { setActiveHarpStrata, activeHarpStrata, ...pozitionByKeyAtPitchPrimer, ...covariantSet }
+  const covarianceButtonProps = { setActiveHarpStrata, activeHarpStrata, ...pozitionByKeyAtRootPrimer, ...covariantSet }
 
   const { getByText } = render(<CovarianceButton { ...covarianceButtonProps } />)
 
@@ -36,7 +36,7 @@ test('Displays a Harp Key and Pozition when a PozitionByKeyAtRootPrimer given', 
 test('Calls setActiveHarpStrata with the expected new HarpStrata when given a KeyByRootAtPozitionPrimer', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyCHarpStrata
-  const keyByPitchAtPozitionPrimer: KeyByRootAtPozitionPrimer = {
+  const keyByRootAtPozitionPrimer: KeyByRootAtPozitionPrimer = {
     lockedType: CovariantMembers.Pozition,
     variedType: CovariantMembers.RootPitch,
     lockedValue: PozitionIds.First,
@@ -48,7 +48,7 @@ test('Calls setActiveHarpStrata with the expected new HarpStrata when given a Ke
     pozitionId: PozitionIds.First,
   }
 
-  const covarianceButtonProps = { setActiveHarpStrata, activeHarpStrata, ...keyByPitchAtPozitionPrimer, ...covariantSet }
+  const covarianceButtonProps = { setActiveHarpStrata, activeHarpStrata, ...keyByRootAtPozitionPrimer, ...covariantSet }
 
   const { getByText } = render(<CovarianceButton { ...covarianceButtonProps } />)
 
