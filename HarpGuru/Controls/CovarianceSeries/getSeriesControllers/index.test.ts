@@ -5,7 +5,7 @@ import { CovariantMembers } from '../types'
 
 import { getSeriesControllers } from './index'
 
-test('can get an array of HarpKeyControllers with locked pozition', () => {
+test('can get a series of HarpKeyControllers with locked pozition', () => {
   const { Pozition: lockedType } = CovariantMembers
   const { RootPitch: variedType } = CovariantMembers
   const { First: lockedValue } = PozitionIds
@@ -54,7 +54,7 @@ test('can get an array of HarpKeyControllers with locked pozition', () => {
   expect(actualControlVarsArray).toStrictEqual(expectedControlVarsArray)
 })
 
-test('can get an array of PozitionControllers with locked root pitch', () => {
+test('can get a series of PozitionControllers with locked root pitch', () => {
   const { RootPitch: lockedType } = CovariantMembers
   const { HarpKey: variedType } = CovariantMembers
   const { Gb: lockedValue } = PitchIds
@@ -103,7 +103,7 @@ test('can get an array of PozitionControllers with locked root pitch', () => {
   expect(actualControlVarsArray).toStrictEqual(expectedControlVarsArray)
 })
 
-test('can get an array of RootPitchControllers with locked harp key', () => {
+test('can get a series of RootPitchControllers with locked harp key', () => {
   const { HarpKey: lockedType } = CovariantMembers
   const { Pozition: variedType } = CovariantMembers
   const { B: lockedValue } = PitchIds
