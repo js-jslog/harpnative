@@ -30,11 +30,13 @@ const degreeColors = {
   [DegreeIds.Seventh]: '#db4437',
 } as const
 
+const pageColor = '#fefefe' as const
 const homeRowsColor = '#e9ecef' as const
 const inertOutline = '#ced4da' as const
 const holeNumbersColor = '#495057' as const
 
 export const themeColors = {
+  pageColor,
   degreeColors,
   homeRowsColor,
   inertOutline,

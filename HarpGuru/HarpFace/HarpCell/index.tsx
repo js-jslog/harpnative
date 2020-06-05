@@ -38,8 +38,8 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
 
   const { 1: borderWidth, 5: borderRadius, 8: height, 8: width, 2: elevation } = themeSizes
   const { 6: fontSize } = themeSizes
-  const { degreeColors, inertOutline: borderColor } = themeColors
-  const cellColor = (isActive && degreeId) ? degreeColors[degreeId] : '#fff'
+  const { pageColor, degreeColors, inertOutline: borderColor } = themeColors
+  const cellColor = (isActive && degreeId) ? degreeColors[degreeId] : pageColor
 
   const styles = StyleSheet.create({
     cell: {
@@ -54,7 +54,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
       height,
     },
     text: {
-      color: (isActive) ? '#fff' : borderColor,
+      color: (isActive) ? pageColor : borderColor,
       fontSize,
     },
   })
