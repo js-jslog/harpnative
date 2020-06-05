@@ -23,7 +23,7 @@ export const getCovariantControllers = (props: CovariancePrimer): CovariantContr
 
     Input: ${JSON.stringify(props)}
 
-    Two of the CovarianceParts properties need to be defined as lockedType and variedType.
+    Two of the CovariantMembers properties need to be defined as lockedType and variedType.
   `
   throw new Error(errorMessage)
 }

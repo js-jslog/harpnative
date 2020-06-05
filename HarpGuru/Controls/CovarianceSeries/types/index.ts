@@ -1,48 +1,48 @@
 import type { PitchIds, PozitionIds } from 'harpstrata'
 
-export enum CovarianceParts {
+export enum CovariantMembers {
   HarpKey = 'harpKeyId',
   Pozition = 'pozitionId',
   RootPitch = 'rootPitchId',
 }
 
 export type PozitionByHarpKeyAtRootPitchPrimer = {
-  readonly lockedType: CovarianceParts.RootPitch;
-  readonly variedType: CovarianceParts.HarpKey;
+  readonly lockedType: CovariantMembers.RootPitch;
+  readonly variedType: CovariantMembers.HarpKey;
   readonly lockedValue: PitchIds;
   readonly variedValue: PitchIds;
 }
 export type PozitionByRootPitchAtHarpKeyPrimer = {
-  readonly lockedType: CovarianceParts.HarpKey;
-  readonly variedType: CovarianceParts.RootPitch;
+  readonly lockedType: CovariantMembers.HarpKey;
+  readonly variedType: CovariantMembers.RootPitch;
   readonly lockedValue: PitchIds;
   readonly variedValue: PitchIds;
 }
 export type PozitionCovariancePrimer = PozitionByHarpKeyAtRootPitchPrimer | PozitionByRootPitchAtHarpKeyPrimer
 
 export type HarpKeyByPozitionAtRootPitchPrimer = {
-  readonly lockedType: CovarianceParts.RootPitch;
-  readonly variedType: CovarianceParts.Pozition;
+  readonly lockedType: CovariantMembers.RootPitch;
+  readonly variedType: CovariantMembers.Pozition;
   readonly lockedValue: PitchIds;
   readonly variedValue: PozitionIds;
 }
 export type HarpKeyByRootPitchAtPozitionPrimer = {
-  readonly lockedType: CovarianceParts.Pozition;
-  readonly variedType: CovarianceParts.RootPitch;
+  readonly lockedType: CovariantMembers.Pozition;
+  readonly variedType: CovariantMembers.RootPitch;
   readonly lockedValue: PozitionIds;
   readonly variedValue: PitchIds;
 }
 export type HarpKeyCovariancePrimer = HarpKeyByPozitionAtRootPitchPrimer | HarpKeyByRootPitchAtPozitionPrimer
 
 export type RootPitchByPozitionAtHarpKeyPrimer = {
-  readonly lockedType: CovarianceParts.HarpKey;
-  readonly variedType: CovarianceParts.Pozition;
+  readonly lockedType: CovariantMembers.HarpKey;
+  readonly variedType: CovariantMembers.Pozition;
   readonly lockedValue: PitchIds;
   readonly variedValue: PozitionIds;
 }
 export type RootPitchByHarpKeyAtPozitionPrimer = {
-  readonly lockedType: CovarianceParts.Pozition;
-  readonly variedType: CovarianceParts.HarpKey;
+  readonly lockedType: CovariantMembers.Pozition;
+  readonly variedType: CovariantMembers.HarpKey;
   readonly lockedValue: PozitionIds;
   readonly variedValue: PitchIds;
 }
@@ -50,7 +50,7 @@ export type RootPitchCovariancePrimer = RootPitchByPozitionAtHarpKeyPrimer | Roo
 
 export type CovariancePrimer = PozitionCovariancePrimer | HarpKeyCovariancePrimer | RootPitchCovariancePrimer
 
-const containsSpecificCovarianceParts = (covariancePrimer: CovariancePrimer, covariantMemberOne: CovarianceParts, covariantMemberTwo: CovarianceParts): boolean => {
+const containsSpecificCovariantMembers = (covariancePrimer: CovariancePrimer, covariantMemberOne: CovariantMembers, covariantMemberTwo: CovariantMembers): boolean => {
   const { lockedType, variedType } = covariancePrimer
   
   const oneWay = (lockedType === covariantMemberOne && variedType === covariantMemberTwo)
@@ -60,19 +60,19 @@ const containsSpecificCovarianceParts = (covariancePrimer: CovariancePrimer, cov
 }
 
 export const isHarpKeyCovariancePrimer = (props: CovariancePrimer): props is HarpKeyCovariancePrimer => {
-  const { Pozition, RootPitch } = CovarianceParts
+  const { Pozition, RootPitch } = CovariantMembers
 
-  return containsSpecificCovarianceParts(props, Pozition, RootPitch)
+  return containsSpecificCovariantMembers(props, Pozition, RootPitch)
 }
 
 export const isPozitionCovariancePrimer = (props: CovariancePrimer): props is PozitionCovariancePrimer => {
-  const { HarpKey, RootPitch } = CovarianceParts
+  const { HarpKey, RootPitch } = CovariantMembers
 
-  return containsSpecificCovarianceParts(props, HarpKey, RootPitch)
+  return containsSpecificCovariantMembers(props, HarpKey, RootPitch)
 }
 
 export const isRootPitchCovariancePrimer = (props: CovariancePrimer): props is RootPitchCovariancePrimer => {
-  const { HarpKey, Pozition } = CovarianceParts
+  const { HarpKey, Pozition } = CovariantMembers
 
-  return containsSpecificCovarianceParts(props, HarpKey, Pozition)
+  return containsSpecificCovariantMembers(props, HarpKey, Pozition)
 }

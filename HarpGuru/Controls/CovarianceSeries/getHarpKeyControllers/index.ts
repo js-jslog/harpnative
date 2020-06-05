@@ -1,12 +1,12 @@
 import type { HarpKeyControllers, PozitionIds, PitchIds } from 'harpstrata'
 
 import type { HarpKeyCovariancePrimer } from '../types'
-import { CovarianceParts } from '../types'
+import { CovariantMembers } from '../types'
 
 export const getHarpKeyControllers = (props: HarpKeyCovariancePrimer): HarpKeyControllers => {
   const { lockedType, lockedValue, variedValue } = props
 
-  if ( lockedType === CovarianceParts.RootPitch ) {
+  if ( lockedType === CovariantMembers.RootPitch ) {
     const pozitionId = variedValue as PozitionIds
     const rootPitchId = lockedValue as PitchIds
     const harpKeyControllers: HarpKeyControllers = { pozitionId, rootPitchId }

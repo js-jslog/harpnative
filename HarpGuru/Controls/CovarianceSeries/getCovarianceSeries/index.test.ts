@@ -1,14 +1,14 @@
 import { PitchIds, PozitionIds } from 'harpstrata'
 import type { CovariantSet } from 'harpstrata'
 
-import { CovariancePrimer, CovarianceParts } from '../types'
+import { CovariancePrimer, CovariantMembers } from '../types'
 
 import { getCovarianceSeries } from './index'
 
 test('getCovarianceSeries returns a complete series of CovariantSet\'s for an origin primer', () => {
   const covarianceOriginPrimer: CovariancePrimer = {
-    lockedType: CovarianceParts.Pozition,
-    variedType: CovarianceParts.HarpKey,
+    lockedType: CovariantMembers.Pozition,
+    variedType: CovariantMembers.HarpKey,
     lockedValue: PozitionIds.First,
     variedValue: PitchIds.C,
   }
@@ -83,8 +83,8 @@ test('getCovarianceSeries returns a complete series of CovariantSet\'s for an or
 
 test('getCovarianceSeries returns a complete series of CovariantSet\'s for a different origin primer', () => {
   const covarianceOriginPrimer: CovariancePrimer = {
-    lockedType: CovarianceParts.RootPitch,
-    variedType: CovarianceParts.HarpKey,
+    lockedType: CovariantMembers.RootPitch,
+    variedType: CovariantMembers.HarpKey,
     lockedValue: PitchIds.G,
     variedValue: PitchIds.G,
   }

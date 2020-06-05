@@ -1,13 +1,13 @@
 import { PitchIds, PozitionIds } from 'harpstrata'
 import type { HarpKeyControllers, PozitionControllers, RootPitchControllers } from 'harpstrata'
 
-import { CovarianceParts } from '../types'
+import { CovariantMembers } from '../types'
 
 import { getCovariantControllers } from './index'
 
 test('getCovariantControllers returns a HarpKeyControllers for a locked pozition', () => {
-  const { Pozition: lockedType } = CovarianceParts
-  const { RootPitch: variedType } = CovarianceParts
+  const { Pozition: lockedType } = CovariantMembers
+  const { RootPitch: variedType } = CovariantMembers
   const { Second: lockedValue } = PozitionIds
   const { C: variedValue } = PitchIds
 
@@ -22,8 +22,8 @@ test('getCovariantControllers returns a HarpKeyControllers for a locked pozition
 })
 
 test('getCovariantControllers returns a HarpKeyControllers for a locked root pitch', () => {
-  const { RootPitch: lockedType } = CovarianceParts
-  const { Pozition: variedType } = CovarianceParts
+  const { RootPitch: lockedType } = CovariantMembers
+  const { Pozition: variedType } = CovariantMembers
   const { Eb: lockedValue } = PitchIds
   const { Fourth: variedValue } = PozitionIds
 
@@ -38,8 +38,8 @@ test('getCovariantControllers returns a HarpKeyControllers for a locked root pit
 })
 
 test('getCovariantControllers returns a PozitionControllers for a locked harp key', () => {
-  const { HarpKey: lockedType } = CovarianceParts
-  const { RootPitch: variedType } = CovarianceParts
+  const { HarpKey: lockedType } = CovariantMembers
+  const { RootPitch: variedType } = CovariantMembers
   const { D: lockedValue } = PitchIds
   const { C: variedValue } = PitchIds
 
@@ -54,8 +54,8 @@ test('getCovariantControllers returns a PozitionControllers for a locked harp ke
 })
 
 test('getCovariantControllers returns a PozitionControllers for a locked root pitch', () => {
-  const { RootPitch: lockedType } = CovarianceParts
-  const { HarpKey: variedType } = CovarianceParts
+  const { RootPitch: lockedType } = CovariantMembers
+  const { HarpKey: variedType } = CovariantMembers
   const { Eb: lockedValue } = PitchIds
   const { A: variedValue } = PitchIds
 
@@ -70,8 +70,8 @@ test('getCovariantControllers returns a PozitionControllers for a locked root pi
 })
 
 test('getCovariantControllers returns a RootPitchControllers for a locked pozition', () => {
-  const { Pozition: lockedType } = CovarianceParts
-  const { HarpKey: variedType } = CovarianceParts
+  const { Pozition: lockedType } = CovariantMembers
+  const { HarpKey: variedType } = CovariantMembers
   const { Fifth: lockedValue } = PozitionIds
   const { A: variedValue } = PitchIds
 

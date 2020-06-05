@@ -9,5 +9,5 @@ export { HeadsupDisplay } from './HeadsupDisplay'
 
 export { CovarianceButtonList } from './CovarianceButtonList'
 
-export { CovarianceParts } from './CovarianceSeries'
+export { CovariantMembers } from './CovarianceSeries'
 export type { CovariancePrimer } from './CovarianceSeries'
