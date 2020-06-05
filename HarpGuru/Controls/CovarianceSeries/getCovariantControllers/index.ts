@@ -8,14 +8,14 @@ import { getHarpKeyControllers } from '../getHarpKeyControllers'
 
 export const getCovariantControllers = (props: CovariancePrimer): CovariantControllers => {
   if (isHarpKeyCovariancePrimer(props)) {
-    const controlVars = getHarpKeyControllers(props)
-    return controlVars
+    const covariantControllers = getHarpKeyControllers(props)
+    return covariantControllers
   } else if (isPozitionCovariancePrimer(props)) {
-    const controlVars = getPozitionControllers(props)
-    return controlVars
+    const covariantControllers = getPozitionControllers(props)
+    return covariantControllers
   } else if (isRootPitchCovariancePrimer(props)) {
-    const controlVars = getRootPitchControllers(props)
-    return controlVars
+    const covariantControllers = getRootPitchControllers(props)
+    return covariantControllers
   }
 
   const errorMessage = `

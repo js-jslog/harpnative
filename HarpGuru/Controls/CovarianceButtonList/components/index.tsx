@@ -8,9 +8,10 @@ import { CovarianceButton } from '../../CovarianceButton'
 
 const getCovarianceButtons = (props: CovarianceButtonListProps): ReadonlyArray<ReactElement> => {
   const { lockedType, lockedValue, variedType, variedValue } = props
-  const controlVarsPrimer = { lockedType, lockedValue, variedType, variedValue } as CovariancePrimer
+  // TODO: understand why I have to use type assertion here
+  const covarianceOriginPrimer = { lockedType, lockedValue, variedType, variedValue } as CovariancePrimer
 
-  const covariantsGroupList = getCovarianceSeries({ ...controlVarsPrimer })
+  const covariantsGroupList = getCovarianceSeries({ ...covarianceOriginPrimer })
 
   const componentArray = covariantsGroupList.map((covariantsGroup, index) => {
     const covarianceButtonProps = { ...props, ...covariantsGroup }

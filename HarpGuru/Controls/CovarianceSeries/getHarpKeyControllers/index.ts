@@ -9,12 +9,12 @@ export const getHarpKeyControllers = (props: HarpKeyCovariancePrimer): HarpKeyCo
   if ( lockedType === CovarianceParts.RootPitch ) {
     const pozitionId = variedValue as PozitionIds
     const rootPitchId = lockedValue as PitchIds
-    const controlVars: HarpKeyControllers = { pozitionId, rootPitchId }
-    return controlVars
+    const harpKeyControllers: HarpKeyControllers = { pozitionId, rootPitchId }
+    return harpKeyControllers
   } else {
     const pozitionId = lockedValue as PozitionIds
     const rootPitchId = variedValue as PitchIds
-    const controlVars: HarpKeyControllers = { pozitionId, rootPitchId }
-    return controlVars
+    const harpKeyControllers: HarpKeyControllers = { pozitionId, rootPitchId }
+    return harpKeyControllers
   }
 }

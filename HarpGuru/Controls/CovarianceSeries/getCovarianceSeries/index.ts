@@ -4,9 +4,9 @@ import type { CovariancePrimer } from '../types'
 import { getSeriesControllers } from '../getSeriesControllers'
 
 export const getCovarianceSeries = (props: CovariancePrimer): ReadonlyArray<CovariantSet> => {
-  const controlVarsArray = getSeriesControllers(props)
+  const seriesControllers = getSeriesControllers(props)
   
-  return controlVarsArray.map((controlVars) => {
-    return getCovariantSet(controlVars)
+  return seriesControllers.map((covariantControllers) => {
+    return getCovariantSet(covariantControllers)
   })
 }

@@ -50,11 +50,11 @@ export type RootPitchCovariancePrimer = RootPitchByPozitionAtHarpKeyPrimer | Roo
 
 export type CovariancePrimer = PozitionCovariancePrimer | HarpKeyCovariancePrimer | RootPitchCovariancePrimer
 
-const containsSpecificCovarianceParts = (controlVarsPrimer: CovariancePrimer, covariantTypeOne: CovarianceParts, covariantTypeTwo: CovarianceParts): boolean => {
-  const { lockedType, variedType } = controlVarsPrimer
+const containsSpecificCovarianceParts = (covariancePrimer: CovariancePrimer, covariantMemberOne: CovarianceParts, covariantMemberTwo: CovarianceParts): boolean => {
+  const { lockedType, variedType } = covariancePrimer
   
-  const oneWay = (lockedType === covariantTypeOne && variedType === covariantTypeTwo)
-  const theOther = (lockedType === covariantTypeTwo && variedType === covariantTypeOne)
+  const oneWay = (lockedType === covariantMemberOne && variedType === covariantMemberTwo)
+  const theOther = (lockedType === covariantMemberTwo && variedType === covariantMemberOne)
 
   return oneWay || theOther
 }

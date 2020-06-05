@@ -9,12 +9,12 @@ export const getRootPitchControllers = (props: RootPitchCovariancePrimer): RootP
   if ( lockedType === CovarianceParts.Pozition ) {
     const harpKeyId = variedValue as PitchIds
     const pozitionId = lockedValue as PozitionIds
-    const controlVars: RootPitchControllers = { harpKeyId, pozitionId }
-    return controlVars
+    const rootPitchControllers: RootPitchControllers = { harpKeyId, pozitionId }
+    return rootPitchControllers
   } else {
     const harpKeyId = lockedValue as PitchIds
     const pozitionId = variedValue as PozitionIds
-    const controlVars: RootPitchControllers = { harpKeyId, pozitionId }
-    return controlVars
+    const rootPitchControllers: RootPitchControllers = { harpKeyId, pozitionId }
+    return rootPitchControllers
   }
 }

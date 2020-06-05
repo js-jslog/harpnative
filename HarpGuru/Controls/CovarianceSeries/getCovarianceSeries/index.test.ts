@@ -6,7 +6,7 @@ import { CovariancePrimer, CovarianceParts } from '../types'
 import { getCovarianceSeries } from './index'
 
 test('getCovarianceSeries returns a complete series of CovariantSet\'s for an origin primer', () => {
-  const controlVarsPrimer: CovariancePrimer = {
+  const covarianceOriginPrimer: CovariancePrimer = {
     lockedType: CovarianceParts.Pozition,
     variedType: CovarianceParts.HarpKey,
     lockedValue: PozitionIds.First,
@@ -76,13 +76,13 @@ test('getCovarianceSeries returns a complete series of CovariantSet\'s for an or
     },
   ]
 
-  const actualCovariantsGroupList = getCovarianceSeries(controlVarsPrimer)
+  const actualCovariantsGroupList = getCovarianceSeries(covarianceOriginPrimer)
 
   expect(actualCovariantsGroupList).toStrictEqual(expectedCovariantsGroupList)
 })
 
 test('getCovarianceSeries returns a complete series of CovariantSet\'s for a different origin primer', () => {
-  const controlVarsPrimer: CovariancePrimer = {
+  const covarianceOriginPrimer: CovariancePrimer = {
     lockedType: CovarianceParts.RootPitch,
     variedType: CovarianceParts.HarpKey,
     lockedValue: PitchIds.G,
@@ -101,7 +101,7 @@ test('getCovarianceSeries returns a complete series of CovariantSet\'s for a dif
     }
   ]
 
-  const actualCovariantsGroupList = getCovarianceSeries(controlVarsPrimer)
+  const actualCovariantsGroupList = getCovarianceSeries(covarianceOriginPrimer)
 
   expect(actualCovariantsGroupList).toEqual(expect.arrayContaining(expectedCovariantGroupsIncludes))
 })
