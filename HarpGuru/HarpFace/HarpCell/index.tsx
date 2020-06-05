@@ -36,13 +36,16 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
 
   const styles = StyleSheet.create({
     cell: {
-      backgroundColor: 'skyblue',
+      backgroundColor: (thisIsActive === IsActiveIds.Active) ? '#46a' : '#fff',
       justifyContent: 'center',
       alignItems: 'center',
       width: 30,
       height: 30,
       borderRadius: 7,
       elevation: (thisIsActive === IsActiveIds.Active) ? 2 : 0,
+    },
+    text: {
+      color: (thisIsActive === IsActiveIds.Active) ? '#fff' : '#000',
     },
   })
 
@@ -57,9 +60,8 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
     accessible={true}
     accessibilityRole='button'
     onPress={(): void => toggleActiveIdsIfHoleExists()}>
-    <View
-      style={styles.cell}>
-      <Text>
+    <View style={styles.cell}>
+      <Text style={styles.text}>
         {displayValue}
       </Text>
     </View>
