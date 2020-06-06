@@ -2,7 +2,7 @@ import {StyleSheet, View} from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
-import type { HarpFaceProps } from '../HarpFace'
+import type { HarpFaceProps } from '../types'
 
 import { getHoleNumbers } from './getHoleNumbers'
 

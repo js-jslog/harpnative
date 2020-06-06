@@ -1,8 +1,8 @@
 import { ApparatusIds, PozitionIds, PitchIds, DegreeIds, getHarpStrata } from 'harpstrata'
 import type { HarpStrata, HarpStrataProps, ActiveIds } from 'harpstrata'
 
-import type { HarpFaceProps } from '../HarpFace'
-import { DisplayModes } from '../HarpFace'
+import type { HarpFaceProps } from '../types'
+import { DisplayModes } from '../types'
 
 const allActiveDegrees = [
   DegreeIds.Root, DegreeIds.Flat2, DegreeIds.Second, DegreeIds.Flat3, DegreeIds.Third, DegreeIds.Fourth,

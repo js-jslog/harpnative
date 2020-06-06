@@ -1,4 +1,4 @@
-import type { HarpFaceProps } from '../../HarpFace'
+import type { HarpFaceProps } from '../../types'
 
 export type Coord = number
 

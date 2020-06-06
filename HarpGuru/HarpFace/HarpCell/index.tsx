@@ -3,7 +3,7 @@ import React from 'react'
 import { getHarpStrata, IsActiveIds } from 'harpstrata'
 import type { HarpStrata, HarpStrataProps, DegreeIds } from 'harpstrata'
 
-import { DisplayModes } from '../HarpFace'
+import { DisplayModes } from '../types'
 import { themeSizes, themeColors } from '../../Styles'
 
 import { getToggledActiveDegreeIds } from './getToggledActiveDegreeIds'

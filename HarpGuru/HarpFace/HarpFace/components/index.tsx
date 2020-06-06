@@ -1,8 +1,8 @@
 import {StyleSheet, View} from 'react-native'
 import React from 'react'
 
-import type {HarpFaceProps} from '../types'
 import { getHarpFaceFacts } from '../getHarpFaceFacts'
+import type {HarpFaceProps} from '../../types'
 import { HoleNumberRow } from '../../HoleNumberRow'
 import { getHarpRows } from '../../HarpRows'
 import { themeSizes } from '../../../Styles'
