@@ -3,7 +3,7 @@ import { PitchIds, DegreeIds } from 'harpstrata'
 import {render, fireEvent} from '@testing-library/react-native'
 
 import { DisplayModes } from '../HarpFace'
-import { exampleHarpFaceProps } from '../HarpFace'
+import { exampleHarpFaceProps, exampleHarpFacePropsActiveCells } from '../HarpFace'
 
 import {HarpCell} from './index'
 
@@ -56,6 +56,14 @@ test('A press of the componenet results in toggled active ids in the harpstrata 
 test('A snapshot of a populated cell', () => {
   const setActiveHarpStrata = jest.fn()
   const harpFaceProps = { ...exampleHarpFaceProps, activeDisplayMode: DisplayModes.Degree, setActiveHarpStrata }
+
+  const { container } = render(<HarpCell {...harpFaceProps} yxCoord={[3,0]} />)
+  expect(container).toMatchSnapshot()
+})
+
+test('A snapshot of an active cell', () => {
+  const setActiveHarpStrata = jest.fn()
+  const harpFaceProps = { ...exampleHarpFacePropsActiveCells, activeDisplayMode: DisplayModes.Degree, setActiveHarpStrata }
 
   const { container } = render(<HarpCell {...harpFaceProps} yxCoord={[3,0]} />)
   expect(container).toMatchSnapshot()
