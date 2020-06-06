@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendered snapshot 1`] = `
+<TouchableOpacity
+  accessibilityRole="button"
+  accessible={true}
+  onPress={[Function]}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fefefe",
+        "borderColor": "#ced4da",
+        "borderRadius": 7.5394000000000005,
+        "borderWidth": 1.1,
+        "elevation": 0,
+        "height": 31.9374,
+        "justifyContent": "center",
+        "width": 31.9374,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#ced4da",
+          "fontSize": 12.199000000000002,
+        }
+      }
+    >
+      2
+    </Text>
+  </View>
+</TouchableOpacity>
+`;
