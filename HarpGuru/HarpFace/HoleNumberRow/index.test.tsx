@@ -1,13 +1,13 @@
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
-import { exampleHarpFaceProps } from '../HarpFace'
+import { harpFaceProps } from '../testResources'
 
 import { HoleNumberRow } from './index'
 
 
 test('HoleNumberRow returns holes numbered 1 to 10 for a 10 hole major diatonic harmonica', () => {
-  const { queryByText, getByText } = render(<HoleNumberRow {...exampleHarpFaceProps} />)
+  const { queryByText, getByText } = render(<HoleNumberRow {...harpFaceProps} />)
 
   expect(queryByText('0')).toBeNull()
   expect(getByText('1')).toBeTruthy()
