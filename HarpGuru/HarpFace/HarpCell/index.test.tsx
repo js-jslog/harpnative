@@ -1,4 +1,3 @@
-import renderer from 'react-test-renderer'
 import React from 'react'
 import { PitchIds, DegreeIds } from 'harpstrata'
 import {render, fireEvent} from '@testing-library/react-native'
@@ -54,10 +53,10 @@ test('A press of the componenet results in toggled active ids in the harpstrata 
   expect(newPitchIds).toStrictEqual(expectedPitchIds)
 })
 
-test('Rendered snapshot', () => {
+test('Rendered snapshot using testing library', () => {
   const setActiveHarpStrata = jest.fn()
   const harpFaceProps = { ...exampleHarpFaceProps, activeDisplayMode: DisplayModes.Degree, setActiveHarpStrata }
 
-  const tree = renderer.create(<HarpCell {...harpFaceProps} yxCoord={[3,0]} />)
-  expect(tree).toMatchSnapshot()
+  const { container } = render(<HarpCell {...harpFaceProps} yxCoord={[3,0]} />)
+  expect(container).toMatchSnapshot()
 })
