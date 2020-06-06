@@ -9,20 +9,20 @@ import { themeSizes } from '../../../Styles'
 const { 9: columnWidth } = themeSizes
 const { 9: rowHeight } = themeSizes
 
-const styles = StyleSheet.create({
-  facewrapper: {
-    flex: 5,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  face: {
-    width: columnWidth * 10,
-    height: rowHeight * 7,
-  },
-})
-
 export const HarpFace = (props: HarpFaceProps): React.ReactElement => {
   const harpRows = getHarpRows(props)
+  const styles = StyleSheet.create({
+    facewrapper: {
+      flex: 5,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    face: {
+      width: columnWidth * 10,
+      height: rowHeight * 7,
+    },
+  })
+
   return (
     <View style={styles.facewrapper}>
       <View style={styles.face}>
