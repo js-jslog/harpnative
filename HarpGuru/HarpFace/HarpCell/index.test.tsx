@@ -53,7 +53,7 @@ test('A press of the componenet results in toggled active ids in the harpstrata 
   expect(newPitchIds).toStrictEqual(expectedPitchIds)
 })
 
-test('Rendered snapshot using testing library', () => {
+test('A snapshot of a populated cell', () => {
   const setActiveHarpStrata = jest.fn()
   const harpFaceProps = { ...exampleHarpFaceProps, activeDisplayMode: DisplayModes.Degree, setActiveHarpStrata }
 
