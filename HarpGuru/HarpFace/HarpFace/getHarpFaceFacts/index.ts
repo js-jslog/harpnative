@@ -1,9 +1,4 @@
-import type { HarpFaceProps } from '../types'
-
-type HarpFaceFacts = {
-  readonly columnCount: number;
-  readonly rowCount: number;
-}
+import type { HarpFaceProps, HarpFaceFacts } from '../types'
 
 export const getHarpFaceFacts = (props: HarpFaceProps): HarpFaceFacts  => {
   const { activeHarpStrata: { degreeMatrix } } = props
