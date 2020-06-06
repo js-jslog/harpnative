@@ -2,8 +2,8 @@ import React from 'react'
 import { PitchIds, DegreeIds } from 'harpstrata'
 import {render, fireEvent} from '@testing-library/react-native'
 
-import { DisplayModes } from '../types'
-import { inactiveCellsHarpFaceProps, activeCellsHarpFaceProps } from '../testResources'
+import { DisplayModes } from '../../types'
+import { inactiveCellsHarpFaceProps, activeCellsHarpFaceProps } from '../../testResources'
 
 import {HarpCell} from './index'
 

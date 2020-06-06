@@ -3,14 +3,12 @@ import React from 'react'
 import { getHarpStrata, IsActiveIds } from 'harpstrata'
 import type { HarpStrata, HarpStrataProps, DegreeIds } from 'harpstrata'
 
-import { DisplayModes } from '../types'
-import { themeSizes, themeColors } from '../../Styles'
-
-import { getToggledActiveDegreeIds } from './getToggledActiveDegreeIds'
-import { analysePosition } from './analysePosition'
-import type { PositionFacts } from './analysePosition'
-
-import {HarpCellProps} from './types'
+import {HarpCellProps} from '../types'
+import { getToggledActiveDegreeIds } from '../getToggledActiveDegreeIds'
+import { analysePosition } from '../analysePosition'
+import type { PositionFacts } from '../analysePosition'
+import { DisplayModes } from '../../types'
+import { themeSizes, themeColors } from '../../../Styles'
 
 const setNewHarpStrata = (activeHarpStrata: HarpStrata, setActiveHarpStrata: (activeHarpStrata: HarpStrata) => void, toggledDegreeId: DegreeIds): void => {
   const { apparatus: { id: apparatusId }, pozitionId, harpKeyId, isActiveComplex: { activeDegreeIds }} = activeHarpStrata
@@ -86,5 +84,3 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
 
   return content
 }
-
-export type { YXCoord } from './types'
