@@ -60,3 +60,11 @@ test('A snapshot of a populated cell', () => {
   const { container } = render(<HarpCell {...harpFaceProps} yxCoord={[3,0]} />)
   expect(container).toMatchSnapshot()
 })
+
+test('A snapshot of an empty cell', () => {
+  const setActiveHarpStrata = jest.fn()
+  const harpFaceProps = { ...exampleHarpFaceProps, activeDisplayMode: DisplayModes.Degree, setActiveHarpStrata }
+
+  const { container } = render(<HarpCell {...harpFaceProps} yxCoord={[0,0]} />)
+  expect(container).toMatchSnapshot()
+})

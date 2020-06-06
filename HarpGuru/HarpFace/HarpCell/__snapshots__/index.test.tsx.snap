@@ -43,3 +43,49 @@ exports[`A snapshot of a populated cell 1`] = `
   </TouchableOpacity>
 </View>
 `;
+
+exports[`A snapshot of an empty cell 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <TouchableOpacity
+    accessible={false}
+    disabled={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fefefe",
+        "borderColor": "#ced4da",
+        "borderRadius": 7.5394000000000005,
+        "borderWidth": 0,
+        "elevation": 0,
+        "height": 31.9374,
+        "justifyContent": "center",
+        "width": 31.9374,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#ced4da",
+          "borderRadius": 7.5394000000000005,
+          "borderWidth": 0,
+          "elevation": 0,
+          "height": 31.9374,
+          "justifyContent": "center",
+          "width": 31.9374,
+        }
+      }
+    />
+  </TouchableOpacity>
+</View>
+`;
