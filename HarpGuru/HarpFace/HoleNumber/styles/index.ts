@@ -7,7 +7,7 @@ const { 5: fontSize, 8: width } = themeSizes
 const { holeNumbersColor } = themeColors
 
 export const getStyles = (): HoleNumberStyles => {
-  const styles = StyleSheet.create({
+  const styles = StyleSheet.create<HoleNumberStyles>({
     cell: {
       justifyContent: 'center',
       alignItems: 'center',

@@ -8,7 +8,7 @@ const { 1: borderWidth, 6: borderRadius } = themeSizes
 const { homeRowsColor, inertOutline } = themeColors
 
 export const getStyles = (props: HarpRowProps): HarpRowStyles => {
-  const styles = StyleSheet.create({
+  const styles = StyleSheet.create<HarpRowStyles>({
     row: {
       flex: 1,
       flexDirection: 'row',
