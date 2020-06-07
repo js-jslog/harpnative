@@ -11,7 +11,7 @@ test('A component is rendered with DegreeIds', () => {
   const { getByText } = render(<ActivityLegendColumn {...activityLegendColumnProps} />)
 
   expect(getByText(DegreeIds.Root)).toBeTruthy()
-  expect(getByText(DegreeIds.Seventh)).toBeTruthy()
+  expect(getByText(DegreeIds.Third)).toBeTruthy()
 })
 
 test('A component is rendered with PitchIds', () => {
@@ -21,5 +21,5 @@ test('A component is rendered with PitchIds', () => {
   const { getByText } = render(<ActivityLegendColumn {...activityLegendColumnProps} />)
 
   expect(getByText(PitchIds.C)).toBeTruthy()
-  expect(getByText(PitchIds.Gb)).toBeTruthy()
+  expect(getByText(PitchIds.Eb)).toBeTruthy()
 })

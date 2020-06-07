@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { FlatList } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 import { isPitchId, getPitchIds, DegreeIds, PitchIds } from 'harpstrata'
@@ -16,16 +16,13 @@ const getIdSequence = (props: ActivityLegendColumnProps): ReadonlyArray<DegreeId
   }
 }
 
-const mapIdToElement = (itemId: DegreeIds | PitchIds, index: number): ReactElement => {
-  return <ActivityLegendCell key={index} itemId={itemId} />
-}
-
 export const ActivityLegendColumn = (props: ActivityLegendColumnProps): ReactElement => {
   const idSequence = getIdSequence(props)
-  const elementArray = (idSequence as ReadonlyArray<DegreeIds | PitchIds>).map(mapIdToElement)
   return (
-    <View>
-      { elementArray }
-    </View>
+    <FlatList
+      data={idSequence as ReadonlyArray<DegreeIds | PitchIds>}
+      renderItem={({ item }): ReactElement => <ActivityLegendCell itemId={item} />}
+      keyExtractor={(item): string => item}
+    />
   )
 }
