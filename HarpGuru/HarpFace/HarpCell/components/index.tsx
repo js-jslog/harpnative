@@ -1,28 +1,12 @@
 import { Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { getHarpStrata } from 'harpstrata'
-import type { HarpStrata, HarpStrataProps, DegreeIds } from 'harpstrata'
 
 import { HarpCellProps } from '../types'
 import { getStyles } from '../styles'
-import { getToggledActiveDegreeIds } from '../getToggledActiveDegreeIds'
+import { setNewHarpStrata } from '../setNewHarpStrata'
 import { analysePosition } from '../analysePosition'
 import type { PositionFacts } from '../analysePosition'
 import { DisplayModes } from '../../types'
-
-const setNewHarpStrata = (activeHarpStrata: HarpStrata, setActiveHarpStrata: (activeHarpStrata: HarpStrata) => void, toggledDegreeId: DegreeIds): void => {
-  const { apparatus: { id: apparatusId }, pozitionId, harpKeyId, isActiveComplex: { activeDegreeIds }} = activeHarpStrata
-
-  const newActiveDegreeIds = getToggledActiveDegreeIds(toggledDegreeId, activeDegreeIds)
-  const activeIds = newActiveDegreeIds
-
-  const newHarpStrataProps: HarpStrataProps = {
-    apparatusId, pozitionId, harpKeyId, activeIds
-  }
-  const newHarpStrata = getHarpStrata(newHarpStrataProps)
-  setActiveHarpStrata(newHarpStrata)
-
-}
 
 export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   const positionFacts: PositionFacts = analysePosition(props)
