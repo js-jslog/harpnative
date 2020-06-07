@@ -36,3 +36,9 @@ test('A component is rendered with all of the degrees of a major diatonic presen
   expect(holeFlat7).toBeTruthy()
   expect(holeSeventh).toBeTruthy()
 })
+
+test('A snapshot of a HarpFace', () => {
+  const { container } = render(<HarpFace {...harpFaceProps} />)
+
+  expect(container).toMatchSnapshot()
+})
