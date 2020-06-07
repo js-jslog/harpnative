@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
-import { harpFaceProps } from '../testResources'
+import { harpFaceProps } from '../../testResources'
 
 import { HoleNumberRow } from './index'
 

@@ -2,9 +2,8 @@ import {StyleSheet, View} from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
-import type { HarpFaceProps } from '../types'
-
-import { getHoleNumbers } from './getHoleNumbers'
+import { getHoleNumbers } from '../getHoleNumbers'
+import type { HarpFaceProps } from '../../types'
 
 const styles = StyleSheet.create({
   row: {
