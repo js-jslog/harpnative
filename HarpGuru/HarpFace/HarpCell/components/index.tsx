@@ -4,18 +4,16 @@ import React from 'react'
 import { HarpCellProps } from '../types'
 import { getStyles } from '../styles'
 import { setNewHarpStrata } from '../setNewHarpStrata'
+import { getDisplayValue } from '../getDisplayValue'
 import { analysePosition } from '../analysePosition'
-import type { PositionFacts } from '../analysePosition'
-import { DisplayModes } from '../../types'
 
 export const HarpCell = (props: HarpCellProps): React.ReactElement => {
-  const positionFacts: PositionFacts = analysePosition(props)
-  const { setActiveHarpStrata, activeHarpStrata, activeDisplayMode } = props
-  const { thisDegree, thisPitch } = positionFacts
+  const { setActiveHarpStrata, activeHarpStrata } = props
+  const positionFacts = analysePosition(props)
+  const { thisDegree } = positionFacts
   const { id: degreeId } = thisDegree || { id: undefined }
-  const { id: pitchId } = thisPitch || { id: undefined }
 
-  const displayValue = (activeDisplayMode === DisplayModes.Degree ? degreeId : pitchId)
+  const displayValue = getDisplayValue(props)
 
   const styles = getStyles(props)
 
