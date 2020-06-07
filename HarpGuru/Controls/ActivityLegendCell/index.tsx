@@ -1,9 +1,13 @@
-import { View } from 'react-native'
+import { Text } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
-export const ActivityLegendCell = (): ReactElement => {
+import type { ActivityLegendCellProps } from './types'
+
+export const ActivityLegendCell = (props: ActivityLegendCellProps): ReactElement => {
+  const { itemId } = props
+
   return (
-    <View />
+    <Text>{itemId}</Text>
   )
 }
