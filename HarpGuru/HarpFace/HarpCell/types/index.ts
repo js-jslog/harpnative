@@ -1,4 +1,4 @@
-import { TextStyle, ViewStyle } from 'react-native'
+import type { TextStyle, ViewStyle } from 'react-native'
 
 import type { HarpFaceProps } from '../../types'
 import type { Coord } from '../../HarpRow'
