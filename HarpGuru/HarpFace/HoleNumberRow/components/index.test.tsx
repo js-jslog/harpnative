@@ -22,3 +22,9 @@ test('HoleNumberRow returns holes numbered 1 to 10 for a 10 hole major diatonic 
   expect(getByText('10')).toBeTruthy()
   expect(queryByText('11')).toBeNull()
 })
+
+test('A snapshot of HoleNumberRow', () => {
+  const { container } = render(<HoleNumberRow {...harpFaceProps} />)
+
+  expect(container).toMatchSnapshot()
+})
