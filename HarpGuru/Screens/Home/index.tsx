@@ -21,14 +21,17 @@ const styles = StyleSheet.create({
 
 export const HomeScreen = (props: ScreenProps): React.ReactElement => {
   const { activeHarpStrata, activeDisplayMode, setActiveHarpStrata, setActiveDisplayMode } = props
+  const { rootPitchId, isActiveComplex: { activeDegreeIds, activePitchIds } } = activeHarpStrata
+
   const harpFaceProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode }
   const displayModeTogglerProps = { setActiveDisplayMode }
+  const activityLegendProps = { rootPitchId, activeDegreeIds, activePitchIds }
 
   return (
     <View style={styles.guruhome}>
       <HarpFace {...harpFaceProps} />
       <DisplayModeToggler {...displayModeTogglerProps} />
-      <ActivityLegend />
+      <ActivityLegend {...activityLegendProps} />
     </View>
   )
 }

@@ -1,15 +1,10 @@
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
-import { DegreeIds, PitchIds } from 'harpstrata'
+import { DegreeIds } from 'harpstrata'
 
+import type { ActivityLegendProps } from '../types'
 import { ActivityLegendColumn } from '../../ActivityLegendColumn'
-
-const activeDegreeIds = [ DegreeIds.Root ]
-const activePitchIds = [ PitchIds.C ]
-
-const degreeActivityLegendColumnProps = { originId: DegreeIds.Root, activeIds: activeDegreeIds }
-const pitchActivityLegendColumnProps = { originId: PitchIds.C, activeIds: activePitchIds }
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -19,7 +14,11 @@ const styles = StyleSheet.create({
   }
 })
 
-export const ActivityLegend = (): ReactElement => {
+export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
+  const { rootPitchId, activeDegreeIds, activePitchIds } = props
+  const degreeActivityLegendColumnProps = { originId: DegreeIds.Root, activeIds: activeDegreeIds }
+  const pitchActivityLegendColumnProps = { originId: rootPitchId, activeIds: activePitchIds }
+
   return (
     <View style={styles.wrapper} >
       <ActivityLegendColumn {...degreeActivityLegendColumnProps} />
