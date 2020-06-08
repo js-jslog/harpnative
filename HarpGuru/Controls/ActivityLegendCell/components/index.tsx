@@ -7,7 +7,7 @@ import { getStyles } from '../styles'
 
 export const ActivityLegendCell = (props: ActivityLegendCellProps): ReactElement => {
   const { itemId } = props
-  const styles = getStyles()
+  const styles = getStyles(props)
 
   return (
     <View style={styles.cell}>
