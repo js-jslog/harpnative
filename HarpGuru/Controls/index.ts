@@ -11,3 +11,6 @@ export { CovarianceButtonList } from './CovarianceButtonList'
 
 export { CovariantMembers } from './CovarianceSeries'
 export type { CovariancePrimer } from './CovarianceSeries'
+
+export { ActivityLegendColumn } from './ActivityLegendColumn'
+export type { ActivityLegendColumnProps } from './ActivityLegendColumn'
