@@ -5,6 +5,7 @@ import { isPitchId, getPitchIds, DegreeIds, PitchIds } from 'harpstrata'
 
 import type { ActivityLegendColumnProps } from '../types'
 import { ActivityLegendCell } from '../../ActivityLegendCell'
+import type { ActivityLegendCellProps } from '../../ActivityLegendCell'
 
 const getIdSequence = (props: ActivityLegendColumnProps): ReadonlyArray<DegreeIds> | ReadonlyArray<PitchIds> => {
   const { originId } = props
@@ -16,12 +17,30 @@ const getIdSequence = (props: ActivityLegendColumnProps): ReadonlyArray<DegreeId
   }
 }
 
+const renderItem = (itemId: DegreeIds | PitchIds, activeIds: ReadonlyArray<DegreeIds | PitchIds>): ReactElement => {
+  // TODO: improve this function's variable names at the very least
+  // if not improve the way it's managing this polymorphism.
+  // The activeIds types are unduely blended as well.
+  if (isPitchId(itemId)) {
+    const a = itemId as PitchIds
+    const b = activeIds as ReadonlyArray<PitchIds>
+    const activityLegendCellProps: ActivityLegendCellProps = { itemId: a, activeIds: b }
+    return <ActivityLegendCell {...activityLegendCellProps} />
+  } else {
+    const a = itemId as DegreeIds
+    const b = activeIds as ReadonlyArray<DegreeIds>
+    const activityLegendCellProps: ActivityLegendCellProps = { itemId: a, activeIds: b }
+    return <ActivityLegendCell {...activityLegendCellProps} />
+  }
+}
+
 export const ActivityLegendColumn = (props: ActivityLegendColumnProps): ReactElement => {
   const idSequence = getIdSequence(props)
+  const { activeIds } = props
   return (
     <FlatList
       data={idSequence as ReadonlyArray<DegreeIds | PitchIds>}
-      renderItem={({ item }): ReactElement => <ActivityLegendCell itemId={item} />}
+      renderItem={({ item }): ReactElement => renderItem(item, activeIds)}
       keyExtractor={(item): string => item}
     />
   )

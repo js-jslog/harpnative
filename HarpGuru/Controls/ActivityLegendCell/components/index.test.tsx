@@ -6,7 +6,8 @@ import { ActivityLegendCell } from './index'
 
 test('A component is rendered displaying a DegreeIds itemId', () => {
   const activityLegendCell = {
-    itemId: DegreeIds.Root
+    itemId: DegreeIds.Root,
+    activeIds: [ DegreeIds.Root ]
   }
   const { getByText } = render(<ActivityLegendCell {...activityLegendCell} />)
   expect(getByText(DegreeIds.Root)).toBeTruthy()
@@ -14,7 +15,8 @@ test('A component is rendered displaying a DegreeIds itemId', () => {
 
 test('A component is rendered displaying a PitchIds itemId', () => {
   const activityLegendCell = {
-    itemId: PitchIds.C
+    itemId: PitchIds.C,
+    activeIds: [ PitchIds.C ]
   }
   const { getByText } = render(<ActivityLegendCell {...activityLegendCell} />)
   expect(getByText(PitchIds.C)).toBeTruthy()
