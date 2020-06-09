@@ -7,6 +7,7 @@ import type { ActivityLegendColumnProps } from '../types'
 import type { HarpStrataControlProps } from '../../types'
 import { ActivityLegendCell } from '../../ActivityLegendCell'
 import type { ActivityLegendCellProps } from '../../ActivityLegendCell'
+import type { DisplayModes } from '../../../HarpFace'
 
 const getIdSequence = (props: ActivityLegendColumnProps): ReadonlyArray<DegreeIds> | ReadonlyArray<PitchIds> => {
   const { originId } = props
@@ -18,7 +19,7 @@ const getIdSequence = (props: ActivityLegendColumnProps): ReadonlyArray<DegreeId
   }
 }
 
-const renderItem = (itemId: DegreeIds | PitchIds, activeIds: ReadonlyArray<DegreeIds | PitchIds>, harpStrataControlProps: HarpStrataControlProps): ReactElement => {
+const renderItem = (itemId: DegreeIds | PitchIds, activeIds: ReadonlyArray<DegreeIds | PitchIds>, harpStrataControlProps: HarpStrataControlProps, activeDisplayMode: DisplayModes): ReactElement => {
   // TODO: improve this function's variable names at the very least
   // if not improve the way it's managing this polymorphism.
   // The activeIds types are unduely blended as well.
@@ -27,7 +28,7 @@ const renderItem = (itemId: DegreeIds | PitchIds, activeIds: ReadonlyArray<Degre
     const b = activeIds as ReadonlyArray<PitchIds>
     const { activeHarpStrata, setActiveHarpStrata } = harpStrataControlProps
     const activityLegendCellProps: ActivityLegendCellProps = {
-      activeHarpStrata, setActiveHarpStrata, itemId: a, activeIds: b
+      activeHarpStrata, setActiveHarpStrata, itemId: a, activeIds: b, activeDisplayMode
     }
     return <ActivityLegendCell {...activityLegendCellProps} />
   } else {
@@ -35,7 +36,7 @@ const renderItem = (itemId: DegreeIds | PitchIds, activeIds: ReadonlyArray<Degre
     const b = activeIds as ReadonlyArray<DegreeIds>
     const { activeHarpStrata, setActiveHarpStrata } = harpStrataControlProps
     const activityLegendCellProps: ActivityLegendCellProps = {
-      activeHarpStrata, setActiveHarpStrata, itemId: a, activeIds: b
+      activeHarpStrata, setActiveHarpStrata, itemId: a, activeIds: b, activeDisplayMode
     }
     return <ActivityLegendCell {...activityLegendCellProps} />
   }
@@ -43,12 +44,12 @@ const renderItem = (itemId: DegreeIds | PitchIds, activeIds: ReadonlyArray<Degre
 
 export const ActivityLegendColumn = (props: ActivityLegendColumnProps): ReactElement => {
   const idSequence = getIdSequence(props)
-  const { activeHarpStrata, setActiveHarpStrata, activeIds } = props
-  const harpStrataControlProps = { activeHarpStrata, setActiveHarpStrata }
+  const { activeHarpStrata, setActiveHarpStrata, activeIds, activeDisplayMode } = props
+  const harpStrataControlProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode }
   return (
     <FlatList
       data={idSequence as ReadonlyArray<DegreeIds | PitchIds>}
-      renderItem={({ item }): ReactElement => renderItem(item, activeIds, harpStrataControlProps)}
+      renderItem={({ item }): ReactElement => renderItem(item, activeIds, harpStrataControlProps, activeDisplayMode)}
       keyExtractor={(item): string => item}
     />
   )

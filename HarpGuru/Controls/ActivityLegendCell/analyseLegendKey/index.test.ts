@@ -1,6 +1,7 @@
 import { DegreeIds, PitchIds } from 'harpstrata'
 
 import { keyCHarpStrata } from '../../testResources'
+import { DisplayModes } from '../../../HarpFace'
 
 import { analyseLegendKey } from './index'
 
@@ -12,13 +13,16 @@ test('Key is recognised as active if it appears in either active list', () => {
   const { C: pitchItemId } = PitchIds
   const activeDegreeIds = [ DegreeIds.Root ]
   const activePitchIds = [ PitchIds.C ]
+  const { Degree: activeDisplayMode } = DisplayModes
   const activityLegendCellPropsDegree = {
     activeHarpStrata, setActiveHarpStrata,
-    itemId: degreeItemId, activeIds: activeDegreeIds
+    itemId: degreeItemId, activeIds: activeDegreeIds,
+    activeDisplayMode
   }
   const activityLegendCellPropsPitch = {
     activeHarpStrata, setActiveHarpStrata,
-    itemId: pitchItemId, activeIds: activePitchIds
+    itemId: pitchItemId, activeIds: activePitchIds,
+    activeDisplayMode
   }
 
   const { isActive: isActiveDegree } = analyseLegendKey(activityLegendCellPropsDegree)
@@ -32,9 +36,10 @@ test('Counterpart degree is identified correctly', () => {
   const activeHarpStrata = keyCHarpStrata
   const setActiveHarpStrata = jest.fn()
   const activePitchIds = [ PitchIds.C ]
-  const activityLegendCellPropsRoot = { activeHarpStrata, setActiveHarpStrata, itemId: PitchIds.C, activeIds: activePitchIds }
-  const activityLegendCellPropsSecond = { activeHarpStrata, setActiveHarpStrata, itemId: PitchIds.D, activeIds: activePitchIds }
-  const activityLegendCellPropsFlat5 = { activeHarpStrata, setActiveHarpStrata, itemId: PitchIds.Gb, activeIds: activePitchIds }
+  const { Degree: activeDisplayMode } = DisplayModes
+  const activityLegendCellPropsRoot = { activeHarpStrata, setActiveHarpStrata, itemId: PitchIds.C, activeIds: activePitchIds, activeDisplayMode }
+  const activityLegendCellPropsSecond = { activeHarpStrata, setActiveHarpStrata, itemId: PitchIds.D, activeIds: activePitchIds, activeDisplayMode }
+  const activityLegendCellPropsFlat5 = { activeHarpStrata, setActiveHarpStrata, itemId: PitchIds.Gb, activeIds: activePitchIds, activeDisplayMode }
 
   const { counterpartDegreeId: counterpartDegreeIdRoot  } = analyseLegendKey(activityLegendCellPropsRoot)
   const { counterpartDegreeId: counterpartDegreeIdSecond  } = analyseLegendKey(activityLegendCellPropsSecond)
@@ -49,9 +54,10 @@ test('Counterpart degree functionality works on degree id input by returning tha
   const activeHarpStrata = keyCHarpStrata
   const setActiveHarpStrata = jest.fn()
   const activeDegreeIds = [ DegreeIds.Root ]
-  const activityLegendCellPropsRoot = { activeHarpStrata, setActiveHarpStrata, itemId: DegreeIds.Root, activeIds: activeDegreeIds }
-  const activityLegendCellPropsSecond = { activeHarpStrata, setActiveHarpStrata, itemId: DegreeIds.Second, activeIds: activeDegreeIds }
-  const activityLegendCellPropsFlat5 = { activeHarpStrata, setActiveHarpStrata, itemId: DegreeIds.Flat5, activeIds: activeDegreeIds }
+  const { Degree: activeDisplayMode } = DisplayModes
+  const activityLegendCellPropsRoot = { activeHarpStrata, setActiveHarpStrata, itemId: DegreeIds.Root, activeIds: activeDegreeIds, activeDisplayMode }
+  const activityLegendCellPropsSecond = { activeHarpStrata, setActiveHarpStrata, itemId: DegreeIds.Second, activeIds: activeDegreeIds, activeDisplayMode }
+  const activityLegendCellPropsFlat5 = { activeHarpStrata, setActiveHarpStrata, itemId: DegreeIds.Flat5, activeIds: activeDegreeIds, activeDisplayMode }
 
   const { counterpartDegreeId: counterpartDegreeIdRoot  } = analyseLegendKey(activityLegendCellPropsRoot)
   const { counterpartDegreeId: counterpartDegreeIdSecond  } = analyseLegendKey(activityLegendCellPropsSecond)
