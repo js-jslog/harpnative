@@ -28,17 +28,19 @@ test('Key is recognised as active if it appears in either active list', () => {
   expect(isActivePitch).toBeTruthy()
 })
 
-//test('Counterpart degree is identified correctly', () => {
-//  const activePitchIds = [ PitchIds.C ]
-//  const activityLegendCellPropsRoot = { itemId: PitchIds.C, activeIds: activePitchIds }
-//  const activityLegendCellPropsSecond = { itemId: PitchIds.D, activeIds: activePitchIds }
-//  const activityLegendCellPropsFlat5 = { itemId: PitchIds.Gb, activeIds: activePitchIds }
-//
-//  const { counterpartDegree: counterpartDegreeRoot  } = analyseLegendKey(activityLegendCellPropsRoot)
-//  const { counterpartDegree: counterpartDegreeSecond  } = analyseLegendKey(activityLegendCellPropsSecond)
-//  const { counterpartDegree: counterpartDegreeFlat5  } = analyseLegendKey(activityLegendCellPropsFlat5)
-//
-//  expect(counterpartDegreeRoot).toBe(DegreeIds.Root)
-//  expect(counterpartDegreeSecond).toBe(DegreeIds.Second)
-//  expect(counterpartDegreeFlat5).toBe(DegreeIds.Flat5)
-//})
+test('Counterpart degree is identified correctly', () => {
+  const activeHarpStrata = keyCHarpStrata
+  const setActiveHarpStrata = jest.fn()
+  const activePitchIds = [ PitchIds.C ]
+  const activityLegendCellPropsRoot = { activeHarpStrata, setActiveHarpStrata, itemId: PitchIds.C, activeIds: activePitchIds }
+  const activityLegendCellPropsSecond = { activeHarpStrata, setActiveHarpStrata, itemId: PitchIds.D, activeIds: activePitchIds }
+  const activityLegendCellPropsFlat5 = { activeHarpStrata, setActiveHarpStrata, itemId: PitchIds.Gb, activeIds: activePitchIds }
+
+  const { counterpartDegreeId: counterpartDegreeIdRoot  } = analyseLegendKey(activityLegendCellPropsRoot)
+  const { counterpartDegreeId: counterpartDegreeIdSecond  } = analyseLegendKey(activityLegendCellPropsSecond)
+  const { counterpartDegreeId: counterpartDegreeIdFlat5  } = analyseLegendKey(activityLegendCellPropsFlat5)
+
+  expect(counterpartDegreeIdRoot).toBe(DegreeIds.Root)
+  expect(counterpartDegreeIdSecond).toBe(DegreeIds.Second)
+  expect(counterpartDegreeIdFlat5).toBe(DegreeIds.Flat5)
+})
