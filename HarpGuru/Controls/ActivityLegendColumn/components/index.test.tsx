@@ -3,6 +3,7 @@ import { DegreeIds, PitchIds } from 'harpstrata'
 import { render } from '@testing-library/react-native'
 
 import { keyCHarpStrata } from '../../testResources'
+import { DisplayModes } from '../../../HarpFace'
 
 import { ActivityLegendColumn } from './index'
 
@@ -11,9 +12,10 @@ test('A component is rendered with DegreeIds', () => {
   const setActiveHarpStrata = jest.fn()
   const { Root: originId } = DegreeIds
   const activeIds = [ DegreeIds.Root ]
+  const { Degree: activeDisplayMode } = DisplayModes
   const activityLegendColumnProps = {
     activeHarpStrata, setActiveHarpStrata,
-    originId, activeIds
+    originId, activeIds, activeDisplayMode
   }
   const { getByText } = render(<ActivityLegendColumn {...activityLegendColumnProps} />)
 
@@ -26,9 +28,10 @@ test('A component is rendered with PitchIds', () => {
   const setActiveHarpStrata = jest.fn()
   const { C: originId } = PitchIds
   const activeIds = [ PitchIds.C ]
+  const { Degree: activeDisplayMode } = DisplayModes
   const activityLegendColumnProps = {
     activeHarpStrata, setActiveHarpStrata,
-    originId, activeIds
+    originId, activeIds, activeDisplayMode
   }
   const { getByText } = render(<ActivityLegendColumn {...activityLegendColumnProps} />)
 

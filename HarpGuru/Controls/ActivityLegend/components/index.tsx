@@ -15,10 +15,10 @@ const styles = StyleSheet.create({
 })
 
 export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
-  const { activeHarpStrata, setActiveHarpStrata } = props
+  const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
   const { rootPitchId, isActiveComplex: { activeDegreeIds, activePitchIds }} = activeHarpStrata
-  const degreeActivityLegendColumnProps = { activeHarpStrata, setActiveHarpStrata, originId: DegreeIds.Root, activeIds: activeDegreeIds }
-  const pitchActivityLegendColumnProps = { activeHarpStrata, setActiveHarpStrata, originId: rootPitchId, activeIds: activePitchIds }
+  const degreeActivityLegendColumnProps = { activeHarpStrata, setActiveHarpStrata, originId: DegreeIds.Root, activeIds: activeDegreeIds, activeDisplayMode }
+  const pitchActivityLegendColumnProps = { activeHarpStrata, setActiveHarpStrata, originId: rootPitchId, activeIds: activePitchIds, activeDisplayMode }
 
   return (
     <View style={styles.wrapper} >
