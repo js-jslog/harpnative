@@ -25,7 +25,7 @@ export const HomeScreen = (props: ScreenProps): React.ReactElement => {
 
   const harpFaceProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode }
   const displayModeTogglerProps = { setActiveDisplayMode }
-  const activityLegendProps = { rootPitchId, activeDegreeIds, activePitchIds }
+  const activityLegendProps = { activeHarpStrata, setActiveHarpStrata, rootPitchId, activeDegreeIds, activePitchIds }
 
   return (
     <View style={styles.guruhome}>
