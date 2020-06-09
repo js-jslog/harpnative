@@ -1,11 +1,13 @@
 import type { DegreeIds, PitchIds } from 'harpstrata'
 
-export type DegreeActivityLegendColumnProps = {
+import type { HarpStrataControlProps } from '../../types'
+
+export type DegreeActivityLegendColumnProps = HarpStrataControlProps & {
   readonly originId: DegreeIds;
   readonly activeIds: ReadonlyArray<DegreeIds>;
 }
 
-export type PitchActivityLegendColumnProps = {
+export type PitchActivityLegendColumnProps = HarpStrataControlProps & {
   readonly originId: PitchIds;
   readonly activeIds: ReadonlyArray<PitchIds>;
 }

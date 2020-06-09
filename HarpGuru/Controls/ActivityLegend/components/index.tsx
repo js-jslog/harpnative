@@ -15,9 +15,9 @@ const styles = StyleSheet.create({
 })
 
 export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
-  const { rootPitchId, activeDegreeIds, activePitchIds } = props
-  const degreeActivityLegendColumnProps = { originId: DegreeIds.Root, activeIds: activeDegreeIds }
-  const pitchActivityLegendColumnProps = { originId: rootPitchId, activeIds: activePitchIds }
+  const { activeHarpStrata, setActiveHarpStrata, rootPitchId, activeDegreeIds, activePitchIds } = props
+  const degreeActivityLegendColumnProps = { activeHarpStrata, setActiveHarpStrata, originId: DegreeIds.Root, activeIds: activeDegreeIds }
+  const pitchActivityLegendColumnProps = { activeHarpStrata, setActiveHarpStrata, originId: rootPitchId, activeIds: activePitchIds }
 
   return (
     <View style={styles.wrapper} >
