@@ -1,14 +1,18 @@
 import { ViewStyle, TextStyle } from 'react-native'
 import { DegreeIds, PitchIds } from 'harpstrata'
 
-export type DegreeLegendKey = {
+import type { HarpStrataControlProps } from '../../types'
+
+export type DegreeLegendKey = HarpStrataControlProps & {
   readonly itemId: DegreeIds;
   readonly activeIds: ReadonlyArray<DegreeIds>;
 }
-export type PitchLegendKey = {
+
+export type PitchLegendKey = HarpStrataControlProps & {
   readonly itemId: PitchIds;
   readonly activeIds: ReadonlyArray<PitchIds>;
 }
+
 export type ActivityLegendCellProps = DegreeLegendKey | PitchLegendKey;
 
 export type ActivityLegendCellStyles = {
