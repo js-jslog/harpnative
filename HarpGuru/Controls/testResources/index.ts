@@ -15,6 +15,12 @@ const keyDHarpStrataProps: HarpStrataProps = {
   ...baseHarpStrataProps,
   harpKeyId: PitchIds.D
 }
+const cHarpSecondPozHarpStrataProps: HarpStrataProps = {
+  ...baseHarpStrataProps,
+  pozitionId: PozitionIds.Second,
+  harpKeyId: PitchIds.C
+}
 
 export const keyCHarpStrata: HarpStrata = getHarpStrata(keyCHarpStrataProps)
 export const keyDHarpStrata: HarpStrata = getHarpStrata(keyDHarpStrataProps)
+export const cHarpSecondPozHarpStrata: HarpStrata = getHarpStrata(cHarpSecondPozHarpStrataProps)
