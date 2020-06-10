@@ -3,7 +3,7 @@ import { PozitionIds, PitchIds } from 'harpstrata'
 import { UpdateCategories } from '../types'
 import type { GenericButtonProps } from '../types'
 import { firstPozitionHarpStrata, keyCHarpStrata } from '../testResources'
-import { getPropsForHarpStrata } from '../getPropsForHarpStrata'
+import { getPropsForHarpStrata } from '../../ControlHelpers'
 
 import { getUpdateHarpStrataProps } from './index'
 

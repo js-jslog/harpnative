@@ -1,22 +1,28 @@
 import { getHarpStrata, getCovariantSet } from 'harpstrata'
-import type { PitchIds, HarpStrata } from 'harpstrata'
+import type { PitchIds, HarpStrata, CovariantControllers } from 'harpstrata'
 
-import { getPropsForHarpStrata } from '../getPropsForHarpStrata'
-import type { DisplayModes } from '../../../HarpFace'
+import { getPropsForHarpStrata } from '../../ControlHelpers'
+import { DisplayModes } from '../../../HarpFace'
 
-type GetHarpStrataProps = {
+export type GetHarpStrataProps = {
   readonly activeHarpStrata: HarpStrata;
   readonly rootPitchId: PitchIds;
   readonly activeDisplayMode: DisplayModes;
 }
 
-export const getNewHarpStrata = (props: GetHarpStrataProps): HarpStrata => {
-  const { activeHarpStrata, rootPitchId } = props
-  const { harpKeyId } = activeHarpStrata
-  const activeHarpStrataProps = getPropsForHarpStrata(activeHarpStrata)
-  const pozitionControllers = { harpKeyId, rootPitchId }
+const getCovariantControllers = (props: GetHarpStrataProps): CovariantControllers => {
+  const { activeHarpStrata: { harpKeyId, pozitionId }, activeDisplayMode, rootPitchId } = props
+  if ( activeDisplayMode === DisplayModes.Degree ) return { harpKeyId, rootPitchId }
+  return { pozitionId, rootPitchId }
+}
 
-  const { pozitionId } = getCovariantSet(pozitionControllers)
+export const getNewHarpStrata = (props: GetHarpStrataProps): HarpStrata => {
+  const { activeHarpStrata } = props
+  const activeHarpStrataProps = getPropsForHarpStrata(activeHarpStrata)
+
+  const covariantControllers = getCovariantControllers(props)
+
+  const { harpKeyId, pozitionId } = getCovariantSet(covariantControllers)
 
   return getHarpStrata({ ...activeHarpStrataProps, harpKeyId, pozitionId })
 }

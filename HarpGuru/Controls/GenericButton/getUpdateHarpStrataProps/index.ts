@@ -2,7 +2,7 @@ import type { HarpStrataProps, PozitionIds, PitchIds } from 'harpstrata'
 
 import { UpdateCategories } from '../types'
 import type { GenericButtonProps } from '../types'
-import { getPropsForHarpStrata } from '../getPropsForHarpStrata'
+import { getPropsForHarpStrata } from '../../ControlHelpers'
 
 export const getUpdateHarpStrataProps = (genericUpdateProps: GenericButtonProps): HarpStrataProps => {
   const { activeHarpStrata, updateCategory, id } = genericUpdateProps

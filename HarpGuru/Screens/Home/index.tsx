@@ -16,6 +16,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'stretch',
   },
+  rightside: {
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+  }
 })
 
 
@@ -29,8 +33,10 @@ export const HomeScreen = (props: ScreenProps): React.ReactElement => {
   return (
     <View style={styles.guruhome}>
       <HarpFace {...harpFaceProps} />
-      <DisplayModeToggler {...displayModeTogglerProps} />
-      <ActivityLegend {...activityLegendProps} />
+      <View style={styles.rightside}>
+        <ActivityLegend {...activityLegendProps} />
+        <DisplayModeToggler {...displayModeTogglerProps} />
+      </View>
     </View>
   )
 }
