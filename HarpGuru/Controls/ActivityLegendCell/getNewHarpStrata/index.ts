@@ -1,7 +1,7 @@
 import { getHarpStrata, getCovariantSet } from 'harpstrata'
 import type { PitchIds, HarpStrata, CovariantControllers } from 'harpstrata'
 
-import { getPropsForHarpStrata } from '../getPropsForHarpStrata'
+import { getPropsForHarpStrata } from '../../ControlHelpers'
 import { DisplayModes } from '../../../HarpFace'
 
 export type GetHarpStrataProps = {
