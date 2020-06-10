@@ -2,6 +2,7 @@ import { FlatList } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 import { isPitchId, getPitchIds, DegreeIds } from 'harpstrata'
+import type { PitchIds } from 'harpstrata'
 
 import type { ActivityLegendColumnProps, DegreeActivityLegendColumnProps, PitchActivityLegendColumnProps } from '../types'
 import { ActivityLegendCell } from '../../ActivityLegendCell'
@@ -18,7 +19,7 @@ const getPitchColumn = (props: PitchActivityLegendColumnProps): ReactElement => 
         const activityLegendCellProps = { ...props, itemId: item }
         return <ActivityLegendCell  {...activityLegendCellProps} />
       }}
-      keyExtractor={(item): string => item}
+      keyExtractor={(item): PitchIds => item}
     />
   )
 }
@@ -33,7 +34,7 @@ const getDegreeColumn = (props: DegreeActivityLegendColumnProps): ReactElement =
         const activityLegendCellProps = { ...props, itemId: item }
         return <ActivityLegendCell  {...activityLegendCellProps} />
       }}
-      keyExtractor={(item): string => item}
+      keyExtractor={(item): DegreeIds => item}
     />
   )
 }
