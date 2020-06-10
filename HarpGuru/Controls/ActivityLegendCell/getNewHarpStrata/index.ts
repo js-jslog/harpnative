@@ -4,7 +4,7 @@ import type { PitchIds, HarpStrata, CovariantControllers } from 'harpstrata'
 import { getPropsForHarpStrata } from '../getPropsForHarpStrata'
 import { DisplayModes } from '../../../HarpFace'
 
-type GetHarpStrataProps = {
+export type GetHarpStrataProps = {
   readonly activeHarpStrata: HarpStrata;
   readonly rootPitchId: PitchIds;
   readonly activeDisplayMode: DisplayModes;
