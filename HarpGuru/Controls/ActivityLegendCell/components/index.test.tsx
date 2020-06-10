@@ -2,7 +2,7 @@ import React from 'react'
 import { DegreeIds, PitchIds } from 'harpstrata'
 import { render, fireEvent } from '@testing-library/react-native'
 
-import { keyCHarpStrata, cHarpSecondPozHarpStrata } from '../../testResources'
+import { keyCHarpStrata, cHarpSecondPozHarpStrata, gHarpFirstPozHarpStrata  } from '../../testResources'
 import { DisplayModes } from '../../../HarpFace'
 
 import { ActivityLegendCell } from './index'
@@ -39,7 +39,7 @@ test('A component is rendered displaying a PitchIds itemId', () => {
   expect(getByText(PitchIds.C)).toBeTruthy()
 })
 
-test('A click calls setActiveHarpStrata with the expected new harpstrata', () => {
+test('A click calls setActiveHarpStrata with the expected new harpstrata, shifting pozition to achieve target root pitch when in degree display mode', () => {
   const activeHarpStrata = keyCHarpStrata
   const setActiveHarpStrata = jest.fn()
   const { Degree: activeDisplayMode } = DisplayModes
@@ -56,4 +56,23 @@ test('A click calls setActiveHarpStrata with the expected new harpstrata', () =>
 
   expect(setActiveHarpStrata.mock.calls.length).toBe(1)
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(cHarpSecondPozHarpStrata)
+})
+
+test('A click calls setActiveHarpStrata with the expected new harpstrata, shifting harp key to achieve target root pitch when in pitch display mode', () => {
+  const activeHarpStrata = keyCHarpStrata
+  const setActiveHarpStrata = jest.fn()
+  const { Pitch: activeDisplayMode } = DisplayModes
+  const activityLegendCell = {
+    activeHarpStrata,
+    setActiveHarpStrata,
+    itemId: PitchIds.G,
+    activeIds: [ PitchIds.C ],
+    activeDisplayMode
+  }
+  const { getByText } = render(<ActivityLegendCell {...activityLegendCell} />)
+
+  fireEvent.press(getByText(PitchIds.G))
+
+  expect(setActiveHarpStrata.mock.calls.length).toBe(1)
+  expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(gHarpFirstPozHarpStrata)
 })
