@@ -28,7 +28,7 @@ export const HomeScreen = (props: ScreenProps): React.ReactElement => {
 
   const harpFaceProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode }
   const displayModeTogglerProps = { setActiveDisplayMode }
-  const activityLegendProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode }
+  const activityLegendProps = { setActiveDisplayMode, activeHarpStrata, setActiveHarpStrata, activeDisplayMode }
 
   return (
     <View style={styles.guruhome}>

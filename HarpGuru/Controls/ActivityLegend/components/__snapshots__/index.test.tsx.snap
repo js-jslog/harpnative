@@ -11,6 +11,7 @@ exports[`A snapshot of the legend in degree mode with some active degrees 1`] = 
   }
 >
   <View
+    collapsable={false}
     style={
       Object {
         "alignItems": "center",
@@ -728,6 +729,7 @@ exports[`A snapshot of the legend in pitch mode with some active degrees 1`] = `
   }
 >
   <View
+    collapsable={false}
     style={
       Object {
         "alignItems": "center",
