@@ -7,21 +7,21 @@ const baseHarpStrataProps: HarpStrataProps = {
   harpKeyId: PitchIds.C,
   activeIds: [] as ActiveIds,
 }
-const keyCHarpStrataProps: HarpStrataProps = {
+export const keyCHarpStrataProps: HarpStrataProps = {
   ...baseHarpStrataProps,
   harpKeyId: PitchIds.C
 }
-const keyDHarpStrataProps: HarpStrataProps = {
+export const keyDHarpStrataProps: HarpStrataProps = {
   ...baseHarpStrataProps,
   harpKeyId: PitchIds.D
 }
-const cHarpSecondPozHarpStrataProps: HarpStrataProps = {
+export const cHarpSecondPozHarpStrataProps: HarpStrataProps = {
   ...baseHarpStrataProps,
   pozitionId: PozitionIds.Second,
   harpKeyId: PitchIds.C
 }
 
-const gHarpFirstPozHarpStrataProps: HarpStrataProps = {
+export const gHarpFirstPozHarpStrataProps: HarpStrataProps = {
   ...baseHarpStrataProps,
   pozitionId: PozitionIds.First,
   harpKeyId: PitchIds.G

@@ -1,0 +1,1435 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A snapshot of the legend in degree mode with some active degrees 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "paddingRight": 20,
+      }
+    }
+  >
+    <ScrollView
+      data={
+        Array [
+          "1",
+          "2b",
+          "2",
+          "3b",
+          "3",
+          "4",
+          "5b",
+          "5",
+          "6b",
+          "6",
+          "7b",
+          "7",
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      maxToRenderPerBatch={10}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#0f9d58",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#fefefe",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              1
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              2b
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              2
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              3b
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#f4b400",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#fefefe",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              3
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              4
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              5b
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#4285f4",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#fefefe",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              5
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              6b
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              6
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 0,
+          }
+        }
+      />
+    </ScrollView>
+    <ScrollView
+      data={
+        Array [
+          "C",
+          "Db",
+          "D",
+          "Eb",
+          "E",
+          "F",
+          "Gb",
+          "G",
+          "Ab",
+          "A",
+          "Bb",
+          "B",
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      maxToRenderPerBatch={10}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#0f9d58",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              C
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              Db
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              D
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              Eb
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#f4b400",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              E
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              F
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              Gb
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#4285f4",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              G
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              Ab
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              A
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 0,
+          }
+        }
+      />
+    </ScrollView>
+  </View>
+</View>
+`;
+
+exports[`A snapshot of the legend in pitch mode with some active degrees 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "paddingRight": 20,
+      }
+    }
+  >
+    <ScrollView
+      data={
+        Array [
+          "1",
+          "2b",
+          "2",
+          "3b",
+          "3",
+          "4",
+          "5b",
+          "5",
+          "6b",
+          "6",
+          "7b",
+          "7",
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      maxToRenderPerBatch={10}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#0f9d58",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              1
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              2b
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              2
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              3b
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#f4b400",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              3
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              4
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              5b
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#4285f4",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              5
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              6b
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              6
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 0,
+          }
+        }
+      />
+    </ScrollView>
+    <ScrollView
+      data={
+        Array [
+          "C",
+          "Db",
+          "D",
+          "Eb",
+          "E",
+          "F",
+          "Gb",
+          "G",
+          "Ab",
+          "A",
+          "Bb",
+          "B",
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      maxToRenderPerBatch={10}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#0f9d58",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#fefefe",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              C
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              Db
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              D
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              Eb
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#f4b400",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#fefefe",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              E
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              F
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              Gb
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#4285f4",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#fefefe",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              G
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              Ab
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={null}
+      >
+        <
+          accessibilityRole="button"
+          accessible={true}
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#fefefe",
+                "height": 19.738400000000002,
+                "justifyContent": "center",
+                "width": 19.738400000000002,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ced4da",
+                  "fontSize": 12.199000000000002,
+                }
+              }
+            >
+              A
+            </Text>
+          </View>
+        </>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 0,
+          }
+        }
+      />
+    </ScrollView>
+  </View>
+</View>
+`;
