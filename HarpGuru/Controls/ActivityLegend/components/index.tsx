@@ -20,6 +20,11 @@ const styles = StyleSheet.create({
     width: 100,
     backgroundColor: 'red',
   },
+  switch: {
+    width: 100,
+    height: 50,
+    backgroundColor: 'yellow'
+  }
 })
 
 export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
@@ -47,12 +52,9 @@ export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
         </View>
       </PanGestureHandler>
       <ScrollView style={styles.scrollview}>
-        <Animated.View style={{
-          width: 100,
-          height: 50,
+        <Animated.View style={[styles.switch, {
           left: activity === 0 ? -50 : 50,
-          backgroundColor: 'yellow',
-        }} />
+        }]} />
         <Button title={'click'} onPress={(): void => {activity === 0 ? setActivity(1) : setActivity(0)}} />
       </ScrollView>
     </>
