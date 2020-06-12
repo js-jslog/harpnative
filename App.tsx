@@ -11,6 +11,7 @@
 import {Colors} from 'react-native/Libraries/NewAppScreen'
 import {StatusBar, StyleSheet, Text, View} from 'react-native'
 import React from 'react'
+import type { ReactElement } from 'react'
 
 import {HarpGuru} from './HarpGuru'
 
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
   },
 })
 
-const App = (): Element => {
+const App = (): ReactElement => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
