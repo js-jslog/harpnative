@@ -33,7 +33,7 @@ export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
   }
 
 
-  const [activity, setActivity] =  useState('left')
+  const [activity, setActivity] =  useState<0 | 1>(0)
 
   return (
     <>
@@ -49,10 +49,10 @@ export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
         <View style={{
           width: 100,
           height: 50,
-          left: activity === 'left' ? -50 : 50,
+          left: activity === 0 ? -50 : 50,
           backgroundColor: 'yellow',
         }} />
-        <Button title={'click'} onPress={(): void => {activity === 'left' ? setActivity('right') : setActivity('left')}} />
+        <Button title={'click'} onPress={(): void => {activity === 0 ? setActivity(1) : setActivity(0)}} />
       </ScrollView>
     </>
   )
