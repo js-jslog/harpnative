@@ -5446,6 +5446,11 @@ realpath-native@^1.1.0:
   dependencies:
     util.promisify "^1.0.0"
 
+redash@^0.23.0:
+  version "0.23.0"
+  resolved "https://registry.yarnpkg.com/redash/-/redash-0.23.0.tgz#78b4036d984d2c0a9a1f71e4cb9d9e1c34981107"
+  integrity sha512-6M9tt7HVvET3rGlIgXng7NzvFRiil5IUqn6W80Sr4bUJm6KMGgzIcSYlj8K+V24xo81kuSTIUmEBOze0/LwfsA==
+
 regenerate-unicode-properties@^8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/regenerate-unicode-properties/-/regenerate-unicode-properties-8.2.0.tgz#e5de7111d655e7ba60c057dbe9ff37c87e65cdec"
