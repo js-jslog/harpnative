@@ -1,7 +1,7 @@
 import { PanGestureHandler } from 'react-native-gesture-handler'
 import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler'
-import { StyleSheet, View } from 'react-native'
-import React from 'react'
+import { Button, ScrollView, StyleSheet, View } from 'react-native'
+import React, { useState } from 'react'
 import type { ReactElement } from 'react'
 import { DegreeIds } from 'harpstrata'
 
@@ -14,7 +14,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingRight: 20,
-  }
+  },
+  scrollview: {
+    width: 100,
+    backgroundColor: 'red',
+  },
 })
 
 export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
@@ -28,14 +32,28 @@ export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
     if (nativeEvent.translationX < nativeEvent.translationY) setActiveDisplayMode(DisplayModes.Degree)
   }
 
+
+  const [activity, setActivity] =  useState('left')
+
   return (
-    <PanGestureHandler
-      onHandlerStateChange={handleSwipe}
-    >
-      <View style={styles.wrapper} >
-        <ActivityLegendColumn {...degreeActivityLegendColumnProps} />
-        <ActivityLegendColumn {...pitchActivityLegendColumnProps} />
-      </View>
-    </PanGestureHandler>
+    <>
+      <PanGestureHandler
+        onHandlerStateChange={handleSwipe}
+      >
+        <View style={styles.wrapper} >
+          <ActivityLegendColumn {...degreeActivityLegendColumnProps} />
+          <ActivityLegendColumn {...pitchActivityLegendColumnProps} />
+        </View>
+      </PanGestureHandler>
+      <ScrollView style={styles.scrollview}>
+        <View style={{
+          width: 100,
+          height: 50,
+          left: activity === 'left' ? -50 : 50,
+          backgroundColor: 'yellow',
+        }} />
+        <Button title={'click'} onPress={(): void => {activity === 'left' ? setActivity('right') : setActivity('left')}} />
+      </ScrollView>
+    </>
   )
 }
