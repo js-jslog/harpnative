@@ -1,3 +1,4 @@
+import Animated from 'react-native-reanimated'
 import { PanGestureHandler } from 'react-native-gesture-handler'
 import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler'
 import { Button, ScrollView, StyleSheet, View } from 'react-native'
@@ -46,7 +47,7 @@ export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
         </View>
       </PanGestureHandler>
       <ScrollView style={styles.scrollview}>
-        <View style={{
+        <Animated.View style={{
           width: 100,
           height: 50,
           left: activity === 0 ? -50 : 50,
