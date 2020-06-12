@@ -6,6 +6,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
+    "test": "jest",
     "lint": "eslint --ext .ts,.tsx .",
     "ci": "yarn lint && yarn tsc"
   },
@@ -40,7 +41,11 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-native": "^3.8.1",
     "jest": "24.9.0",
+    "react-test-renderer": "16.11.0",
     "typescript": "^3.8.3"
+  },
+  "jest": {
+    "preset": "@testing-library/react-native"
   },
   "private": true
 }
