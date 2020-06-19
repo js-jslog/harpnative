@@ -1,3 +1,4 @@
+import { useTimingTransition } from 'react-native-redash'
 import Animated from 'react-native-reanimated'
 import { PanGestureHandler } from 'react-native-gesture-handler'
 import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler'
@@ -48,6 +49,11 @@ export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
 
   const [activity, setActivity] =  useState<0 | 1>(0)
   const [ offset, setOffset ] = useState(0)
+  const transition = useTimingTransition(activity, { duration: 400 })
+  const rotate = Animated.interpolate(transition, {
+    inputRange: [0, 1],
+    outputRange: [0, Math.PI / 1]
+  })
 
   return (
     <>
@@ -62,7 +68,7 @@ export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
       </PanGestureHandler>
       <ScrollView style={styles.scrollview}>
         <Animated.View style={[styles.switch, {
-          transform: [{ translateX: offset }],
+          transform: [{ rotate }],
         }]} />
         <Button title={'click'} onPress={(): void => {activity === 0 ? setActivity(1) : setActivity(0)}} />
       </ScrollView>
