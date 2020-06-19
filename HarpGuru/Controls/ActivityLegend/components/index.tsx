@@ -48,11 +48,17 @@ export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
 
 
   const [flipped, setFlipped] =  useState<0 | 1>(0)
+  const [slid, setSlid] =  useState<0 | 1>(0)
   const [ offset, setOffset ] = useState(0)
-  const transition = useTimingTransition(flipped, { duration: 400 })
-  const rotate = Animated.interpolate(transition, {
+  const transitionFlip = useTimingTransition(flipped, { duration: 400 })
+  const transitionSlide = useTimingTransition(slid, { duration: 400 })
+  const rotate = Animated.interpolate(transitionFlip, {
     inputRange: [0, 1],
     outputRange: [0, Math.PI / 1]
+  })
+  const slide = Animated.interpolate(transitionSlide, {
+    inputRange: [0, 1],
+    outputRange: [0, 100]
   })
 
   return (
@@ -69,8 +75,10 @@ export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
       <ScrollView style={styles.scrollview}>
         <Animated.View style={[styles.switch, {
           transform: [{ rotate }],
+          translateX: slide
         }]} />
         <Button title={'flip'} onPress={(): void => {flipped === 0 ? setFlipped(1) : setFlipped(0)}} />
+        <Button title={'slide'} onPress={(): void => {slid === 0 ? setSlid(1) : setSlid(0)}} />
       </ScrollView>
     </>
   )
