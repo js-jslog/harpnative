@@ -1,5 +1,5 @@
 import { useTimingTransition } from 'react-native-redash'
-import Animated from 'react-native-reanimated'
+import Animated, { interpolate } from 'react-native-reanimated'
 import { PanGestureHandler } from 'react-native-gesture-handler'
 import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler'
 import { Button, ScrollView, StyleSheet, View } from 'react-native'
@@ -49,14 +49,15 @@ export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
 
   const [flipped, setFlipped] =  useState<0 | 1>(0)
   const [slid, setSlid] =  useState<0 | 1>(0)
+
   const [ offset, setOffset ] = useState(0)
   const transitionFlip = useTimingTransition(flipped, { duration: 400 })
   const transitionSlide = useTimingTransition(slid, { duration: 400 })
-  const rotate = Animated.interpolate(transitionFlip, {
+  const rotate = interpolate(transitionFlip, {
     inputRange: [0, 1],
     outputRange: [0, Math.PI / 1]
   })
-  const slide = Animated.interpolate(transitionSlide, {
+  const slide = interpolate(transitionSlide, {
     inputRange: [0, 1],
     outputRange: [0, 100]
   })
