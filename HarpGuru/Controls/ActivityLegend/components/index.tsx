@@ -47,9 +47,9 @@ export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
   }
 
 
-  const [activity, setActivity] =  useState<0 | 1>(0)
+  const [flipped, setFlipped] =  useState<0 | 1>(0)
   const [ offset, setOffset ] = useState(0)
-  const transition = useTimingTransition(activity, { duration: 400 })
+  const transition = useTimingTransition(flipped, { duration: 400 })
   const rotate = Animated.interpolate(transition, {
     inputRange: [0, 1],
     outputRange: [0, Math.PI / 1]
@@ -70,7 +70,7 @@ export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
         <Animated.View style={[styles.switch, {
           transform: [{ rotate }],
         }]} />
-        <Button title={'click'} onPress={(): void => {activity === 0 ? setActivity(1) : setActivity(0)}} />
+        <Button title={'flip'} onPress={(): void => {flipped === 0 ? setFlipped(1) : setFlipped(0)}} />
       </ScrollView>
     </>
   )
