@@ -1,6 +1,6 @@
-import { useTimingTransition } from 'react-native-redash'
-import Animated, { interpolate } from 'react-native-reanimated'
-import { PanGestureHandler } from 'react-native-gesture-handler'
+import { useTimingTransition, onGestureEvent } from 'react-native-redash'
+import Animated, { Value, interpolate } from 'react-native-reanimated'
+import { PanGestureHandler, State } from 'react-native-gesture-handler'
 import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler'
 import { Button, ScrollView, StyleSheet, View } from 'react-native'
 import React, { useState } from 'react'
@@ -39,39 +39,39 @@ export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
     if (nativeEvent.translationX < nativeEvent.translationY) setActiveDisplayMode(DisplayModes.Degree)
   }
 
-  const handleGesture = ({nativeEvent}: PanGestureHandlerGestureEvent): void => {
-    const { translationX: x, translationY: y } = nativeEvent
-    const delta = x - y
-    const value = (delta < 100 && delta > -100) ? delta : 0
-    setOffset(value)
-  }
+
+  const state = new Value(State.UNDETERMINED)
+  const translationX = new Value(0)
+  const translationY = new Value(0)
+  const gestureHandler = onGestureEvent({
+    state,
+    translationX,
+    translationY
+  })
 
 
   const [flipped, setFlipped] =  useState<0 | 1>(0)
   const [slid, setSlid] =  useState<0 | 1>(0)
 
-  const [ offset, setOffset ] = useState(0)
   const transitionFlip = useTimingTransition(flipped, { duration: 400 })
   const transitionSlide = useTimingTransition(slid, { duration: 400 })
   const rotate = interpolate(transitionFlip, {
     inputRange: [0, 1],
     outputRange: [0, Math.PI / 1]
   })
-  const slide = interpolate(transitionSlide, {
-    inputRange: [0, 1],
-    outputRange: [0, 100]
-  })
+  const slide = Animated.add(translationX, 100)
+  //const slide = interpolate(transitionSlide, {
+  //  inputRange: [0, 1],
+  //  outputRange: [0, 100]
+  //})
 
   return (
-    <>
-      <PanGestureHandler
-        onHandlerStateChange={handleSwipe}
-        onGestureEvent={handleGesture}
-      >
-        <View style={styles.wrapper} >
+    <View>
+      <PanGestureHandler {...gestureHandler}>
+        <Animated.View style={styles.wrapper} >
           <ActivityLegendColumn {...degreeActivityLegendColumnProps} />
           <ActivityLegendColumn {...pitchActivityLegendColumnProps} />
-        </View>
+        </Animated.View>
       </PanGestureHandler>
       <ScrollView style={styles.scrollview}>
         <Animated.View style={[styles.switch, {
@@ -81,6 +81,6 @@ export const ActivityLegend = (props: ActivityLegendProps): ReactElement => {
         <Button title={'flip'} onPress={(): void => {flipped === 0 ? setFlipped(1) : setFlipped(0)}} />
         <Button title={'slide'} onPress={(): void => {slid === 0 ? setSlid(1) : setSlid(0)}} />
       </ScrollView>
-    </>
+    </View>
   )
 }
