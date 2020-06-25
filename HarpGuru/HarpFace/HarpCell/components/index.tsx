@@ -1,4 +1,5 @@
-import { Text, View, TouchableOpacity } from 'react-native'
+import { TapGestureHandler, TapGestureHandlerStateChangeEvent, State } from 'react-native-gesture-handler'
+import { Text, View } from 'react-native'
 import React from 'react'
 
 import { HarpCellProps } from '../types'
@@ -17,27 +18,29 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
 
   const styles = getStyles(props)
 
-  const toggleActiveIdsIfHoleExists = (): void => {
+  const handleTapStateChange = ({nativeEvent}: TapGestureHandlerStateChangeEvent) => {
+    if (nativeEvent.state !== State.END) return
     if (degreeId === undefined) return
+
     setNewHarpStrata(activeHarpStrata, setActiveHarpStrata, degreeId)
   }
 
   const accessibleContent = 
-  <TouchableOpacity
-    accessible={true}
-    accessibilityRole='button'
-    onPress={(): void => toggleActiveIdsIfHoleExists()}>
-    <View style={styles.cell}>
+  <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
+    <View
+      accessible={true}
+      accessibilityRole='button'
+      style={styles.cell}>
       <Text style={styles.text}>
         {displayValue}
       </Text>
     </View>
-  </TouchableOpacity>
+  </TapGestureHandler>
 
   const inAccessibleContent = 
-  <TouchableOpacity disabled={true} accessible={false} style={styles.cell} >
+  <View accessible={false} style={styles.cell} >
     <View style={styles.cell} />
-  </TouchableOpacity>
+  </View>
 
   const content = (thisDegree === undefined ? inAccessibleContent : accessibleContent)
 

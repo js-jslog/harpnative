@@ -34,7 +34,7 @@ test('A component is rendered without an a11y role of button if it has no conten
   expect(queryByRole('button')).toBeNull()
 })
 
-test('A press of the componenet results in toggled active ids in the harpstrata passed to the paramaterised setter', () => {
+test.skip('A press of the componenet results in toggled active ids in the harpstrata passed to the paramaterised setter', () => {
   const setActiveHarpStrata = jest.fn()
   const harpFaceProps = { ...inactiveCellsHarpFaceProps, activeDisplayMode: DisplayModes.Degree, setActiveHarpStrata }
 
