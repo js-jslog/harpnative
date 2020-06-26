@@ -13,12 +13,12 @@ const styles = StyleSheet.create({
   }
 })
 
-const { width: windowWidth } = Dimensions.get('window')
-const scrollDuration = 200
-const scrollOutDelay = 600
-
 export const HeadsupDisplay = (props: HeadsupDisplayProps): React.ReactElement => {
   const { children } = props
+
+  const { width: windowWidth } = Dimensions.get('window')
+  const scrollDuration = 200
+  const scrollOutDelay = 600
 
   const clock = new Clock()
   const inStartTime = new Value<number>(-1)
