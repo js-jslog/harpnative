@@ -3,7 +3,7 @@ import React from 'react'
 
 import type { ScreenProps } from '../types'
 import { themeColors } from '../../Styles'
-import { SweepingBanner } from '../../HeadsupDisplay'
+import { SweepingBanner, HUDContent } from '../../HeadsupDisplay'
 import { HarpFace } from '../../HarpFace'
 import { SwipeControlWrapper } from '../../Controls'
 
@@ -22,9 +22,11 @@ const styles = StyleSheet.create({
 
 export const HomeScreen = (props: ScreenProps): React.ReactElement => {
   const { activeHarpStrata, activeDisplayMode, setActiveHarpStrata, setActiveDisplayMode } = props
+  const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
 
   const swipeControlProps = { activeDisplayMode, setActiveDisplayMode }
   const harpFaceProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode }
+  const hudContentProps = { harpKeyId, pozitionId, rootPitchId }
 
   return (
     <>
@@ -33,7 +35,7 @@ export const HomeScreen = (props: ScreenProps): React.ReactElement => {
           <HarpFace {...harpFaceProps} />
         </View>
       </SwipeControlWrapper>
-      <SweepingBanner><Text>Test text</Text></SweepingBanner>
+      <SweepingBanner><HUDContent {...hudContentProps} /></SweepingBanner>
     </>
   )
 }
