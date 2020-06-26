@@ -1,14 +1,21 @@
 import 'react-native-gesture-handler'
 
+import {PanGestureHandler} from 'react-native-gesture-handler'
+import {StyleSheet, View} from 'react-native'
 import React, { useState } from 'react'
 import type { ReactElement } from 'react'
 import { getApparatusIds, getPozitionIds, getPitchIds, getHarpStrata } from 'harpstrata'
 import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
-import { NavigationContainer } from '@react-navigation/native'
-import { createDrawerNavigator } from '@react-navigation/drawer'
 
-import { HomeScreen, ControlPanel } from '../Screens'
+import { HomeScreen } from '../Screens'
+import {SweepingBanner, HUDContent} from '../HeadsupDisplay'
 import {DisplayModes} from '../HarpFace'
+
+const styles = StyleSheet.create({
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+  }
+})
 
 const [ initialApparatusId ] = getApparatusIds()
 const [ initialPozitionId ] = getPozitionIds()
@@ -24,25 +31,25 @@ const initialHarpStrataProps: HarpStrataProps = {
 const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
 const { Degree: initialDisplayMode } = DisplayModes
 
-const Drawer = createDrawerNavigator()
 
 export const HarpGuru = (): ReactElement => {
   const [ activeHarpStrata, setActiveHarpStrata ] = useState(initialHarpStrata)
   const [ activeDisplayMode, setActiveDisplayMode ] = useState(initialDisplayMode)
+  const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
 
   const screenProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode }
+  const hudContentProps = { harpKeyId, pozitionId, rootPitchId }
+
+  const handleSwipe = () => {
+    console.log('swipe handler')
+  }
 
   return (
-    <NavigationContainer>
-      <Drawer.Navigator
-        drawerPosition='left'
-        drawerContent={(): ReactElement => <ControlPanel {...screenProps} />}
-        drawerType='slide'
-      >
-        <Drawer.Screen name='HomeScreen'>
-          {(): ReactElement => <HomeScreen {...screenProps} />}
-        </Drawer.Screen>
-      </Drawer.Navigator>
-    </NavigationContainer>
+    <PanGestureHandler onHandlerStateChange={handleSwipe}>
+      <View style={styles.overlay}>
+        <HomeScreen {...screenProps} />
+        <SweepingBanner><HUDContent {...hudContentProps} /></SweepingBanner>
+      </View>
+    </PanGestureHandler>
   )
 }
