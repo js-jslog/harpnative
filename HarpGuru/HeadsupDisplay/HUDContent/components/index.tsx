@@ -1,4 +1,4 @@
-import {PanGestureHandler} from 'react-native-gesture-handler'
+import {PanGestureHandler, PanGestureHandlerGestureEvent, State} from 'react-native-gesture-handler'
 import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
@@ -6,6 +6,8 @@ import {HUDContentProps} from '../types'
 import { themeSizes, themeColors } from '../../../Styles'
 
 const { 7: variableSize, 8: titleSize } = themeSizes
+const { 8: swipeThreshold } = themeSizes
+
 const styles = StyleSheet.create({
   wrapper: {
     ...StyleSheet.absoluteFillObject,
@@ -38,14 +40,20 @@ const Variable = ({children}: ChildProps): React.ReactElement => {
   return <Text style={styles.variable}>{children}</Text>
 }
 
-const handleHarpKeySwipe = () => {
-  console.log('harp key swipe')
+const handleHarpKeySwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
+  if (nativeEvent.state === State.ACTIVE) {
+    console.log('harp key swipe')
+  }
 }
-const handlePozitionSwipe = () => {
-  console.log('position swipe')
+const handlePozitionSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
+  if (nativeEvent.state === State.ACTIVE) {
+    console.log('position swipe')
+  }
 }
-const handleRootPitchSwipe = () => {
-  console.log('position key swipe')
+const handleRootPitchSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
+  if (nativeEvent.state === State.ACTIVE) {
+    console.log('position key swipe')
+  }
 }
 
 export const HUDContent = (props: HUDContentProps): React.ReactElement => {
@@ -53,19 +61,28 @@ export const HUDContent = (props: HUDContentProps): React.ReactElement => {
 
   return (
     <View style={styles.wrapper}>
-      <PanGestureHandler onHandlerStateChange={handleHarpKeySwipe}>
+      <PanGestureHandler
+        activeOffsetY={swipeThreshold}
+        onHandlerStateChange={handleHarpKeySwipe}
+      >
         <View style={styles.column}>
           <Title>Harp Key</Title>
           <Variable>{harpKeyId}</Variable>
         </View>
       </PanGestureHandler>
-      <PanGestureHandler onHandlerStateChange={handlePozitionSwipe}>
+      <PanGestureHandler
+        activeOffsetY={swipeThreshold}
+        onHandlerStateChange={handlePozitionSwipe}
+      >
         <View style={styles.column}>
           <Title>Position</Title>
           <Variable>{pozitionId}</Variable>
         </View>
       </PanGestureHandler>
-      <PanGestureHandler onHandlerStateChange={handleRootPitchSwipe}>
+      <PanGestureHandler
+        activeOffsetY={swipeThreshold}
+        onHandlerStateChange={handleRootPitchSwipe}
+      >
         <View style={styles.column}>
           <Title>Pozition Key</Title>
           <Variable>{rootPitchId}</Variable>
