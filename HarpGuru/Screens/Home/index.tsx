@@ -1,5 +1,5 @@
 import Animated, {useCode, Value, Clock, startClock, cond, eq, set, interpolate, Extrapolate, add, greaterOrEq, neq, and} from 'react-native-reanimated'
-import {StyleSheet, View} from 'react-native'
+import {StyleSheet, View, Dimensions} from 'react-native'
 import React from 'react'
 
 import type { ScreenProps } from '../types'
@@ -26,6 +26,9 @@ const styles = StyleSheet.create({
   }
 })
 
+const { width: windowWidth } = Dimensions.get('window')
+const scrollDuration = 200
+const scrollOutDelay = 600
 
 export const HomeScreen = (props: ScreenProps): React.ReactElement => {
   const { activeHarpStrata, activeDisplayMode, setActiveHarpStrata, setActiveDisplayMode } = props
@@ -43,7 +46,7 @@ export const HomeScreen = (props: ScreenProps): React.ReactElement => {
       [ set(inStartTime, clock) ]
     ),
     cond(
-      and(eq(outStartTime, -1), greaterOrEq(clock, add(inStartTime, 1500))),
+      and(eq(outStartTime, -1), greaterOrEq(clock, add(inStartTime, scrollOutDelay))),
       [ set(outStartTime, clock) ]
     ),
   ],
@@ -51,15 +54,15 @@ export const HomeScreen = (props: ScreenProps): React.ReactElement => {
   )
 
   const positionIn = interpolate(clock, {
-    inputRange: [inStartTime, add(inStartTime, 500)],
-    outputRange: [-1000, 0],
+    inputRange: [inStartTime, add(inStartTime, scrollDuration)],
+    outputRange: [windowWidth * -1, 0],
     extrapolate: Extrapolate.CLAMP,
   })
   const positionOut = cond(
     neq(outStartTime, -1),
     interpolate(clock, {
-      inputRange: [outStartTime, add(outStartTime, 500)],
-      outputRange: [0, 1000],
+      inputRange: [outStartTime, add(outStartTime, scrollDuration)],
+      outputRange: [0, windowWidth],
       extrapolate: Extrapolate.CLAMP,
     })
   )
