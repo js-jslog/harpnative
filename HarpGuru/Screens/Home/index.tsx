@@ -3,7 +3,7 @@ import React from 'react'
 
 import type { ScreenProps } from '../types'
 import { themeColors } from '../../Styles'
-import { HeadsupDisplay } from '../../HeadsupDisplay'
+import { SweepingBanner } from '../../HeadsupDisplay'
 import { HarpFace } from '../../HarpFace'
 import { SwipeControlWrapper } from '../../Controls'
 
@@ -33,7 +33,7 @@ export const HomeScreen = (props: ScreenProps): React.ReactElement => {
           <HarpFace {...harpFaceProps} />
         </View>
       </SwipeControlWrapper>
-      <HeadsupDisplay><Text>Test text</Text></HeadsupDisplay>
+      <SweepingBanner><Text>Test text</Text></SweepingBanner>
     </>
   )
 }

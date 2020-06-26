@@ -1,1 +1,1 @@
-export { HeadsupDisplay } from './components'
+export { SweepingBanner } from './SweepingBanner'

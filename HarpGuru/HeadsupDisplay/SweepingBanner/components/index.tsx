@@ -2,7 +2,7 @@ import Animated, {Clock, Value, useCode, startClock, cond, eq, set, and, greater
 import {StyleSheet, Dimensions} from 'react-native'
 import React from 'react'
 
-import type { HeadsupDisplayProps } from '../types'
+import type { SweepingBannerProps } from '../types'
 
 const styles = StyleSheet.create({
   headsupOverlay: {
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   }
 })
 
-export const HeadsupDisplay = (props: HeadsupDisplayProps): React.ReactElement => {
+export const SweepingBanner = (props: SweepingBannerProps): React.ReactElement => {
   const { children } = props
 
   const { width: windowWidth } = Dimensions.get('window')
