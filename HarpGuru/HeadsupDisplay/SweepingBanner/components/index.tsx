@@ -7,7 +7,6 @@ import type { SweepingBannerProps } from '../types'
 const styles = StyleSheet.create({
   headsupOverlay: {
     ...StyleSheet.absoluteFillObject,
-    height: 90,
   }
 })
 
