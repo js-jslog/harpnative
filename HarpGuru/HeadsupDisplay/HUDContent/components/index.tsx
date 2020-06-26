@@ -2,15 +2,15 @@ import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
 import {HUDContentProps} from '../types'
-import { themeSizes } from '../../../Styles'
+import { themeSizes, themeColors } from '../../../Styles'
 
 const { 7: variableSize, 8: titleSize } = themeSizes
 const styles = StyleSheet.create({
   wrapper: {
     ...StyleSheet.absoluteFillObject,
     flexDirection: 'row',
-    backgroundColor: '#ddd',
-    opacity: 0.5
+    backgroundColor: themeColors.inertOutline,
+    opacity: 0.5,
   },
   column: {
     flex: 1,
