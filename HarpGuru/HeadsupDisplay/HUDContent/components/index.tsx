@@ -9,6 +9,8 @@ const styles = StyleSheet.create({
   wrapper: {
     ...StyleSheet.absoluteFillObject,
     flexDirection: 'row',
+    backgroundColor: '#ddd',
+    opacity: 0.5
   },
   column: {
     flex: 1,

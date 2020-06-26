@@ -7,8 +7,6 @@ import type { SweepingBannerProps } from '../types'
 const styles = StyleSheet.create({
   headsupOverlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'red',
-    opacity: 0.5,
     height: 90,
   }
 })
@@ -18,7 +16,7 @@ export const SweepingBanner = (props: SweepingBannerProps): React.ReactElement =
 
   const { width: windowWidth } = Dimensions.get('window')
   const scrollDuration = 200
-  const scrollOutDelay = 600
+  const scrollOutDelay = 6000
 
   const clock = new Clock()
   const inStartTime = new Value<number>(-1)
