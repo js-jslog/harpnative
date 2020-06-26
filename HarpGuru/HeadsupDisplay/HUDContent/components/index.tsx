@@ -1,3 +1,4 @@
+import {PanGestureHandler} from 'react-native-gesture-handler'
 import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
@@ -37,23 +38,39 @@ const Variable = ({children}: ChildProps): React.ReactElement => {
   return <Text style={styles.variable}>{children}</Text>
 }
 
+const handleHarpKeySwipe = () => {
+  console.log('harp key swipe')
+}
+const handlePozitionSwipe = () => {
+  console.log('position swipe')
+}
+const handleRootPitchSwipe = () => {
+  console.log('position key swipe')
+}
+
 export const HUDContent = (props: HUDContentProps): React.ReactElement => {
   const { harpKeyId, pozitionId, rootPitchId } = props
 
   return (
     <View style={styles.wrapper}>
-      <View style={styles.column}>
-        <Title>Harp Key</Title>
-        <Variable>{harpKeyId}</Variable>
-      </View>
-      <View style={styles.column}>
-        <Title>Position</Title>
-        <Variable>{pozitionId}</Variable>
-      </View>
-      <View style={styles.column}>
-        <Title>Pozition Key</Title>
-        <Variable>{rootPitchId}</Variable>
-      </View>
+      <PanGestureHandler onHandlerStateChange={handleHarpKeySwipe}>
+        <View style={styles.column}>
+          <Title>Harp Key</Title>
+          <Variable>{harpKeyId}</Variable>
+        </View>
+      </PanGestureHandler>
+      <PanGestureHandler onHandlerStateChange={handlePozitionSwipe}>
+        <View style={styles.column}>
+          <Title>Position</Title>
+          <Variable>{pozitionId}</Variable>
+        </View>
+      </PanGestureHandler>
+      <PanGestureHandler onHandlerStateChange={handleRootPitchSwipe}>
+        <View style={styles.column}>
+          <Title>Pozition Key</Title>
+          <Variable>{rootPitchId}</Variable>
+        </View>
+      </PanGestureHandler>
     </View>
   )
 }
