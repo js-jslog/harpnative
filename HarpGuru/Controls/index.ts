@@ -13,3 +13,5 @@ export { CovariantMembers } from './CovarianceSeries'
 export type { CovariancePrimer } from './CovarianceSeries'
 
 export { ActivityLegend } from './ActivityLegend'
+
+export { SwipeControlWrapper } from './SwipeControlWrapper'
