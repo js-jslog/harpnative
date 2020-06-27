@@ -10,12 +10,13 @@ export const getPropsForHarpStrata = (props: GetPropsForHarpStrataProps): HarpSt
   const { apparatus: { id: apparatusId }} = props
   const { pozitionId } = props
   const { harpKeyId } = props
-  const { isActiveComplex: { activePitchIds: activeIds }} = props
+  const { isActiveComplex: { activePitchIds, activeDegreeIds }} = props
 
+  const { displayMode } = props
 
-  const harpStrataProps = {
-    apparatusId, pozitionId, harpKeyId, activeIds
+  if (displayMode === DisplayModes.Degree) {
+    return { apparatusId, pozitionId, harpKeyId, activeIds: activeDegreeIds }
   }
 
-  return harpStrataProps
+  return { apparatusId, pozitionId, harpKeyId, activeIds: activePitchIds }
 }
