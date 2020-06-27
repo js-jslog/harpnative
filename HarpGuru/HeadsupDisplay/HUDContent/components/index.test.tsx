@@ -6,7 +6,7 @@ import { HUDContent } from './index'
 
 const harpStrataProps: HarpStrataProps = {
   apparatusId: ApparatusIds.MajorDiatonic,
-  pozitionId: PozitionIds.First,
+  pozitionId: PozitionIds.Second,
   harpKeyId: PitchIds.C,
   activeIds: [] as ActiveIds,
 }
