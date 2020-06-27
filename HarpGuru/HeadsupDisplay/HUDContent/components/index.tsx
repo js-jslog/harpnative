@@ -3,6 +3,7 @@ import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
 import {HUDContentProps} from '../types'
+import {incrementHarpStrataByPozition} from '../incrementHarpStrataByPozition'
 import { themeSizes, themeColors } from '../../../Styles'
 
 const { 7: variableSize, 8: titleSize } = themeSizes
@@ -45,11 +46,6 @@ const handleHarpKeySwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
     console.log('harp key swipe')
   }
 }
-const handlePozitionSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
-  if (nativeEvent.state === State.ACTIVE) {
-    console.log('position swipe')
-  }
-}
 const handleRootPitchSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
   if (nativeEvent.state === State.ACTIVE) {
     console.log('position key swipe')
@@ -57,7 +53,15 @@ const handleRootPitchSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
 }
 
 export const HUDContent = (props: HUDContentProps): React.ReactElement => {
-  const { activeHarpStrata: { harpKeyId, pozitionId, rootPitchId }} = props
+  const { activeHarpStrata, setActiveHarpStrata } = props
+  const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
+
+  const handlePozitionSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
+    if (nativeEvent.state === State.ACTIVE) {
+      const nextHarpStrata = incrementHarpStrataByPozition(activeHarpStrata)
+      setActiveHarpStrata(nextHarpStrata)
+    }
+  }
 
   return (
     <View style={styles.wrapper}>
