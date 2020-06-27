@@ -43,9 +43,11 @@ export const HarpGuru = (): ReactElement => {
   const screenProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode }
   const hudContentProps = { harpKeyId, pozitionId, rootPitchId }
 
+  const [ bannerActive, setBannerActive ] = useState(false)
+
   const handleSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
     if (nativeEvent.state === State.ACTIVE) {
-      console.log('iswipe handler')
+      setBannerActive(!bannerActive)
     }
   }
 
@@ -56,7 +58,7 @@ export const HarpGuru = (): ReactElement => {
     >
       <View style={styles.overlay}>
         <HomeScreen {...screenProps} />
-        <SweepingBanner><HUDContent {...hudContentProps} /></SweepingBanner>
+        <SweepingBanner bannerActive={bannerActive}><HUDContent {...hudContentProps} /></SweepingBanner>
       </View>
     </PanGestureHandler>
   )

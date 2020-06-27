@@ -6,6 +6,6 @@ import { SweepingBanner } from './index'
 
 test('SweepingBanner renders a component with children', () => {
   const testText = 'Test text'
-  const { getByText } = render(<SweepingBanner><Text>{testText}</Text></SweepingBanner>)
+  const { getByText } = render(<SweepingBanner bannerActive={true}><Text>{testText}</Text></SweepingBanner>)
   expect(getByText(testText)).toBeTruthy()
 })
