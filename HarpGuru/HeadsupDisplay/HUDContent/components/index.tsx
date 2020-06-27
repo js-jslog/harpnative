@@ -3,8 +3,8 @@ import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
 import {HUDContentProps} from '../types'
+import {nudgeHarpStrataByPozition} from '../nudgeHarpStrataByPozition'
 import {incrementHarpStrataByRootPitch} from '../incrementHarpStrataByRootPitch'
-import {incrementHarpStrataByPozition} from '../incrementHarpStrataByPozition'
 import {incrementHarpStrataByHarpKey} from '../incrementHarpStrataByHarpKey'
 import { themeSizes, themeColors } from '../../../Styles'
 
@@ -49,7 +49,7 @@ export const HUDContent = (props: HUDContentProps): React.ReactElement => {
 
   const handlePozitionSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
     if (nativeEvent.state === State.ACTIVE) {
-      const nextHarpStrata = incrementHarpStrataByPozition(activeHarpStrata, activeDisplayMode)
+      const nextHarpStrata = nudgeHarpStrataByPozition(activeHarpStrata, 'UP', activeDisplayMode)
       setActiveHarpStrata(nextHarpStrata)
     }
   }
