@@ -11,7 +11,7 @@ import { getUpdateHarpStrataProps } from './index'
 test('getUpdateHarpStrataProps provides amended HarpStrataProps for a given Pozition update', () => {
   const sourceHarpStrata = firstPozitionHarpStrata
 
-  const baseHarpStrataProps = getPropsForHarpStrata({ ...sourceHarpStrata, displayMode: DisplayModes.Degree })
+  const baseHarpStrataProps = getPropsForHarpStrata(sourceHarpStrata, DisplayModes.Degree)
 
   const expectedHarpStrataProps = { ...baseHarpStrataProps, pozitionId: PozitionIds.Third }
 
@@ -30,7 +30,7 @@ test('getUpdateHarpStrataProps provides amended HarpStrataProps for a given Pozi
 test('getUpdateHarpStrataProps provides amended HarpStrataProps for a given Harp Key update', () => {
   const sourceHarpStrata = keyCHarpStrata
 
-  const baseHarpStrataProps = getPropsForHarpStrata({ ...sourceHarpStrata, displayMode: DisplayModes.Degree })
+  const baseHarpStrataProps = getPropsForHarpStrata(sourceHarpStrata, DisplayModes.Degree)
 
   const expectedHarpStrataProps = { ...baseHarpStrataProps, harpKeyId: PitchIds.D }
 

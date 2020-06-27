@@ -13,8 +13,7 @@ export const incrementHarpStrataByRootPitch = (activeHarpStrata: HarpStrata, dis
     ...activeHarpStrata,
     pozitionId: covariantGroup.pozitionId,
     harpKeyId: covariantGroup.harpKeyId,
-    displayMode
-  })
+  }, displayMode)
 
   return getHarpStrata(nextHarpStrataProps)
 }

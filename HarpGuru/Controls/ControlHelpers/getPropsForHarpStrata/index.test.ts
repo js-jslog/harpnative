@@ -8,7 +8,7 @@ import { getPropsForHarpStrata } from './index'
 test('given a HarpStrata, getPropsForHarpStrata supplies the props to generate the exact same HarpStrata again', () => {
   const sourceHarpStrata = keyCHarpStrata
 
-  const derivedHarpStrataProps = getPropsForHarpStrata({ ...sourceHarpStrata, displayMode: DisplayModes.Pitch })
+  const derivedHarpStrataProps = getPropsForHarpStrata(sourceHarpStrata, DisplayModes.Pitch)
 
   expect(getHarpStrata(derivedHarpStrataProps)).toStrictEqual(sourceHarpStrata)
 })
@@ -20,7 +20,7 @@ test('given a HarpStrata, getPropsForHarpStrata supplies the props to generate t
 test('the `activeIds` array is made of pitches when the display mode is Pitch', () => {
   const sourceHarpStrata = getHarpStrata({...keyCHarpStrataProps, activeIds: [DegreeIds.Root]})
 
-  const derivedHarpStrataProps = getPropsForHarpStrata({ ...sourceHarpStrata, displayMode: DisplayModes.Pitch })
+  const derivedHarpStrataProps = getPropsForHarpStrata(sourceHarpStrata, DisplayModes.Pitch)
   const expectedActiveIds = [PitchIds.C]
   const { activeIds: actualActiveIds } = derivedHarpStrataProps
 
@@ -30,7 +30,7 @@ test('the `activeIds` array is made of pitches when the display mode is Pitch', 
 test('the `activeIds` array is made of Degrees when the display mode is Degree', () => {
   const sourceHarpStrata = getHarpStrata({...keyCHarpStrataProps, activeIds: [PitchIds.C]})
 
-  const derivedHarpStrataProps = getPropsForHarpStrata({ ...sourceHarpStrata, displayMode: DisplayModes.Degree })
+  const derivedHarpStrataProps = getPropsForHarpStrata(sourceHarpStrata, DisplayModes.Degree)
   const expectedActiveIds = [DegreeIds.Root]
   const { activeIds: actualActiveIds } = derivedHarpStrataProps
 

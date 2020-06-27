@@ -10,7 +10,7 @@ export const getUpdateHarpStrataProps = (genericUpdateProps: GenericButtonProps)
   // TODO: The only reason it has been acceptable to define the display mode statically here is because I expect
   // these components to be removed. They must either be removed or this functionality must be updated to meet the
   // new requiremenets of the getPropsForHarpStrata function.
-  const baseHarpStrataProps = getPropsForHarpStrata({ ...activeHarpStrata, displayMode: DisplayModes.Degree })
+  const baseHarpStrataProps = getPropsForHarpStrata(activeHarpStrata, DisplayModes.Degree)
   if (updateCategory === UpdateCategories.HarpKey) {
     const harpKeyId = id as PitchIds
     return { ...baseHarpStrataProps, harpKeyId }
