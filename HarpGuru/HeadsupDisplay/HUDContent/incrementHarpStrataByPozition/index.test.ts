@@ -14,7 +14,7 @@ const cHarpSecondPozitionProps = { ...baseHarpStrataProps, pozitionId: PozitionI
 const cHarpFirstPozition = getHarpStrata(cHarpFirstPozitionProps)
 const cHarpSecondPozition = getHarpStrata(cHarpSecondPozitionProps)
 
-test('provides incremented HarpStrata along Pozition with harp key kept the same', () => {
+test('provides incremented HarpStrata by pozition along with root pitch id', () => {
   const actualIncrementedHarpStrata = incrementHarpStrataByPozition(cHarpFirstPozition)
 
   expect(actualIncrementedHarpStrata).toStrictEqual(cHarpSecondPozition)
