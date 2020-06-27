@@ -44,25 +44,25 @@ const Variable = ({children}: ChildProps): React.ReactElement => {
 }
 
 export const HUDContent = (props: HUDContentProps): React.ReactElement => {
-  const { activeHarpStrata, setActiveHarpStrata } = props
+  const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
   const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
 
   const handlePozitionSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
     if (nativeEvent.state === State.ACTIVE) {
-      const nextHarpStrata = incrementHarpStrataByPozition(activeHarpStrata)
+      const nextHarpStrata = incrementHarpStrataByPozition(activeHarpStrata, activeDisplayMode)
       setActiveHarpStrata(nextHarpStrata)
     }
   }
   const handleRootPitchSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
     if (nativeEvent.state === State.ACTIVE) {
-      const nextHarpStrata = incrementHarpStrataByRootPitch(activeHarpStrata)
+      const nextHarpStrata = incrementHarpStrataByRootPitch(activeHarpStrata, activeDisplayMode)
       setActiveHarpStrata(nextHarpStrata)
     }
   }
 
   const handleHarpKeySwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
     if (nativeEvent.state === State.ACTIVE) {
-      const nextHarpStrata = incrementHarpStrataByHarpKey(activeHarpStrata)
+      const nextHarpStrata = incrementHarpStrataByHarpKey(activeHarpStrata, activeDisplayMode)
       setActiveHarpStrata(nextHarpStrata)
     }
   }

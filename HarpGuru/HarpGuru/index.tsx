@@ -40,7 +40,7 @@ export const HarpGuru = (): ReactElement => {
   const [ activeDisplayMode, setActiveDisplayMode ] = useState(initialDisplayMode)
 
   const screenProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode }
-  const hudContentProps = { activeHarpStrata, setActiveHarpStrata }
+  const hudContentProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode }
 
   const [ bannerActive, setBannerActive ] = useState(false)
   

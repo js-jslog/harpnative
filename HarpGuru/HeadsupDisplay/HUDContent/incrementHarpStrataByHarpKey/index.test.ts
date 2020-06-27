@@ -1,5 +1,7 @@
 import {HarpStrataProps, ApparatusIds, PozitionIds, PitchIds, ActiveIds, getHarpStrata} from 'harpstrata'
 
+import {DisplayModes} from '../../../HarpFace'
+
 import { incrementHarpStrataByHarpKey } from './index'
 
 const baseHarpStrataProps: HarpStrataProps = {
@@ -16,7 +18,7 @@ const cHarpFirstPozition = getHarpStrata(cHarpFirstPozitionProps)
 const dbHarpFirstPozition = getHarpStrata(dbHarpFirstPozitionProps)
 
 test('provides incremented HarpStrata by harp key along with pozition id', () => {
-  const actualIncrementedHarpStrata = incrementHarpStrataByHarpKey(cHarpFirstPozition)
+  const actualIncrementedHarpStrata = incrementHarpStrataByHarpKey(cHarpFirstPozition, DisplayModes.Degree)
 
   expect(actualIncrementedHarpStrata).toStrictEqual(dbHarpFirstPozition)
 })

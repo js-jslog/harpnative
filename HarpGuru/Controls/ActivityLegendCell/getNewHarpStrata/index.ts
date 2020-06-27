@@ -17,8 +17,8 @@ const getCovariantControllers = (props: GetHarpStrataProps): CovariantController
 }
 
 export const getNewHarpStrata = (props: GetHarpStrataProps): HarpStrata => {
-  const { activeHarpStrata } = props
-  const activeHarpStrataProps = getPropsForHarpStrata(activeHarpStrata)
+  const { activeHarpStrata, activeDisplayMode } = props
+  const activeHarpStrataProps = getPropsForHarpStrata({ ...activeHarpStrata, displayMode: activeDisplayMode })
 
   const covariantControllers = getCovariantControllers(props)
 
