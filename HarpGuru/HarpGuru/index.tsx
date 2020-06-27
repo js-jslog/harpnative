@@ -47,7 +47,11 @@ export const HarpGuru = (): ReactElement => {
 
   const handleSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
     if (nativeEvent.state === State.ACTIVE) {
-      setBannerActive(!bannerActive)
+      if (nativeEvent.numberOfPointers === 1) {
+        setBannerActive(!bannerActive)
+      } else {
+        setActiveDisplayMode(activeDisplayMode === DisplayModes.Pitch ? DisplayModes.Degree : DisplayModes.Pitch )
+      }
     }
   }
 
