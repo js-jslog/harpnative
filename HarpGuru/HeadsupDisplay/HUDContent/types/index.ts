@@ -1,7 +1,6 @@
-import type { PozitionIds, PitchIds } from 'harpstrata'
+import type { HarpStrata } from 'harpstrata'
 
 export type HUDContentProps = {
-  readonly harpKeyId: PitchIds,
-  readonly pozitionId: PozitionIds,
-  readonly rootPitchId: PitchIds,
+  readonly activeHarpStrata: HarpStrata,
+  readonly setActiveHarpStrata: (arg0: HarpStrata) => void
 }

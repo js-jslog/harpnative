@@ -38,12 +38,12 @@ const { Degree: initialDisplayMode } = DisplayModes
 export const HarpGuru = (): ReactElement => {
   const [ activeHarpStrata, setActiveHarpStrata ] = useState(initialHarpStrata)
   const [ activeDisplayMode, setActiveDisplayMode ] = useState(initialDisplayMode)
-  const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
 
   const screenProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode }
-  const hudContentProps = { harpKeyId, pozitionId, rootPitchId }
+  const hudContentProps = { activeHarpStrata, setActiveHarpStrata }
 
   const [ bannerActive, setBannerActive ] = useState(false)
+  
 
   const handleSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
     if (nativeEvent.state === State.ACTIVE) {

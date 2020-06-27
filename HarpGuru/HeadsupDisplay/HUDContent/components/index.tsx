@@ -57,7 +57,7 @@ const handleRootPitchSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
 }
 
 export const HUDContent = (props: HUDContentProps): React.ReactElement => {
-  const { harpKeyId, pozitionId, rootPitchId } = props
+  const { activeHarpStrata: { harpKeyId, pozitionId, rootPitchId }} = props
 
   return (
     <View style={styles.wrapper}>
