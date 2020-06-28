@@ -1,7 +1,7 @@
 import { PanGestureHandler, PanGestureHandlerGestureEvent, State } from 'react-native-gesture-handler'
 import { Text, StyleSheet, View } from 'react-native'
 import React from 'react'
-import { PozitionIds, HarpStrata } from 'harpstrata'
+import { HarpStrata } from 'harpstrata'
 
 import {nudgeHarpStrataByPozition} from '../nudgeHarpStrataByPozition'
 import { themeSizes } from '../../../Styles'
@@ -29,8 +29,9 @@ type ChildProps = {
   readonly children: React.ReactNode
 }
 
-type PozitionSelectorProps = {
-  readonly pozitionId: PozitionIds
+type OptionContainerProps = {
+  readonly title: string
+  readonly optionId: string
   readonly activeHarpStrata: HarpStrata
   readonly setActiveHarpStrata: (arg0: HarpStrata) => void
   readonly activeDisplayMode: DisplayModes
@@ -43,8 +44,8 @@ const Variable = ({children}: ChildProps): React.ReactElement => {
   return <Text style={styles.variable}>{children}</Text>
 }
 
-export const PozitionSelector = (props: PozitionSelectorProps): React.ReactElement => {
-  const { pozitionId, activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
+export const OptionContainer = (props: OptionContainerProps): React.ReactElement => {
+  const { title, optionId, activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
   const handlePozitionSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
     if (nativeEvent.state === State.END) {
       if (nativeEvent.translationY > 0) {
@@ -61,8 +62,8 @@ export const PozitionSelector = (props: PozitionSelectorProps): React.ReactEleme
       onHandlerStateChange={handlePozitionSwipe}
     >
       <View style={styles.column}>
-        <Title>Position</Title>
-        <Variable>{pozitionId}</Variable>
+        <Title>{title}</Title>
+        <Variable>{optionId}</Variable>
       </View>
     </PanGestureHandler>
   )
