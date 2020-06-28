@@ -48,9 +48,12 @@ export const HUDContent = (props: HUDContentProps): React.ReactElement => {
   const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
 
   const handlePozitionSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
-    if (nativeEvent.state === State.ACTIVE) {
-      const nextHarpStrata = nudgeHarpStrataByPozition(activeHarpStrata, 'UP', activeDisplayMode)
-      setActiveHarpStrata(nextHarpStrata)
+    if (nativeEvent.state === State.END) {
+      if (nativeEvent.translationY > 0) {
+        setActiveHarpStrata(nudgeHarpStrataByPozition(activeHarpStrata, 'UP', activeDisplayMode))
+      } else {
+        setActiveHarpStrata(nudgeHarpStrataByPozition(activeHarpStrata, 'DOWN', activeDisplayMode))
+      }
     }
   }
   const handleRootPitchSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
@@ -80,7 +83,7 @@ export const HUDContent = (props: HUDContentProps): React.ReactElement => {
         </View>
       </PanGestureHandler>
       <PanGestureHandler
-        activeOffsetY={swipeThreshold}
+        activeOffsetY={[swipeThreshold * -1, swipeThreshold]}
         onHandlerStateChange={handlePozitionSwipe}
       >
         <View style={styles.column}>
