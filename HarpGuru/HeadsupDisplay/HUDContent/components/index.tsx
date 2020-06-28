@@ -63,13 +63,15 @@ export const HUDContent = (props: HUDContentProps): React.ReactElement => {
     }
   }
 
+  const partiallyAppliedNudgeFunction = (direction: 'UP' | 'DOWN') => {
+    return nudgeHarpStrataByPozition(activeHarpStrata, direction, activeDisplayMode)
+  }
+
   const optionContainerProps = {
     title: 'Position',
     optionId: pozitionId,
-    nudgeFunction: nudgeHarpStrataByPozition,
-    activeHarpStrata,
+    nudgeFunction: partiallyAppliedNudgeFunction,
     setActiveHarpStrata,
-    activeDisplayMode
   }
 
   return (
