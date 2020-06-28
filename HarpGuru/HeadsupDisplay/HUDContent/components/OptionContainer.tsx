@@ -3,7 +3,6 @@ import { Text, StyleSheet, View } from 'react-native'
 import React from 'react'
 import { HarpStrata } from 'harpstrata'
 
-import {nudgeHarpStrataByPozition} from '../nudgeHarpStrataByPozition'
 import { themeSizes } from '../../../Styles'
 import {DisplayModes} from '../../../HarpFace'
 
@@ -32,6 +31,7 @@ type ChildProps = {
 type OptionContainerProps = {
   readonly title: string
   readonly optionId: string
+  readonly nudgeFunction: (arg0: HarpStrata, arg1: 'UP' | 'DOWN', arg2: DisplayModes) => HarpStrata
   readonly activeHarpStrata: HarpStrata
   readonly setActiveHarpStrata: (arg0: HarpStrata) => void
   readonly activeDisplayMode: DisplayModes
@@ -45,13 +45,13 @@ const Variable = ({children}: ChildProps): React.ReactElement => {
 }
 
 export const OptionContainer = (props: OptionContainerProps): React.ReactElement => {
-  const { title, optionId, activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
+  const { title, optionId, activeHarpStrata, setActiveHarpStrata, activeDisplayMode, nudgeFunction } = props
   const handlePozitionSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
     if (nativeEvent.state === State.END) {
       if (nativeEvent.translationY > 0) {
-        setActiveHarpStrata(nudgeHarpStrataByPozition(activeHarpStrata, 'UP', activeDisplayMode))
+        setActiveHarpStrata(nudgeFunction(activeHarpStrata, 'UP', activeDisplayMode))
       } else {
-        setActiveHarpStrata(nudgeHarpStrataByPozition(activeHarpStrata, 'DOWN', activeDisplayMode))
+        setActiveHarpStrata(nudgeFunction(activeHarpStrata, 'DOWN', activeDisplayMode))
       }
     }
   }

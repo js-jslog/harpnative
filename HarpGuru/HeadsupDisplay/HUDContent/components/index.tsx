@@ -3,6 +3,7 @@ import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
 import {HUDContentProps} from '../types'
+import {nudgeHarpStrataByPozition} from '../nudgeHarpStrataByPozition'
 import {incrementHarpStrataByRootPitch} from '../incrementHarpStrataByRootPitch'
 import {incrementHarpStrataByHarpKey} from '../incrementHarpStrataByHarpKey'
 import { themeSizes, themeColors } from '../../../Styles'
@@ -65,6 +66,7 @@ export const HUDContent = (props: HUDContentProps): React.ReactElement => {
   const optionContainerProps = {
     title: 'Position',
     optionId: pozitionId,
+    nudgeFunction: nudgeHarpStrataByPozition,
     activeHarpStrata,
     setActiveHarpStrata,
     activeDisplayMode
