@@ -3,10 +3,11 @@ import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
 import {HUDContentProps} from '../types'
-import {nudgeHarpStrataByPozition} from '../nudgeHarpStrataByPozition'
 import {incrementHarpStrataByRootPitch} from '../incrementHarpStrataByRootPitch'
 import {incrementHarpStrataByHarpKey} from '../incrementHarpStrataByHarpKey'
 import { themeSizes, themeColors } from '../../../Styles'
+
+import {PozitionSelector} from './PozitionSelector'
 
 const { 7: variableSize, 8: titleSize } = themeSizes
 const { 8: swipeThreshold } = themeSizes
@@ -47,15 +48,6 @@ export const HUDContent = (props: HUDContentProps): React.ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
   const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
 
-  const handlePozitionSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
-    if (nativeEvent.state === State.END) {
-      if (nativeEvent.translationY > 0) {
-        setActiveHarpStrata(nudgeHarpStrataByPozition(activeHarpStrata, 'UP', activeDisplayMode))
-      } else {
-        setActiveHarpStrata(nudgeHarpStrataByPozition(activeHarpStrata, 'DOWN', activeDisplayMode))
-      }
-    }
-  }
   const handleRootPitchSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
     if (nativeEvent.state === State.ACTIVE) {
       const nextHarpStrata = incrementHarpStrataByRootPitch(activeHarpStrata, activeDisplayMode)
@@ -70,6 +62,9 @@ export const HUDContent = (props: HUDContentProps): React.ReactElement => {
     }
   }
 
+  const pozitionSelectorProps = {
+    pozitionId, activeHarpStrata, setActiveHarpStrata, activeDisplayMode
+  }
 
   return (
     <View style={styles.wrapper}>
@@ -82,15 +77,7 @@ export const HUDContent = (props: HUDContentProps): React.ReactElement => {
           <Variable>{harpKeyId}</Variable>
         </View>
       </PanGestureHandler>
-      <PanGestureHandler
-        activeOffsetY={[swipeThreshold * -1, swipeThreshold]}
-        onHandlerStateChange={handlePozitionSwipe}
-      >
-        <View style={styles.column}>
-          <Title>Position</Title>
-          <Variable>{pozitionId}</Variable>
-        </View>
-      </PanGestureHandler>
+      <PozitionSelector {...pozitionSelectorProps}/>
       <PanGestureHandler
         activeOffsetY={swipeThreshold}
         onHandlerStateChange={handleRootPitchSwipe}
