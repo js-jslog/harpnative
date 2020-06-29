@@ -41,10 +41,16 @@ const Variable = ({children}: ChildProps): React.ReactElement => {
   return <Text style={styles.variable}>{children}</Text>
 }
 
+const isPastActivationThreshold = (translation: number) => {
+  if (translation > swipeThreshold) return true
+  if (translation < swipeThreshold * -1) return true
+  return false
+}
+
 export const OptionContainer = (props: OptionContainerProps): React.ReactElement => {
   const { title, optionId, setActiveHarpStrata, nudgeFunction } = props
   const handlePozitionSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
-    if (nativeEvent.state === State.END) {
+    if (nativeEvent.state === State.END && isPastActivationThreshold(nativeEvent.translationY)) {
       if (nativeEvent.translationY > 0) {
         setActiveHarpStrata(nudgeFunction('UP'))
       } else {
