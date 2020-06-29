@@ -6,10 +6,10 @@ import {HUDContentProps} from '../types'
 import {nudgeHarpStrataByRootPitch} from '../nudgeHarpStrataByRootPitch'
 import {nudgeHarpStrataByPozition} from '../nudgeHarpStrataByPozition'
 import {nudgeHarpStrataByHarpKey} from '../nudgeHarpStrataByHarpKey'
+import { OptionContainer } from '../../OptionContainer'
 import { themeColors } from '../../../Styles'
 import {DisplayModes} from '../../../HarpFace'
 
-import { OptionContainer } from './OptionContainer'
 
 const styles = StyleSheet.create({
   wrapper: {
