@@ -3,9 +3,9 @@ import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
 import {HUDContentProps} from '../types'
+import {nudgeHarpStrataByRootPitch} from '../nudgeHarpStrataByRootPitch'
 import {nudgeHarpStrataByPozition} from '../nudgeHarpStrataByPozition'
-import {incrementHarpStrataByRootPitch} from '../incrementHarpStrataByRootPitch'
-import {incrementHarpStrataByHarpKey} from '../incrementHarpStrataByHarpKey'
+import {nudgeHarpStrataByHarpKey} from '../nudgeHarpStrataByHarpKey'
 import { themeSizes, themeColors } from '../../../Styles'
 
 import { OptionContainer } from './OptionContainer'
@@ -50,16 +50,22 @@ export const HUDContent = (props: HUDContentProps): React.ReactElement => {
   const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
 
   const handleRootPitchSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
-    if (nativeEvent.state === State.ACTIVE) {
-      const nextHarpStrata = incrementHarpStrataByRootPitch(activeHarpStrata, activeDisplayMode)
-      setActiveHarpStrata(nextHarpStrata)
+    if (nativeEvent.state === State.END) {
+      if (nativeEvent.translationY > 0) {
+        setActiveHarpStrata(nudgeHarpStrataByRootPitch(activeHarpStrata, 'UP', activeDisplayMode))
+      } else {
+        setActiveHarpStrata(nudgeHarpStrataByRootPitch(activeHarpStrata, 'DOWN', activeDisplayMode))
+      }
     }
   }
 
   const handleHarpKeySwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
-    if (nativeEvent.state === State.ACTIVE) {
-      const nextHarpStrata = incrementHarpStrataByHarpKey(activeHarpStrata, activeDisplayMode)
-      setActiveHarpStrata(nextHarpStrata)
+    if (nativeEvent.state === State.END) {
+      if (nativeEvent.translationY > 0) {
+        setActiveHarpStrata(nudgeHarpStrataByHarpKey(activeHarpStrata, 'UP', activeDisplayMode))
+      } else {
+        setActiveHarpStrata(nudgeHarpStrataByHarpKey(activeHarpStrata, 'DOWN', activeDisplayMode))
+      }
     }
   }
 

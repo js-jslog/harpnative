@@ -2,7 +2,7 @@ import {HarpStrataProps, ApparatusIds, PozitionIds, PitchIds, ActiveIds, getHarp
 
 import {DisplayModes} from '../../../HarpFace'
 
-import { incrementHarpStrataByHarpKey } from './index'
+import { nudgeHarpStrataByHarpKey } from './index'
 
 const baseHarpStrataProps: HarpStrataProps = {
   apparatusId: ApparatusIds.MajorDiatonic,
@@ -18,7 +18,13 @@ const cHarpFirstPozition = getHarpStrata(cHarpFirstPozitionProps)
 const dbHarpFirstPozition = getHarpStrata(dbHarpFirstPozitionProps)
 
 test('provides incremented HarpStrata by harp key along with pozition id', () => {
-  const actualIncrementedHarpStrata = incrementHarpStrataByHarpKey(cHarpFirstPozition, DisplayModes.Degree)
+  const actualIncrementedHarpStrata = nudgeHarpStrataByHarpKey(cHarpFirstPozition, 'UP', DisplayModes.Degree)
 
   expect(actualIncrementedHarpStrata).toStrictEqual(dbHarpFirstPozition)
+})
+
+test('provides decremented HarpStrata by harp key along with pozition id', () => {
+  const actualDecrementededHarpStrata = nudgeHarpStrataByHarpKey(dbHarpFirstPozition, 'DOWN', DisplayModes.Degree)
+
+  expect(actualDecrementededHarpStrata).toStrictEqual(cHarpFirstPozition)
 })
