@@ -71,6 +71,7 @@ export const OptionContainer = (props: OptionContainerProps): React.ReactElement
 
   return (
     <PanGestureHandler
+      shouldCancelWhenOutside={true}
       activeOffsetY={[swipeThreshold * -1, swipeThreshold]}
       onHandlerStateChange={handlePozitionSwipe}
     >
