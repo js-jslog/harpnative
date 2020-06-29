@@ -1,11 +1,12 @@
 import { PanGestureHandler, PanGestureHandlerGestureEvent, State } from 'react-native-gesture-handler'
-import { Text, StyleSheet, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React, {useState, useRef, useEffect} from 'react'
-import { HarpStrata } from 'harpstrata'
 
+import type { OptionContainerProps } from '../types'
 import { themeSizes, themeColors } from '../../../Styles'
 
-const { 7: variableSize, 8: titleSize } = themeSizes
+import { Title, Variable } from './OptionContents'
+
 const { 8: swipeThreshold } = themeSizes
 
 const styles = StyleSheet.create({
@@ -14,12 +15,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-  },
-  title: {
-    fontSize: titleSize
-  },
-  variable: {
-    fontSize: variableSize
   }
 })
 
@@ -29,24 +24,6 @@ const usePrevious = (value: State) => {
     ref.current = value
   })
   return ref.current
-}
-
-type ChildProps = {
-  readonly children: React.ReactNode
-}
-
-type OptionContainerProps = {
-  readonly title: string
-  readonly optionId: string
-  readonly nudgeFunction: (arg0: 'UP' | 'DOWN') => HarpStrata
-  readonly setActiveHarpStrata: (arg0: HarpStrata) => void
-}
-
-const Title = ({children}: ChildProps): React.ReactElement => {
-  return <Text style={styles.title}>{children}</Text>
-}
-const Variable = ({children}: ChildProps): React.ReactElement => {
-  return <Text style={styles.variable}>{children}</Text>
 }
 
 export const OptionContainer = (props: OptionContainerProps): React.ReactElement => {
