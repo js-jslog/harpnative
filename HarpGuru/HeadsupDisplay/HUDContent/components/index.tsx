@@ -23,34 +23,35 @@ const styles = StyleSheet.create({
 type FullNudgeFunction = (arg0: HarpStrata, arg1: 'UP' | 'DOWN', arg2: DisplayModes) => HarpStrata
 type PartiallyAppliedNudgeFunction = (arg0: 'UP' | 'DOWN') => HarpStrata
 
+const partiallyApplyNudgeFunction = (nudgeFunction: FullNudgeFunction, activeHarpStrata: HarpStrata, activeDisplayMode: DisplayModes): PartiallyAppliedNudgeFunction => {
+  return (direction: 'UP' | 'DOWN') => {
+    return nudgeFunction(activeHarpStrata, direction, activeDisplayMode)
+  }
+}
+
+
 export const HUDContent = (props: HUDContentProps): React.ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
   const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
 
-  const partiallyApplyNudgeFunction = (nudgeFunction: FullNudgeFunction): PartiallyAppliedNudgeFunction => {
-    return (direction: 'UP' | 'DOWN') => {
-      return nudgeFunction(activeHarpStrata, direction, activeDisplayMode)
-    }
-  }
-
   const harpKeyOptionContainerProps = {
     title: 'Harp Key',
     optionId: harpKeyId,
-    nudgeFunction: partiallyApplyNudgeFunction(nudgeHarpStrataByHarpKey),
+    nudgeFunction: partiallyApplyNudgeFunction(nudgeHarpStrataByHarpKey, activeHarpStrata, activeDisplayMode),
     setActiveHarpStrata,
   }
 
   const pozitionOptionContainerProps = {
     title: 'Position',
     optionId: pozitionId,
-    nudgeFunction: partiallyApplyNudgeFunction(nudgeHarpStrataByPozition),
+    nudgeFunction: partiallyApplyNudgeFunction(nudgeHarpStrataByPozition, activeHarpStrata, activeDisplayMode),
     setActiveHarpStrata,
   }
 
   const rootPitchOptionContainerProps = {
     title: 'Position Key',
     optionId: rootPitchId,
-    nudgeFunction: partiallyApplyNudgeFunction(nudgeHarpStrataByRootPitch),
+    nudgeFunction: partiallyApplyNudgeFunction(nudgeHarpStrataByRootPitch, activeHarpStrata, activeDisplayMode),
     setActiveHarpStrata,
   }
 
