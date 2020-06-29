@@ -1,10 +1,10 @@
 import { PanGestureHandler, PanGestureHandlerGestureEvent, State } from 'react-native-gesture-handler'
-import { View, StyleSheet } from 'react-native'
+import { View } from 'react-native'
 import React, {useState, useRef, useEffect} from 'react'
 
 import type { OptionContainerProps } from '../types'
-import { styles } from '../styles'
-import { themeSizes, themeColors } from '../../../Styles'
+import { styles, getDynamicStyles } from '../styles'
+import { themeSizes } from '../../../Styles'
 
 import { Title, Variable } from './OptionContents'
 
@@ -25,11 +25,7 @@ export const OptionContainer = (props: OptionContainerProps): React.ReactElement
 
   const { title, optionId, setActiveHarpStrata, nudgeFunction } = props
 
-  const dynamicStyles = StyleSheet.create({
-    activeSwipeStyle: {
-      backgroundColor: (state === State.ACTIVE ? themeColors.inertOutline : 'transparent')
-    }
-  })
+  const dynamicStyles = getDynamicStyles(state)
 
   if (state === State.END && previousState === State.ACTIVE) {
     if (translationY > 0) {
