@@ -1,9 +1,9 @@
 import { PanGestureHandler, PanGestureHandlerGestureEvent, State } from 'react-native-gesture-handler'
 import { Text, StyleSheet, View } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import { HarpStrata } from 'harpstrata'
 
-import { themeSizes } from '../../../Styles'
+import { themeSizes, themeColors } from '../../../Styles'
 
 const { 7: variableSize, 8: titleSize } = themeSizes
 const { 8: swipeThreshold } = themeSizes
@@ -48,8 +48,10 @@ const isPastActivationThreshold = (translation: number) => {
 }
 
 export const OptionContainer = (props: OptionContainerProps): React.ReactElement => {
+  const [ state, setState ] = useState(State.UNDETERMINED)
   const { title, optionId, setActiveHarpStrata, nudgeFunction } = props
   const handlePozitionSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
+    setState(nativeEvent.state)
     if (nativeEvent.state === State.END && isPastActivationThreshold(nativeEvent.translationY)) {
       if (nativeEvent.translationY > 0) {
         setActiveHarpStrata(nudgeFunction('UP'))
@@ -64,7 +66,7 @@ export const OptionContainer = (props: OptionContainerProps): React.ReactElement
       activeOffsetY={[swipeThreshold * -1, swipeThreshold]}
       onHandlerStateChange={handlePozitionSwipe}
     >
-      <View style={styles.column}>
+      <View style={[styles.column, { ...{ backgroundColor: (state === State.ACTIVE ? themeColors.inertOutline : 'transparent')}}]}>
         <Title>{title}</Title>
         <Variable>{optionId}</Variable>
       </View>
