@@ -1,6 +1,6 @@
 import { PanGestureHandler, PanGestureHandlerGestureEvent, State } from 'react-native-gesture-handler'
 import { Text, StyleSheet, View } from 'react-native'
-import React, {useState} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import { HarpStrata } from 'harpstrata'
 
 import { themeSizes, themeColors } from '../../../Styles'
@@ -23,6 +23,14 @@ const styles = StyleSheet.create({
   }
 })
 
+const usePrevious = (value: State) => {
+  const ref = useRef(State.UNDETERMINED)
+  useEffect(() => {
+    ref.current = value
+  })
+  return ref.current
+}
+
 type ChildProps = {
   readonly children: React.ReactNode
 }
@@ -41,24 +49,24 @@ const Variable = ({children}: ChildProps): React.ReactElement => {
   return <Text style={styles.variable}>{children}</Text>
 }
 
-const isPastActivationThreshold = (translation: number) => {
-  if (translation > swipeThreshold) return true
-  if (translation < swipeThreshold * -1) return true
-  return false
-}
-
 export const OptionContainer = (props: OptionContainerProps): React.ReactElement => {
   const [ state, setState ] = useState(State.UNDETERMINED)
+  const [ translationY, setTranslationY ] = useState(0)
+  const previousState = usePrevious(state)
+
   const { title, optionId, setActiveHarpStrata, nudgeFunction } = props
+
+  if (state === State.END && previousState === State.ACTIVE) {
+    if (translationY > 0) {
+      setActiveHarpStrata(nudgeFunction('UP'))
+    } else {
+      setActiveHarpStrata(nudgeFunction('DOWN'))
+    }
+  }
+
   const handlePozitionSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
     setState(nativeEvent.state)
-    if (nativeEvent.state === State.END && isPastActivationThreshold(nativeEvent.translationY)) {
-      if (nativeEvent.translationY > 0) {
-        setActiveHarpStrata(nudgeFunction('UP'))
-      } else {
-        setActiveHarpStrata(nudgeFunction('DOWN'))
-      }
-    }
+    setTranslationY(nativeEvent.translationY)
   }
 
   return (
