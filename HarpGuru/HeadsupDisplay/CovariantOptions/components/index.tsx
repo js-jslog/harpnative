@@ -2,7 +2,7 @@ import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import {HarpStrata} from 'harpstrata'
 
-import {HUDContentProps} from '../types'
+import type {CovariantOptionsProps} from '../types'
 import {nudgeHarpStrataByRootPitch} from '../nudgeHarpStrataByRootPitch'
 import {nudgeHarpStrataByPozition} from '../nudgeHarpStrataByPozition'
 import {nudgeHarpStrataByHarpKey} from '../nudgeHarpStrataByHarpKey'
@@ -30,7 +30,7 @@ const partiallyApplyNudgeFunction = (nudgeFunction: FullNudgeFunction, activeHar
 }
 
 
-export const HUDContent = (props: HUDContentProps): React.ReactElement => {
+export const CovariantOptions = (props: CovariantOptionsProps): React.ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
   const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
 

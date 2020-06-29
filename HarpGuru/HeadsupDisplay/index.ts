@@ -1,2 +1,2 @@
 export { SweepingBanner } from './SweepingBanner'
-export { HUDContent } from './HUDContent'
+export { CovariantOptions } from './CovariantOptions'

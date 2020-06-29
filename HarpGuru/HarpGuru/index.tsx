@@ -9,7 +9,7 @@ import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
 import { themeSizes } from '../Styles'
 import { HomeScreen } from '../Screens'
-import {SweepingBanner, HUDContent} from '../HeadsupDisplay'
+import {SweepingBanner, CovariantOptions} from '../HeadsupDisplay'
 import {DisplayModes} from '../HarpFace'
 
 const styles = StyleSheet.create({
@@ -62,7 +62,7 @@ export const HarpGuru = (): ReactElement => {
     >
       <View style={styles.overlay}>
         <HomeScreen {...screenProps} />
-        <SweepingBanner bannerActive={bannerActive}><HUDContent {...hudContentProps} /></SweepingBanner>
+        <SweepingBanner bannerActive={bannerActive}><CovariantOptions {...hudContentProps} /></SweepingBanner>
       </View>
     </PanGestureHandler>
   )

@@ -1,0 +1,1 @@
+export { CovariantOptions } from './components'
