@@ -1,18 +1,7 @@
-import { StyleSheet, Text } from 'react-native'
+import { Text } from 'react-native'
 import React from 'react'
 
-import { themeSizes } from '../../../Styles'
-
-const { 7: variableSize, 8: titleSize } = themeSizes
-
-const styles = StyleSheet.create({
-  title: {
-    fontSize: titleSize
-  },
-  variable: {
-    fontSize: variableSize
-  }
-})
+import { styles } from '../styles'
 
 type ChildProps = {
   readonly children: React.ReactNode

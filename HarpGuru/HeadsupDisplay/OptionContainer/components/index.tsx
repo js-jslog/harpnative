@@ -1,22 +1,14 @@
 import { PanGestureHandler, PanGestureHandlerGestureEvent, State } from 'react-native-gesture-handler'
-import { StyleSheet, View } from 'react-native'
+import { View } from 'react-native'
 import React, {useState, useRef, useEffect} from 'react'
 
 import type { OptionContainerProps } from '../types'
+import { styles } from '../styles'
 import { themeSizes, themeColors } from '../../../Styles'
 
 import { Title, Variable } from './OptionContents'
 
 const { 8: swipeThreshold } = themeSizes
-
-const styles = StyleSheet.create({
-  column: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-  }
-})
 
 const usePrevious = (value: State) => {
   const ref = useRef(State.UNDETERMINED)
