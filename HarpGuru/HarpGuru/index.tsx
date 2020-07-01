@@ -42,13 +42,13 @@ export const HarpGuru = (): ReactElement => {
   const screenProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode }
   const covariantMenuProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode }
 
-  const [ overlayVisible, setBannerActive ] = useState(false)
+  const [ overlayVisible, setOverlayVisible ] = useState(false)
   
 
   const handleSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
     if (nativeEvent.state === State.ACTIVE) {
       if (nativeEvent.numberOfPointers === 1) {
-        setBannerActive(!overlayVisible)
+        setOverlayVisible(!overlayVisible)
       } else {
         setActiveDisplayMode(activeDisplayMode === DisplayModes.Pitch ? DisplayModes.Degree : DisplayModes.Pitch )
       }
