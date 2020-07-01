@@ -6,4 +6,5 @@ export type CovariantMenuProps = {
   readonly activeHarpStrata: HarpStrata,
   readonly setActiveHarpStrata: (arg0: HarpStrata) => void
   readonly activeDisplayMode: DisplayModes
+  readonly setActiveDisplayMode: (arg0: DisplayModes) => void
 }

@@ -7,41 +7,54 @@ import {nudgeHarpStrataByPozition} from '../nudgeHarpStrataByPozition'
 import {nudgeHarpStrataByHarpKey} from '../nudgeHarpStrataByHarpKey'
 import { OptionContainer } from '../../OptionContainer'
 import {MenuContainer} from '../../MenuContainer'
+import {nudgeDisplayMode} from '../../LayoutMenu/nudgeDisplayMode'
 import {DisplayModes} from '../../../HarpFace'
 
 
 type FullNudgeFunction = (arg0: HarpStrata, arg1: 'UP' | 'DOWN', arg2: DisplayModes) => HarpStrata
 type PartiallyAppliedNudgeFunction = (arg0: 'UP' | 'DOWN') => HarpStrata
 
-const partiallyApplyNudgeFunction = (nudgeFunction: FullNudgeFunction, activeHarpStrata: HarpStrata, activeDisplayMode: DisplayModes): PartiallyAppliedNudgeFunction => {
+const partiallyApplyCovariantNudgeFunction = (nudgeFunction: FullNudgeFunction, activeHarpStrata: HarpStrata, activeDisplayMode: DisplayModes): PartiallyAppliedNudgeFunction => {
   return (direction: 'UP' | 'DOWN') => {
     return nudgeFunction(activeHarpStrata, direction, activeDisplayMode)
   }
 }
 
+const getPartiallyAppliedDisplayModeNudgeFunction = (activeHarpStrata: HarpStrata, displayMode: DisplayModes, setActiveDisplayMode: (arg0: DisplayModes) => void) => {
+  return (): HarpStrata => {
+    return nudgeDisplayMode(activeHarpStrata, displayMode, setActiveDisplayMode)
+  }
+}
 
 export const CovariantMenu = (props: CovariantMenuProps): React.ReactElement => {
-  const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
+  const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode } = props
   const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
 
   const harpKeyOptionContainerProps = {
     title: 'Harp Key',
     optionId: harpKeyId,
-    nudgeFunction: partiallyApplyNudgeFunction(nudgeHarpStrataByHarpKey, activeHarpStrata, activeDisplayMode),
+    nudgeFunction: partiallyApplyCovariantNudgeFunction(nudgeHarpStrataByHarpKey, activeHarpStrata, activeDisplayMode),
     setActiveHarpStrata,
   }
 
   const pozitionOptionContainerProps = {
     title: 'Position',
     optionId: pozitionId,
-    nudgeFunction: partiallyApplyNudgeFunction(nudgeHarpStrataByPozition, activeHarpStrata, activeDisplayMode),
+    nudgeFunction: partiallyApplyCovariantNudgeFunction(nudgeHarpStrataByPozition, activeHarpStrata, activeDisplayMode),
     setActiveHarpStrata,
   }
 
   const rootPitchOptionContainerProps = {
     title: 'Position Key',
     optionId: rootPitchId,
-    nudgeFunction: partiallyApplyNudgeFunction(nudgeHarpStrataByRootPitch, activeHarpStrata, activeDisplayMode),
+    nudgeFunction: partiallyApplyCovariantNudgeFunction(nudgeHarpStrataByRootPitch, activeHarpStrata, activeDisplayMode),
+    setActiveHarpStrata,
+  }
+
+  const displayModeOptionContainerProps = {
+    title: 'Display',
+    optionId: activeDisplayMode,
+    nudgeFunction: getPartiallyAppliedDisplayModeNudgeFunction(activeHarpStrata, activeDisplayMode, setActiveDisplayMode),
     setActiveHarpStrata,
   }
 
@@ -50,6 +63,7 @@ export const CovariantMenu = (props: CovariantMenuProps): React.ReactElement => 
       <OptionContainer {...harpKeyOptionContainerProps}/>
       <OptionContainer {...pozitionOptionContainerProps}/>
       <OptionContainer {...rootPitchOptionContainerProps}/>
+      <OptionContainer {...displayModeOptionContainerProps}/>
     </MenuContainer>
   )
 }
