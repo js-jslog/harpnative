@@ -6,15 +6,18 @@ import { themeSizes, themeColors } from '../../Styles'
 const { 7: variableSize, 8: titleSize } = themeSizes
 
 export const styles = StyleSheet.create({
+  // OverlayMenuContainer
   overlayMenuContainer: {
     ...StyleSheet.absoluteFillObject,
     opacity: 0.5,
   },
-  menu: {
+  // MenuContainer
+  menuContainer: {
     ...StyleSheet.absoluteFillObject,
     flexDirection: 'row',
     backgroundColor: themeColors.inertOutline,
   },
+  // OptionContainer
   optionContainer: {
     flex: 1,
     flexDirection: 'column',
@@ -29,6 +32,7 @@ export const styles = StyleSheet.create({
   }
 })
 
+// Dynamic styles for OptionContainer
 export const getDynamicStyles = (state: State): { readonly activeSwipeStyle: ViewStyle } => {
   return StyleSheet.create({
     activeSwipeStyle: {

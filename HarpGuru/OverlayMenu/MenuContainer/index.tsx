@@ -5,7 +5,7 @@ import { styles } from '../styles'
 
 export const MenuContainer = ({children}: {readonly children: ReactNode}): ReactElement => {
   return (
-    <View style={styles.menu}>
+    <View style={styles.menuContainer}>
       { children }
     </View>
   )
