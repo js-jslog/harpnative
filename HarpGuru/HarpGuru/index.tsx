@@ -9,7 +9,7 @@ import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
 import { themeSizes } from '../Styles'
 import { HomeScreen } from '../Screens'
-import {OverlayMenuContainer, CovariantMenu} from '../OverlayMenu'
+import {OverlayMenuContainer, CovariantMenu, LayoutMenu} from '../OverlayMenu'
 import {DisplayModes} from '../HarpFace'
 
 const styles = StyleSheet.create({
@@ -42,6 +42,11 @@ const usePrevious = (value: State) => {
   return ref.current
 }
 
+enum MenuStates {
+  LayoutMenu,
+  CovariantMenu,
+  NoMenu
+}
 
 export const HarpGuru = (): ReactElement => {
   const [ activeHarpStrata, setActiveHarpStrata ] = useState(initialHarpStrata)
@@ -49,10 +54,11 @@ export const HarpGuru = (): ReactElement => {
 
   const screenProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode }
   const covariantMenuProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode }
+  const layoutMenuProps = { activeHarpStrata, setActiveHarpStrata }
 
-  const [ panState, setPanState ] = useState(State.UNDETERMINED)
-  const [ translationX, setTranslationX ] = useState(0)
-  const [ overlayVisible, setOverlayVisible ] = useState(false)
+  const [ panState, setPanState ] = useState<State>(State.UNDETERMINED)
+  const [ menuState, setMenuState ] = useState<MenuStates>(MenuStates.NoMenu)
+  const [ translationX, setTranslationX ] = useState<number>(0)
   const previousPanState = usePrevious(panState)
   
   const handleSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
@@ -61,11 +67,17 @@ export const HarpGuru = (): ReactElement => {
   }
 
   if (panState === State.END && previousPanState === State.ACTIVE) {
-    if (!overlayVisible && translationX > 0) {
-      setOverlayVisible(true)
-    } else if (overlayVisible && translationX < 0){
-      setOverlayVisible(false)
+    if (menuState === MenuStates.NoMenu && translationX < 0) {
+      setMenuState(MenuStates.LayoutMenu)
+    } else if (menuState === MenuStates.NoMenu && translationX > 0) {
+      setMenuState(MenuStates.CovariantMenu)
+    } else if (menuState === MenuStates.CovariantMenu && translationX < 0) {
+      setMenuState(MenuStates.NoMenu)
+    } else if (menuState === MenuStates.LayoutMenu && translationX > 0) {
+      setMenuState(MenuStates.NoMenu)
     }
+    setPanState(State.UNDETERMINED)
+    setTranslationX(0)
     //setActiveDisplayMode(activeDisplayMode === DisplayModes.Pitch ? DisplayModes.Degree : DisplayModes.Pitch )
   }
 
@@ -76,7 +88,8 @@ export const HarpGuru = (): ReactElement => {
     >
       <View style={styles.overlay}>
         <HomeScreen {...screenProps} />
-        <OverlayMenuContainer overlayVisible={overlayVisible}><CovariantMenu {...covariantMenuProps} /></OverlayMenuContainer>
+        <OverlayMenuContainer overlayVisible={menuState === MenuStates.CovariantMenu}><CovariantMenu {...covariantMenuProps} /></OverlayMenuContainer>
+        <OverlayMenuContainer overlayVisible={menuState === MenuStates.LayoutMenu}><LayoutMenu {...layoutMenuProps} /></OverlayMenuContainer>
       </View>
     </PanGestureHandler>
   )
