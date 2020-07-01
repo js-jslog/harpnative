@@ -6,7 +6,7 @@ import type { OptionContainerProps } from '../types'
 import { styles, getDynamicStyles } from '../../styles'
 import { themeSizes } from '../../../Styles'
 
-import { Title, Variable } from './OptionContents'
+import { Title, Option } from './OptionContents'
 
 const { 8: swipeThreshold } = themeSizes
 
@@ -48,7 +48,7 @@ export const OptionContainer = (props: OptionContainerProps): React.ReactElement
     >
       <View style={[styles.optionContainer, dynamicStyles.activeSwipeStyle]}>
         <Title>{title}</Title>
-        <Variable>{optionId}</Variable>
+        <Option>{optionId}</Option>
       </View>
     </PanGestureHandler>
   )

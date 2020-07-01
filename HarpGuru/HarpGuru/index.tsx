@@ -9,7 +9,7 @@ import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
 import { themeSizes } from '../Styles'
 import { HomeScreen } from '../Screens'
-import {OverlayMenuContainer, CovariantMenu} from '../HeadsupDisplay'
+import {OverlayMenuContainer, CovariantMenu} from '../OverlayMenu'
 import {DisplayModes} from '../HarpFace'
 
 const styles = StyleSheet.create({
