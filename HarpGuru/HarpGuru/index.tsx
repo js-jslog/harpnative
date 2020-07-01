@@ -9,7 +9,7 @@ import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
 import { themeSizes } from '../Styles'
 import { HomeScreen } from '../Screens'
-import {SweepingBanner, CovariantOptions} from '../HeadsupDisplay'
+import {SweepingBanner, CovariantMenu} from '../HeadsupDisplay'
 import {DisplayModes} from '../HarpFace'
 
 const styles = StyleSheet.create({
@@ -40,7 +40,7 @@ export const HarpGuru = (): ReactElement => {
   const [ activeDisplayMode, setActiveDisplayMode ] = useState(initialDisplayMode)
 
   const screenProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode }
-  const hudContentProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode }
+  const covariantMenuProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode }
 
   const [ bannerActive, setBannerActive ] = useState(false)
   
@@ -62,7 +62,7 @@ export const HarpGuru = (): ReactElement => {
     >
       <View style={styles.overlay}>
         <HomeScreen {...screenProps} />
-        <SweepingBanner bannerActive={bannerActive}><CovariantOptions {...hudContentProps} /></SweepingBanner>
+        <SweepingBanner bannerActive={bannerActive}><CovariantMenu {...covariantMenuProps} /></SweepingBanner>
       </View>
     </PanGestureHandler>
   )

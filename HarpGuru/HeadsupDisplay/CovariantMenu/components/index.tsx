@@ -30,7 +30,7 @@ const partiallyApplyNudgeFunction = (nudgeFunction: FullNudgeFunction, activeHar
 }
 
 
-export const CovariantOptions = (props: CovariantOptionsProps): React.ReactElement => {
+export const CovariantMenu = (props: CovariantOptionsProps): React.ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
   const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
 
