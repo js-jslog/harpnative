@@ -20,8 +20,21 @@ test('LayoutMenu renders a component with a major diatonic layout selected', () 
     activeHarpStrata: harpStrata,
     setActiveHarpStrata: jest.fn(),
     activeDisplayMode: DisplayModes.Degree,
+    setActiveDisplayMode: jest.fn()
   }
   const { getByText } = render(<LayoutMenu {...hudContentProps} />)
 
   expect(getByText(ApparatusIds.MajorDiatonic)).toBeTruthy()
+})
+
+test('LayoutMenu renders a component with Degree DisplayMode selected', () => {
+  const hudContentProps = {
+    activeHarpStrata: harpStrata,
+    setActiveHarpStrata: jest.fn(),
+    activeDisplayMode: DisplayModes.Degree,
+    setActiveDisplayMode: jest.fn()
+  }
+  const { getByText } = render(<LayoutMenu {...hudContentProps} />)
+
+  expect(getByText(DisplayModes.Degree)).toBeTruthy()
 })
