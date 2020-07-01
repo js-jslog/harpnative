@@ -54,7 +54,7 @@ export const HarpGuru = (): ReactElement => {
 
   const screenProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode }
   const covariantMenuProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode }
-  const layoutMenuProps = { activeHarpStrata, setActiveHarpStrata }
+  const layoutMenuProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode }
 
   const [ panState, setPanState ] = useState<State>(State.UNDETERMINED)
   const [ menuState, setMenuState ] = useState<MenuStates>(MenuStates.NoMenu)
