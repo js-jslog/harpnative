@@ -15,8 +15,8 @@ const getPartiallyAppliedLayoutNudgeFunction = (activeHarpStrata: HarpStrata): (
 }
 
 const getPartiallyAppliedDisplayModeNudgeFunction = (activeHarpStrata: HarpStrata, displayMode: DisplayModes, setActiveDisplayMode: (arg0: DisplayModes) => void) => {
-  return (direction: 'UP' | 'DOWN'): HarpStrata => {
-    return nudgeDisplayMode(activeHarpStrata, displayMode, setActiveDisplayMode, direction)
+  return (): HarpStrata => {
+    return nudgeDisplayMode(activeHarpStrata, displayMode, setActiveDisplayMode)
   }
 }
 

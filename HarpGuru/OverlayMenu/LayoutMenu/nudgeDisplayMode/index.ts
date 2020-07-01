@@ -2,7 +2,7 @@ import { HarpStrata } from 'harpstrata'
 
 import {DisplayModes} from '../../../HarpFace'
 
-export const nudgeDisplayMode = (activeHarpStrata: HarpStrata, activeDisplayMode: DisplayModes, setActiveDisplayMode: (arg0: DisplayModes) => void, direction: 'UP' | 'DOWN'): HarpStrata => {
+export const nudgeDisplayMode = (activeHarpStrata: HarpStrata, activeDisplayMode: DisplayModes, setActiveDisplayMode: (arg0: DisplayModes) => void): HarpStrata => {
   if (activeDisplayMode === DisplayModes.Degree) {
     setActiveDisplayMode(DisplayModes.Pitch)
   } else {
