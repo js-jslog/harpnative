@@ -1,2 +1,2 @@
-export { SweepingBanner } from './SweepingBanner'
+export { OverlayMenuContainer } from './OverlayMenuContainer'
 export { CovariantMenu } from './CovariantMenu'

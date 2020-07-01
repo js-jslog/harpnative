@@ -2,7 +2,7 @@ import Animated from 'react-native-reanimated'
 import {StyleSheet, Dimensions} from 'react-native'
 import React from 'react'
 
-import type { SweepingBannerProps } from '../types'
+import type { OverlayMenuContainerProps } from '../types'
 
 const styles = StyleSheet.create({
   headsupOverlay: {
@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
   }
 })
 
-export const SweepingBanner = (props: SweepingBannerProps): React.ReactElement => {
-  const { children, bannerActive } = props
+export const OverlayMenuContainer = (props: OverlayMenuContainerProps): React.ReactElement => {
+  const { children, overlayVisible } = props
 
   const { width: windowWidth } = Dimensions.get('window')
 
@@ -19,7 +19,7 @@ export const SweepingBanner = (props: SweepingBannerProps): React.ReactElement =
     <Animated.View
       style={[styles.headsupOverlay, {
         transform: [
-          { translateX: (bannerActive ? 0 : windowWidth * -1) }
+          { translateX: (overlayVisible ? 0 : windowWidth * -1) }
         ],
       }]}>
       { children }

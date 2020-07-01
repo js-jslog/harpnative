@@ -9,7 +9,7 @@ import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
 import { themeSizes } from '../Styles'
 import { HomeScreen } from '../Screens'
-import {SweepingBanner, CovariantMenu} from '../HeadsupDisplay'
+import {OverlayMenuContainer, CovariantMenu} from '../HeadsupDisplay'
 import {DisplayModes} from '../HarpFace'
 
 const styles = StyleSheet.create({
@@ -42,13 +42,13 @@ export const HarpGuru = (): ReactElement => {
   const screenProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode }
   const covariantMenuProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode }
 
-  const [ bannerActive, setBannerActive ] = useState(false)
+  const [ overlayVisible, setBannerActive ] = useState(false)
   
 
   const handleSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
     if (nativeEvent.state === State.ACTIVE) {
       if (nativeEvent.numberOfPointers === 1) {
-        setBannerActive(!bannerActive)
+        setBannerActive(!overlayVisible)
       } else {
         setActiveDisplayMode(activeDisplayMode === DisplayModes.Pitch ? DisplayModes.Degree : DisplayModes.Pitch )
       }
@@ -62,7 +62,7 @@ export const HarpGuru = (): ReactElement => {
     >
       <View style={styles.overlay}>
         <HomeScreen {...screenProps} />
-        <SweepingBanner bannerActive={bannerActive}><CovariantMenu {...covariantMenuProps} /></SweepingBanner>
+        <OverlayMenuContainer overlayVisible={overlayVisible}><CovariantMenu {...covariantMenuProps} /></OverlayMenuContainer>
       </View>
     </PanGestureHandler>
   )

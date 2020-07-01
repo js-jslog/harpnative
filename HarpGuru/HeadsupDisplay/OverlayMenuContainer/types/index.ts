@@ -1,6 +1,6 @@
 import React from 'react'
 
-export type SweepingBannerProps = {
+export type OverlayMenuContainerProps = {
   readonly bannerActive: boolean
   readonly children: React.ReactNode
 }

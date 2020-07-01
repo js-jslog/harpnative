@@ -1,1 +1,0 @@
-export { SweepingBanner } from './components'
