@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import React, {useState, useRef, useEffect} from 'react'
 
 import type { OptionContainerProps } from '../types'
-import { styles, getDynamicStyles } from '../styles'
+import { styles, getDynamicStyles } from '../../styles'
 import { themeSizes } from '../../../Styles'
 
 import { Title, Variable } from './OptionContents'
@@ -46,7 +46,7 @@ export const OptionContainer = (props: OptionContainerProps): React.ReactElement
       activeOffsetY={[swipeThreshold * -1, swipeThreshold]}
       onHandlerStateChange={handlePozitionSwipe}
     >
-      <View style={[styles.column, dynamicStyles.activeSwipeStyle]}>
+      <View style={[styles.optionContainer, dynamicStyles.activeSwipeStyle]}>
         <Title>{title}</Title>
         <Variable>{optionId}</Variable>
       </View>

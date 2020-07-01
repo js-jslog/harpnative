@@ -1,12 +1,21 @@
-import {State} from 'react-native-gesture-handler'
+import { State } from 'react-native-gesture-handler'
 import { StyleSheet, ViewStyle } from 'react-native'
 
-import { themeSizes, themeColors } from '../../../Styles'
+import { themeSizes, themeColors } from '../../Styles'
 
 const { 7: variableSize, 8: titleSize } = themeSizes
 
 export const styles = StyleSheet.create({
-  column: {
+  overlayMenuContainer: {
+    ...StyleSheet.absoluteFillObject,
+    opacity: 0.5,
+  },
+  menu: {
+    ...StyleSheet.absoluteFillObject,
+    flexDirection: 'row',
+    backgroundColor: themeColors.inertOutline,
+  },
+  optionContainer: {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
@@ -15,16 +24,12 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: titleSize
   },
-  variable: {
+  option: {
     fontSize: variableSize
   }
 })
 
-type DynamicStyleType = {
-  readonly activeSwipeStyle: ViewStyle
-}
-
-export const getDynamicStyles = (state: State): DynamicStyleType => {
+export const getDynamicStyles = (state: State): { readonly activeSwipeStyle: ViewStyle } => {
   return StyleSheet.create({
     activeSwipeStyle: {
       backgroundColor: (state === State.ACTIVE ? themeColors.inertOutline : 'transparent')

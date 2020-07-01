@@ -1,15 +1,9 @@
 import Animated from 'react-native-reanimated'
-import {StyleSheet, Dimensions} from 'react-native'
+import { Dimensions } from 'react-native'
 import React from 'react'
 
 import type { OverlayMenuContainerProps } from '../types'
-
-const styles = StyleSheet.create({
-  headsupOverlay: {
-    ...StyleSheet.absoluteFillObject,
-    opacity: 0.5,
-  }
-})
+import { styles } from '../../styles'
 
 export const OverlayMenuContainer = (props: OverlayMenuContainerProps): React.ReactElement => {
   const { children, overlayVisible } = props
@@ -18,7 +12,7 @@ export const OverlayMenuContainer = (props: OverlayMenuContainerProps): React.Re
 
   return (
     <Animated.View
-      style={[styles.headsupOverlay, {
+      style={[styles.overlayMenuContainer, {
         transform: [
           { translateX: (overlayVisible ? 0 : windowWidth * -1) }
         ],
