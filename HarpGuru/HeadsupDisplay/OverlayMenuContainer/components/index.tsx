@@ -7,6 +7,7 @@ import type { OverlayMenuContainerProps } from '../types'
 const styles = StyleSheet.create({
   headsupOverlay: {
     ...StyleSheet.absoluteFillObject,
+    opacity: 0.5,
   }
 })
 

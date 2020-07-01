@@ -2,7 +2,7 @@ import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import {HarpStrata} from 'harpstrata'
 
-import type {CovariantOptionsProps} from '../types'
+import type {CovariantMenuProps} from '../types'
 import {nudgeHarpStrataByRootPitch} from '../nudgeHarpStrataByRootPitch'
 import {nudgeHarpStrataByPozition} from '../nudgeHarpStrataByPozition'
 import {nudgeHarpStrataByHarpKey} from '../nudgeHarpStrataByHarpKey'
@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     flexDirection: 'row',
     backgroundColor: themeColors.inertOutline,
-    opacity: 0.5,
   }
 })
 
@@ -30,7 +29,7 @@ const partiallyApplyNudgeFunction = (nudgeFunction: FullNudgeFunction, activeHar
 }
 
 
-export const CovariantMenu = (props: CovariantOptionsProps): React.ReactElement => {
+export const CovariantMenu = (props: CovariantMenuProps): React.ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
   const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
 
