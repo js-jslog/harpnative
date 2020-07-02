@@ -2,7 +2,7 @@ import React from 'react'
 import {PitchIds, PozitionIds, HarpStrataProps, ApparatusIds, ActiveIds, getHarpStrata} from 'harpstrata'
 import {render} from '@testing-library/react-native'
 
-import {DisplayModes} from '../../../HarpFace'
+import {DisplayModes} from '../../../../HarpFace'
 
 import { HarpKeyOption } from './index'
 

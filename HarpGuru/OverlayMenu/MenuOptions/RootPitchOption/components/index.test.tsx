@@ -2,9 +2,9 @@ import React from 'react'
 import {PitchIds, PozitionIds, HarpStrataProps, ApparatusIds, ActiveIds, getHarpStrata} from 'harpstrata'
 import {render} from '@testing-library/react-native'
 
-import {DisplayModes} from '../../../HarpFace'
+import {DisplayModes} from '../../../../HarpFace'
 
-import { PozitionOption } from './index'
+import { RootPitchOption } from './index'
 
 const harpStrataProps: HarpStrataProps = {
   apparatusId: ApparatusIds.MajorDiatonic,
@@ -15,14 +15,14 @@ const harpStrataProps: HarpStrataProps = {
 
 const harpStrata = getHarpStrata(harpStrataProps)
 
-test('PozitionOption renders a component with position information displayed', () => {
+test('RootPitchOption renders a component with root pitch information displayed', () => {
   const menuOptionProps = {
     activeHarpStrata: harpStrata,
     setActiveHarpStrata: jest.fn(),
     activeDisplayMode: DisplayModes.Degree,
     setActiveDisplayMode: jest.fn()
   }
-  const { getByText } = render(<PozitionOption {...menuOptionProps} />)
+  const { getByText } = render(<RootPitchOption {...menuOptionProps} />)
 
-  expect(getByText(PozitionIds.Second)).toBeTruthy()
+  expect(getByText(PitchIds.G)).toBeTruthy()
 })

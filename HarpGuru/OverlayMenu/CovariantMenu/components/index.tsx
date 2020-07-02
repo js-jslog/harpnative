@@ -2,12 +2,10 @@ import React from 'react'
 import {HarpStrata} from 'harpstrata'
 
 import type {CovariantMenuProps} from '../types'
-import { RootPitchOption } from '../../RootPitchOption'
-import { PozitionOption } from '../../PozitionOption'
 import { OptionContainer } from '../../OptionContainer'
+import { HarpKeyOption, RootPitchOption, PozitionOption } from '../../MenuOptions'
 import {MenuContainer} from '../../MenuContainer'
 import {nudgeDisplayMode} from '../../LayoutMenu/nudgeDisplayMode'
-import { HarpKeyOption } from '../../HarpKeyOption'
 import {DisplayModes} from '../../../HarpFace'
 
 

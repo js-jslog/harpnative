@@ -2,9 +2,9 @@ import React from 'react'
 import {HarpStrata} from 'harpstrata'
 
 import { nudgeHarpStrataByRootPitch } from '../nudgeHarpStrataByRootPitch'
-import type { OptionControlProps } from '../../types'
-import { OptionContainer } from '../../OptionContainer'
-import type { DisplayModes } from '../../../HarpFace'
+import type { OptionControlProps } from '../../../types'
+import { OptionContainer } from '../../../OptionContainer'
+import type { DisplayModes } from '../../../../HarpFace'
 
 
 type FullNudgeFunction = (arg0: HarpStrata, arg1: 'UP' | 'DOWN', arg2: DisplayModes) => HarpStrata

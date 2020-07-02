@@ -1,10 +1,10 @@
 import React from 'react'
 import {HarpStrata} from 'harpstrata'
 
-import { nudgeHarpStrataByHarpKey } from '../nudgeHarpStrataByHarpKey'
-import type { OptionControlProps } from '../../types'
-import { OptionContainer } from '../../OptionContainer'
-import type { DisplayModes } from '../../../HarpFace'
+import { nudgeHarpStrataByPozition } from '../nudgeHarpStrataByPozition'
+import type { OptionControlProps } from '../../../types'
+import { OptionContainer } from '../../../OptionContainer'
+import type { DisplayModes } from '../../../../HarpFace'
 
 
 type FullNudgeFunction = (arg0: HarpStrata, arg1: 'UP' | 'DOWN', arg2: DisplayModes) => HarpStrata
@@ -16,16 +16,16 @@ const partiallyApplyCovariantNudgeFunction = (nudgeFunction: FullNudgeFunction, 
   }
 }
 
-export const HarpKeyOption = (props: OptionControlProps): React.ReactElement => {
+export const PozitionOption = (props: OptionControlProps): React.ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
-  const { harpKeyId } = activeHarpStrata
+  const { pozitionId } = activeHarpStrata
 
-  const harpKeyOptionContainerProps = {
-    title: 'Harp Key',
-    optionId: harpKeyId,
-    nudgeFunction: partiallyApplyCovariantNudgeFunction(nudgeHarpStrataByHarpKey, activeHarpStrata, activeDisplayMode),
+  const pozitionOptionContainerProps = {
+    title: 'Position',
+    optionId: pozitionId,
+    nudgeFunction: partiallyApplyCovariantNudgeFunction(nudgeHarpStrataByPozition, activeHarpStrata, activeDisplayMode),
     setActiveHarpStrata,
   }
 
-  return <OptionContainer {...harpKeyOptionContainerProps}/>
+  return <OptionContainer {...pozitionOptionContainerProps}/>
 }
