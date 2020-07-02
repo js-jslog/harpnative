@@ -3,7 +3,7 @@ import {HarpStrata} from 'harpstrata'
 
 import { nudgeDisplayMode } from '../nudgeDisplayMode'
 import { OptionContainer } from '../../OptionContainer'
-import type { OptionControlProps } from '../../../types'
+import type { MenuProps } from '../../../types'
 import type { DisplayModes } from '../../../../HarpFace'
 
 
@@ -13,7 +13,7 @@ const getPartiallyAppliedDisplayModeNudgeFunction = (activeHarpStrata: HarpStrat
   }
 }
 
-export const DisplayModeOption = (props: OptionControlProps): React.ReactElement => {
+export const DisplayModeOption = (props: MenuProps): React.ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode } = props
 
   const rootPitchOptionContainerProps = {

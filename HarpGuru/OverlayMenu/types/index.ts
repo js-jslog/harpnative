@@ -2,7 +2,7 @@ import type { HarpStrata } from 'harpstrata'
 
 import type { DisplayModes } from '../../HarpFace'
 
-export type OptionControlProps = {
+export type MenuProps = {
   readonly activeHarpStrata: HarpStrata,
   readonly setActiveHarpStrata: (arg0: HarpStrata) => void
   readonly activeDisplayMode: DisplayModes
