@@ -1,9 +1,9 @@
 import React from 'react'
 import {HarpStrata} from 'harpstrata'
 
+import type { PozitionOptionProps } from '../types'
 import { nudgeHarpStrataByPozition } from '../nudgeHarpStrataByPozition'
 import { OptionContainer } from '../../OptionContainer'
-import type { MenuProps } from '../../../types'
 import type { DisplayModes } from '../../../../HarpFace'
 
 
@@ -16,7 +16,7 @@ const partiallyApplyCovariantNudgeFunction = (nudgeFunction: FullNudgeFunction, 
   }
 }
 
-export const PozitionOption = (props: MenuProps): React.ReactElement => {
+export const PozitionOption = (props: PozitionOptionProps): React.ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
   const { pozitionId } = activeHarpStrata
 

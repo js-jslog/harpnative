@@ -1,9 +1,9 @@
 import React from 'react'
 import {HarpStrata} from 'harpstrata'
 
+import type { ApparatusOptionProps } from '../types'
 import { nudgeHarpStrataByApparatus } from '../nudgeHarpStrataByApparatus'
 import { OptionContainer } from '../../OptionContainer'
-import type { MenuProps } from '../../../types'
 
 
 const getPartiallyAppliedLayoutNudgeFunction = (activeHarpStrata: HarpStrata): (direction: 'UP' | 'DOWN') => HarpStrata => {
@@ -12,7 +12,7 @@ const getPartiallyAppliedLayoutNudgeFunction = (activeHarpStrata: HarpStrata): (
   }
 }
 
-export const ApparatusOption = (props: MenuProps): React.ReactElement => {
+export const ApparatusOption = (props: ApparatusOptionProps): React.ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata } = props
   const { apparatus: {id: apparatusId} } = activeHarpStrata
 

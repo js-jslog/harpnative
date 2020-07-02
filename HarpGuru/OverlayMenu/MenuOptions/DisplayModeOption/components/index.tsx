@@ -1,9 +1,9 @@
 import React from 'react'
 import {HarpStrata} from 'harpstrata'
 
+import type { DisplayModeOptionProps } from '../types'
 import { nudgeDisplayMode } from '../nudgeDisplayMode'
 import { OptionContainer } from '../../OptionContainer'
-import type { MenuProps } from '../../../types'
 import type { DisplayModes } from '../../../../HarpFace'
 
 
@@ -13,15 +13,15 @@ const getPartiallyAppliedDisplayModeNudgeFunction = (activeHarpStrata: HarpStrat
   }
 }
 
-export const DisplayModeOption = (props: MenuProps): React.ReactElement => {
+export const DisplayModeOption = (props: DisplayModeOptionProps): React.ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode } = props
 
-  const rootPitchOptionContainerProps = {
+  const displayModeOptionContainerProps = {
     title: 'Display',
     optionId: activeDisplayMode,
     nudgeFunction: getPartiallyAppliedDisplayModeNudgeFunction(activeHarpStrata, activeDisplayMode, setActiveDisplayMode),
     setActiveHarpStrata,
   }
 
-  return <OptionContainer {...rootPitchOptionContainerProps}/>
+  return <OptionContainer {...displayModeOptionContainerProps}/>
 }

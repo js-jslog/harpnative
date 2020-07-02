@@ -1,9 +1,9 @@
 import React from 'react'
 import {HarpStrata} from 'harpstrata'
 
+import type { RootPitchOptionProps } from '../types'
 import { nudgeHarpStrataByRootPitch } from '../nudgeHarpStrataByRootPitch'
 import { OptionContainer } from '../../OptionContainer'
-import type { MenuProps } from '../../../types'
 import type { DisplayModes } from '../../../../HarpFace'
 
 
@@ -16,7 +16,7 @@ const partiallyApplyCovariantNudgeFunction = (nudgeFunction: FullNudgeFunction, 
   }
 }
 
-export const RootPitchOption = (props: MenuProps): React.ReactElement => {
+export const RootPitchOption = (props: RootPitchOptionProps): React.ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
   const { rootPitchId } = activeHarpStrata
 
