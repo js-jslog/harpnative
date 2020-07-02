@@ -4,7 +4,7 @@ import {render} from '@testing-library/react-native'
 
 import {DisplayModes} from '../../../HarpFace'
 
-import { CovariantMenu } from './index'
+import { PozitionOption } from './index'
 
 const harpStrataProps: HarpStrataProps = {
   apparatusId: ApparatusIds.MajorDiatonic,
@@ -15,16 +15,14 @@ const harpStrataProps: HarpStrataProps = {
 
 const harpStrata = getHarpStrata(harpStrataProps)
 
-test('CovariantMenu renders a component with position and key information displayed', () => {
-  const hudContentProps = {
+test('PozitionOption renders a component with position information displayed', () => {
+  const menuOptionProps = {
     activeHarpStrata: harpStrata,
     setActiveHarpStrata: jest.fn(),
     activeDisplayMode: DisplayModes.Degree,
     setActiveDisplayMode: jest.fn()
   }
-  const { getByText } = render(<CovariantMenu {...hudContentProps} />)
+  const { getByText } = render(<PozitionOption {...menuOptionProps} />)
 
-  expect(getByText(PitchIds.C)).toBeTruthy()
-  expect(getByText(PitchIds.G)).toBeTruthy()
   expect(getByText(PozitionIds.Second)).toBeTruthy()
 })
