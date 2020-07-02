@@ -1,8 +1,8 @@
 import type { HarpStrata } from 'harpstrata'
 
-import type { DisplayModes } from '../../../HarpFace'
+import {DisplayModes} from '../../../../HarpFace'
 
-export type LayoutMenuProps = {
+export type CovariantMenuProps = {
   readonly activeHarpStrata: HarpStrata,
   readonly setActiveHarpStrata: (arg0: HarpStrata) => void
   readonly activeDisplayMode: DisplayModes

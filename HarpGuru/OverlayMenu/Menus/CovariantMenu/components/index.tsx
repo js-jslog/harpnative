@@ -1,8 +1,8 @@
 import React from 'react'
 
 import type {CovariantMenuProps} from '../types'
-import { DisplayModeOption, HarpKeyOption, RootPitchOption, PozitionOption } from '../../MenuOptions'
 import {MenuContainer} from '../../MenuContainer'
+import { DisplayModeOption, HarpKeyOption, RootPitchOption, PozitionOption } from '../../../MenuOptions'
 
 
 export const CovariantMenu = (props: CovariantMenuProps): React.ReactElement => {

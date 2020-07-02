@@ -1,8 +1,8 @@
 import React from 'react'
 
 import type { LayoutMenuProps } from '../types'
-import { ApparatusOption, DisplayModeOption } from '../../MenuOptions'
 import { MenuContainer} from '../../MenuContainer'
+import { ApparatusOption, DisplayModeOption } from '../../../MenuOptions'
 
 
 export const LayoutMenu = (props: LayoutMenuProps): React.ReactElement => {
