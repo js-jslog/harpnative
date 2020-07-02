@@ -1,7 +1,7 @@
 import { Text } from 'react-native'
 import React from 'react'
 
-import { styles } from '../../styles'
+import { styles } from '../../../styles'
 
 type ChildProps = {
   readonly children: React.ReactNode

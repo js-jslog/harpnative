@@ -2,8 +2,8 @@ import React from 'react'
 import {HarpStrata} from 'harpstrata'
 
 import { nudgeHarpStrataByRootPitch } from '../nudgeHarpStrataByRootPitch'
+import { OptionContainer } from '../../OptionContainer'
 import type { OptionControlProps } from '../../../types'
-import { OptionContainer } from '../../../OptionContainer'
 import type { DisplayModes } from '../../../../HarpFace'
 
 

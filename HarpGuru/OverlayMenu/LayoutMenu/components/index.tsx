@@ -4,7 +4,7 @@ import type { HarpStrata } from 'harpstrata'
 import type { LayoutMenuProps } from '../types'
 import { nudgeHarpStrataByApparatus } from '../nudgeHarpStrataByApparatus'
 import {nudgeDisplayMode} from '../nudgeDisplayMode'
-import { OptionContainer } from '../../OptionContainer'
+import { OptionContainer } from '../../MenuOptions/OptionContainer'
 import { MenuContainer} from '../../MenuContainer'
 import {DisplayModes} from '../../../HarpFace'
 

@@ -3,8 +3,8 @@ import { View } from 'react-native'
 import React, {useState, useRef, useEffect} from 'react'
 
 import type { OptionContainerProps } from '../types'
-import { styles, getDynamicStyles } from '../../styles'
-import { themeSizes } from '../../../Styles'
+import { styles, getDynamicStyles } from '../../../styles'
+import { themeSizes } from '../../../../Styles'
 
 import { Title, Option } from './OptionContents'
 
