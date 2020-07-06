@@ -23,15 +23,15 @@ export const OptionContainer = (props: OptionContainerProps): React.ReactElement
   const [ translationY, setTranslationY ] = useState(0)
   const previousState = usePrevious(state)
 
-  const { title, optionId, setActiveHarpStrata, nudgeFunction } = props
+  const { title, optionId, nudgeFunction } = props
 
   const dynamicStyles = getDynamicStyles(state)
 
   if (state === State.END && previousState === State.ACTIVE) {
     if (translationY > 0) {
-      setActiveHarpStrata(nudgeFunction('UP'))
+      nudgeFunction('UP')
     } else {
-      setActiveHarpStrata(nudgeFunction('DOWN'))
+      nudgeFunction('DOWN')
     }
   }
 

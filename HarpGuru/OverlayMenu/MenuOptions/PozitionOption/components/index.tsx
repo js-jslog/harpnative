@@ -7,12 +7,12 @@ import { OptionContainer } from '../../OptionContainer'
 import type { DisplayModes } from '../../../../HarpFace'
 
 
-type FullNudgeFunction = (arg0: HarpStrata, arg1: 'UP' | 'DOWN', arg2: DisplayModes) => HarpStrata
-type PartiallyAppliedNudgeFunction = (arg0: 'UP' | 'DOWN') => HarpStrata
+type FullNudgeFunction = (arg0: HarpStrata, setActiveHarpStrata: (arg0: HarpStrata) => void, arg1: 'UP' | 'DOWN', arg2: DisplayModes) => void
+type PartiallyAppliedNudgeFunction = (arg0: 'UP' | 'DOWN') => void
 
-const partiallyApplyCovariantNudgeFunction = (nudgeFunction: FullNudgeFunction, activeHarpStrata: HarpStrata, activeDisplayMode: DisplayModes): PartiallyAppliedNudgeFunction => {
+const partiallyApplyCovariantNudgeFunction = (nudgeFunction: FullNudgeFunction, activeHarpStrata: HarpStrata, setActiveHarpStrata: (arg0: HarpStrata) => void, activeDisplayMode: DisplayModes): PartiallyAppliedNudgeFunction => {
   return (direction: 'UP' | 'DOWN') => {
-    return nudgeFunction(activeHarpStrata, direction, activeDisplayMode)
+    return nudgeFunction(activeHarpStrata, setActiveHarpStrata, direction, activeDisplayMode)
   }
 }
 
@@ -23,7 +23,7 @@ export const PozitionOption = (props: PozitionOptionProps): React.ReactElement =
   const pozitionOptionContainerProps = {
     title: 'Position',
     optionId: pozitionId,
-    nudgeFunction: partiallyApplyCovariantNudgeFunction(nudgeHarpStrataByPozition, activeHarpStrata, activeDisplayMode),
+    nudgeFunction: partiallyApplyCovariantNudgeFunction(nudgeHarpStrataByPozition, activeHarpStrata, setActiveHarpStrata, activeDisplayMode),
     setActiveHarpStrata,
   }
 

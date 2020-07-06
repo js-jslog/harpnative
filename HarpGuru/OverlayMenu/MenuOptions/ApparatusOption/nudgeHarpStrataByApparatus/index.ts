@@ -15,7 +15,7 @@ const getNextId = (apparatusId: ApparatusIds, direction: 'UP' | 'DOWN'): Apparat
   return previousApparatusId
 }
 
-export const nudgeHarpStrataByApparatus = (activeHarpStrata: HarpStrata, direction: 'UP' | 'DOWN'): HarpStrata => {
+export const nudgeHarpStrataByApparatus = (activeHarpStrata: HarpStrata, setActiveHarpStrata: (arg0: HarpStrata) => void, direction: 'UP' | 'DOWN'): void => {
   const { apparatus: { id: apparatusId }} = activeHarpStrata
 
   const nextHarpStrataProps = getPropsForHarpStrata({
@@ -23,5 +23,5 @@ export const nudgeHarpStrataByApparatus = (activeHarpStrata: HarpStrata, directi
     apparatus: { ...activeHarpStrata.apparatus, id: getNextId(apparatusId, direction) }
   }, DisplayModes.Degree)
 
-  return getHarpStrata(nextHarpStrataProps)
+  setActiveHarpStrata(getHarpStrata(nextHarpStrataProps))
 }

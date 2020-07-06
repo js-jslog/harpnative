@@ -6,9 +6,9 @@ import { nudgeHarpStrataByApparatus } from '../nudgeHarpStrataByApparatus'
 import { OptionContainer } from '../../OptionContainer'
 
 
-const getPartiallyAppliedLayoutNudgeFunction = (activeHarpStrata: HarpStrata): (direction: 'UP' | 'DOWN') => HarpStrata => {
-  return (direction: 'UP' | 'DOWN'): HarpStrata => {
-    return nudgeHarpStrataByApparatus(activeHarpStrata, direction)
+const getPartiallyAppliedLayoutNudgeFunction = (activeHarpStrata: HarpStrata, setActiveHarpStrata: (arg0: HarpStrata) => void): (direction: 'UP' | 'DOWN') => void => {
+  return (direction: 'UP' | 'DOWN'): void => {
+    nudgeHarpStrataByApparatus(activeHarpStrata, setActiveHarpStrata, direction)
   }
 }
 
@@ -19,8 +19,7 @@ export const ApparatusOption = (props: ApparatusOptionProps): React.ReactElement
   const layoutOptionContainerProps = {
     title: 'Layout',
     optionId: apparatusId,
-    nudgeFunction: getPartiallyAppliedLayoutNudgeFunction(activeHarpStrata),
-    setActiveHarpStrata,
+    nudgeFunction: getPartiallyAppliedLayoutNudgeFunction(activeHarpStrata, setActiveHarpStrata)
   }
 
   return <OptionContainer {...layoutOptionContainerProps}/>
