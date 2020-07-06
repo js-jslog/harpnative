@@ -7,10 +7,10 @@ import type { ReactElement } from 'react'
 import { getApparatusIds, getPozitionIds, getPitchIds, getHarpStrata } from 'harpstrata'
 import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
-import { themeSizes } from '../Styles'
-import { HomeScreen } from '../Screens'
-import {OverlayMenuContainer, CovariantMenu, LayoutMenu} from '../OverlayMenu'
-import {DisplayModes} from '../HarpFace'
+import { themeSizes } from '../../Styles'
+import { HomeScreen } from '../../Screens'
+import {OverlayMenuContainer, CovariantMenu, LayoutMenu} from '../../OverlayMenu'
+import {DisplayModes} from '../../HarpFace'
 
 const styles = StyleSheet.create({
   overlay: {
