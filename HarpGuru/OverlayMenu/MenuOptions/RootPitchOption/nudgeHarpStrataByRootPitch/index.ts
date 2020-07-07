@@ -1,7 +1,7 @@
 import { HarpStrata, getCovariantSet, getHarpStrata, getPitchIds, PitchIds } from 'harpstrata'
 
 import {DisplayModes} from '../../../../HarpFace'
-import {getPropsForHarpStrata} from '../../../../Controls/ControlHelpers'
+import { getPropsForHarpStrata } from '../../../../Controls'
 
 const getNextId = (rootId: PitchIds, direction: 'UP' | 'DOWN'): PitchIds => {
   if (direction === 'UP') {

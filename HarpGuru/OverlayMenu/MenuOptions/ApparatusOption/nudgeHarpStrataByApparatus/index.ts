@@ -2,7 +2,7 @@ import { HarpStrata, getHarpStrata, getApparatusIds } from 'harpstrata'
 import type { ApparatusIds } from 'harpstrata'
 
 import {DisplayModes} from '../../../../HarpFace'
-import {getPropsForHarpStrata} from '../../../../Controls/ControlHelpers'
+import { getPropsForHarpStrata } from '../../../../Controls'
 
 const getNextId = (apparatusId: ApparatusIds, direction: 'UP' | 'DOWN'): ApparatusIds => {
   const apparatusIdList = getApparatusIds()
