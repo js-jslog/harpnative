@@ -1,1 +1,0 @@
-export { ActivityLegend } from './components'
