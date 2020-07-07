@@ -18,28 +18,44 @@ const naturalMinorHarp = getHarpStrata(naturalMinorHarpProps)
 
 test('provides incremented HarpStrata by apparatus', () => {
   const setActiveHarpStrata = jest.fn()
-  nudgeHarpStrataByApparatus(countryTunedHarp, setActiveHarpStrata, 'UP')
+  const partialParams = {
+    activeHarpStrata: countryTunedHarp,
+    setActiveHarpStrata
+  }
+  nudgeHarpStrataByApparatus(partialParams, 'UP')
 
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(naturalMinorHarp)
 })
 
 test('provides decremented HarpStrata by apparatus', () => {
   const setActiveHarpStrata = jest.fn()
-  nudgeHarpStrataByApparatus(countryTunedHarp, setActiveHarpStrata, 'DOWN')
+  const partialParams = {
+    activeHarpStrata: countryTunedHarp,
+    setActiveHarpStrata
+  }
+  nudgeHarpStrataByApparatus(partialParams, 'DOWN')
 
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(majorDiatonicHarp)
 })
 
 test('provides incremented HarpStrata by apparatus across array limit', () => {
   const setActiveHarpStrata = jest.fn()
-  nudgeHarpStrataByApparatus(naturalMinorHarp, setActiveHarpStrata, 'UP')
+  const partialParams = {
+    activeHarpStrata: naturalMinorHarp,
+    setActiveHarpStrata
+  }
+  nudgeHarpStrataByApparatus(partialParams, 'UP')
 
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(majorDiatonicHarp)
 })
 
 test('provides decremented HarpStrata by apparatus across array limit', () => {
   const setActiveHarpStrata = jest.fn()
-  nudgeHarpStrataByApparatus(majorDiatonicHarp, setActiveHarpStrata, 'DOWN')
+  const partialParams = {
+    activeHarpStrata: majorDiatonicHarp,
+    setActiveHarpStrata
+  }
+  nudgeHarpStrataByApparatus(partialParams, 'DOWN')
 
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(naturalMinorHarp)
 })
