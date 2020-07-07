@@ -18,14 +18,24 @@ const cHarpSecondPozition = getHarpStrata(cHarpSecondPozitionProps)
 
 test('provides incremented HarpStrata by pozition along with root pitch id', () => {
   const setActiveHarpStrata = jest.fn()
-  nudgeHarpStrataByPozition(cHarpFirstPozition, setActiveHarpStrata, 'UP', DisplayModes.Degree)
+  const partialParams = {
+    activeHarpStrata: cHarpFirstPozition,
+    setActiveHarpStrata,
+    activeDisplayMode: DisplayModes.Degree
+  }
+  nudgeHarpStrataByPozition(partialParams, 'UP')
 
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(cHarpSecondPozition)
 })
 
 test('provides decremented HarpStrata by pozition along with root pitch id', () => {
   const setActiveHarpStrata = jest.fn()
-  nudgeHarpStrataByPozition(cHarpSecondPozition, setActiveHarpStrata, 'DOWN', DisplayModes.Degree)
+  const partialParams = {
+    activeHarpStrata: cHarpSecondPozition,
+    setActiveHarpStrata,
+    activeDisplayMode: DisplayModes.Degree
+  }
+  nudgeHarpStrataByPozition(partialParams, 'DOWN')
 
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(cHarpFirstPozition)
 })
