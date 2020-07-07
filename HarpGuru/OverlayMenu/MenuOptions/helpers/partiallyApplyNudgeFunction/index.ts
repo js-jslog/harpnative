@@ -1,6 +1,6 @@
-export const partiallyApplyNudgeFunction = <K extends string, T>(
-  nudgeFunction: (arg0: Record<K, T>, arg1: 'UP' | 'DOWN') => void,
-  partialParams: Record<K, T>
+export const partiallyApplyNudgeFunction = <K>(
+  nudgeFunction: (arg0: K, arg1: 'UP' | 'DOWN') => void,
+  partialParams: K
 ): (arg0: 'UP' | 'DOWN') => void => {
   return (direction: 'UP' | 'DOWN'): void => {
     nudgeFunction(partialParams, direction)
