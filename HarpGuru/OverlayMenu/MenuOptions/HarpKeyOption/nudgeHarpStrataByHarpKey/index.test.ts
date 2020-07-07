@@ -19,14 +19,24 @@ const dbHarpFirstPozition = getHarpStrata(dbHarpFirstPozitionProps)
 
 test('provides incremented HarpStrata by harp key along with pozition id', () => {
   const setActiveHarpStrata = jest.fn()
-  nudgeHarpStrataByHarpKey(cHarpFirstPozition, setActiveHarpStrata, 'UP', DisplayModes.Degree)
+  const partialParams = {
+    activeHarpStrata: cHarpFirstPozition,
+    setActiveHarpStrata,
+    activeDisplayMode: DisplayModes.Degree
+  }
+  nudgeHarpStrataByHarpKey(partialParams, 'UP')
 
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(dbHarpFirstPozition)
 })
 
 test('provides decremented HarpStrata by harp key along with pozition id', () => {
   const setActiveHarpStrata = jest.fn()
-  nudgeHarpStrataByHarpKey(dbHarpFirstPozition, setActiveHarpStrata, 'DOWN', DisplayModes.Degree)
+  const partialParams = {
+    activeHarpStrata: dbHarpFirstPozition,
+    setActiveHarpStrata,
+    activeDisplayMode: DisplayModes.Degree
+  }
+  nudgeHarpStrataByHarpKey(partialParams, 'DOWN')
 
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(cHarpFirstPozition)
 })

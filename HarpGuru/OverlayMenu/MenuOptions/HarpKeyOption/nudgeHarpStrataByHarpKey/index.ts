@@ -12,7 +12,13 @@ const getNextId = (rootId: PitchIds, direction: 'UP' | 'DOWN'): PitchIds => {
   return previousHarpKeyId
 }
 
-export const nudgeHarpStrataByHarpKey = (activeHarpStrata: HarpStrata, setActiveHarpStrata: (arg0: HarpStrata) => void, direction: 'UP' | 'DOWN', displayMode: DisplayModes): void => {
+type partialParams = {
+  readonly activeHarpStrata: HarpStrata
+  readonly setActiveHarpStrata: (arg0: HarpStrata) => void
+  readonly activeDisplayMode: DisplayModes
+}
+
+export const nudgeHarpStrataByHarpKey = ({activeHarpStrata, setActiveHarpStrata, activeDisplayMode}: partialParams, direction: 'UP' | 'DOWN'): void => {
   const { rootPitchId, harpKeyId } = activeHarpStrata
 
   const covariantGroup = getCovariantSet({ rootPitchId, harpKeyId: getNextId(harpKeyId, direction) })
@@ -21,7 +27,7 @@ export const nudgeHarpStrataByHarpKey = (activeHarpStrata: HarpStrata, setActive
     ...activeHarpStrata,
     pozitionId: covariantGroup.pozitionId,
     harpKeyId: covariantGroup.harpKeyId,
-  }, displayMode)
+  }, activeDisplayMode)
 
   setActiveHarpStrata(getHarpStrata(nextHarpStrataProps))
 }
