@@ -5,7 +5,7 @@ type PartialParams = {
   readonly setActiveDisplayMode: (arg0: DisplayModes) => void
 }
 
-export const nudgeDisplayMode = (partialParams: PartialParams, direction: 'UP' | 'DOWN'): void => {
+export const nudgeDisplayMode = (partialParams: PartialParams): void => {
   const { activeDisplayMode, setActiveDisplayMode } = partialParams
 
   if (activeDisplayMode === DisplayModes.Degree) {

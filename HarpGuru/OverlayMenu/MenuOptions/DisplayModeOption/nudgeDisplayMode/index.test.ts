@@ -8,7 +8,7 @@ test('sets the opposite display mode when input DisplayMode is Pitch', () => {
     activeDisplayMode: DisplayModes.Pitch,
     setActiveDisplayMode
   }
-  nudgeDisplayMode(partialParams, 'UP')
+  nudgeDisplayMode(partialParams)
 
   expect(setActiveDisplayMode.mock.calls[0][0]).toStrictEqual(DisplayModes.Degree)
 })
@@ -19,7 +19,7 @@ test('sets the opposite display mode when input DisplayMode is Degree', () => {
     activeDisplayMode: DisplayModes.Degree,
     setActiveDisplayMode
   }
-  nudgeDisplayMode(partialParams, 'UP')
+  nudgeDisplayMode(partialParams)
 
   expect(setActiveDisplayMode.mock.calls[0][0]).toStrictEqual(DisplayModes.Pitch)
 })
