@@ -9,7 +9,7 @@ import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
 import { themeSizes } from '../../Styles'
 import { HomeScreen } from '../../Screens'
-import {OverlayMenuContainer, CovariantMenu, LayoutMenu} from '../../OverlayMenu'
+import {AnimatedMenuContainer, CovariantMenu, LayoutMenu} from '../../OverlayMenu'
 import {DisplayModes} from '../../HarpFace'
 
 const styles = StyleSheet.create({
@@ -88,8 +88,8 @@ export const HarpGuru = (): ReactElement => {
     >
       <View style={styles.overlay}>
         <HomeScreen {...screenProps} />
-        <OverlayMenuContainer overlayVisible={menuState === MenuStates.CovariantMenu}><CovariantMenu {...covariantMenuProps} /></OverlayMenuContainer>
-        <OverlayMenuContainer overlayVisible={menuState === MenuStates.LayoutMenu}><LayoutMenu {...layoutMenuProps} /></OverlayMenuContainer>
+        <AnimatedMenuContainer overlayVisible={menuState === MenuStates.CovariantMenu}><CovariantMenu {...covariantMenuProps} /></AnimatedMenuContainer>
+        <AnimatedMenuContainer overlayVisible={menuState === MenuStates.LayoutMenu}><LayoutMenu {...layoutMenuProps} /></AnimatedMenuContainer>
       </View>
     </PanGestureHandler>
   )

@@ -1,3 +1,3 @@
-export { OverlayMenuContainer } from './OverlayMenuContainer'
+export { AnimatedMenuContainer } from './AnimatedMenuContainer'
 export { CovariantMenu } from './Menus'
 export { LayoutMenu } from './Menus'

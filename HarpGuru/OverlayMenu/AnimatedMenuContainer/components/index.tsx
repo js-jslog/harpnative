@@ -5,7 +5,7 @@ import React from 'react'
 import type { OverlayMenuContainerProps } from '../types'
 import { styles } from '../../styles'
 
-export const OverlayMenuContainer = (props: OverlayMenuContainerProps): React.ReactElement => {
+export const AnimatedMenuContainer = (props: OverlayMenuContainerProps): React.ReactElement => {
   const { children, overlayVisible } = props
 
   const { width: windowWidth } = Dimensions.get('window')
