@@ -8,13 +8,14 @@ import { styles } from '../../styles'
 export const AnimatedMenuContainer = (props: OverlayMenuContainerProps): React.ReactElement => {
   const { children, onScreen } = props
 
-  const { width: windowWidth } = Dimensions.get('window')
+  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
+  const guaranteeOffScreenWidth = (windowWidth > windowHeight ? windowWidth : windowHeight)
 
   return (
     <Animated.View
       style={[styles.overlayMenuContainer, {
         transform: [
-          { translateX: (onScreen ? 0 : windowWidth * -1) }
+          { translateX: (onScreen ? 0 : guaranteeOffScreenWidth * -1) }
         ],
       }]}>
       { children }
