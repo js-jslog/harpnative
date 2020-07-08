@@ -16,25 +16,25 @@ const harpStrataProps: HarpStrataProps = {
 const harpStrata = getHarpStrata(harpStrataProps)
 
 test('LayoutMenu renders a component with a major diatonic layout selected', () => {
-  const hudContentProps = {
+  const menuProps = {
     activeHarpStrata: harpStrata,
     setActiveHarpStrata: jest.fn(),
     activeDisplayMode: DisplayModes.Degree,
     setActiveDisplayMode: jest.fn()
   }
-  const { getByText } = render(<LayoutMenu {...hudContentProps} />)
+  const { getByText } = render(<LayoutMenu {...menuProps} />)
 
   expect(getByText(ApparatusIds.MajorDiatonic)).toBeTruthy()
 })
 
 test('LayoutMenu renders a component with Degree DisplayMode selected', () => {
-  const hudContentProps = {
+  const menuProps = {
     activeHarpStrata: harpStrata,
     setActiveHarpStrata: jest.fn(),
     activeDisplayMode: DisplayModes.Degree,
     setActiveDisplayMode: jest.fn()
   }
-  const { getByText } = render(<LayoutMenu {...hudContentProps} />)
+  const { getByText } = render(<LayoutMenu {...menuProps} />)
 
   expect(getByText(DisplayModes.Degree)).toBeTruthy()
 })
