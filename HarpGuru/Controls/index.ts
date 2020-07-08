@@ -12,6 +12,4 @@ export { CovarianceButtonList } from './CovarianceButtonList'
 export { CovariantMembers } from './CovarianceSeries'
 export type { CovariancePrimer } from './CovarianceSeries'
 
-export { SwipeControlWrapper } from './SwipeControlWrapper'
-
 export { getPropsForHarpStrata } from './ControlHelpers'

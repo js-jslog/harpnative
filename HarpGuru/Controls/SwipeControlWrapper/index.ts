@@ -1,1 +1,0 @@
-export { SwipeControlWrapper } from './components'
