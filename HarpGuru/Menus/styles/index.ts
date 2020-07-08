@@ -6,8 +6,8 @@ import { themeSizes, themeColors } from '../../Styles'
 const { 7: variableSize, 8: titleSize } = themeSizes
 
 export const styles = StyleSheet.create({
-  // OverlayMenuContainer
-  overlayMenuContainer: {
+  // AnimatedMenuContainer
+  animatedMenuContainer: {
     ...StyleSheet.absoluteFillObject,
     opacity: 0.5,
   },

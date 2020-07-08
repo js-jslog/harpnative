@@ -9,7 +9,7 @@ import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
 import { themeSizes } from '../../Styles'
 import { HomeScreen } from '../../Screens'
-import {AnimatedMenuContainer, CovariantMenu, LayoutMenu} from '../../OverlayMenu'
+import {AnimatedMenuContainer, CovariantMenu, LayoutMenu} from '../../Menus'
 import {DisplayModes} from '../../HarpFace'
 
 const styles = StyleSheet.create({
