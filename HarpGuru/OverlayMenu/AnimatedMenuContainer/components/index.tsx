@@ -6,7 +6,7 @@ import type { OverlayMenuContainerProps } from '../types'
 import { styles } from '../../styles'
 
 export const AnimatedMenuContainer = (props: OverlayMenuContainerProps): React.ReactElement => {
-  const { children, overlayVisible } = props
+  const { children, onScreen } = props
 
   const { width: windowWidth } = Dimensions.get('window')
 
@@ -14,7 +14,7 @@ export const AnimatedMenuContainer = (props: OverlayMenuContainerProps): React.R
     <Animated.View
       style={[styles.overlayMenuContainer, {
         transform: [
-          { translateX: (overlayVisible ? 0 : windowWidth * -1) }
+          { translateX: (onScreen ? 0 : windowWidth * -1) }
         ],
       }]}>
       { children }

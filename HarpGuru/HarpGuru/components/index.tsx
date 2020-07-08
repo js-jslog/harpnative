@@ -88,8 +88,8 @@ export const HarpGuru = (): ReactElement => {
     >
       <View style={styles.overlay}>
         <HomeScreen {...screenProps} />
-        <AnimatedMenuContainer overlayVisible={menuState === MenuStates.CovariantMenu}><CovariantMenu {...covariantMenuProps} /></AnimatedMenuContainer>
-        <AnimatedMenuContainer overlayVisible={menuState === MenuStates.LayoutMenu}><LayoutMenu {...layoutMenuProps} /></AnimatedMenuContainer>
+        <AnimatedMenuContainer onScreen={menuState === MenuStates.CovariantMenu}><CovariantMenu {...covariantMenuProps} /></AnimatedMenuContainer>
+        <AnimatedMenuContainer onScreen={menuState === MenuStates.LayoutMenu}><LayoutMenu {...layoutMenuProps} /></AnimatedMenuContainer>
       </View>
     </PanGestureHandler>
   )
