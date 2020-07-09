@@ -3,7 +3,7 @@ import type { ActiveDegreeIds } from 'harpstrata'
 
 import { getToggledActiveDegreeIds } from './index'
 
-test("getToggledActiveDegreeIds will take a DegreeId and add it to an ActiveDegreeIds which doesn't already have the Id in it", () => {
+test('getToggledActiveDegreeIds will take a DegreeId and add it to an ActiveDegreeIds which doesnt already have the Id in it', () => {
   const activeDegreeIds: ActiveDegreeIds = []
   const { Root: degreeId } = DegreeIds
   const expectedActiveDegreeIds: ActiveDegreeIds = [DegreeIds.Root]

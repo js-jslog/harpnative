@@ -4,7 +4,7 @@ import { CovarianceSeries, CovariancePrimer, CovariantMembers } from '../types'
 
 import { getCovarianceSeries } from './index'
 
-test("getCovarianceSeries returns a complete series of CovariantSet's for an origin primer", () => {
+test('getCovarianceSeries returns a complete series of CovariantSets for an origin primer', () => {
   const covarianceOriginPrimer: CovariancePrimer = {
     lockedType: CovariantMembers.Pozition,
     variedType: CovariantMembers.HarpKey,
@@ -80,7 +80,7 @@ test("getCovarianceSeries returns a complete series of CovariantSet's for an ori
   expect(actualCovarianceSeries).toStrictEqual(expectedCovarianceSeries)
 })
 
-test("getCovarianceSeries returns a series of CovariantSet's for a different origin primer", () => {
+test('getCovarianceSeries returns a series of CovariantSets for a different origin primer', () => {
   const covarianceOriginPrimer: CovariancePrimer = {
     lockedType: CovariantMembers.RootPitch,
     variedType: CovariantMembers.HarpKey,
@@ -108,7 +108,7 @@ test("getCovarianceSeries returns a series of CovariantSet's for a different ori
   )
 })
 
-test("getCovarianceSeries returns a series of CovariantSet's for yet another different origin primer", () => {
+test('getCovarianceSeries returns a series of CovariantSets for yet another different origin primer', () => {
   const covarianceOriginPrimer: CovariancePrimer = {
     lockedType: CovariantMembers.RootPitch,
     variedType: CovariantMembers.Pozition,
@@ -136,7 +136,7 @@ test("getCovarianceSeries returns a series of CovariantSet's for yet another dif
   )
 })
 
-test("getCovarianceSeries returns a series of CovariantSet's for yet again another different origin primer", () => {
+test('getCovarianceSeries returns a series of CovariantSets for yet again another different origin primer', () => {
   const covarianceOriginPrimer: CovariancePrimer = {
     lockedType: CovariantMembers.Pozition,
     variedType: CovariantMembers.RootPitch,

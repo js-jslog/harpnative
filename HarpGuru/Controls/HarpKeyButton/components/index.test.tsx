@@ -27,7 +27,7 @@ test('HarpKeyButton renders a component with the parameter label on it', () => {
   expect(getByText(id)).toBeTruthy()
 })
 
-test("HarpKeyButton renders a component which set's the expected harp strata to the paramaterised function", () => {
+test('HarpKeyButton renders a component which sets the expected harp strata to the paramaterised function', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyDHarpStrata
   const { C: id } = PitchIds
@@ -46,7 +46,7 @@ test("HarpKeyButton renders a component which set's the expected harp strata to 
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(keyCHarpStrata)
 })
 
-test("HarpKeyButton renders a disabled component if it's id matches the active harp pitch", () => {
+test('HarpKeyButton renders a disabled component if its id matches the active harp pitch', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyCHarpStrata
   const { C: id } = PitchIds

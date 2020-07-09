@@ -30,7 +30,7 @@ test('PozitionButton renders a component with the parameter label on it', () => 
   expect(getByText(id)).toBeTruthy()
 })
 
-test("PozitionButton renders a component which set's the expected harp strata to the paramaterised function", () => {
+test('PozitionButton renders a component which sets the expected harp strata to the paramaterised function', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = firstPozitionHarpStrata
   const { Second: id } = PozitionIds
@@ -51,7 +51,7 @@ test("PozitionButton renders a component which set's the expected harp strata to
   )
 })
 
-test("PozitionButton renders a disabled component if it's id matches the active pozition", () => {
+test('PozitionButton renders a disabled component if its id matches the active pozition', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = firstPozitionHarpStrata
   const { First: id } = PozitionIds

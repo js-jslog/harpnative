@@ -42,16 +42,17 @@ const getButtonTitle = (props: CovarianceButtonProps): string => {
     return `${rootPitchId} ${harpKeyId}`
   }
 
+  const errorObject = {
+    lockedType,
+    variedType,
+    harpKeyId,
+    pozitionId,
+    rootPitchId,
+  }
   const errorMessage = `
     Expected lockedType and variedType to constitute a covariant controling pair but didn't.
 
-    ${JSON.stringify({
-      lockedType,
-      variedType,
-      harpKeyId,
-      pozitionId,
-      rootPitchId,
-    })}
+    ${JSON.stringify(errorObject)}
   `
   throw new Error(errorMessage)
 }

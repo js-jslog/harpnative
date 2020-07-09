@@ -10,7 +10,7 @@ import { DisplayModes } from '../../../HarpFace'
 
 import { DisplayModeToggler } from './index'
 
-test("DisplayModeToggler renders a component with 'Display mode' title", () => {
+test('DisplayModeToggler renders a component with "Display mode" title', () => {
   const setActiveDisplayMode = jest.fn()
   const displayModeTogglerProps: DisplayModeTogglerProps = {
     setActiveDisplayMode,
@@ -22,7 +22,7 @@ test("DisplayModeToggler renders a component with 'Display mode' title", () => {
   expect(getByLabelText('Display mode')).toBeTruthy()
 })
 
-test("DisplayModeToggler renders a component with both 'Degree' and 'Pitch' buttons", () => {
+test('DisplayModeToggler renders a component with both "Degree" and "Pitch" buttons', () => {
   const setActiveDisplayMode = jest.fn()
   const displayModeTogglerProps: DisplayModeTogglerProps = {
     setActiveDisplayMode,
@@ -35,7 +35,7 @@ test("DisplayModeToggler renders a component with both 'Degree' and 'Pitch' butt
   expect(getByText(DisplayModes.Pitch)).toBeTruthy()
 })
 
-test("DisplayModeToggler Degree button calls a paramaterised function with it's identity when it is clicked", () => {
+test('DisplayModeToggler Degree button calls a paramaterised function with its identity when it is clicked', () => {
   const setActiveDisplayMode = jest.fn()
   const displayModeTogglerProps: DisplayModeTogglerProps = {
     setActiveDisplayMode,
@@ -50,7 +50,7 @@ test("DisplayModeToggler Degree button calls a paramaterised function with it's 
   expect(setActiveDisplayMode.mock.calls[0][0]).toBe(DisplayModes.Degree)
 })
 
-test("DisplayModeToggler Pitch button calls a paramaterised function with it's identity when it is clicked", () => {
+test('DisplayModeToggler Pitch button calls a paramaterised function with its identity when it is clicked', () => {
   const setActiveDisplayMode = jest.fn()
   const displayModeTogglerProps: DisplayModeTogglerProps = {
     setActiveDisplayMode,
