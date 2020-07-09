@@ -1,8 +1,9 @@
+import type { SetActiveDisplayMode } from '../../../../HarpGuru'
 import {DisplayModes} from '../../../../HarpFace'
 
 type PartialParams = {
   readonly activeDisplayMode: DisplayModes
-  readonly setActiveDisplayMode: (arg0: DisplayModes) => void
+  readonly setActiveDisplayMode: SetActiveDisplayMode
 }
 
 export const nudgeDisplayMode = (partialParams: PartialParams): void => {
