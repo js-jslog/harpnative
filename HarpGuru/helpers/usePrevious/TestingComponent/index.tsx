@@ -7,6 +7,9 @@ type Props = {
 
 export const TestingComponent = ({value}: Props): React.ReactElement => {
   return (
-    <Text>{value}</Text>
+    <>
+      <Text>Current: {value}</Text>
+      <Text>Previous: {value}</Text>
+    </>
   )
 }
