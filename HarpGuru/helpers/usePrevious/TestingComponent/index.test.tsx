@@ -3,7 +3,7 @@ import {render} from '@testing-library/react-native'
 
 import { TestingComponent } from './index'
 
-test('A component is rendered with its prop value displayed', () => {
+test('A component is rendered with its prop value displayed as well as its previous prop value', () => {
   const {getByText, rerender} = render(<TestingComponent value={'testing component render'} />)
 
   expect(getByText('Current: testing component render')).toBeTruthy()
@@ -11,5 +11,5 @@ test('A component is rendered with its prop value displayed', () => {
   rerender(<TestingComponent value={'now it has rendered again'} />)
 
   expect(getByText('Current: now it has rendered again')).toBeTruthy()
-  expect(getByText('Previous: now it has rendered again')).toBeTruthy()
+  expect(getByText('Previous: testing component render')).toBeTruthy()
 })
