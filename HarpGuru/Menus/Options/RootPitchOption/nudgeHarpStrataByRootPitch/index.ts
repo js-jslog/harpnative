@@ -1,5 +1,6 @@
 import { HarpStrata, getCovariantSet, getHarpStrata, getPitchIds, PitchIds } from 'harpstrata'
 
+import type { SetActiveHarpStrata } from '../../../../HarpGuru'
 import {DisplayModes} from '../../../../HarpFace'
 import { getPropsForHarpStrata } from '../../../../Controls'
 
@@ -14,7 +15,7 @@ const getNextId = (rootId: PitchIds, direction: 'UP' | 'DOWN'): PitchIds => {
 
 type PartialParams = {
   readonly activeHarpStrata: HarpStrata
-  readonly setActiveHarpStrata: (arg0: HarpStrata) => void
+  readonly setActiveHarpStrata: SetActiveHarpStrata
   readonly activeDisplayMode: DisplayModes
 }
 

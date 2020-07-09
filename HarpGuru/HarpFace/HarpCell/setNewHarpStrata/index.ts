@@ -2,8 +2,9 @@ import { getHarpStrata } from 'harpstrata'
 import type { HarpStrata, HarpStrataProps, DegreeIds } from 'harpstrata'
 
 import { getToggledActiveDegreeIds } from '../getToggledActiveDegreeIds'
+import type { SetActiveHarpStrata } from '../../../HarpGuru'
 
-export const setNewHarpStrata = (activeHarpStrata: HarpStrata, setActiveHarpStrata: (activeHarpStrata: HarpStrata) => void, toggledDegreeId: DegreeIds): void => {
+export const setNewHarpStrata = (activeHarpStrata: HarpStrata, setActiveHarpStrata: SetActiveHarpStrata, toggledDegreeId: DegreeIds): void => {
   const { apparatus: { id: apparatusId }, pozitionId, harpKeyId, isActiveComplex: { activeDegreeIds }} = activeHarpStrata
 
   const newActiveDegreeIds = getToggledActiveDegreeIds(toggledDegreeId, activeDegreeIds)
