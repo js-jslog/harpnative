@@ -3,9 +3,9 @@ import { Text, View } from 'react-native'
 import React from 'react'
 
 import { HarpCellProps } from '../types'
+import { toggleDegreeIdInHarpStrata } from '../toggleDegreeIdInHarpStrata'
 import { getStyles } from '../styles'
 import { setPozitionRootAtCell } from '../setPozitionRootAtCell'
-import { setNewHarpStrata } from '../setNewHarpStrata'
 import { getDisplayValue } from '../getDisplayValue'
 import { analysePosition } from '../analysePosition'
 
@@ -24,10 +24,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
     if (nativeEvent.state !== State.END) return
     if (degreeId === undefined) return
 
-    // TODO: have the setActiveHarpStrata be called outside the helper like in the long press
-    // handler below.
-    // Also, this function needs renaming since it's not specific enough anymore.
-    setNewHarpStrata(activeHarpStrata, setActiveHarpStrata, degreeId)
+    setActiveHarpStrata(toggleDegreeIdInHarpStrata(activeHarpStrata, degreeId))
   }
 
   const handleLongPressStateChange = ({nativeEvent}: TapGestureHandlerStateChangeEvent) => {
