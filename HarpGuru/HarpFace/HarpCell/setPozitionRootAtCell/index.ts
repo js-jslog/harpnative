@@ -9,11 +9,11 @@ export const setPozitionRootAtCell = (activeHarpStrata: HarpStrata, newRootPitch
   const activeHarpStrataProps = getPropsForHarpStrata(activeHarpStrata, DisplayModes.Degree)
 
   const covariantControllers = { harpKeyId: activeHarpKeyId, rootPitchId: newRootPitchId }
-  const { harpKeyId: newHarpKeyId, pozitionId: newPozitionId } = getCovariantSet(covariantControllers)
+  const { pozitionId: newPozitionId } = getCovariantSet(covariantControllers)
 
   return getHarpStrata({
     ...activeHarpStrataProps,
-    harpKeyId: newHarpKeyId,
+    harpKeyId: activeHarpKeyId,
     pozitionId: newPozitionId
   })
 }
