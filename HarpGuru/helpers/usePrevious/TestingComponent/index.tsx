@@ -4,8 +4,8 @@ import React from 'react'
 import { usePrevious } from '../index'
 
 type Props = {
-  readonly value: string
-  readonly initial: string
+  readonly value: unknown
+  readonly initial: unknown
 }
 
 export const TestingComponent = ({value, initial}: Props): React.ReactElement => {
