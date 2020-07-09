@@ -2,11 +2,12 @@ import 'react-native-gesture-handler'
 
 import {PanGestureHandler, PanGestureHandlerGestureEvent, State} from 'react-native-gesture-handler'
 import {StyleSheet, View} from 'react-native'
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState } from 'react'
 import type { ReactElement } from 'react'
 import { getApparatusIds, getPozitionIds, getPitchIds, getHarpStrata } from 'harpstrata'
 import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
+import { usePrevious } from '../../helpers'
 import { themeSizes } from '../../Styles'
 import { HomeScreen } from '../../Screens'
 import {AnimatedMenuContainer, CovariantMenu, LayoutMenu} from '../../Menus'
@@ -34,13 +35,6 @@ const initialHarpStrataProps: HarpStrataProps = {
 const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
 const { Degree: initialDisplayMode } = DisplayModes
 
-const usePrevious = (value: State) => {
-  const ref = useRef(State.UNDETERMINED)
-  useEffect(() => {
-    ref.current = value
-  })
-  return ref.current
-}
 
 enum MenuStates {
   LayoutMenu,
@@ -59,7 +53,7 @@ export const HarpGuru = (): ReactElement => {
   const [ panState, setPanState ] = useState<State>(State.UNDETERMINED)
   const [ menuState, setMenuState ] = useState<MenuStates>(MenuStates.NoMenu)
   const [ translationX, setTranslationX ] = useState<number>(0)
-  const previousPanState = usePrevious(panState)
+  const previousPanState = usePrevious(panState, State.UNDETERMINED)
   
   const handleSwipe = ({nativeEvent}: PanGestureHandlerGestureEvent) => {
     setPanState(nativeEvent.state)
