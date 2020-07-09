@@ -1,23 +1,18 @@
 import 'react-native-gesture-handler'
 
 import {PanGestureHandler, PanGestureHandlerGestureEvent, State} from 'react-native-gesture-handler'
-import {StyleSheet, View} from 'react-native'
+import {View} from 'react-native'
 import React, { useState } from 'react'
 import type { ReactElement } from 'react'
 import { getApparatusIds, getPozitionIds, getPitchIds, getHarpStrata } from 'harpstrata'
 import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
+import { styles } from '../styles'
 import { usePrevious } from '../../helpers'
 import { themeSizes } from '../../Styles'
 import { HomeScreen } from '../../Screens'
 import {AnimatedMenuContainer, CovariantMenu, LayoutMenu} from '../../Menus'
 import {DisplayModes} from '../../HarpFace'
-
-const styles = StyleSheet.create({
-  overlay: {
-    ...StyleSheet.absoluteFillObject,
-  }
-})
 
 const { 8: swipeThreshold } = themeSizes
 
