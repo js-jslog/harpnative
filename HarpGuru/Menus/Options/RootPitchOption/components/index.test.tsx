@@ -1,16 +1,16 @@
 import React from 'react'
-import {PitchIds, PozitionIds, HarpStrataProps, ApparatusIds, ActiveIds, getHarpStrata} from 'harpstrata'
+import {PitchIds, PozitionIds, ApparatusIds, getHarpStrata} from 'harpstrata'
 import {render} from '@testing-library/react-native'
 
 import {DisplayModes} from '../../../../HarpFace'
 
 import { RootPitchOption } from './index'
 
-const harpStrataProps: HarpStrataProps = {
+const harpStrataProps = {
   apparatusId: ApparatusIds.MajorDiatonic,
   pozitionId: PozitionIds.Second,
   harpKeyId: PitchIds.C,
-  activeIds: [] as ActiveIds,
+  activeIds: [],
 }
 
 const harpStrata = getHarpStrata(harpStrataProps)

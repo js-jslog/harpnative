@@ -1,12 +1,12 @@
-import {HarpStrataProps, ApparatusIds, PozitionIds, PitchIds, ActiveIds, getHarpStrata} from 'harpstrata'
+import {ApparatusIds, PozitionIds, PitchIds, getHarpStrata} from 'harpstrata'
 
 import { nudgeHarpStrataByApparatus } from './index'
 
-const baseHarpStrataProps: HarpStrataProps = {
+const baseHarpStrataProps = {
   apparatusId: ApparatusIds.MajorDiatonic,
   pozitionId: PozitionIds.First,
   harpKeyId: PitchIds.C,
-  activeIds: [] as ActiveIds,
+  activeIds: [],
 }
 const majorDiatonicHarpProps = baseHarpStrataProps
 const countryTunedHarpProps = { ...baseHarpStrataProps, apparatusId: ApparatusIds.CountryTuned }

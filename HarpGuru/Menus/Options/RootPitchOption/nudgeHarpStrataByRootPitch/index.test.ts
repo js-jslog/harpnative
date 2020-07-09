@@ -1,14 +1,14 @@
-import {HarpStrataProps, ApparatusIds, PozitionIds, PitchIds, ActiveIds, getHarpStrata} from 'harpstrata'
+import {ApparatusIds, PozitionIds, PitchIds, getHarpStrata} from 'harpstrata'
 
 import {DisplayModes} from '../../../../HarpFace'
 
 import { nudgeHarpStrataByRootPitch } from './index'
 
-const baseHarpStrataProps: HarpStrataProps = {
+const baseHarpStrataProps = {
   apparatusId: ApparatusIds.MajorDiatonic,
   pozitionId: PozitionIds.First,
   harpKeyId: PitchIds.C,
-  activeIds: [] as ActiveIds,
+  activeIds: [],
 }
 const cHarpFirstPozitionProps = baseHarpStrataProps
 // Eigth position puts the root a semi tone higher than in First
