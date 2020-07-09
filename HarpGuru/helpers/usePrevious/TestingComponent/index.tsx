@@ -5,10 +5,11 @@ import { usePrevious } from '../index'
 
 type Props = {
   readonly value: string
+  readonly initial: string
 }
 
-export const TestingComponent = ({value}: Props): React.ReactElement => {
-  const previousValue =  usePrevious(value)
+export const TestingComponent = ({value, initial}: Props): React.ReactElement => {
+  const previousValue =  usePrevious(value, initial)
   return (
     <>
       <Text>Current: {value}</Text>
