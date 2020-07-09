@@ -10,5 +10,5 @@ test('A component is rendered with its prop value displayed', () => {
 
   rerender(<TestingComponent value={'now it has rendered again'} />)
 
-  expect('now it has rendered again').toBeTruthy()
+  expect(getByText('now it has rendered again')).toBeTruthy()
 })
