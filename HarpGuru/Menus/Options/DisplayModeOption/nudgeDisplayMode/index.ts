@@ -1,12 +1,7 @@
-import type { SetActiveDisplayMode } from '../../../../HarpGuru'
+import type { DisplayModeOptionProps } from '../types'
 import {DisplayModes} from '../../../../HarpFace'
 
-type PartialParams = {
-  readonly activeDisplayMode: DisplayModes
-  readonly setActiveDisplayMode: SetActiveDisplayMode
-}
-
-export const nudgeDisplayMode = (partialParams: PartialParams): void => {
+export const nudgeDisplayMode = (partialParams: DisplayModeOptionProps): void => {
   const { activeDisplayMode, setActiveDisplayMode } = partialParams
 
   if (activeDisplayMode === DisplayModes.Degree) {

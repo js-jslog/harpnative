@@ -1,7 +1,6 @@
-import { HarpStrata, getCovariantSet, getHarpStrata, getPitchIds, PitchIds } from 'harpstrata'
+import { getCovariantSet, getHarpStrata, getPitchIds, PitchIds } from 'harpstrata'
 
-import type { SetActiveHarpStrata } from '../../../../HarpGuru'
-import {DisplayModes} from '../../../../HarpFace'
+import type { RootPitchOptionProps } from '../types'
 import { getPropsForHarpStrata } from '../../../../Controls'
 
 const getNextId = (rootId: PitchIds, direction: 'UP' | 'DOWN'): PitchIds => {
@@ -13,13 +12,7 @@ const getNextId = (rootId: PitchIds, direction: 'UP' | 'DOWN'): PitchIds => {
   return previousRootPitchId
 }
 
-type PartialParams = {
-  readonly activeHarpStrata: HarpStrata
-  readonly setActiveHarpStrata: SetActiveHarpStrata
-  readonly activeDisplayMode: DisplayModes
-}
-
-export const nudgeHarpStrataByRootPitch = (partialParams: PartialParams, direction: 'UP' | 'DOWN'): void => {
+export const nudgeHarpStrataByRootPitch = (partialParams: RootPitchOptionProps, direction: 'UP' | 'DOWN'): void => {
   const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = partialParams
   const { rootPitchId, harpKeyId } = activeHarpStrata
 

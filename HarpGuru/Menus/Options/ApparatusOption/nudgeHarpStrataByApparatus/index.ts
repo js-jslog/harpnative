@@ -1,7 +1,7 @@
-import { HarpStrata, getHarpStrata, getApparatusIds } from 'harpstrata'
+import { getHarpStrata, getApparatusIds } from 'harpstrata'
 import type { ApparatusIds } from 'harpstrata'
 
-import type { SetActiveHarpStrata } from '../../../../HarpGuru'
+import type { ApparatusOptionProps } from '../types'
 import { DisplayModes } from '../../../../HarpFace'
 import { getPropsForHarpStrata } from '../../../../Controls'
 
@@ -17,12 +17,7 @@ const getNextId = (apparatusId: ApparatusIds, direction: 'UP' | 'DOWN'): Apparat
   return previousApparatusId
 }
 
-type PartialParams = {
-  readonly activeHarpStrata: HarpStrata
-  readonly setActiveHarpStrata: SetActiveHarpStrata
-}
-
-export const nudgeHarpStrataByApparatus = (partialParams: PartialParams, direction: 'UP' | 'DOWN'): void => {
+export const nudgeHarpStrataByApparatus = (partialParams: ApparatusOptionProps, direction: 'UP' | 'DOWN'): void => {
   const { activeHarpStrata, setActiveHarpStrata } = partialParams
   const { apparatus: { id: apparatusId }} = activeHarpStrata
 
