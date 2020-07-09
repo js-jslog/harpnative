@@ -72,7 +72,6 @@ export const HarpGuru = (): ReactElement => {
     }
     setPanState(State.UNDETERMINED)
     setTranslationX(0)
-    //setActiveDisplayMode(activeDisplayMode === DisplayModes.Pitch ? DisplayModes.Degree : DisplayModes.Pitch )
   }
 
   return (
