@@ -9,7 +9,7 @@ test('A component is rendered with its prop value displayed as well as its previ
   expect(getByText('Current: testing component render')).toBeTruthy()
   expect(getByText('Previous: no previous on first render')).toBeTruthy()
 
-  rerender(<TestingComponent value={'now it has rendered again'} />)
+  rerender(<TestingComponent value={'now it has rendered again'} initial={'it doesnt matter what this is after hook initialisation'}/>)
 
   expect(getByText('Current: now it has rendered again')).toBeTruthy()
   expect(getByText('Previous: testing component render')).toBeTruthy()
