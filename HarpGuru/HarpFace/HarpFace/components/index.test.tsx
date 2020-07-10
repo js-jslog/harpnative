@@ -7,7 +7,7 @@ import { harpFaceProps } from '../../testResources'
 
 import { HarpFace } from './index'
 
-test('A component is rendered with all of the degrees of a major diatonic presented', () => {
+test.skip('A component is rendered with all of the degrees of a major diatonic presented', () => {
   const { getAllByText } = render(<HarpFace {...harpFaceProps} />)
 
   const [holeRoot] = getAllByText(DegreeIds.Root)
@@ -37,7 +37,7 @@ test('A component is rendered with all of the degrees of a major diatonic presen
   expect(holeSeventh).toBeTruthy()
 })
 
-test('A snapshot of a HarpFace', () => {
+test.skip('A snapshot of a HarpFace', () => {
   const { container } = render(<HarpFace {...harpFaceProps} />)
 
   expect(container).toMatchSnapshot()
