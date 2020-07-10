@@ -25,12 +25,22 @@ export const getStyles = (props: HarpRowProps): HarpRowStyles => {
       borderBottomLeftRadius: isDrawRow(props) ? borderRadius : 0,
       borderBottomRightRadius: isDrawRow(props) ? borderRadius : 0,
     },
-    chunkWrapper: {
-      flex: 1,
+    chunkWrapper3: {
+      flex: 3,
       flexDirection: 'row',
     },
-    cellChunk: {
+    chunkWrapper4: {
+      flex: 4,
+      flexDirection: 'row',
+    },
+    cellChunk3: {
       flex: 3,
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+    },
+    cellChunk4: {
+      flex: 4,
       flexDirection: 'row',
       justifyContent: 'space-around',
       alignItems: 'center',

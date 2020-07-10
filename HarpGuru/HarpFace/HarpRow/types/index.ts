@@ -10,7 +10,9 @@ export type HarpRowProps = HarpFaceProps & {
 
 export type HarpRowStyles = {
   readonly row: ViewStyle
-  readonly chunkWrapper: ViewStyle
-  readonly cellChunk: ViewStyle
+  readonly chunkWrapper3: ViewStyle
+  readonly chunkWrapper4: ViewStyle
+  readonly cellChunk3: ViewStyle
+  readonly cellChunk4: ViewStyle
   readonly spacer: ViewStyle
 }

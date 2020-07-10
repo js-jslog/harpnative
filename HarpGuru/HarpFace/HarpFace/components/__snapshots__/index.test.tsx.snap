@@ -50,7 +50,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 3,
               "flexDirection": "row",
             }
           }
@@ -173,7 +173,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 3,
               "flexDirection": "row",
             }
           }
@@ -296,7 +296,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 4,
               "flexDirection": "row",
             }
           }
@@ -305,7 +305,7 @@ exports[`A snapshot of a HarpFace 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "flex": 3,
+                "flex": 4,
                 "flexDirection": "row",
                 "justifyContent": "space-around",
               }
@@ -406,6 +406,35 @@ exports[`A snapshot of a HarpFace 1`] = `
                   }
                 }
               />
+            </View>
+            <View
+              accessibilityRole="button"
+              accessible={true}
+              collapsable={false}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fefefe",
+                  "borderColor": "#ddd",
+                  "borderRadius": 7.5394000000000005,
+                  "borderWidth": 1.1,
+                  "elevation": 0,
+                  "height": 31.9374,
+                  "justifyContent": "center",
+                  "width": 31.9374,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#ddd",
+                    "fontSize": 12.199000000000002,
+                  }
+                }
+              >
+                7b
+              </Text>
             </View>
           </View>
           <View
@@ -440,7 +469,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 3,
               "flexDirection": "row",
             }
           }
@@ -560,7 +589,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 3,
               "flexDirection": "row",
             }
           }
@@ -674,7 +703,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 4,
               "flexDirection": "row",
             }
           }
@@ -683,7 +712,7 @@ exports[`A snapshot of a HarpFace 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "flex": 3,
+                "flex": 4,
                 "flexDirection": "row",
                 "justifyContent": "space-around",
               }
@@ -779,6 +808,35 @@ exports[`A snapshot of a HarpFace 1`] = `
                 5b
               </Text>
             </View>
+            <View
+              accessibilityRole="button"
+              accessible={true}
+              collapsable={false}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fefefe",
+                  "borderColor": "#ddd",
+                  "borderRadius": 7.5394000000000005,
+                  "borderWidth": 1.1,
+                  "elevation": 0,
+                  "height": 31.9374,
+                  "justifyContent": "center",
+                  "width": 31.9374,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#ddd",
+                    "fontSize": 12.199000000000002,
+                  }
+                }
+              >
+                7
+              </Text>
+            </View>
           </View>
           <View
             style={
@@ -812,7 +870,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 3,
               "flexDirection": "row",
             }
           }
@@ -926,7 +984,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 3,
               "flexDirection": "row",
             }
           }
@@ -1040,7 +1098,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 4,
               "flexDirection": "row",
             }
           }
@@ -1049,7 +1107,7 @@ exports[`A snapshot of a HarpFace 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "flex": 3,
+                "flex": 4,
                 "flexDirection": "row",
                 "justifyContent": "space-around",
               }
@@ -1140,6 +1198,35 @@ exports[`A snapshot of a HarpFace 1`] = `
                 }
               >
                 5
+              </Text>
+            </View>
+            <View
+              accessibilityRole="button"
+              accessible={true}
+              collapsable={false}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fefefe",
+                  "borderColor": "#ddd",
+                  "borderRadius": 7.5394000000000005,
+                  "borderWidth": 1.1,
+                  "elevation": 0,
+                  "height": 31.9374,
+                  "justifyContent": "center",
+                  "width": 31.9374,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#ddd",
+                    "fontSize": 12.199000000000002,
+                  }
+                }
+              >
+                1
               </Text>
             </View>
           </View>
@@ -1397,7 +1484,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 3,
               "flexDirection": "row",
             }
           }
@@ -1511,7 +1598,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 3,
               "flexDirection": "row",
             }
           }
@@ -1625,7 +1712,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 4,
               "flexDirection": "row",
             }
           }
@@ -1634,7 +1721,7 @@ exports[`A snapshot of a HarpFace 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "flex": 3,
+                "flex": 4,
                 "flexDirection": "row",
                 "justifyContent": "space-around",
               }
@@ -1727,6 +1814,35 @@ exports[`A snapshot of a HarpFace 1`] = `
                 4
               </Text>
             </View>
+            <View
+              accessibilityRole="button"
+              accessible={true}
+              collapsable={false}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fefefe",
+                  "borderColor": "#ddd",
+                  "borderRadius": 7.5394000000000005,
+                  "borderWidth": 1.1,
+                  "elevation": 0,
+                  "height": 31.9374,
+                  "justifyContent": "center",
+                  "width": 31.9374,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#ddd",
+                    "fontSize": 12.199000000000002,
+                  }
+                }
+              >
+                6
+              </Text>
+            </View>
           </View>
           <View
             style={
@@ -1760,7 +1876,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 3,
               "flexDirection": "row",
             }
           }
@@ -1874,7 +1990,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 3,
               "flexDirection": "row",
             }
           }
@@ -1991,7 +2107,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 4,
               "flexDirection": "row",
             }
           }
@@ -2000,7 +2116,7 @@ exports[`A snapshot of a HarpFace 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "flex": 3,
+                "flex": 4,
                 "flexDirection": "row",
                 "justifyContent": "space-around",
               }
@@ -2094,6 +2210,35 @@ exports[`A snapshot of a HarpFace 1`] = `
                 }
               >
                 6b
+              </Text>
+            </View>
+            <View
+              accessibilityRole="button"
+              accessible={true}
+              collapsable={false}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fefefe",
+                  "borderColor": "#ddd",
+                  "borderRadius": 7.5394000000000005,
+                  "borderWidth": 1.1,
+                  "elevation": 0,
+                  "height": 31.9374,
+                  "justifyContent": "center",
+                  "width": 31.9374,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#ddd",
+                    "fontSize": 12.199000000000002,
+                  }
+                }
+              >
+                2b
               </Text>
             </View>
           </View>
@@ -2129,7 +2274,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 3,
               "flexDirection": "row",
             }
           }
@@ -2246,7 +2391,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 3,
               "flexDirection": "row",
             }
           }
@@ -2369,7 +2514,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 4,
               "flexDirection": "row",
             }
           }
@@ -2378,12 +2523,44 @@ exports[`A snapshot of a HarpFace 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "flex": 3,
+                "flex": 4,
                 "flexDirection": "row",
                 "justifyContent": "space-around",
               }
             }
           >
+            <View
+              accessible={false}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fefefe",
+                  "borderColor": "#ddd",
+                  "borderRadius": 7.5394000000000005,
+                  "borderWidth": 0,
+                  "elevation": 0,
+                  "height": 31.9374,
+                  "justifyContent": "center",
+                  "width": 31.9374,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#fefefe",
+                    "borderColor": "#ddd",
+                    "borderRadius": 7.5394000000000005,
+                    "borderWidth": 0,
+                    "elevation": 0,
+                    "height": 31.9374,
+                    "justifyContent": "center",
+                    "width": 31.9374,
+                  }
+                }
+              />
+            </View>
             <View
               accessible={false}
               style={
@@ -2513,7 +2690,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 3,
               "flexDirection": "row",
             }
           }
@@ -2633,7 +2810,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 3,
               "flexDirection": "row",
             }
           }
@@ -2756,7 +2933,7 @@ exports[`A snapshot of a HarpFace 1`] = `
         <View
           style={
             Object {
-              "flex": 1,
+              "flex": 4,
               "flexDirection": "row",
             }
           }
@@ -2765,12 +2942,44 @@ exports[`A snapshot of a HarpFace 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "flex": 3,
+                "flex": 4,
                 "flexDirection": "row",
                 "justifyContent": "space-around",
               }
             }
           >
+            <View
+              accessible={false}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fefefe",
+                  "borderColor": "#ddd",
+                  "borderRadius": 7.5394000000000005,
+                  "borderWidth": 0,
+                  "elevation": 0,
+                  "height": 31.9374,
+                  "justifyContent": "center",
+                  "width": 31.9374,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#fefefe",
+                    "borderColor": "#ddd",
+                    "borderRadius": 7.5394000000000005,
+                    "borderWidth": 0,
+                    "elevation": 0,
+                    "height": 31.9374,
+                    "justifyContent": "center",
+                    "width": 31.9374,
+                  }
+                }
+              />
+            </View>
             <View
               accessible={false}
               style={
