@@ -1,7 +1,5 @@
 import type { HarpRowProps } from '../HarpRow'
 
-// TODO: this should probably be moved in to HarpCell since
-// that's where it's really required
 export enum DisplayModes {
   Degree = 'DEGREE',
   Pitch = 'PITCH',
