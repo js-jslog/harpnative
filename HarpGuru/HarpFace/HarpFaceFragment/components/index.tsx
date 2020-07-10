@@ -1,8 +1,8 @@
 import { View } from 'react-native'
 import React from 'react'
 
+import type { HarpFaceFragmentProps } from '../types'
 import { getStyles } from '../styles'
-import type { HarpFaceFragmentProps } from '../../types'
 import { HoleNumberRow } from '../../HoleNumberRow'
 import { getHarpRows } from '../../HarpRows'
 

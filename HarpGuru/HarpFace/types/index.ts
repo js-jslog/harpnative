@@ -1,4 +1,4 @@
-import type { HarpRowProps } from '../HarpRow'
+import type { HarpFaceFragmentProps } from '../HarpFaceFragment'
 
 export enum DisplayModes {
   Degree = 'DEGREE',
@@ -6,10 +6,3 @@ export enum DisplayModes {
 }
 
 export type HarpFaceProps = Omit<HarpFaceFragmentProps, 'xRange'>
-
-export type HarpFaceFragmentProps = Omit<HarpRowProps, 'yCoord'>
-
-export type HarpFaceFacts = {
-  readonly columnCount: number
-  readonly rowCount: number
-}

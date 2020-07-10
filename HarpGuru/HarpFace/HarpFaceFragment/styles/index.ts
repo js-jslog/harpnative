@@ -1,8 +1,7 @@
 import { StyleSheet } from 'react-native'
 
-import type { HarpFaceFragmentStyles } from '../types'
+import type { HarpFaceFragmentProps, HarpFaceFragmentStyles } from '../types'
 import { getFragmentFacts } from '../getFragmentFacts'
-import type { HarpFaceFragmentProps } from '../../types'
 import { themeSizes } from '../../../Styles'
 
 const { 9: columnWidth } = themeSizes

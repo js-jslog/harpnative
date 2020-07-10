@@ -25,7 +25,6 @@ export const getStyles = (props: HarpFaceProps): HarpFaceStyles => {
     // and place the face in the center
     facewrapper: {
       ...StyleSheet.absoluteFillObject,
-      flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
     },

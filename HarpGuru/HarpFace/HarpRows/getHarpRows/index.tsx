@@ -3,8 +3,8 @@ import { InteractionIds } from 'harpstrata'
 
 import { HarpRows } from '../types'
 import { mapRowToBlowDrawIds } from '../mapRowToBlowDrawIds'
-import type { HarpFaceFragmentProps } from '../../types'
 import { HarpRow } from '../../HarpRow'
+import type { HarpFaceFragmentProps } from '../../HarpFaceFragment'
 
 export const getHarpRows = (props: HarpFaceFragmentProps): HarpRows => {
   const {
