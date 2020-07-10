@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 
 import type { HarpFaceStyles } from '../types'
-import { getHarpFaceFacts } from '../getHarpFaceFacts'
+import { getFragmentFacts } from '../getFragmentFacts'
 import type { HarpFaceProps } from '../../types'
 import { themeSizes } from '../../../Styles'
 
@@ -9,7 +9,7 @@ const { 9: columnWidth } = themeSizes
 const { 9: rowHeight } = themeSizes
 
 export const getStyles = (props: HarpFaceProps): HarpFaceStyles => {
-  const { columnCount, rowCount } = getHarpFaceFacts(props)
+  const { columnCount, rowCount } = getFragmentFacts(props)
 
   const styles = StyleSheet.create<HarpFaceStyles>({
     facewrapper: {
