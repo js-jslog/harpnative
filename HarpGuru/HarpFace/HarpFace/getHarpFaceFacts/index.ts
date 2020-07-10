@@ -1,4 +1,4 @@
-import type { HarpFaceProps } from '../../types'
+import type { HarpFaceProps } from '../types'
 
 type HarpFaceFacts = {
   readonly rowCount: number

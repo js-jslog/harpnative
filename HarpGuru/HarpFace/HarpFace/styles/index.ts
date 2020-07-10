@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 
+import type { HarpFaceProps } from '../types'
 import { getHarpFaceFacts } from '../getHarpFaceFacts'
 import { themeSizes } from '../../../Styles'
-import type { HarpFaceProps } from '../..'
 
 type HarpFaceStyles = {
   readonly facewrapper: ViewStyle
