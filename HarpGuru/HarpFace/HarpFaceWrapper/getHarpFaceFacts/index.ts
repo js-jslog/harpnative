@@ -1,5 +1,9 @@
 import type { HarpFaceProps } from '../../types'
 
+// TODO: make this function available to the fragment
+// component so that when it needs global face info
+// it is clear that that is what it is doing, and when
+// it needs specialised fragment info it's clear again.
 type HarpFaceFacts = {
   readonly rowCount: number
   readonly columnCount: number
