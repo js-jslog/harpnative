@@ -26,12 +26,10 @@ export const HarpFaceFragment = (props: HarpFaceFragmentProps): React.ReactEleme
   const styles = getStyles(props)
 
   return (
-    <View style={styles.facewrapper}>
-      <View style={styles.face}>
-        {harpRows.top}
-        <HoleNumberRow {...props} />
-        {harpRows.bottom}
-      </View>
+    <View style={styles.fragment}>
+      {harpRows.top}
+      <HoleNumberRow {...props} />
+      {harpRows.bottom}
     </View>
   )
 }

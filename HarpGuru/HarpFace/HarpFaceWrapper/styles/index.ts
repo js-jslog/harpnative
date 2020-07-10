@@ -10,8 +10,10 @@ type HarpFaceStyles = {
   readonly face: ViewStyle
 }
 
+// TODO: these sizes neem to be somewhere common between
+// the face and the fragment because they are used in boths styles
 const { 9: columnWidth } = themeSizes
-const { 9: boundaryWidth } = themeSizes
+const { 8: boundaryWidth } = themeSizes
 const { 9: rowHeight } = themeSizes
 
 export const getStyles = (props: HarpFaceProps): HarpFaceStyles => {
@@ -30,7 +32,7 @@ export const getStyles = (props: HarpFaceProps): HarpFaceStyles => {
     // This is itself a wrapper for a series of face fragments
     face: {
       flexDirection: 'row',
-      justifyContent: 'center',
+      justifyContent: 'space-around',
       alignItems: 'center',
       width: (columnWidth * columnCount) + (boundaryWidth * boundaryCount),
       height: rowHeight * rowCount,

@@ -19,6 +19,10 @@ export const HarpFace = (props: HarpFaceProps): React.ReactElement => {
     ...props,
     xRange: [6, 9] as [6,9]
   }
+  const harpFaceFragmentProps4 = {
+    ...props,
+    xRange: [9, 10] as [9,10]
+  }
 
   return (
     <View style={styles.facewrapper}>
@@ -26,6 +30,7 @@ export const HarpFace = (props: HarpFaceProps): React.ReactElement => {
         <HarpFaceFragment {...harpFaceFragmentProps1} />
         <HarpFaceFragment {...harpFaceFragmentProps2} />
         <HarpFaceFragment {...harpFaceFragmentProps3} />
+        <HarpFaceFragment {...harpFaceFragmentProps4} />
       </View>
     </View>
   )

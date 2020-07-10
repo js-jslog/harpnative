@@ -21,6 +21,10 @@ export const getStyles = (props: HarpFaceProps): HarpFaceStyles => {
       width: columnWidth * columnCount,
       height: rowHeight * rowCount,
     },
+    fragment: {
+      width: columnWidth * columnCount,
+      height: rowHeight * rowCount,
+    },
   })
 
   return styles
