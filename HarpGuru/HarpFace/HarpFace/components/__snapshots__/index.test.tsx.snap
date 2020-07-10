@@ -15,7 +15,6 @@ exports[`A component is rendered 1`] = `
       Object {
         "alignItems": "center",
         "bottom": 0,
-        "flexDirection": "row",
         "justifyContent": "center",
         "left": 0,
         "position": "absolute",
