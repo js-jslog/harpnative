@@ -29,7 +29,7 @@ export const getChunkedHarpCells = (props: HarpRowProps): React.ReactElement[][]
 
   const [matrixRow] = degreeMatrix
 
-  const chunkedMatrixRow = [ matrixRow.slice(0,3), matrixRow.slice(3,6), matrixRow.slice(6, 9)]
+  const chunkedMatrixRow = [ matrixRow.slice(0,3), matrixRow.slice(3,6), matrixRow.slice(6)]
 
   const chunkedHarpCells = chunkedMatrixRow.map((harpCells, outerindex) => harpCells.map((_, innerindex) => {
     const index = (outerindex * 3) + innerindex
