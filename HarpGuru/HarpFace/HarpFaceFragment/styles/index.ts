@@ -2,11 +2,7 @@ import { StyleSheet } from 'react-native'
 
 import type { HarpFaceFragmentProps, HarpFaceFragmentStyles } from '../types'
 import { getFragmentFacts } from '../getFragmentFacts'
-import { getHarpFaceFacts } from '../../HarpFace'
-import { themeSizes } from '../../../Styles'
-
-const { 9: columnWidth } = themeSizes
-const { 9: rowHeight } = themeSizes
+import { getHarpFaceFacts, columnWidth, rowHeight } from '../../HarpFace'
 
 export const getStyles = (props: HarpFaceFragmentProps): HarpFaceFragmentStyles => {
   const { columnCount } = getFragmentFacts(props)
