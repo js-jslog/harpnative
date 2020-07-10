@@ -6,7 +6,6 @@ export type HarpFaceFragmentProps = Omit<HarpRowProps, 'yCoord'>
 
 export type FragmentFacts = {
   readonly columnCount: number
-  readonly rowCount: number
 }
 
 export type HarpFaceFragmentStyles = {
