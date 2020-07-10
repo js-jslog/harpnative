@@ -1,13 +1,11 @@
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
-import { harpFaceProps } from '../../testResources'
-
 import { HoleNumberRow } from './index'
 
-test.skip('HoleNumberRow returns holes numbered 1 to 10 for a 10 hole major diatonic harmonica', () => {
+test('HoleNumberRow returns a 10 hole sequence', () => {
   const { queryByText, getByText } = render(
-    <HoleNumberRow {...harpFaceProps} />
+    <HoleNumberRow xRange={[0,1,2,3,4,5,6,7,8,9]} />
   )
 
   expect(queryByText('0')).toBeNull()
@@ -24,8 +22,8 @@ test.skip('HoleNumberRow returns holes numbered 1 to 10 for a 10 hole major diat
   expect(queryByText('11')).toBeNull()
 })
 
-test.skip('A snapshot of HoleNumberRow', () => {
-  const { container } = render(<HoleNumberRow {...harpFaceProps} />)
+test('A snapshot of HoleNumberRow', () => {
+  const { container } = render(<HoleNumberRow xRange={[0,1,2,3,4,5,6,7,8,9]}/>)
 
   expect(container).toMatchSnapshot()
 })
