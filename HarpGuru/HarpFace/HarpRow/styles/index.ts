@@ -25,6 +25,19 @@ export const getStyles = (props: HarpRowProps): HarpRowStyles => {
       borderBottomLeftRadius: isDrawRow(props) ? borderRadius : 0,
       borderBottomRightRadius: isDrawRow(props) ? borderRadius : 0,
     },
+    chunkWrapper: {
+      flex: 1,
+      flexDirection: 'row',
+    },
+    cellChunk: {
+      flex: 3,
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+    },
+    spacer: {
+      flex: 0.5,
+    },
   })
 
   return styles
