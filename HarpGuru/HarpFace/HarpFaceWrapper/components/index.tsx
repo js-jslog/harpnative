@@ -24,6 +24,8 @@ export const HarpFace = (props: HarpFaceProps): React.ReactElement => {
     <View style={styles.facewrapper}>
       <View style={styles.face}>
         <HarpFaceFragment {...harpFaceFragmentProps1} />
+        <HarpFaceFragment {...harpFaceFragmentProps2} />
+        <HarpFaceFragment {...harpFaceFragmentProps3} />
       </View>
     </View>
   )

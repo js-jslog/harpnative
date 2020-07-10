@@ -13,7 +13,7 @@ export const getStyles = (props: HarpFaceProps): HarpFaceStyles => {
 
   const styles = StyleSheet.create<HarpFaceStyles>({
     facewrapper: {
-      flex: 5,
+      flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
     },
