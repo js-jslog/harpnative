@@ -10,9 +10,11 @@ export const getHarpCells = (props: HarpRowProps): React.ReactElement[] => {
   } = props
   const { yCoord } = props
 
-  const [matrixRow] = degreeMatrix
+  let [matrixRow] = degreeMatrix
+  if (props.xRange) matrixRow = [ ...matrixRow.slice(props.xRange[0], props.xRange[1])]
+
   const harpCells = matrixRow.map((_, index) => {
-    const yxCoord: YXCoord = [yCoord, index]
+    const yxCoord: YXCoord = [yCoord, (index + (props.xRange && props.xRange[0] || 0))]
     // TODO: this has one extra props than required (the yCoords is included which is messy)
     return <HarpCell key={index} {...props} yxCoord={yxCoord} />
   })

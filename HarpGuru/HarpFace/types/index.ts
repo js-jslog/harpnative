@@ -13,6 +13,10 @@ export type HarpFaceProps = {
   readonly activeDisplayMode: DisplayModes
 }
 
+export type HarpFaceFragmentProps = HarpFaceProps & {
+  readonly xRange?: [number, number]
+}
+
 export type HarpFaceFacts = {
   readonly columnCount: number
   readonly rowCount: number
