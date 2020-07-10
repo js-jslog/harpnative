@@ -9,5 +9,5 @@ import { HarpFace } from './index'
 test('A component is rendered', () => {
   const { container } = render(<HarpFace {...harpFaceProps} />)
 
-  expect(container).toBeTruthy()
+  expect(container).toMatchSnapshot()
 })
