@@ -1,6 +1,6 @@
-import type { HarpFaceFacts, HarpFaceFragmentProps } from '../types'
+import type { FragmentFacts, HarpFaceFragmentProps } from '../types'
 
-export const getFragmentFacts = ({activeHarpStrata, xRange}: HarpFaceFragmentProps): HarpFaceFacts => {
+export const getFragmentFacts = ({activeHarpStrata, xRange}: HarpFaceFragmentProps): FragmentFacts => {
   const { degreeMatrix } = activeHarpStrata
 
   const { length: rowCount } = degreeMatrix
