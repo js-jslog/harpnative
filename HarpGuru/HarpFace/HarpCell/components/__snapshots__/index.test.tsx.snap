@@ -32,7 +32,7 @@ exports[`A snapshot of a populated cell 1`] = `
       style={
         Object {
           "color": "#ddd",
-          "fontSize": 12.199000000000002,
+          "fontSize": 19.738400000000002,
         }
       }
     >
@@ -74,7 +74,7 @@ exports[`A snapshot of an active cell 1`] = `
       style={
         Object {
           "color": "#fefefe",
-          "fontSize": 12.199000000000002,
+          "fontSize": 19.738400000000002,
         }
       }
     >
