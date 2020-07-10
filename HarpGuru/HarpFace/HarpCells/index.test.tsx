@@ -7,9 +7,9 @@ import type { HarpRowProps } from '../HarpRow'
 import { getHarpCells } from './index'
 
 test('getHarpCells returns an array of HarpCells, the length of the range supplied', () => {
-  const harpRowProps: HarpRowProps = { ...harpFaceProps, yCoord: 0, xRange: [0,1,2] }
+  const harpRowProps: HarpRowProps = { ...harpFaceProps, yCoord: 0, xRange: [0,1,2,3,4,5,6,7,8] }
   const harpCells = getHarpCells(harpRowProps)
-  expect(harpCells.length).toBe(3)
+  expect(harpCells.length).toBe(9)
 })
 
 test('getHarpCells returns an array of HarpCells, with a sample containing the expected values', () => {
