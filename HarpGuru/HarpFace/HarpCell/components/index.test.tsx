@@ -10,6 +10,8 @@ import {
 
 import { HarpCell } from './index'
 
+// TODO: These props are all badly named and badly derived.
+// Change test data production to be bottom up like type definitions.
 test('A component is rendered with the Degree or Pitch value in its text view depending on the DisplayMode selected', () => {
   const harpFaceProps = {
     ...inactiveCellsHarpFaceProps,
