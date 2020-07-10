@@ -5,10 +5,10 @@ import { render } from '@testing-library/react-native'
 
 import { harpFaceProps } from '../../testResources'
 
-import { HarpFace } from './index'
+import { HarpFaceFragment } from './index'
 
-test.skip('A component is rendered with all of the degrees of a major diatonic presented', () => {
-  const { getAllByText } = render(<HarpFace {...harpFaceProps} />)
+test('A component is rendered with all of the degrees of a major diatonic presented', () => {
+  const { getAllByText } = render(<HarpFaceFragment {...harpFaceProps} xRange={[0,1,2,3,4,5,6,7,8,9]} />)
 
   const [holeRoot] = getAllByText(DegreeIds.Root)
   const [holeFlat2] = getAllByText(DegreeIds.Flat2)
@@ -37,8 +37,8 @@ test.skip('A component is rendered with all of the degrees of a major diatonic p
   expect(holeSeventh).toBeTruthy()
 })
 
-test.skip('A snapshot of a HarpFace', () => {
-  const { container } = render(<HarpFace {...harpFaceProps} />)
+test('A snapshot of a HarpFaceFragment', () => {
+  const { container } = render(<HarpFaceFragment {...harpFaceProps} xRange={[0,1,2,3,4,5,6,7,8,9]} />)
 
   expect(container).toMatchSnapshot()
 })
