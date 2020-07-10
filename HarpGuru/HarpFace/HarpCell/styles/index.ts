@@ -13,7 +13,7 @@ const {
   8: width,
   2: elevation,
 } = themeSizes
-const { 6: fontSize } = themeSizes
+const { 7: fontSize } = themeSizes
 const { pageColor, degreeColors, inertOutline: borderColor } = themeColors
 
 export const getStyles = (props: HarpCellProps): HarpCellStyles => {
