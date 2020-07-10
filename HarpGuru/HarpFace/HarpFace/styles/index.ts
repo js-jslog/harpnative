@@ -2,13 +2,13 @@ import { StyleSheet } from 'react-native'
 
 import type { HarpFaceStyles } from '../types'
 import { getFragmentFacts } from '../getFragmentFacts'
-import type { HarpFaceProps } from '../../types'
+import type { HarpFaceFragmentProps } from '../../types'
 import { themeSizes } from '../../../Styles'
 
 const { 9: columnWidth } = themeSizes
 const { 9: rowHeight } = themeSizes
 
-export const getStyles = (props: HarpFaceProps): HarpFaceStyles => {
+export const getStyles = (props: HarpFaceFragmentProps): HarpFaceStyles => {
   const { columnCount, rowCount } = getFragmentFacts(props)
 
   const styles = StyleSheet.create<HarpFaceStyles>({
