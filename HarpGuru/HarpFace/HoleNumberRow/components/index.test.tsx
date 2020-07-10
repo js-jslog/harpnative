@@ -5,7 +5,7 @@ import { harpFaceProps } from '../../testResources'
 
 import { HoleNumberRow } from './index'
 
-test('HoleNumberRow returns holes numbered 1 to 10 for a 10 hole major diatonic harmonica', () => {
+test.skip('HoleNumberRow returns holes numbered 1 to 10 for a 10 hole major diatonic harmonica', () => {
   const { queryByText, getByText } = render(
     <HoleNumberRow {...harpFaceProps} />
   )
@@ -24,7 +24,7 @@ test('HoleNumberRow returns holes numbered 1 to 10 for a 10 hole major diatonic 
   expect(queryByText('11')).toBeNull()
 })
 
-test('A snapshot of HoleNumberRow', () => {
+test.skip('A snapshot of HoleNumberRow', () => {
   const { container } = render(<HoleNumberRow {...harpFaceProps} />)
 
   expect(container).toMatchSnapshot()
