@@ -3,7 +3,7 @@ import React from 'react'
 
 import type { ScreenProps } from '../types'
 import { themeColors } from '../../Styles'
-import { HarpFace } from '../../HarpFace/HarpFaceWrapper'
+import { HarpFace } from '../../HarpFace'
 
 const { pageColor } = themeColors
 
