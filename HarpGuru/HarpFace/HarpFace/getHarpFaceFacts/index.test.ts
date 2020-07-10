@@ -2,8 +2,12 @@ import { harpFaceProps } from '../../testResources'
 
 import { getHarpFaceFacts } from './index'
 
-test('Recovers the column and row count from the HarpFaceProps', () => {
-  const harpFaceFacts = getHarpFaceFacts(harpFaceProps)
+test('Recovers the column and row count from the fragment props', () => {
+  const harpFaceFactProps = {
+    ...harpFaceProps,
+    xRange: [0,1,2,3,4,5,6,7,8,9]
+  }
+  const harpFaceFacts = getHarpFaceFacts(harpFaceFactProps)
 
   const { columnCount, rowCount } = harpFaceFacts
 
@@ -11,23 +15,15 @@ test('Recovers the column and row count from the HarpFaceProps', () => {
   expect(rowCount).toBe(7)
 })
 
-test('Recovers the column and row count from the HarpFaceProps for a harp with a different number of rows and columns', () => {
-  const { activeHarpStrata } = harpFaceProps
-  const tamperedDegreeMatrix = [[undefined, undefined]]
-
-  const tamperedHarpStrata = {
-    ...activeHarpStrata,
-    degreeMatrix: tamperedDegreeMatrix,
-  }
-  const tamperedHarpFaceProps = {
+test('Recovers the column and row count from a smaller fragment props', () => {
+  const harpFaceFactProps = {
     ...harpFaceProps,
-    activeHarpStrata: tamperedHarpStrata,
+    xRange: [4,5,6,7]
   }
-
-  const harpFaceFacts = getHarpFaceFacts(tamperedHarpFaceProps)
+  const harpFaceFacts = getHarpFaceFacts(harpFaceFactProps)
 
   const { columnCount, rowCount } = harpFaceFacts
 
-  expect(columnCount).toBe(2)
-  expect(rowCount).toBe(1)
+  expect(columnCount).toBe(4)
+  expect(rowCount).toBe(7)
 })
