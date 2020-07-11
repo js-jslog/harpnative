@@ -17,3 +17,12 @@ test('groups column indexes for a simple HasRootArray which doesnt start with a 
 
   expect(actualRangeIndexes).toStrictEqual(expectedRangeIndexes)
 })
+
+test('groups column indexes for a simple HasRootArray with consecutive root columns', () => {
+  const hasRootArray = [ false, true, true, false, true, false, false ]
+  const expectedRangeIndexes = [ [0], [1, 2, 3], [4, 5, 6]]
+
+  const actualRangeIndexes = groupColumnIndexes(hasRootArray)
+
+  expect(actualRangeIndexes).toStrictEqual(expectedRangeIndexes)
+})

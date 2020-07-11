@@ -6,12 +6,21 @@ export const groupColumnIndexes = (hasRootArray: ReadonlyArray<boolean>): Column
   const mapped = hasRootArray.map((element, index) => {
     if (!element && index !== 0) return []
 
-    const nextIndex = hasRootArray.indexOf(true, index+1)
+    const indexOffset = (element ? 2 : 1)
+    const nextIndex = hasRootArray.indexOf(true, index + indexOffset)
 
     if (nextIndex === -1) return incrementArray.slice(index)
 
     return incrementArray.slice(index, nextIndex)
   })
 
-  return mapped.filter(element => element.length > 0)
+  const filtered = mapped.filter((element, index, array) => {
+    const { length: groupLength } = element
+    const isEmpty = groupLength === 0
+    const duplicateEntries = index > 0 && array[index-1].indexOf(element[0]) !== -1
+
+    return !isEmpty && !duplicateEntries
+  })
+
+  return filtered
 }
