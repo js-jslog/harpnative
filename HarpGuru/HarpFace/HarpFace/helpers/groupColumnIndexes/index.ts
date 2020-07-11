@@ -7,10 +7,10 @@ export const groupColumnIndexes = (hasRootArray: ReadonlyArray<boolean>): Column
   const overlappingGroups = hasRootArray.map((hasRoot, index) => {
     if (!hasRoot && index !== 0) return []
 
-    const searchPoint = hasRootArray.indexOf(false, index)
-    const nextIndex = hasRootArray.indexOf(true, searchPoint)
+    const endOfTrueRun = hasRootArray.indexOf(false, index)
+    const nextIndex = hasRootArray.indexOf(true, endOfTrueRun)
 
-    if (nextIndex === -1) return incrementArray.slice(index)
+    if (nextIndex === -1 || nextIndex === index) return incrementArray.slice(index)
 
     return incrementArray.slice(index, nextIndex)
   })
