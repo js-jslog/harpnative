@@ -6,8 +6,8 @@ export const groupColumnIndexes = (hasRootArray: ReadonlyArray<boolean>): Column
   const mapped = hasRootArray.map((element, index) => {
     if (!element && index !== 0) return []
 
-    const indexOffset = (element ? 2 : 1)
-    const nextIndex = hasRootArray.indexOf(true, index + indexOffset)
+    const searchPoint = hasRootArray.indexOf(false, index)
+    const nextIndex = hasRootArray.indexOf(true, searchPoint)
 
     if (nextIndex === -1) return incrementArray.slice(index)
 
