@@ -66,6 +66,15 @@ test('transposes well with mixed types', () => {
   expect(transposeMatrix(actualTransposition)).toStrictEqual(doubleRow)
 })
 
+test('throws an error if the matrix rows are not all the same length, reporting the input matrix', () => {
+  const unevenRows = [
+    [1, 2, 3],
+    [1, 2]
+  ]
+
+  expect(() => transposeMatrix(unevenRows)).toThrow('[[1,2,3],[1,2,]]')
+})
+
 test('transposes an empty array without error', () => {
   const empty = [[]]
 
