@@ -1,27 +1,25 @@
 import { DegreeIds } from 'harpstrata'
 
-import { identifyRootsInRow } from './index'
+import { rowHasRoot } from './index'
 
-test('Map a simple degreeMatrix to identify its roots', () => {
+test('Reduce a single row matrix to identify whether it contains any roots', () => {
   const degreeMatrix = [[{id: DegreeIds.Root}, {id: DegreeIds.Second}, {id: DegreeIds.Fourth}]]
-  const expectedRootsMatrix = [[ true, false, false ]]
+  const expectedRootsMatrix = [ true ]
 
-  const actualRootsMatrix = degreeMatrix.map(identifyRootsInRow)
+  const actualRootsMatrix = degreeMatrix.map(rowHasRoot)
 
   expect(actualRootsMatrix).toStrictEqual(expectedRootsMatrix)
 })
 
-test('Map a multidimensional simple degreeMatrix to identify its roots', () => {
+test('Reduce a multidimensional simple degreeMatrix to identify which rows have roots', () => {
   const degreeMatrix = [
     [{id: DegreeIds.Root}, {id: DegreeIds.Second}, {id: DegreeIds.Fourth}],
     [{id: DegreeIds.Root}, undefined, {id: DegreeIds.Root}],
+    [{id: DegreeIds.Second}, undefined, {id: DegreeIds.Third}],
   ]
-  const expectedRootsMatrix = [
-    [ true, false, false ],
-    [ true, false, true ]
-  ]
+  const expectedRootsMatrix = [ true, true, false]
 
-  const actualRootsMatrix = degreeMatrix.map(identifyRootsInRow)
+  const actualRootsMatrix = degreeMatrix.map(rowHasRoot)
 
   expect(actualRootsMatrix).toStrictEqual(expectedRootsMatrix)
 })

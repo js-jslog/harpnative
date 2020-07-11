@@ -1,7 +1,6 @@
-import { DegreeRow, DegreeIds, Degree } from 'harpstrata'
+import { DegreeIds } from 'harpstrata'
+import type { Degree, DegreeRow } from 'harpstrata'
 
-type IsRootRow = ReadonlyArray<boolean>
-
-export const identifyRootsInRow = (degreeRow: DegreeRow): IsRootRow => {
-  return degreeRow.map((degree: Degree | undefined): boolean => !!(degree && degree.id === DegreeIds.Root))
+export const rowHasRoot = (degreeRow: DegreeRow): boolean => {
+  return degreeRow.some((degree: Degree | undefined) => degree && degree.id === DegreeIds.Root)
 }
