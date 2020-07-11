@@ -15,8 +15,8 @@ export const { 9: columnWidth } = themeSizes
 export const { 9: rowHeight } = themeSizes
 
 export const getStyles = (props: HarpFaceProps): HarpFaceStyles => {
-  const { columnCount, rowCount, boundaryIndexes } = getHarpFaceFacts(props)
-  const { length: boundaryCount }  = boundaryIndexes
+  const { columnCount, rowCount, octaveColumnGroups } = getHarpFaceFacts(props)
+  const { length: groupCount }  = octaveColumnGroups
 
   const styles = StyleSheet.create({
     // Wrapper, just to fill up all the available space
@@ -31,7 +31,7 @@ export const getStyles = (props: HarpFaceProps): HarpFaceStyles => {
       flexDirection: 'row',
       justifyContent: 'space-around',
       alignItems: 'center',
-      width: (columnWidth * columnCount) + (boundaryWidth * boundaryCount),
+      width: (columnWidth * columnCount) + (boundaryWidth * groupCount +1),
       height: rowHeight * rowCount,
     }
   })

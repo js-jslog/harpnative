@@ -11,8 +11,11 @@ test('Recovers the column and row count from the HarpFaceProps', () => {
   expect(rowCount).toBe(7)
 })
 
-test('Identifies the boundary indexes in a naive way', () => {
-  const { boundaryIndexes } = getHarpFaceFacts(harpFaceProps)
+test('Identifies the columns grouped by octave', () => {
+  const { octaveColumnGroups } = getHarpFaceFacts(harpFaceProps)
+  const expectedOctaveGroups = [
+    [0,1,2],[3,4,5],[6,7,8],[9]
+  ]
 
-  expect(boundaryIndexes).toStrictEqual([2, 5, 8])
+  expect(octaveColumnGroups).toStrictEqual(expectedOctaveGroups)
 })
