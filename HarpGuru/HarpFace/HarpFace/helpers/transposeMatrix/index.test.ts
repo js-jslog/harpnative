@@ -8,3 +8,9 @@ test('transposes a sinlge row to a column and back again', () => {
   expect(actualTransposition).toStrictEqual(expectedTransposition)
   expect(transposeMatrix(actualTransposition)).toStrictEqual(singleRow)
 })
+
+test('transposes an empty array without error', () => {
+  const empty = [[]]
+
+  expect(transposeMatrix(empty)).toStrictEqual(empty)
+})
