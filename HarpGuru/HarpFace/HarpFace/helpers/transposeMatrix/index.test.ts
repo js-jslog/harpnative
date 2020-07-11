@@ -72,7 +72,7 @@ test('throws an error if the matrix rows are not all the same length, reporting 
     [1, 2]
   ]
 
-  expect(() => transposeMatrix(unevenRows)).toThrow('[[1,2,3],[1,2,]]')
+  expect(() => transposeMatrix(unevenRows)).toThrow('[[1,2,3],[1,2]]')
 })
 
 test('transposes an empty array without error', () => {
