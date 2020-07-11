@@ -3,8 +3,9 @@ type ColumnRanges = ReadonlyArray<ColumnRange>
 
 export const groupColumnIndexes = (hasRootArray: ReadonlyArray<boolean>): ColumnRanges => {
   const incrementArray = Array.from(Array(hasRootArray.length).keys())
-  const mapped = hasRootArray.map((element, index) => {
-    if (!element && index !== 0) return []
+
+  const overlappingGroups = hasRootArray.map((hasRoot, index) => {
+    if (!hasRoot && index !== 0) return []
 
     const searchPoint = hasRootArray.indexOf(false, index)
     const nextIndex = hasRootArray.indexOf(true, searchPoint)
@@ -14,13 +15,13 @@ export const groupColumnIndexes = (hasRootArray: ReadonlyArray<boolean>): Column
     return incrementArray.slice(index, nextIndex)
   })
 
-  const filtered = mapped.filter((element, index, array) => {
-    const { length: groupLength } = element
+  return overlappingGroups.filter((group, index) => {
+    const { length: groupLength } = group
     const isEmpty = groupLength === 0
-    const duplicateEntries = index > 0 && array[index-1].indexOf(element[0]) !== -1
 
-    return !isEmpty && !duplicateEntries
+    const { [index-1]: previousGroup } = overlappingGroups
+    const hasDuplicates = previousGroup && previousGroup.indexOf(group[0]) !== -1
+
+    return !isEmpty && !hasDuplicates
   })
-
-  return filtered
 }
