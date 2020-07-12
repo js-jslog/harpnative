@@ -1,8 +1,8 @@
 import type { DegreeMatrix } from 'harpstrata'
 
 import { transposeMatrix } from '../transposeMatrix'
-import { getOctaveColumnGroups } from '../groupColumnIndexes'
-import type { ColumnRanges } from '../groupColumnIndexes'
+import { getOctaveColumnGroups } from '../getOctaveColumnGroups'
+import type { ColumnRanges } from '../getOctaveColumnGroups'
 import { arrayHasRoot } from '../arrayHasRoot'
 import type { HarpFaceProps } from '../../types'
 
