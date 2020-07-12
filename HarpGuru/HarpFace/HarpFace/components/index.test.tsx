@@ -6,7 +6,7 @@ import { harpFaceProps } from '../../testResources'
 
 import { HarpFace } from './index'
 
-test('A snapshot of a HarpFace', () => {
+test('A component is rendered', () => {
   const { container } = render(<HarpFace {...harpFaceProps} />)
 
   expect(container).toMatchSnapshot()
