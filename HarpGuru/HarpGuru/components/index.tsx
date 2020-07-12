@@ -38,7 +38,7 @@ const initialHarpStrataProps: HarpStrataProps = {
 const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
 const { Degree: initialDisplayMode } = DisplayModes
 
-export enum MenuStates {
+enum MenuStates {
   LayoutMenu,
   CovariantMenu,
   NoMenu,
@@ -65,14 +65,14 @@ export const HarpGuru = (): ReactElement => {
     setActiveHarpStrata,
     activeDisplayMode,
     setActiveDisplayMode,
-    menuState,
+    onScreen: menuState === MenuStates.CovariantMenu,
   }
   const layoutMenuProps = {
     activeHarpStrata,
     setActiveHarpStrata,
     activeDisplayMode,
     setActiveDisplayMode,
-    menuState,
+    onScreen: menuState === MenuStates.LayoutMenu,
   }
 
   const handleSwipe = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
