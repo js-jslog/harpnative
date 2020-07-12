@@ -10,7 +10,7 @@ type HarpFaceStyles = {
   readonly face: ViewStyle
 }
 
-const { 8: boundaryWidth } = themeSizes
+const { 7: boundaryWidth } = themeSizes
 export const { 9: columnWidth } = themeSizes
 export const { 9: rowHeight } = themeSizes
 

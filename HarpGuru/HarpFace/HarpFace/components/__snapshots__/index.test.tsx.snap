@@ -30,7 +30,7 @@ exports[`A component is rendered 1`] = `
           "flexDirection": "row",
           "height": 361.73830000000004,
           "justifyContent": "space-around",
-          "width": 612.5812,
+          "width": 596.7226,
         }
       }
     >
