@@ -1,6 +1,6 @@
 import { getOctaveColumnGroups } from './index'
 
-test('groups column indexes for a simple HasRootArray', () => {
+test('groups column indexes for a simple root columns mask', () => {
   const hasRootArray = [true, false, false, true, false, false]
   const expectedRangeIndexes = [
     [0, 1, 2],
@@ -39,7 +39,7 @@ test('groups column successfully when its on its own at the end', () => {
   expect(actualRangeIndexes).toStrictEqual(expectedRangeIndexes)
 })
 
-test('groups column indexes for an artifically complex HasRootArray', () => {
+test('groups column indexes for an artifically complex root columns mask', () => {
   const hasRootArray = [
     false,
     false,
