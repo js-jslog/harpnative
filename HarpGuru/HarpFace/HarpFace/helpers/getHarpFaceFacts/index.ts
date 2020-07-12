@@ -1,7 +1,7 @@
 import type { DegreeMatrix } from 'harpstrata'
 
 import { transposeMatrix } from '../transposeMatrix'
-import { rowHasRoot } from '../rowHasRoot'
+import { arrayHasRoot } from '../rowHasRoot'
 import { groupColumnIndexes } from '../groupColumnIndexes'
 import type { ColumnRanges } from '../groupColumnIndexes'
 import type { HarpFaceProps } from '../../types'
@@ -23,7 +23,7 @@ export const getHarpFaceFacts = (props: HarpFaceProps): HarpFaceFacts => {
   } = degreeMatrix
 
   const columnsFirstDegreeMatrix = transposeMatrix(degreeMatrix) as DegreeMatrix
-  const rootColumnsMask = columnsFirstDegreeMatrix.map(rowHasRoot)
+  const rootColumnsMask = columnsFirstDegreeMatrix.map(arrayHasRoot)
   const octaveColumnGroups = groupColumnIndexes(rootColumnsMask)
 
   return {

@@ -1,6 +1,6 @@
 import { DegreeIds } from 'harpstrata'
 
-import { rowHasRoot } from './index'
+import { arrayHasRoot } from './index'
 
 test('Reduce a single row matrix to identify whether it contains any roots', () => {
   const degreeMatrix = [
@@ -12,7 +12,7 @@ test('Reduce a single row matrix to identify whether it contains any roots', () 
   ]
   const expectedRootsMatrix = [true]
 
-  const actualRootsMatrix = degreeMatrix.map(rowHasRoot)
+  const actualRootsMatrix = degreeMatrix.map(arrayHasRoot)
 
   expect(actualRootsMatrix).toStrictEqual(expectedRootsMatrix)
 })
@@ -29,7 +29,7 @@ test('Reduce a multidimensional simple degreeMatrix to identify which rows have 
   ]
   const expectedRootsMatrix = [true, true, false]
 
-  const actualRootsMatrix = degreeMatrix.map(rowHasRoot)
+  const actualRootsMatrix = degreeMatrix.map(arrayHasRoot)
 
   expect(actualRootsMatrix).toStrictEqual(expectedRootsMatrix)
 })
