@@ -1,7 +1,7 @@
 type ColumnRange = ReadonlyArray<number>
 export type ColumnRanges = ReadonlyArray<ColumnRange>
 
-export const groupColumnIndexes = (
+export const getOctaveColumnGroups = (
   hasRootArray: ReadonlyArray<boolean>
 ): ColumnRanges => {
   const incrementArray = Array.from(Array(hasRootArray.length).keys())

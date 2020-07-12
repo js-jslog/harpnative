@@ -1,4 +1,4 @@
-import { groupColumnIndexes } from './index'
+import { getOctaveColumnGroups } from './index'
 
 test('groups column indexes for a simple HasRootArray', () => {
   const hasRootArray = [true, false, false, true, false, false]
@@ -7,7 +7,7 @@ test('groups column indexes for a simple HasRootArray', () => {
     [3, 4, 5],
   ]
 
-  const actualRangeIndexes = groupColumnIndexes(hasRootArray)
+  const actualRangeIndexes = getOctaveColumnGroups(hasRootArray)
 
   expect(actualRangeIndexes).toStrictEqual(expectedRangeIndexes)
 })
@@ -16,7 +16,7 @@ test('groups column indexes for a simple HasRootArray which doesnt start with a 
   const hasRootArray = [false, true, false, true, false, false]
   const expectedRangeIndexes = [[0], [1, 2], [3, 4, 5]]
 
-  const actualRangeIndexes = groupColumnIndexes(hasRootArray)
+  const actualRangeIndexes = getOctaveColumnGroups(hasRootArray)
 
   expect(actualRangeIndexes).toStrictEqual(expectedRangeIndexes)
 })
@@ -25,7 +25,7 @@ test('groups column indexes for a simple HasRootArray with consecutive root colu
   const hasRootArray = [false, true, true, false, true, false, false]
   const expectedRangeIndexes = [[0], [1, 2, 3], [4, 5, 6]]
 
-  const actualRangeIndexes = groupColumnIndexes(hasRootArray)
+  const actualRangeIndexes = getOctaveColumnGroups(hasRootArray)
 
   expect(actualRangeIndexes).toStrictEqual(expectedRangeIndexes)
 })
@@ -34,7 +34,7 @@ test('groups column successfully when its on its own at the end', () => {
   const hasRootArray = [true, false, true]
   const expectedRangeIndexes = [[0, 1], [2]]
 
-  const actualRangeIndexes = groupColumnIndexes(hasRootArray)
+  const actualRangeIndexes = getOctaveColumnGroups(hasRootArray)
 
   expect(actualRangeIndexes).toStrictEqual(expectedRangeIndexes)
 })
@@ -56,7 +56,7 @@ test('groups column indexes for an artifically complex HasRootArray', () => {
   ]
   const expectedRangeIndexes = [[0, 1], [2, 3, 4, 5], [6, 7, 8], [9, 10], [11]]
 
-  const actualRangeIndexes = groupColumnIndexes(hasRootArray)
+  const actualRangeIndexes = getOctaveColumnGroups(hasRootArray)
 
   expect(actualRangeIndexes).toStrictEqual(expectedRangeIndexes)
 })
