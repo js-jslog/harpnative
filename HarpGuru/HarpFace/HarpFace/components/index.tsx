@@ -3,7 +3,7 @@ import React from 'react'
 
 import type { HarpFaceProps } from '../types'
 import { getStyles } from '../styles'
-import { getHarpFaceFacts } from '../getHarpFaceFacts'
+import { getHarpFaceFacts } from '../helpers'
 import { HarpFaceFragment } from '../../HarpFaceFragment'
 
 export const HarpFace = (props: HarpFaceProps): React.ReactElement => {

@@ -1,3 +1,3 @@
 export { HarpFace } from './components'
-export { getHarpFaceFacts } from './getHarpFaceFacts'
+export { getHarpFaceFacts } from './helpers'
 export { columnWidth, rowHeight } from './styles'

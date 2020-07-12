@@ -1,8 +1,10 @@
 import type {DegreeMatrix} from 'harpstrata'
 
-import type { HarpFaceProps } from '../types'
-import { transposeMatrix, rowHasRoot, groupColumnIndexes } from '../helpers'
-import type { ColumnRanges } from '../helpers'
+import { transposeMatrix } from '../transposeMatrix'
+import { rowHasRoot } from '../rowHasRoot'
+import { groupColumnIndexes } from '../groupColumnIndexes'
+import type { ColumnRanges } from '../groupColumnIndexes'
+import type { HarpFaceProps } from '../../types'
 
 type HarpFaceFacts = {
   readonly rowCount: number
