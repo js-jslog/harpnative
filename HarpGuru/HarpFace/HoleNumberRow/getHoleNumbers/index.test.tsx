@@ -4,7 +4,7 @@ import { getHoleNumbers } from './index'
 
 test('getHoleNumbers returns an array of HoleNumber components which is the width of the range supplied', () => {
   const props = {
-    xRange: [0,1,2,3,4,5,6,7]
+    xRange: [0, 1, 2, 3, 4, 5, 6, 7],
   }
   const holeNumbers = getHoleNumbers(props)
 
@@ -13,7 +13,7 @@ test('getHoleNumbers returns an array of HoleNumber components which is the widt
 
 test('getHoleNumbers returns an array of HoleNumber components from which a sample have the expected value', () => {
   const props = {
-    xRange: [1,2,3,4]
+    xRange: [1, 2, 3, 4],
   }
   const holeNumbers = getHoleNumbers(props)
 

@@ -12,16 +12,14 @@ export const HarpFace = (props: HarpFaceProps): React.ReactElement => {
   const fragments = octaveColumnGroups.map((xRange, index) => {
     const harpFaceFragmentProps = {
       ...props,
-      xRange
+      xRange,
     }
     return <HarpFaceFragment key={index} {...harpFaceFragmentProps} />
   })
 
   return (
     <View style={styles.facewrapper}>
-      <View style={styles.face}>
-        {fragments}
-      </View>
+      <View style={styles.face}>{fragments}</View>
     </View>
   )
 }

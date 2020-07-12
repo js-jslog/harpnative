@@ -1,4 +1,4 @@
-import type {DegreeMatrix} from 'harpstrata'
+import type { DegreeMatrix } from 'harpstrata'
 
 import { transposeMatrix } from '../transposeMatrix'
 import { rowHasRoot } from '../rowHasRoot'
@@ -29,6 +29,6 @@ export const getHarpFaceFacts = (props: HarpFaceProps): HarpFaceFacts => {
   return {
     rowCount,
     columnCount,
-    octaveColumnGroups
+    octaveColumnGroups,
   }
 }

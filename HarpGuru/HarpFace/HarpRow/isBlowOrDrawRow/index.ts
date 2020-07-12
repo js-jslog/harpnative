@@ -4,7 +4,10 @@ import type { HarpRowProps } from '../types'
 
 type Props = Pick<HarpRowProps, 'activeHarpStrata' | 'yCoord'>
 
-const getInteractionId = ({activeHarpStrata, yCoord}: Props): InteractionIds | undefined => {
+const getInteractionId = ({
+  activeHarpStrata,
+  yCoord,
+}: Props): InteractionIds | undefined => {
   const {
     apparatus: { interactionMatrix },
   } = activeHarpStrata

@@ -6,11 +6,13 @@ import { getStyles } from '../styles'
 import { HoleNumberRow } from '../../HoleNumberRow'
 import { getHarpRows } from '../../HarpRows'
 
-export const HarpFaceFragment = (props: HarpFaceFragmentProps): React.ReactElement => {
+export const HarpFaceFragment = (
+  props: HarpFaceFragmentProps
+): React.ReactElement => {
   const harpRows = getHarpRows(props)
   const styles = getStyles(props)
   const holeNumberRowProps = {
-    xRange: props.xRange
+    xRange: props.xRange,
   }
 
   return (

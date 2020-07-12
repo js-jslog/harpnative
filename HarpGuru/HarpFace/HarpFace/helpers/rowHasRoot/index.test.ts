@@ -3,8 +3,14 @@ import { DegreeIds } from 'harpstrata'
 import { rowHasRoot } from './index'
 
 test('Reduce a single row matrix to identify whether it contains any roots', () => {
-  const degreeMatrix = [[{id: DegreeIds.Root}, {id: DegreeIds.Second}, {id: DegreeIds.Fourth}]]
-  const expectedRootsMatrix = [ true ]
+  const degreeMatrix = [
+    [
+      { id: DegreeIds.Root },
+      { id: DegreeIds.Second },
+      { id: DegreeIds.Fourth },
+    ],
+  ]
+  const expectedRootsMatrix = [true]
 
   const actualRootsMatrix = degreeMatrix.map(rowHasRoot)
 
@@ -13,11 +19,15 @@ test('Reduce a single row matrix to identify whether it contains any roots', () 
 
 test('Reduce a multidimensional simple degreeMatrix to identify which rows have roots', () => {
   const degreeMatrix = [
-    [{id: DegreeIds.Root}, {id: DegreeIds.Second}, {id: DegreeIds.Fourth}],
-    [{id: DegreeIds.Root}, undefined, {id: DegreeIds.Root}],
-    [{id: DegreeIds.Second}, undefined, {id: DegreeIds.Third}],
+    [
+      { id: DegreeIds.Root },
+      { id: DegreeIds.Second },
+      { id: DegreeIds.Fourth },
+    ],
+    [{ id: DegreeIds.Root }, undefined, { id: DegreeIds.Root }],
+    [{ id: DegreeIds.Second }, undefined, { id: DegreeIds.Third }],
   ]
-  const expectedRootsMatrix = [ true, true, false]
+  const expectedRootsMatrix = [true, true, false]
 
   const actualRootsMatrix = degreeMatrix.map(rowHasRoot)
 

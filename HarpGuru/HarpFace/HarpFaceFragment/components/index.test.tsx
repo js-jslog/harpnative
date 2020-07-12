@@ -8,7 +8,12 @@ import { harpFaceProps } from '../../testResources'
 import { HarpFaceFragment } from './index'
 
 test('A component is rendered with all of the degrees of a major diatonic presented', () => {
-  const { getAllByText } = render(<HarpFaceFragment {...harpFaceProps} xRange={[0,1,2,3,4,5,6,7,8,9]} />)
+  const { getAllByText } = render(
+    <HarpFaceFragment
+      {...harpFaceProps}
+      xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+    />
+  )
 
   const [holeRoot] = getAllByText(DegreeIds.Root)
   const [holeFlat2] = getAllByText(DegreeIds.Flat2)
@@ -38,7 +43,12 @@ test('A component is rendered with all of the degrees of a major diatonic presen
 })
 
 test('A snapshot of a HarpFaceFragment', () => {
-  const { container } = render(<HarpFaceFragment {...harpFaceProps} xRange={[0,1,2,3,4,5,6,7,8,9]} />)
+  const { container } = render(
+    <HarpFaceFragment
+      {...harpFaceProps}
+      xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+    />
+  )
 
   expect(container).toMatchSnapshot()
 })
