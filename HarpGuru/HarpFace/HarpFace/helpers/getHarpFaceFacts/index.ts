@@ -1,9 +1,9 @@
 import type { DegreeMatrix } from 'harpstrata'
 
 import { transposeMatrix } from '../transposeMatrix'
-import { arrayHasRoot } from '../rowHasRoot'
 import { groupColumnIndexes } from '../groupColumnIndexes'
 import type { ColumnRanges } from '../groupColumnIndexes'
+import { arrayHasRoot } from '../arrayHasRoot'
 import type { HarpFaceProps } from '../../types'
 
 type HarpFaceFacts = {
