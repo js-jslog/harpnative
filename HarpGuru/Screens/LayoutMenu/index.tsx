@@ -1,15 +1,15 @@
 import React from 'react'
 import type { ReactElement } from 'react'
 
-import type { ScreenProps } from '../types'
 import { AnimatedMenuContainer, LayoutMenu } from '../../Menus'
+import type { LayoutMenuProps } from '../../Menus'
 import { MenuStates } from '../../HarpGuru'
 
-type MenuScreenProps = ScreenProps & {
+type LayoutMenuScreenProps = LayoutMenuProps & {
   readonly menuState: MenuStates
 }
 
-export const LayoutMenuScreen = (props: MenuScreenProps): ReactElement => {
+export const LayoutMenuScreen = (props: LayoutMenuScreenProps): ReactElement => {
   const { menuState } = props
   const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode } = props
   const covariantMenuProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode }
