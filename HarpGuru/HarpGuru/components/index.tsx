@@ -19,8 +19,7 @@ import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 import { styles } from '../styles'
 import { usePrevious } from '../../helpers'
 import { themeSizes } from '../../Styles'
-import { HomeScreen, CovariantMenuScreen } from '../../Screens'
-import { AnimatedMenuContainer, LayoutMenu } from '../../Menus'
+import { HomeScreen, CovariantMenuScreen, LayoutMenuScreen } from '../../Screens'
 import { DisplayModes } from '../../HarpFace'
 
 const { 8: swipeThreshold } = themeSizes
@@ -55,12 +54,6 @@ export const HarpGuru = (): ReactElement => {
     activeDisplayMode,
     setActiveDisplayMode,
   }
-  const layoutMenuProps = {
-    activeHarpStrata,
-    setActiveHarpStrata,
-    activeDisplayMode,
-    setActiveDisplayMode,
-  }
 
   const [panState, setPanState] = useState<State>(State.UNDETERMINED)
   const [menuState, setMenuState] = useState<MenuStates>(MenuStates.NoMenu)
@@ -68,6 +61,13 @@ export const HarpGuru = (): ReactElement => {
   const previousPanState = usePrevious(panState, State.UNDETERMINED)
 
   const covariantMenuProps = {
+    activeHarpStrata,
+    setActiveHarpStrata,
+    activeDisplayMode,
+    setActiveDisplayMode,
+    menuState,
+  }
+  const layoutMenuProps = {
     activeHarpStrata,
     setActiveHarpStrata,
     activeDisplayMode,
@@ -102,9 +102,7 @@ export const HarpGuru = (): ReactElement => {
       <View style={styles.overlay}>
         <HomeScreen {...screenProps} />
         <CovariantMenuScreen {...covariantMenuProps} />
-        <AnimatedMenuContainer onScreen={menuState === MenuStates.LayoutMenu}>
-          <LayoutMenu {...layoutMenuProps} />
-        </AnimatedMenuContainer>
+        <LayoutMenuScreen {...layoutMenuProps} />
       </View>
     </PanGestureHandler>
   )
