@@ -5,7 +5,7 @@ export type ColumnRanges = ReadonlyArray<ColumnRange>
 export const getOctaveColumnGroups = (
   rootColumnsMask: RootColumnsMask
 ): ColumnRanges => {
-  const incrementArray = Array.from(Array(rootColumnsMask.length).keys())
+  const columnIndexes = Array.from(Array(rootColumnsMask.length).keys())
 
   const overlappingGroups = rootColumnsMask.map((hasRoot, index) => {
     if (!hasRoot && index !== 0) return []
@@ -14,9 +14,9 @@ export const getOctaveColumnGroups = (
     const nextIndex = rootColumnsMask.indexOf(true, endOfTrueRun)
 
     if (nextIndex === -1 || nextIndex === index)
-      return incrementArray.slice(index)
+      return columnIndexes.slice(index)
 
-    return incrementArray.slice(index, nextIndex)
+    return columnIndexes.slice(index, nextIndex)
   })
 
   return overlappingGroups.filter((group, index) => {
