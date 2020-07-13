@@ -52,7 +52,7 @@ export const HarpGuru = (): ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useState(initialHarpStrata)
   const [activeDisplayMode, setActiveDisplayMode] = useState(initialDisplayMode)
 
-  const screenProps = {
+  const homeScreenProps = {
     activeHarpStrata,
     setActiveHarpStrata,
     activeDisplayMode,
@@ -104,7 +104,7 @@ export const HarpGuru = (): ReactElement => {
       onHandlerStateChange={handleSwipe}
     >
       <View style={styles.overlay}>
-        <HomeScreen {...screenProps} />
+        <HomeScreen {...homeScreenProps} />
         <CovariantMenuScreen {...covariantMenuProps} />
         <LayoutMenuScreen {...layoutMenuProps} />
       </View>
