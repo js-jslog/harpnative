@@ -64,14 +64,14 @@ export const HarpGuru = (): ReactElement => {
     setActiveDisplayMode,
   }
 
-  const covariantMenuProps = {
+  const covariantMenuScreenProps = {
     activeHarpStrata,
     setActiveHarpStrata,
     activeDisplayMode,
     setActiveDisplayMode,
     onScreen: menuState === MenuStates.CovariantMenu,
   }
-  const layoutMenuProps = {
+  const layoutMenuScreenProps = {
     activeHarpStrata,
     setActiveHarpStrata,
     activeDisplayMode,
@@ -105,8 +105,8 @@ export const HarpGuru = (): ReactElement => {
     >
       <View style={styles.overlay}>
         <HomeScreen {...homeScreenProps} />
-        <CovariantMenuScreen {...covariantMenuProps} />
-        <LayoutMenuScreen {...layoutMenuProps} />
+        <CovariantMenuScreen {...covariantMenuScreenProps} />
+        <LayoutMenuScreen {...layoutMenuScreenProps} />
       </View>
     </PanGestureHandler>
   )
