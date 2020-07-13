@@ -16,15 +16,15 @@ import {
 } from 'harpstrata'
 import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
+import { DisplayModes } from '../types'
 import { styles } from '../styles'
-import { DisplayModes } from '../../types'
-import { usePrevious } from '../../helpers'
-import { themeSizes } from '../../Styles'
+import { usePrevious } from '../helpers'
+import { themeSizes } from '../Theme'
 import {
   HomeScreen,
   CovariantMenuScreen,
   LayoutMenuScreen,
-} from '../../Screens'
+} from '../Screens'
 
 const { 8: swipeThreshold } = themeSizes
 
