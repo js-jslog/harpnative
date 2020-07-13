@@ -2,8 +2,8 @@ import { View } from 'react-native'
 import React from 'react'
 
 import { getStyles } from '../styles'
-import { getHarpFaceFacts } from '../helpers'
 import type { HarpFaceProps } from '../../types'
+import { getHarpFaceFacts } from '../../helpers'
 import { HarpFaceFragment } from '../../HarpFaceFragment'
 
 export const HarpFace = (props: HarpFaceProps): React.ReactElement => {
