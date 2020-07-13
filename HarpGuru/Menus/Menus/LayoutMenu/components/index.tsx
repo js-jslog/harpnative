@@ -2,7 +2,10 @@ import React from 'react'
 
 import { MenuContainer } from '../../MenuContainer'
 import { ApparatusOption, DisplayModeOption } from '../../../Options'
-import type { ApparatusOptionProps, DisplayModeOptionProps } from '../../../Options'
+import type {
+  ApparatusOptionProps,
+  DisplayModeOptionProps,
+} from '../../../Options'
 
 export type LayoutMenuProps = ApparatusOptionProps & DisplayModeOptionProps
 

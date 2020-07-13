@@ -8,14 +8,24 @@ type LayoutMenuScreenProps = LayoutMenuProps & {
   readonly onScreen: boolean
 }
 
-export const LayoutMenuScreen = (props: LayoutMenuScreenProps): ReactElement => {
+export const LayoutMenuScreen = (
+  props: LayoutMenuScreenProps
+): ReactElement => {
   const { onScreen } = props
-  const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode } = props
-  const covariantMenuProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode }
+  const {
+    activeHarpStrata,
+    setActiveHarpStrata,
+    activeDisplayMode,
+    setActiveDisplayMode,
+  } = props
+  const covariantMenuProps = {
+    activeHarpStrata,
+    setActiveHarpStrata,
+    activeDisplayMode,
+    setActiveDisplayMode,
+  }
   return (
-    <AnimatedMenuContainer
-      onScreen={onScreen}
-    >
+    <AnimatedMenuContainer onScreen={onScreen}>
       <LayoutMenu {...covariantMenuProps} />
     </AnimatedMenuContainer>
   )

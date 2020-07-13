@@ -7,11 +7,21 @@ import {
   RootPitchOption,
   PozitionOption,
 } from '../../../Options'
-import type { RootPitchOptionProps, PozitionOptionProps, HarpKeyOptionProps, DisplayModeOptionProps } from '../../../Options'
+import type {
+  RootPitchOptionProps,
+  PozitionOptionProps,
+  HarpKeyOptionProps,
+  DisplayModeOptionProps,
+} from '../../../Options'
 
-export type CovariantMenuProps = HarpKeyOptionProps & PozitionOptionProps & RootPitchOptionProps & DisplayModeOptionProps
+export type CovariantMenuProps = HarpKeyOptionProps &
+  PozitionOptionProps &
+  RootPitchOptionProps &
+  DisplayModeOptionProps
 
-export const CovariantMenu = (props: CovariantMenuProps): React.ReactElement => {
+export const CovariantMenu = (
+  props: CovariantMenuProps
+): React.ReactElement => {
   return (
     <MenuContainer>
       <HarpKeyOption {...props} />

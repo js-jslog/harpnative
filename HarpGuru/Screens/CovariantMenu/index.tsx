@@ -8,14 +8,24 @@ type CovariantMenuScreenProps = CovariantMenuProps & {
   readonly onScreen: boolean
 }
 
-export const CovariantMenuScreen = (props: CovariantMenuScreenProps): ReactElement => {
+export const CovariantMenuScreen = (
+  props: CovariantMenuScreenProps
+): ReactElement => {
   const { onScreen } = props
-  const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode } = props
-  const covariantMenuProps = { activeHarpStrata, setActiveHarpStrata, activeDisplayMode, setActiveDisplayMode }
+  const {
+    activeHarpStrata,
+    setActiveHarpStrata,
+    activeDisplayMode,
+    setActiveDisplayMode,
+  } = props
+  const covariantMenuProps = {
+    activeHarpStrata,
+    setActiveHarpStrata,
+    activeDisplayMode,
+    setActiveDisplayMode,
+  }
   return (
-    <AnimatedMenuContainer
-      onScreen={onScreen}
-    >
+    <AnimatedMenuContainer onScreen={onScreen}>
       <CovariantMenu {...covariantMenuProps} />
     </AnimatedMenuContainer>
   )
