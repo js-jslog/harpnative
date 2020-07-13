@@ -52,17 +52,17 @@ export const HarpGuru = (): ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useState(initialHarpStrata)
   const [activeDisplayMode, setActiveDisplayMode] = useState(initialDisplayMode)
 
+  const [panState, setPanState] = useState<State>(State.UNDETERMINED)
+  const [menuState, setMenuState] = useState<MenuStates>(MenuStates.NoMenu)
+  const [translationX, setTranslationX] = useState<number>(0)
+  const previousPanState = usePrevious(panState, State.UNDETERMINED)
+
   const homeScreenProps = {
     activeHarpStrata,
     setActiveHarpStrata,
     activeDisplayMode,
     setActiveDisplayMode,
   }
-
-  const [panState, setPanState] = useState<State>(State.UNDETERMINED)
-  const [menuState, setMenuState] = useState<MenuStates>(MenuStates.NoMenu)
-  const [translationX, setTranslationX] = useState<number>(0)
-  const previousPanState = usePrevious(panState, State.UNDETERMINED)
 
   const covariantMenuProps = {
     activeHarpStrata,
