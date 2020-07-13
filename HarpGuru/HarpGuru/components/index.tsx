@@ -17,6 +17,7 @@ import {
 import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
 import { styles } from '../styles'
+import { DisplayModes } from '../../types'
 import { usePrevious } from '../../helpers'
 import { themeSizes } from '../../Styles'
 import {
@@ -24,7 +25,6 @@ import {
   CovariantMenuScreen,
   LayoutMenuScreen,
 } from '../../Screens'
-import { DisplayModes } from '../../HarpFace'
 
 const { 8: swipeThreshold } = themeSizes
 
