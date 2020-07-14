@@ -4,7 +4,7 @@ import type { HarpCellProps } from '../../HarpCell'
 
 export type Coord = number
 
-export type HarpRowProps = Omit<HarpCellProps, 'yxCoord'> & {
+export type HarpRowProps = Pick<HarpCellProps, 'activeHarpStrata' | 'setActiveHarpStrata' | 'activeDisplayMode' | 'activeDisplayMode'> & {
   readonly yCoord: Coord
   readonly xRange: ReadonlyArray<number>
 }

@@ -1,3 +1,3 @@
 import type { HarpFaceFragmentProps } from '../HarpFaceFragment'
 
-export type HarpFaceProps = Omit<HarpFaceFragmentProps, 'xRange'>
+export type HarpFaceProps = Pick<HarpFaceFragmentProps, 'activeHarpStrata' | 'setActiveHarpStrata' | 'activeDisplayMode' | 'activeDisplayMode'>
