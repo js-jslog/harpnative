@@ -11,21 +11,21 @@ import { DisplayModes } from '../../../types'
 import { HarpCell } from './index'
 
 test('A component is rendered with the Degree or Pitch value in its text view depending on the DisplayMode selected', () => {
-  const harpFaceProps = {
+  const harpCellProps = {
     ...inactiveCellsHarpFaceProps,
     activeDisplayMode: DisplayModes.Degree,
+    yxCoord: [3,0] as [3,0],
   }
   const { getByText, rerender } = render(
-    <HarpCell {...harpFaceProps} yxCoord={[3, 0]} />
+    <HarpCell {...harpCellProps} />
   )
 
   expect(getByText(DegreeIds.Second)).toBeTruthy()
 
   rerender(
     <HarpCell
-      {...harpFaceProps}
+      {...harpCellProps}
       activeDisplayMode={DisplayModes.Pitch}
-      yxCoord={[3, 0]}
     />
   )
 
@@ -33,22 +33,24 @@ test('A component is rendered with the Degree or Pitch value in its text view de
 })
 
 test('A component is rendered with an a11y role of button', () => {
-  const harpFaceProps = {
+  const harpCellProps = {
     ...inactiveCellsHarpFaceProps,
     activeDisplayMode: DisplayModes.Degree,
+    yxCoord: [3,0] as [3,0],
   }
-  const { getByRole } = render(<HarpCell {...harpFaceProps} yxCoord={[3, 0]} />)
+  const { getByRole } = render(<HarpCell {...harpCellProps} />)
 
   expect(getByRole('button')).toBeTruthy()
 })
 
 test('A component is rendered without an a11y role of button if it has no content', () => {
-  const harpFaceProps = {
+  const harpCellProps = {
     ...inactiveCellsHarpFaceProps,
     activeDisplayMode: DisplayModes.Degree,
+    yxCoord: [0,0] as [0,0],
   }
   const { queryByRole } = render(
-    <HarpCell {...harpFaceProps} yxCoord={[0, 0]} />
+    <HarpCell {...harpCellProps} />
   )
 
   expect(queryByRole('button')).toBeNull()
@@ -56,13 +58,14 @@ test('A component is rendered without an a11y role of button if it has no conten
 
 test.skip('A press of the componenet results in toggled active ids in the harpstrata passed to the paramaterised setter', () => {
   const setActiveHarpStrata = jest.fn()
-  const harpFaceProps = {
+  const harpCellProps = {
     ...inactiveCellsHarpFaceProps,
     activeDisplayMode: DisplayModes.Degree,
     setActiveHarpStrata,
+    yxCoord: [3,0] as [3,0],
   }
 
-  const { getByText } = render(<HarpCell {...harpFaceProps} yxCoord={[3, 0]} />)
+  const { getByText } = render(<HarpCell {...harpCellProps} />)
 
   fireEvent.press(getByText(DegreeIds.Second))
 
@@ -88,25 +91,27 @@ test.skip('A press of the componenet results in toggled active ids in the harpst
 
 test('A snapshot of a populated cell', () => {
   const setActiveHarpStrata = jest.fn()
-  const harpFaceProps = {
+  const harpCellProps = {
     ...inactiveCellsHarpFaceProps,
     activeDisplayMode: DisplayModes.Degree,
     setActiveHarpStrata,
+    yxCoord: [3,0] as [3,0],
   }
 
-  const { container } = render(<HarpCell {...harpFaceProps} yxCoord={[3, 0]} />)
+  const { container } = render(<HarpCell {...harpCellProps} />)
   expect(container).toMatchSnapshot()
 })
 
 test('A snapshot of an active cell', () => {
   const setActiveHarpStrata = jest.fn()
-  const harpFaceProps = {
+  const harpCellProps = {
     ...activeCellsHarpFaceProps,
     activeDisplayMode: DisplayModes.Degree,
     setActiveHarpStrata,
+    yxCoord: [3,0] as [3,0],
   }
 
-  const { container } = render(<HarpCell {...harpFaceProps} yxCoord={[3, 0]} />)
+  const { container } = render(<HarpCell {...harpCellProps} />)
   expect(container).toMatchSnapshot()
 })
 
@@ -116,8 +121,9 @@ test('A snapshot of an empty cell', () => {
     ...inactiveCellsHarpFaceProps,
     activeDisplayMode: DisplayModes.Degree,
     setActiveHarpStrata,
+    yxCoord: [0,0] as [0,0],
   }
 
-  const { container } = render(<HarpCell {...harpFaceProps} yxCoord={[0, 0]} />)
+  const { container } = render(<HarpCell {...harpFaceProps} />)
   expect(container).toMatchSnapshot()
 })
