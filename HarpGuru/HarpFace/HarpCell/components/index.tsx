@@ -1,3 +1,4 @@
+import React, { useGlobal } from 'reactn'
 import {
   TapGestureHandler,
   TapGestureHandlerStateChangeEvent,
@@ -5,7 +6,6 @@ import {
   LongPressGestureHandler,
 } from 'react-native-gesture-handler'
 import { Text, View } from 'react-native'
-import React from 'react'
 
 import { HarpCellProps } from '../types'
 import { toggleDegreeIdInHarpStrata } from '../toggleDegreeIdInHarpStrata'
@@ -21,6 +21,8 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   const { id: degreeId } = thisDegree || { id: undefined }
   const { id: pitchId } = thisPitch || { id: undefined }
 
+  const [, setCounter] = useGlobal('counter')
+
   const displayValue = getDisplayValue(props)
 
   const styles = getStyles(props)
@@ -32,6 +34,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
     if (degreeId === undefined) return
 
     setActiveHarpStrata(toggleDegreeIdInHarpStrata(activeHarpStrata, degreeId))
+    setCounter(1)
   }
 
   const handleLongPressStateChange = ({
