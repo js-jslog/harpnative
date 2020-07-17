@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler'
 
+import { setGlobal } from 'reactn'
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
@@ -26,6 +27,10 @@ import {
   LayoutMenuScreen,
   QuizQuestionScreen,
 } from '../Screens'
+
+setGlobal({
+  counter: 5,
+})
 
 const { 8: swipeThreshold } = themeSizes
 
