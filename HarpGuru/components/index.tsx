@@ -20,7 +20,7 @@ import { DisplayModes } from '../types'
 import { styles } from '../styles'
 import { usePrevious } from '../helpers'
 import { themeSizes } from '../Theme'
-import { HomeScreen, CovariantMenuScreen, LayoutMenuScreen } from '../Screens'
+import { HomeScreen, CovariantMenuScreen, LayoutMenuScreen, QuizQuestionScreen } from '../Screens'
 
 const { 8: swipeThreshold } = themeSizes
 
@@ -74,6 +74,9 @@ export const HarpGuru = (): ReactElement => {
     setActiveDisplayMode,
     onScreen: menuState === MenuStates.LayoutMenu,
   }
+  const quizQuestionScreenProps = {
+    screenFree: menuState === MenuStates.NoMenu,
+  }
 
   const handleSwipe = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
     setPanState(nativeEvent.state)
@@ -103,6 +106,7 @@ export const HarpGuru = (): ReactElement => {
         <HomeScreen {...homeScreenProps} />
         <CovariantMenuScreen {...covariantMenuScreenProps} />
         <LayoutMenuScreen {...layoutMenuScreenProps} />
+        <QuizQuestionScreen {...quizQuestionScreenProps} />
       </View>
     </PanGestureHandler>
   )
