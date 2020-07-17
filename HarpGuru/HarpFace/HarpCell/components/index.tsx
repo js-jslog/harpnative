@@ -1,4 +1,4 @@
-import React, { useDispatch } from 'reactn'
+import React, { useDispatch, addReducer } from 'reactn'
 import {
   TapGestureHandler,
   TapGestureHandlerStateChangeEvent,
@@ -21,9 +21,10 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   const { id: degreeId } = thisDegree || { id: undefined }
   const { id: pitchId } = thisPitch || { id: undefined }
 
-  const resetCounter = useDispatch(() => ({
+  addReducer('resetCounter', () => ({
     counter: 1
   }))
+  const resetCounter = useDispatch('resetCounter')
 
   const displayValue = getDisplayValue(props)
 
