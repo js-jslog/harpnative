@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import type { ReactElement } from 'react'
 
 import { AnimatedMenuContainer, QuizQuestionDisplay } from '../../Menus'
@@ -8,11 +8,13 @@ type QuizQuestionScreenProps = {
 }
 
 export const QuizQuestionScreen = (
-  props:  QuizQuestionScreenProps
+  props: QuizQuestionScreenProps
 ): ReactElement => {
   const { screenFree } = props
+  const [flashOn, setFlashOn] = useState<boolean>(true)
+  setTimeout(() => setFlashOn(!flashOn), 3000)
   return (
-    <AnimatedMenuContainer onScreen={screenFree}>
+    <AnimatedMenuContainer onScreen={screenFree && flashOn}>
       <QuizQuestionDisplay />
     </AnimatedMenuContainer>
   )
