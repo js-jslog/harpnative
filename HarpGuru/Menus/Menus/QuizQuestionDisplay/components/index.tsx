@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
   question: {
     fontSize: themeSizes['8'],
-  }
+  },
 })
 
 export const QuizQuestionDisplay = (): React.ReactElement => {
