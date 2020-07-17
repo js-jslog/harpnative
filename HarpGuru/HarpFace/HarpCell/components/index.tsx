@@ -1,4 +1,4 @@
-import React, { useDispatch, addReducer } from 'reactn'
+import React, { useDispatch } from 'reactn'
 import {
   TapGestureHandler,
   TapGestureHandlerStateChangeEvent,
@@ -21,7 +21,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   const { id: degreeId } = thisDegree || { id: undefined }
   const { id: pitchId } = thisPitch || { id: undefined }
 
-  const resetCounter = useDispatch('resetCounter')
+  const quizAnswerGiven = useDispatch('quizAnswerGiven')
 
   const displayValue = getDisplayValue(props)
 
@@ -34,7 +34,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
     if (degreeId === undefined) return
 
     setActiveHarpStrata(toggleDegreeIdInHarpStrata(activeHarpStrata, degreeId))
-    resetCounter()
+    quizAnswerGiven()
   }
 
   const handleLongPressStateChange = ({

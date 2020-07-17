@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler'
 
-import { setGlobal, addReducer } from 'reactn'
+import { setGlobal, addReducer, useDispatch } from 'reactn'
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
@@ -32,8 +32,11 @@ setGlobal({
   counter: 5,
 })
 
-addReducer('resetCounter', () => ({
+addReducer('quizAnswerGiven', () => ({
   counter: 1
+}))
+addReducer('requestNextQuestion', () => ({
+  counter: 0
 }))
 
 const { 8: swipeThreshold } = themeSizes
@@ -61,11 +64,13 @@ enum MenuStates {
 export const HarpGuru = (): ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useState(initialHarpStrata)
   const [activeDisplayMode, setActiveDisplayMode] = useState(initialDisplayMode)
+  const requestNextQuestion = useDispatch('requestNextQuestion')
 
   const [panState, setPanState] = useState<State>(State.UNDETERMINED)
   const [menuState, setMenuState] = useState<MenuStates>(MenuStates.NoMenu)
   const [translationX, setTranslationX] = useState<number>(0)
   const previousPanState = usePrevious(panState, State.UNDETERMINED)
+  const previousMenuState = usePrevious(menuState, MenuStates.NoMenu)
 
   const homeScreenProps = {
     activeHarpStrata,
@@ -110,6 +115,8 @@ export const HarpGuru = (): ReactElement => {
     setPanState(State.UNDETERMINED)
     setTranslationX(0)
   }
+
+  if (menuState === MenuStates.NoMenu && previousMenuState !== MenuStates.NoMenu) requestNextQuestion()
 
   return (
     <PanGestureHandler
