@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler'
 
-import { setGlobal } from 'reactn'
+import { setGlobal, addReducer } from 'reactn'
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
@@ -31,6 +31,10 @@ import {
 setGlobal({
   counter: 5,
 })
+
+addReducer('resetCounter', () => ({
+  counter: 1
+}))
 
 const { 8: swipeThreshold } = themeSizes
 

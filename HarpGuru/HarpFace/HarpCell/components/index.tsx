@@ -21,9 +21,6 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   const { id: degreeId } = thisDegree || { id: undefined }
   const { id: pitchId } = thisPitch || { id: undefined }
 
-  addReducer('resetCounter', () => ({
-    counter: 1
-  }))
   const resetCounter = useDispatch('resetCounter')
 
   const displayValue = getDisplayValue(props)
