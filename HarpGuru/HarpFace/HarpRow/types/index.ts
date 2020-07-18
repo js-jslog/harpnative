@@ -1,14 +1,15 @@
 import type { ViewStyle } from 'react-native'
+import type { HarpStrata } from 'harpstrata'
 
 import type { HarpCellProps, Coord } from '../../HarpCell'
+import type { SetActiveHarpStrata } from '../../../types'
 
 export type HarpRowProps = Pick<
   HarpCellProps,
-  | 'activeHarpStrata'
-  | 'setActiveHarpStrata'
-  | 'activeDisplayMode'
   | 'activeDisplayMode'
 > & {
+  readonly activeHarpStrata: HarpStrata
+  readonly setActiveHarpStrata: SetActiveHarpStrata
   readonly yCoord: Coord
   readonly xRange: ReadonlyArray<number>
 }
