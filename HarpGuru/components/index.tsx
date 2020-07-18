@@ -38,11 +38,6 @@ enum MenuStates {
   NoMenu,
 }
 
-// TODO: this is messy. I have exported the setGlobalReactNState
-// string as a convenient way to load the file which creates the
-// global state and simultaneously report on what the state was
-// set as. At the moment I don't actually have anywhere I want to
-// report it so this is a loose thread.
 export const initialReactNState = setGlobalReactNState
 
 export const HarpGuru = (): ReactElement => {
