@@ -14,6 +14,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Security: to invite users to upgrade in case of vulnerabilities.
 
 ## [Unreleased](https://github.com/js-jslog/harpnative/compare/v0.1.0...HEAD) - yyyy-mm-dd
+
+### Added
+
 - INITIAL-DEVELOPMENT: Introduce ReactN to enable the use of some global state
 
 ## [v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/v0.1.0) - 2020-07-14
