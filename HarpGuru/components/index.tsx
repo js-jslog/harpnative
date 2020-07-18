@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler'
 
-import { setGlobal, addReducer, useDispatch } from 'reactn'
+import { addReducer, useDispatch } from 'reactn'
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
