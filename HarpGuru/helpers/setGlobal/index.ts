@@ -1,5 +1,10 @@
 import { setGlobal } from 'reactn'
-import { getHarpStrata, getApparatusIds, getPozitionIds, getPitchIds } from 'harpstrata'
+import {
+  getHarpStrata,
+  getApparatusIds,
+  getPozitionIds,
+  getPitchIds,
+} from 'harpstrata'
 import type { ActiveIds, HarpStrataProps, HarpStrata } from 'harpstrata'
 
 const [initialApparatusId] = getApparatusIds()

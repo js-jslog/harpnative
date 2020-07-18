@@ -15,10 +15,14 @@ import { setPozitionRootAtCell } from '../setPozitionRootAtCell'
 import { getDisplayValue } from '../getDisplayValue'
 import { analysePosition } from '../analysePosition'
 
-export const HarpCell = (props: Pick<HarpCellProps, 'yxCoord' | 'activeDisplayMode'>): React.ReactElement => {
-  const [ activeHarpStrata, setActiveHarpStrata ] = useGlobal('activeHarpStrata')
+export const HarpCell = (
+  props: Pick<HarpCellProps, 'yxCoord' | 'activeDisplayMode'>
+): React.ReactElement => {
+  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const harpCellProps = {
-    ...props, activeHarpStrata, setActiveHarpStrata,
+    ...props,
+    activeHarpStrata,
+    setActiveHarpStrata,
   }
   const positionFacts = analysePosition(harpCellProps)
   const { thisDegree, thisPitch } = positionFacts

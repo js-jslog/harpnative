@@ -1,4 +1,10 @@
-import type { Degree, Pitch, Interaction, IsActiveIds, HarpStrata } from 'harpstrata'
+import type {
+  Degree,
+  Pitch,
+  Interaction,
+  IsActiveIds,
+  HarpStrata,
+} from 'harpstrata'
 
 import type { HarpCellProps } from '../types'
 
