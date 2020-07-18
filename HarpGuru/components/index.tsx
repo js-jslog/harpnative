@@ -1,5 +1,8 @@
 import 'react-native-gesture-handler'
 
+import '../helpers/setGlobal/index'
+
+import { useGlobal } from 'reactn'
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
@@ -8,13 +11,6 @@ import {
 import { View } from 'react-native'
 import React, { useState } from 'react'
 import type { ReactElement } from 'react'
-import {
-  getApparatusIds,
-  getPozitionIds,
-  getPitchIds,
-  getHarpStrata,
-} from 'harpstrata'
-import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
 import { DisplayModes } from '../types'
 import { styles } from '../styles'
@@ -24,18 +20,6 @@ import { HomeScreen, CovariantMenuScreen, LayoutMenuScreen } from '../Screens'
 
 const { 8: swipeThreshold } = themeSizes
 
-const [initialApparatusId] = getApparatusIds()
-const [initialPozitionId] = getPozitionIds()
-const [initialPitchId] = getPitchIds()
-const initialActiveIds: ActiveIds = []
-
-const initialHarpStrataProps: HarpStrataProps = {
-  apparatusId: initialApparatusId,
-  pozitionId: initialPozitionId,
-  harpKeyId: initialPitchId,
-  activeIds: initialActiveIds,
-}
-const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
 const { Degree: initialDisplayMode } = DisplayModes
 
 enum MenuStates {
@@ -45,7 +29,7 @@ enum MenuStates {
 }
 
 export const HarpGuru = (): ReactElement => {
-  const [activeHarpStrata, setActiveHarpStrata] = useState(initialHarpStrata)
+  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode, setActiveDisplayMode] = useState(initialDisplayMode)
 
   const [panState, setPanState] = useState<State>(State.UNDETERMINED)
@@ -54,10 +38,7 @@ export const HarpGuru = (): ReactElement => {
   const previousPanState = usePrevious(panState, State.UNDETERMINED)
 
   const homeScreenProps = {
-    activeHarpStrata,
-    setActiveHarpStrata,
     activeDisplayMode,
-    setActiveDisplayMode,
   }
 
   const covariantMenuScreenProps = {
