@@ -20,7 +20,10 @@ const initialHarpStrataProps: HarpStrataProps = {
 }
 const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
 
-const state = { activeHarpStrata: initialHarpStrata }
+const state = {
+  counter: 5,
+  activeHarpStrata: initialHarpStrata
+}
 setGlobal(state)
 
 export type SetActiveHarpStrata = (arg0: HarpStrata) => void

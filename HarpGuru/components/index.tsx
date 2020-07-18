@@ -21,10 +21,6 @@ import {
   QuizQuestionScreen,
 } from '../Screens'
 
-setGlobal({
-  counter: 5,
-})
-
 addReducer('quizAnswerGiven', () => ({
   counter: 1,
 }))
