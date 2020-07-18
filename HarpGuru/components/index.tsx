@@ -1,6 +1,5 @@
 import 'react-native-gesture-handler'
 
-import { useGlobal } from 'reactn'
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
@@ -34,7 +33,6 @@ enum MenuStates {
 export const initialReactNState = setGlobalReactNState
 
 export const HarpGuru = (): ReactElement => {
-  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode, setActiveDisplayMode] = useState(initialDisplayMode)
 
   const [panState, setPanState] = useState<State>(State.UNDETERMINED)
@@ -47,15 +45,11 @@ export const HarpGuru = (): ReactElement => {
   }
 
   const covariantMenuScreenProps = {
-    activeHarpStrata,
-    setActiveHarpStrata,
     activeDisplayMode,
     setActiveDisplayMode,
     onScreen: menuState === MenuStates.CovariantMenu,
   }
   const layoutMenuScreenProps = {
-    activeHarpStrata,
-    setActiveHarpStrata,
     activeDisplayMode,
     setActiveDisplayMode,
     onScreen: menuState === MenuStates.LayoutMenu,
