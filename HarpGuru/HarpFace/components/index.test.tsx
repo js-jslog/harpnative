@@ -8,7 +8,8 @@ import { harpFaceProps } from '../testResources'
 import { HarpFace } from './index'
 
 jest.mock('reactn')
-reactn.useGlobal.mockReturnValue([harpFaceProps.activeHarpStrata])
+const mockUseGlobal = reactn.useGlobal as jest.Mock
+mockUseGlobal.mockReturnValue([harpFaceProps.activeHarpStrata])
 
 test('A component is rendered', () => {
   const { container } = render(<HarpFace {...harpFaceProps} />)

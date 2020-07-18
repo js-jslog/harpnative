@@ -9,7 +9,8 @@ import { harpFaceProps } from '../../testResources'
 import { HarpRow } from './index'
 
 jest.mock('reactn')
-reactn.useGlobal.mockReturnValue([harpFaceProps.activeHarpStrata])
+const mockUseGlobal = reactn.useGlobal as jest.Mock
+mockUseGlobal.mockReturnValue([harpFaceProps.activeHarpStrata])
 
 test('The first 3 holes of a blow row from a major diatonic harmonica can be rendered', () => {
   const { getByText } = render(

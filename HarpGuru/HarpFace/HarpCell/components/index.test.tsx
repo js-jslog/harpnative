@@ -12,9 +12,10 @@ import { DisplayModes } from '../../../types'
 import { HarpCell } from './index'
 
 jest.mock('reactn')
+const mockUseGlobal = reactn.useGlobal as jest.Mock
 
 test('A component is rendered with the Degree or Pitch value in its text view depending on the DisplayMode selected', () => {
-  reactn.useGlobal.mockReturnValue([inactiveCellsHarpFaceProps.activeHarpStrata])
+  mockUseGlobal.mockReturnValue([inactiveCellsHarpFaceProps.activeHarpStrata])
   const harpCellProps = {
     activeDisplayMode: DisplayModes.Degree,
     yxCoord: [3, 0] as [3, 0],
@@ -31,7 +32,7 @@ test('A component is rendered with the Degree or Pitch value in its text view de
 })
 
 test('A component is rendered with an a11y role of button', () => {
-  reactn.useGlobal.mockReturnValue([inactiveCellsHarpFaceProps.activeHarpStrata])
+  mockUseGlobal.mockReturnValue([inactiveCellsHarpFaceProps.activeHarpStrata])
   const harpCellProps = {
     activeDisplayMode: DisplayModes.Degree,
     yxCoord: [3, 0] as [3, 0],
@@ -42,7 +43,7 @@ test('A component is rendered with an a11y role of button', () => {
 })
 
 test('A component is rendered without an a11y role of button if it has no content', () => {
-  reactn.useGlobal.mockReturnValue([inactiveCellsHarpFaceProps.activeHarpStrata])
+  mockUseGlobal.mockReturnValue([inactiveCellsHarpFaceProps.activeHarpStrata])
   const harpCellProps = {
     activeDisplayMode: DisplayModes.Degree,
     yxCoord: [0, 0] as [0, 0],
@@ -86,7 +87,7 @@ test.skip('A press of the componenet results in toggled active ids in the harpst
 })
 
 test('A snapshot of a populated cell', () => {
-  reactn.useGlobal.mockReturnValue([inactiveCellsHarpFaceProps.activeHarpStrata])
+  mockUseGlobal.mockReturnValue([inactiveCellsHarpFaceProps.activeHarpStrata])
   const harpCellProps = {
     activeDisplayMode: DisplayModes.Degree,
     yxCoord: [3, 0] as [3, 0],
@@ -97,7 +98,7 @@ test('A snapshot of a populated cell', () => {
 })
 
 test('A snapshot of an active cell', () => {
-  reactn.useGlobal.mockReturnValue([activeCellsHarpFaceProps.activeHarpStrata])
+  mockUseGlobal.mockReturnValue([activeCellsHarpFaceProps.activeHarpStrata])
   const harpCellProps = {
     activeDisplayMode: DisplayModes.Degree,
     yxCoord: [3, 0] as [3, 0],
@@ -108,7 +109,7 @@ test('A snapshot of an active cell', () => {
 })
 
 test('A snapshot of an empty cell', () => {
-  reactn.useGlobal.mockReturnValue([inactiveCellsHarpFaceProps.activeHarpStrata])
+  mockUseGlobal.mockReturnValue([inactiveCellsHarpFaceProps.activeHarpStrata])
   const harpFaceProps = {
     activeDisplayMode: DisplayModes.Degree,
     yxCoord: [0, 0] as [0, 0],

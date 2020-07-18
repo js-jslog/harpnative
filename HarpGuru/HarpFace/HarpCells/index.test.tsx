@@ -8,7 +8,8 @@ import type { HarpRowProps } from '../HarpRow'
 import { getHarpCells } from './index'
 
 jest.mock('reactn')
-reactn.useGlobal.mockReturnValue([harpFaceProps.activeHarpStrata])
+const mockUseGlobal = reactn.useGlobal as jest.Mock
+mockUseGlobal.mockReturnValue([harpFaceProps.activeHarpStrata])
 
 test('getHarpCells returns an array of HarpCells, the length of the range supplied', () => {
   const harpRowProps: HarpRowProps = {
