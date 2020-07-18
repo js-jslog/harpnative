@@ -15,9 +15,7 @@ import { setPozitionRootAtCell } from '../setPozitionRootAtCell'
 import { getDisplayValue } from '../getDisplayValue'
 import { analysePosition } from '../analysePosition'
 
-export const HarpCell = (
-  props: HarpCellProps,
-): React.ReactElement => {
+export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const harpCellProps = {
     ...props,
