@@ -26,10 +26,10 @@ setGlobal({
 })
 
 addReducer('quizAnswerGiven', () => ({
-  counter: 1
+  counter: 1,
 }))
 addReducer('requestNextQuestion', () => ({
-  counter: 0
+  counter: 0,
 }))
 
 const { 8: swipeThreshold } = themeSizes
@@ -96,7 +96,11 @@ export const HarpGuru = (): ReactElement => {
     setTranslationX(0)
   }
 
-  if (menuState === MenuStates.NoMenu && previousMenuState !== MenuStates.NoMenu) requestNextQuestion()
+  if (
+    menuState === MenuStates.NoMenu &&
+    previousMenuState !== MenuStates.NoMenu
+  )
+    requestNextQuestion()
 
   return (
     <PanGestureHandler
