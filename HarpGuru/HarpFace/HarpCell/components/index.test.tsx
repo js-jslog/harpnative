@@ -1,4 +1,4 @@
-import reactn from 'reactn'
+import { useGlobal } from 'reactn'
 import React from 'react'
 import { PitchIds, DegreeIds } from 'harpstrata'
 import { render, fireEvent } from '@testing-library/react-native'
@@ -12,7 +12,7 @@ import { DisplayModes } from '../../../types'
 import { HarpCell } from './index'
 
 jest.mock('reactn')
-const mockUseGlobal = reactn.useGlobal as jest.Mock
+const mockUseGlobal = useGlobal as jest.Mock
 
 test('A component is rendered with the Degree or Pitch value in its text view depending on the DisplayMode selected', () => {
   mockUseGlobal.mockReturnValue([inactiveCellsHarpFaceProps.activeHarpStrata])

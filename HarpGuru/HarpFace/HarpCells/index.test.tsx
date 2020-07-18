@@ -1,4 +1,4 @@
-import reactn from 'reactn'
+import { useGlobal } from 'reactn'
 import { DegreeIds } from 'harpstrata'
 import { render } from '@testing-library/react-native'
 
@@ -8,7 +8,7 @@ import type { HarpRowProps } from '../HarpRow'
 import { getHarpCells } from './index'
 
 jest.mock('reactn')
-const mockUseGlobal = reactn.useGlobal as jest.Mock
+const mockUseGlobal = useGlobal as jest.Mock
 mockUseGlobal.mockReturnValue([harpFaceProps.activeHarpStrata])
 
 test('getHarpCells returns an array of HarpCells, the length of the range supplied', () => {

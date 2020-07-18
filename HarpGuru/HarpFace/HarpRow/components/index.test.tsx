@@ -1,4 +1,4 @@
-import reactn from 'reactn'
+import { useGlobal } from 'reactn'
 import 'react-native'
 import React from 'react'
 import { DegreeIds } from 'harpstrata'
@@ -9,7 +9,7 @@ import { harpFaceProps } from '../../testResources'
 import { HarpRow } from './index'
 
 jest.mock('reactn')
-const mockUseGlobal = reactn.useGlobal as jest.Mock
+const mockUseGlobal = useGlobal as jest.Mock
 mockUseGlobal.mockReturnValue([harpFaceProps.activeHarpStrata])
 
 test('The first 3 holes of a blow row from a major diatonic harmonica can be rendered', () => {
