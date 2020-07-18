@@ -19,12 +19,11 @@ export const getStyles = (props: Props): HarpFaceFragmentStyles => {
   // Perhaps it's not a hook afterall and I can use it in even more
   // places than I thought.
   //const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
-  const { activeHarpStrata, setActiveHarpStrata } = props
+  const { activeHarpStrata } = props
   const { columnCount } = getFragmentFacts(props)
   const { rowCount } = getHarpFaceFacts({
     ...props,
     activeHarpStrata,
-    setActiveHarpStrata,
   })
 
   const styles = StyleSheet.create<HarpFaceFragmentStyles>({
