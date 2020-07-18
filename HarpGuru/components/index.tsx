@@ -1,7 +1,5 @@
 import 'react-native-gesture-handler'
 
-import '../helpers/setGlobal/index'
-
 import { useGlobal } from 'reactn'
 import {
   PanGestureHandler,
@@ -14,7 +12,7 @@ import type { ReactElement } from 'react'
 
 import { DisplayModes } from '../types'
 import { styles } from '../styles'
-import { usePrevious } from '../helpers'
+import { usePrevious, setGlobalReactNState } from '../helpers'
 import { themeSizes } from '../Theme'
 import { HomeScreen, CovariantMenuScreen, LayoutMenuScreen } from '../Screens'
 
@@ -27,6 +25,13 @@ enum MenuStates {
   CovariantMenu,
   NoMenu,
 }
+
+// TODO: this is messy. I have exported the setGlobalReactNState
+// string as a convenient way to load the file which creates the
+// global state and simultaneously report on what the state was
+// set as. At the moment I don't actually have anywhere I want to
+// report it so this is a loose thread.
+export const initialReactNState = setGlobalReactNState
 
 export const HarpGuru = (): ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')

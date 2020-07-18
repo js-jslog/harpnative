@@ -9,8 +9,11 @@ import { HarpFaceFragment } from '../HarpFaceFragment'
 
 export const HarpFace = (props: HarpFaceProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const styles = getStyles({...props, activeHarpStrata})
-  const { octaveColumnGroups } = getHarpFaceFacts({...props, activeHarpStrata})
+  const styles = getStyles({ ...props, activeHarpStrata })
+  const { octaveColumnGroups } = getHarpFaceFacts({
+    ...props,
+    activeHarpStrata,
+  })
   const fragments = octaveColumnGroups.map((xRange, index) => {
     const harpFaceFragmentProps = {
       ...props,

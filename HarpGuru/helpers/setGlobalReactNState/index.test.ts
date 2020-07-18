@@ -8,5 +8,7 @@ test('that the global state is defined', () => {
 })
 
 test('that the confirmation string is set with the state in it', () => {
-  expect(setGlobalReactNState).toEqual(expect.stringContaining('activeHarpStrata'))
+  expect(setGlobalReactNState).toEqual(
+    expect.stringContaining('activeHarpStrata')
+  )
 })
