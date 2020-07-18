@@ -20,4 +20,14 @@ const initialHarpStrataProps: HarpStrataProps = {
 }
 const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
 
-setGlobal({ activeHarpStrata: initialHarpStrata })
+const state = { activeHarpStrata: initialHarpStrata }
+setGlobal(state)
+
+export const setGlobalReactNState = `
+  This variable confirms that the setGlobal function has
+  been called with the following initial state.
+
+  No further action is required to load this in to the app.
+
+  ${JSON.stringify(state, undefined, 2)}
+`
