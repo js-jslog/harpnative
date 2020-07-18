@@ -23,6 +23,8 @@ const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
 const state = { activeHarpStrata: initialHarpStrata }
 setGlobal(state)
 
+export type SetActiveHarpStrata = (arg0: HarpStrata) => void
+
 export const setGlobalReactNState = `
   This variable confirms that the setGlobal function has
   been called with the following initial state.

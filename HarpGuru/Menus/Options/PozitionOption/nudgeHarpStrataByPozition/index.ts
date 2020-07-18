@@ -7,7 +7,7 @@ import {
 import type { HarpStrata } from 'harpstrata'
 
 import type { PozitionOptionProps } from '../types'
-import type { SetActiveHarpStrata } from '../../../../types'
+import type { SetActiveHarpStrata } from '../../../../helpers'
 import { getPropsForHarpStrata } from '../../../../helpers'
 
 const getNextId = (
