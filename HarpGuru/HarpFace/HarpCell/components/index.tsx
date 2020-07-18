@@ -16,7 +16,7 @@ import { getDisplayValue } from '../getDisplayValue'
 import { analysePosition } from '../analysePosition'
 
 export const HarpCell = (
-  props: Pick<HarpCellProps, 'yxCoord' | 'activeDisplayMode'>
+  props: HarpCellProps,
 ): React.ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const harpCellProps = {
