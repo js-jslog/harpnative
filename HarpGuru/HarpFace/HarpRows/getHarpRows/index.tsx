@@ -1,5 +1,6 @@
 import React from 'react'
-import { InteractionIds, HarpStrata } from 'harpstrata'
+import { InteractionIds } from 'harpstrata'
+import type { HarpStrata } from 'harpstrata'
 
 import { HarpRows } from '../types'
 import { mapRowToBlowDrawIds } from '../mapRowToBlowDrawIds'
