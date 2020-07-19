@@ -10,10 +10,11 @@ import {
 import { View } from 'react-native'
 import React, { useState } from 'react'
 import type { ReactElement } from 'react'
+import { getHarpStrata } from 'harpstrata'
 
 import { DisplayModes } from '../types'
 import { styles } from '../styles'
-import { usePrevious, setGlobalReactNState } from '../helpers'
+import { usePrevious, setGlobalReactNState, getPropsForHarpStrata } from '../helpers'
 import { themeSizes } from '../Theme'
 import {
   HomeScreen,
@@ -27,16 +28,8 @@ addReducer('quizAnswerGiven', () => ({
 }))
 addReducer('requestNextQuestion', (global: GlobalState) => {
   const { activeHarpStrata } = global
-  const { isActiveComplex } = activeHarpStrata
-  const resetActiveComplex = {
-    ...isActiveComplex,
-    activePitchIds: [],
-    activeDegreeIds: [],
-  }
-  const resetActiveHarpStrata = {
-    ...activeHarpStrata,
-    isActiveComplex: resetActiveComplex
-  }
+  const harpStrataProps = getPropsForHarpStrata(activeHarpStrata, DisplayModes.Degree)
+  const resetActiveHarpStrata = getHarpStrata({...harpStrataProps, activeIds: []})
   return {
     activeHarpStrata: resetActiveHarpStrata,
     counter: 0,
