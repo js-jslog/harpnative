@@ -14,7 +14,11 @@ import { getHarpStrata } from 'harpstrata'
 
 import { DisplayModes } from '../types'
 import { styles } from '../styles'
-import { usePrevious, setGlobalReactNState, getPropsForHarpStrata } from '../helpers'
+import {
+  usePrevious,
+  setGlobalReactNState,
+  getPropsForHarpStrata,
+} from '../helpers'
 import { themeSizes } from '../Theme'
 import {
   HomeScreen,
@@ -27,12 +31,18 @@ addReducer('quizAnswerGiven', (_global: GlobalState, dispatch: Dispatch) => {
   setTimeout(dispatch.requestNextQuestion, 1000)
 })
 addReducer('requestNextQuestion', (global: GlobalState) => {
-  const { activeHarpStrata } = global
-  const harpStrataProps = getPropsForHarpStrata(activeHarpStrata, DisplayModes.Degree)
-  const resetActiveHarpStrata = getHarpStrata({...harpStrataProps, activeIds: []})
+  const { activeHarpStrata, counter } = global
+  const harpStrataProps = getPropsForHarpStrata(
+    activeHarpStrata,
+    DisplayModes.Degree
+  )
+  const resetActiveHarpStrata = getHarpStrata({
+    ...harpStrataProps,
+    activeIds: [],
+  })
   return {
     activeHarpStrata: resetActiveHarpStrata,
-    counter: 0,
+    counter: counter + 1,
   }
 })
 

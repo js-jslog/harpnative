@@ -1,5 +1,5 @@
-import React, { useGlobal, useEffect } from 'reactn'
-import type { ReactElement } from 'react'
+import React, { useGlobal, useEffect, useDispatch } from 'reactn'
+import { ReactElement, useState } from 'react'
 
 import { AnimatedMenuContainer, QuizQuestionDisplay } from '../../Menus'
 
@@ -10,20 +10,25 @@ type QuizQuestionScreenProps = {
 export const QuizQuestionScreen = (
   props: QuizQuestionScreenProps
 ): ReactElement => {
-  const [counter, setCounter] = useGlobal('counter')
+  const [displayPeriod, setDisplayPeriod] = useState<boolean>(true)
+  const [counter] = useGlobal('counter')
   const { screenFree } = props
+  const requestNextQuestion = useDispatch('requestNextQuestion')
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (counter === 0) {
-        setCounter(5)
-      } else {
-        setCounter(counter - 1)
-      }
-    }, 1000)
-    return () => clearTimeout(timer)
-  })
+    setDisplayPeriod(true)
+    const nextQuestionTimer = setTimeout(() => {
+      requestNextQuestion()
+    }, 5000)
+    const hideQuestionTimer = setTimeout(() => {
+      setDisplayPeriod(false)
+    }, 2000)
+    return () => {
+      clearTimeout(nextQuestionTimer)
+      clearTimeout(hideQuestionTimer)
+    }
+  }, [counter])
   return (
-    <AnimatedMenuContainer onScreen={screenFree && counter < 1}>
+    <AnimatedMenuContainer onScreen={screenFree && displayPeriod}>
       <QuizQuestionDisplay />
     </AnimatedMenuContainer>
   )
