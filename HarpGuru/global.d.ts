@@ -16,9 +16,7 @@ declare module 'reactn/default' {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       dispatch: any
     ) => void
-    requestNextQuestion: (
-      global: State,
-    ) => State
+    requestNextQuestion: (global: State) => State
   }
 
   export interface State {
