@@ -21,8 +21,8 @@ const initialHarpStrataProps: HarpStrataProps = {
 const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
 
 const state = {
-  counter: 5,
-  activeHarpStrata: initialHarpStrata
+  counter: 0,
+  activeHarpStrata: initialHarpStrata,
 }
 setGlobal(state)
 
