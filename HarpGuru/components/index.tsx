@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler'
 
+import type { State as GlobalState } from 'reactn/default'
 import { addReducer, useDispatch } from 'reactn'
 import {
   PanGestureHandler,
@@ -24,9 +25,23 @@ import {
 addReducer('quizAnswerGiven', () => ({
   counter: 1,
 }))
-addReducer('requestNextQuestion', () => ({
-  counter: 0,
-}))
+addReducer('requestNextQuestion', (global: GlobalState) => {
+  const { activeHarpStrata } = global
+  const { isActiveComplex } = activeHarpStrata
+  const resetActiveComplex = {
+    ...isActiveComplex,
+    activePitchIds: [],
+    activeDegreeIds: [],
+  }
+  const resetActiveHarpStrata = {
+    ...activeHarpStrata,
+    isActiveComplex: resetActiveComplex
+  }
+  return {
+    activeHarpStrata: resetActiveHarpStrata,
+    counter: 0,
+  }
+})
 
 const { 8: swipeThreshold } = themeSizes
 
