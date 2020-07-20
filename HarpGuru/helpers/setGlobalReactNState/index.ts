@@ -8,6 +8,11 @@ import {
 } from 'harpstrata'
 import type { ActiveIds, HarpStrataProps, HarpStrata } from 'harpstrata'
 
+export enum ExperienceModes {
+  Explore = 'EXPLORE',
+  Quiz = 'QUIZ',
+}
+
 import { getNextQuizQuestion } from '../getNextQuizQuestion'
 
 const [initialApparatusId] = getApparatusIds()
@@ -22,10 +27,12 @@ const initialHarpStrataProps: HarpStrataProps = {
   activeIds: initialActiveIds,
 }
 const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
+const { Explore: explore } = ExperienceModes
 
 const state = {
-  quizQuestion: getNextQuizQuestion(PitchIds.A),
   activeHarpStrata: initialHarpStrata,
+  quizQuestion: getNextQuizQuestion(PitchIds.A),
+  activeExperienceMode: explore
 }
 setGlobal(state)
 

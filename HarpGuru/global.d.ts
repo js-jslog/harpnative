@@ -1,6 +1,8 @@
 import 'reactn'
 import type { HarpStrata } from 'harpstrata'
 
+import type { ExperienceModes } from './helpers/setGlobalReactNState'
+
 // All of the `dispatch: any` lines in here are
 // required because of a typescript complaint
 // about circular references on the `useDispatch`
@@ -22,5 +24,6 @@ declare module 'reactn/default' {
   export interface State {
     quizQuestion: DegreeIds | PitchIds
     activeHarpStrata: HarpStrata
+    experienceMode: ExperienceModes
   }
 }
