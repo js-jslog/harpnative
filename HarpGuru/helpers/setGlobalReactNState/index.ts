@@ -32,7 +32,7 @@ const { Explore: explore } = ExperienceModes
 const state = {
   activeHarpStrata: initialHarpStrata,
   quizQuestion: getNextQuizQuestion(PitchIds.A),
-  activeExperienceMode: explore
+  activeExperienceMode: explore,
 }
 setGlobal(state)
 

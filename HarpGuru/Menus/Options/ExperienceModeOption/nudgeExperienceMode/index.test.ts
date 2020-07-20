@@ -19,7 +19,10 @@ test('sets the opposite explore mode when active explore mode is Quiz', () => {
 
 test('sets the opposite explore mode when active explore mode is Explore', () => {
   const setActiveExperienceMode = jest.fn()
-  mockUseGlobal.mockReturnValue([ExperienceModes.Explore, setActiveExperienceMode])
+  mockUseGlobal.mockReturnValue([
+    ExperienceModes.Explore,
+    setActiveExperienceMode,
+  ])
   nudgeExperienceMode()
 
   expect(setActiveExperienceMode.mock.calls[0][0]).toStrictEqual(

@@ -10,7 +10,6 @@ jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
 
 test('ExperienceModeOption renders a component with Explore mode text displayed', () => {
-
   mockUseGlobal.mockReturnValue([ExperienceModes.Explore])
   const { getByText } = render(<ExperienceModeOption />)
 
@@ -18,7 +17,6 @@ test('ExperienceModeOption renders a component with Explore mode text displayed'
 })
 
 test('ExperienceModeOption renders a component with Quiz mode text displayed', () => {
-
   mockUseGlobal.mockReturnValue([ExperienceModes.Quiz])
   const { getByText } = render(<ExperienceModeOption />)
 
