@@ -4,8 +4,11 @@ import {
   getApparatusIds,
   getPozitionIds,
   getPitchIds,
+  PitchIds,
 } from 'harpstrata'
 import type { ActiveIds, HarpStrataProps, HarpStrata } from 'harpstrata'
+
+import { getNextQuizQuestion } from '../getNextQuizQuestion'
 
 const [initialApparatusId] = getApparatusIds()
 const [initialPozitionId] = getPozitionIds()
@@ -21,7 +24,7 @@ const initialHarpStrataProps: HarpStrataProps = {
 const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
 
 const state = {
-  counter: 0,
+  quizQuestion: getNextQuizQuestion(PitchIds.A),
   activeHarpStrata: initialHarpStrata,
 }
 setGlobal(state)

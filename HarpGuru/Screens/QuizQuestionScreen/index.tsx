@@ -11,7 +11,7 @@ export const QuizQuestionScreen = (
   props: QuizQuestionScreenProps
 ): ReactElement => {
   const [displayPeriod, setDisplayPeriod] = useState<boolean>(true)
-  const [counter] = useGlobal('counter')
+  const [quizQuestion] = useGlobal('quizQuestion')
   const { screenFree } = props
   const requestNextQuestion = useDispatch('requestNextQuestion')
   useEffect(() => {
@@ -26,7 +26,7 @@ export const QuizQuestionScreen = (
       clearTimeout(nextQuestionTimer)
       clearTimeout(hideQuestionTimer)
     }
-  }, [counter])
+  }, [quizQuestion])
   return (
     <AnimatedMenuContainer onScreen={screenFree && displayPeriod}>
       <QuizQuestionDisplay />

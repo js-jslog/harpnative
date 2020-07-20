@@ -1,3 +1,4 @@
+import { useGlobal } from 'reactn'
 import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
@@ -17,10 +18,11 @@ const styles = StyleSheet.create({
 })
 
 export const QuizQuestionDisplay = (): React.ReactElement => {
+  const [quizQuestion] = useGlobal('quizQuestion')
   return (
     <MenuContainer>
       <View style={styles.view}>
-        <Text style={styles.question}>Quiz item</Text>
+        <Text style={styles.question}>{quizQuestion}</Text>
       </View>
     </MenuContainer>
   )

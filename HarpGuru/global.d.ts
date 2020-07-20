@@ -20,7 +20,7 @@ declare module 'reactn/default' {
   }
 
   export interface State {
-    counter: number
+    quizQuestion: DegreeIds | PitchIds
     activeHarpStrata: HarpStrata
   }
 }
