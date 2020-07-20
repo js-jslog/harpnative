@@ -5,10 +5,10 @@ import { nudgeExperienceMode } from '../nudgeExperienceMode'
 import { OptionContainer } from '../../OptionContainer'
 
 export const ExperienceModeOption = (): React.ReactElement => {
-  const [experienceMode] = useGlobal('experienceMode')
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const experienceModeOptionProps = {
     title: 'Experience',
-    optionId: experienceMode,
+    optionId: activeExperienceMode,
     nudgeFunction: nudgeExperienceMode,
   }
 

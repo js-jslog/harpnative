@@ -4,7 +4,7 @@ import { ExperienceModes } from '../../../../helpers/setGlobalReactNState'
 
 export const nudgeExperienceMode = (): void => {
   const [activeExperienceMode, setActiveExperienceMode] = useGlobal(
-    'experienceMode'
+    'activeExperienceMode'
   )
 
   if (activeExperienceMode === ExperienceModes.Quiz) {

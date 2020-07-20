@@ -24,6 +24,6 @@ declare module 'reactn/default' {
   export interface State {
     quizQuestion: DegreeIds | PitchIds
     activeHarpStrata: HarpStrata
-    experienceMode: ExperienceModes
+    activeExperienceMode: ExperienceModes
   }
 }
