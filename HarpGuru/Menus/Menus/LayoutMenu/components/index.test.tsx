@@ -1,10 +1,24 @@
+import { useGlobal } from 'reactn'
 import React from 'react'
-import { ApparatusIds } from 'harpstrata'
+import { ApparatusIds, PozitionIds, PitchIds, getHarpStrata } from 'harpstrata'
+import type { HarpStrataProps, ActiveIds } from 'harpstrata'
 import { render } from '@testing-library/react-native'
 
 import { DisplayModes } from '../../../../types'
 
 import { LayoutMenu } from './index'
+
+jest.mock('reactn')
+const mockUseGlobal = useGlobal as jest.Mock
+
+const harpStrataProps: HarpStrataProps = {
+  apparatusId: ApparatusIds.MajorDiatonic,
+  pozitionId: PozitionIds.First,
+  harpKeyId: PitchIds.C,
+  activeIds: [] as ActiveIds,
+}
+const harpStrata = getHarpStrata(harpStrataProps)
+mockUseGlobal.mockReturnValue([harpStrata])
 
 test('LayoutMenu renders a component with a major diatonic layout selected', () => {
   const menuProps = {
