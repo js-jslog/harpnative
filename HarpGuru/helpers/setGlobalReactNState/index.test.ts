@@ -4,6 +4,7 @@ import { setGlobalReactNState } from './index'
 
 test('that the global state is defined', () => {
   setGlobalReactNState()
-  const { 0: global } = setup()
-  expect(Object.keys(global).length).not.toBe(0)
+  const { globalTuple } = setup()
+  const [global] = globalTuple
+  expect(global.activeHarpStrata).toBeTruthy()
 })
