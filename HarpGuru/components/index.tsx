@@ -16,7 +16,6 @@ import { DisplayModes } from '../types'
 import { styles } from '../styles'
 import {
   usePrevious,
-  setGlobalReactNState,
   getPropsForHarpStrata,
   getNextQuizQuestion,
 } from '../helpers'
@@ -57,8 +56,6 @@ enum MenuStates {
   CovariantMenu,
   NoMenu,
 }
-
-export const initialReactNState = setGlobalReactNState
 
 export const HarpGuru = (): ReactElement => {
   const [activeDisplayMode, setActiveDisplayMode] = useState(initialDisplayMode)
