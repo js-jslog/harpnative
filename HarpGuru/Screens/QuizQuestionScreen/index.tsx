@@ -19,7 +19,7 @@ export const QuizQuestionScreen = (
   useEffect(() => {
     setDisplayPeriod(true)
     const nextQuestionTimer = setTimeout(() => {
-      requestNextQuestion()
+      if (activeExperienceMode === ExperienceModes.Quiz) requestNextQuestion()
     }, 5000)
     const hideQuestionTimer = setTimeout(() => {
       setDisplayPeriod(false)

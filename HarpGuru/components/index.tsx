@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler'
 
 import type { State as GlobalState, Dispatch } from 'reactn/default'
-import { addReducer, useDispatch } from 'reactn'
+import { addReducer, useDispatch, useGlobal } from 'reactn'
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
@@ -14,6 +14,7 @@ import { getHarpStrata } from 'harpstrata'
 
 import { DisplayModes } from '../types'
 import { styles } from '../styles'
+import { ExperienceModes } from '../helpers/setGlobalReactNState'
 import {
   usePrevious,
   getPropsForHarpStrata,
@@ -62,6 +63,7 @@ enum MenuStates {
 
 export const HarpGuru = (): ReactElement => {
   const [activeDisplayMode, setActiveDisplayMode] = useState(initialDisplayMode)
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const requestNextQuestion = useDispatch('requestNextQuestion')
 
   const [panState, setPanState] = useState<State>(State.UNDETERMINED)
@@ -109,7 +111,8 @@ export const HarpGuru = (): ReactElement => {
 
   if (
     menuState === MenuStates.NoMenu &&
-    previousMenuState !== MenuStates.NoMenu
+    previousMenuState !== MenuStates.NoMenu &&
+    activeExperienceMode === ExperienceModes.Quiz
   )
     requestNextQuestion()
 

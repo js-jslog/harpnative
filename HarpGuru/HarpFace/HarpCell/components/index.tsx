@@ -14,9 +14,11 @@ import { getStyles } from '../styles'
 import { setPozitionRootAtCell } from '../setPozitionRootAtCell'
 import { getDisplayValue } from '../getDisplayValue'
 import { analysePosition } from '../analysePosition'
+import { ExperienceModes } from '../../../helpers/setGlobalReactNState'
 
 export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const harpCellProps = {
     ...props,
     activeHarpStrata,
@@ -40,7 +42,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
     if (degreeId === undefined) return
 
     setActiveHarpStrata(toggleDegreeIdInHarpStrata(activeHarpStrata, degreeId))
-    quizAnswerGiven()
+    if (activeExperienceMode === ExperienceModes.Quiz) quizAnswerGiven()
   }
 
   const handleLongPressStateChange = ({
