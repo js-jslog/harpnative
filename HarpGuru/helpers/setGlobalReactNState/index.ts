@@ -15,7 +15,7 @@ export enum ExperienceModes {
 
 import { getNextQuizQuestion } from '../getNextQuizQuestion'
 
-import { espyGlobalTuple } from './testSetup'
+import { espyGlobalTuple } from './stateInformant'
 
 export const setGlobalReactNState = (): void => {
   const [initialApparatusId] = getApparatusIds()

@@ -12,7 +12,7 @@ import {
 } from 'harpstrata'
 import { act } from '@testing-library/react-native'
 
-import { espyGlobalTuple } from './testSetup'
+import { espyGlobalTuple } from './stateInformant'
 
 import { setGlobalReactNState } from './index'
 
