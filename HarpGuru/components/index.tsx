@@ -16,9 +16,9 @@ import { DisplayModes } from '../types'
 import { styles } from '../styles'
 import {
   usePrevious,
-  setGlobalReactNState,
   getPropsForHarpStrata,
   getNextQuizQuestion,
+  setGlobalReactNState,
 } from '../helpers'
 import { themeSizes } from '../Theme'
 import {
@@ -27,6 +27,8 @@ import {
   LayoutMenuScreen,
   QuizQuestionScreen,
 } from '../Screens'
+
+setGlobalReactNState()
 
 addReducer('quizAnswerGiven', (_global: GlobalState, dispatch: Dispatch) => {
   setTimeout(dispatch.requestNextQuestion, 1000)
@@ -57,8 +59,6 @@ enum MenuStates {
   CovariantMenu,
   NoMenu,
 }
-
-export const initialReactNState = setGlobalReactNState
 
 export const HarpGuru = (): ReactElement => {
   const [activeDisplayMode, setActiveDisplayMode] = useState(initialDisplayMode)
