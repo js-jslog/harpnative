@@ -5,9 +5,7 @@ type Props = {
   readonly setActiveExperienceMode: (arg0: ExperienceModes) => void
 }
 
-export const nudgeExperienceMode = (
-  partialParams: Props
-): void => {
+export const nudgeExperienceMode = (partialParams: Props): void => {
   const { activeExperienceMode, setActiveExperienceMode } = partialParams
 
   if (activeExperienceMode === ExperienceModes.Quiz) {

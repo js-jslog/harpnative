@@ -6,15 +6,20 @@ import { partiallyApplyNudgeFunction } from '../../helpers'
 import { OptionContainer } from '../../OptionContainer'
 
 export const ExperienceModeOption = (): React.ReactElement => {
-  const [activeExperienceMode, setActiveExperienceMode] = useGlobal('activeExperienceMode')
+  const [activeExperienceMode, setActiveExperienceMode] = useGlobal(
+    'activeExperienceMode'
+  )
   const partialParams = {
     activeExperienceMode,
-    setActiveExperienceMode
+    setActiveExperienceMode,
   }
   const experienceModeOptionProps = {
     title: 'Experience',
     optionId: activeExperienceMode,
-    nudgeFunction: partiallyApplyNudgeFunction(nudgeExperienceMode, partialParams),
+    nudgeFunction: partiallyApplyNudgeFunction(
+      nudgeExperienceMode,
+      partialParams
+    ),
   }
 
   return <OptionContainer {...experienceModeOptionProps} />

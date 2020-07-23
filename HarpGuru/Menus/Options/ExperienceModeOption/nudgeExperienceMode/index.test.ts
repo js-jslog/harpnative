@@ -7,7 +7,7 @@ test('sets the opposite explore mode when active explore mode is Quiz', () => {
   const setActiveExperienceMode = jest.fn()
   const partialParams = {
     activeExperienceMode,
-    setActiveExperienceMode
+    setActiveExperienceMode,
   }
   nudgeExperienceMode(partialParams)
 
@@ -21,7 +21,7 @@ test('sets the opposite explore mode when active explore mode is Explore', () =>
   const setActiveExperienceMode = jest.fn()
   const partialParams = {
     activeExperienceMode,
-    setActiveExperienceMode
+    setActiveExperienceMode,
   }
   nudgeExperienceMode(partialParams)
 
