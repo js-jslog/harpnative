@@ -15,6 +15,8 @@ export enum ExperienceModes {
 
 import { getNextQuizQuestion } from '../getNextQuizQuestion'
 
+import { setup } from './testSetup'
+
 export const setGlobalReactNState = (): void => {
   const [initialApparatusId] = getApparatusIds()
   const [initialPozitionId] = getPozitionIds()
@@ -29,6 +31,9 @@ export const setGlobalReactNState = (): void => {
   }
   const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
   const { Explore: explore } = ExperienceModes
+
+  const { globalTuple } = setup()
+  if (globalTuple[0].activeHarpStrata !== undefined) return
 
   const state = {
     activeHarpStrata: initialHarpStrata,
