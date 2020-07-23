@@ -18,6 +18,7 @@ import {
   usePrevious,
   getPropsForHarpStrata,
   getNextQuizQuestion,
+  setGlobalReactNState,
 } from '../helpers'
 import { themeSizes } from '../Theme'
 import {
@@ -26,6 +27,8 @@ import {
   LayoutMenuScreen,
   QuizQuestionScreen,
 } from '../Screens'
+
+setGlobalReactNState()
 
 addReducer('quizAnswerGiven', (_global: GlobalState, dispatch: Dispatch) => {
   setTimeout(dispatch.requestNextQuestion, 1000)
