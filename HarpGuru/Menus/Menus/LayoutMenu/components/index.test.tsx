@@ -5,6 +5,7 @@ import type { HarpStrataProps, ActiveIds } from 'harpstrata'
 import { render } from '@testing-library/react-native'
 
 import { DisplayModes } from '../../../../types'
+import { ExperienceModes } from '../../../../helpers/setGlobalReactNState'
 
 import { LayoutMenu } from './index'
 
@@ -20,6 +21,7 @@ const harpStrataProps: HarpStrataProps = {
 const harpStrata = getHarpStrata(harpStrataProps)
 mockUseGlobal.mockImplementation((stateItem: string) => {
   if (stateItem === 'activeHarpStrata') return [harpStrata]
+  if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
   return undefined
 })
 
@@ -41,4 +43,14 @@ test('LayoutMenu renders a component with Degree DisplayMode selected', () => {
   const { getByText } = render(<LayoutMenu {...menuProps} />)
 
   expect(getByText(DisplayModes.Degree)).toBeTruthy()
+})
+
+test('LayoutMenu renders a component with Explore ExperienceMode selected', () => {
+  const menuProps = {
+    activeDisplayMode: DisplayModes.Degree,
+    setActiveDisplayMode: jest.fn(),
+  }
+  const { getByText } = render(<LayoutMenu {...menuProps} />)
+
+  expect(getByText(ExperienceModes.Explore)).toBeTruthy()
 })
