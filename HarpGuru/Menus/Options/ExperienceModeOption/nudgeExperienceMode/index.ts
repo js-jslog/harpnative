@@ -1,11 +1,14 @@
-import { useGlobal } from 'reactn'
-
 import { ExperienceModes } from '../../../../helpers/setGlobalReactNState'
 
-export const nudgeExperienceMode = (): void => {
-  const [activeExperienceMode, setActiveExperienceMode] = useGlobal(
-    'activeExperienceMode'
-  )
+type Props = {
+  readonly activeExperienceMode: ExperienceModes
+  readonly setActiveExperienceMode: (arg0: ExperienceModes) => void
+}
+
+export const nudgeExperienceMode = (
+  partialParams: Props
+): void => {
+  const { activeExperienceMode, setActiveExperienceMode } = partialParams
 
   if (activeExperienceMode === ExperienceModes.Quiz) {
     setActiveExperienceMode(ExperienceModes.Explore)
