@@ -1,7 +1,16 @@
 import { State } from 'reactn/default'
 import { setGlobal } from 'reactn'
-import {getApparatusIds, getPozitionIds, getPitchIds, ActiveIds, PitchIds, HarpStrataProps, HarpStrata, getHarpStrata} from 'harpstrata'
-import {act} from '@testing-library/react-native'
+import {
+  getApparatusIds,
+  getPozitionIds,
+  getPitchIds,
+  ActiveIds,
+  PitchIds,
+  HarpStrataProps,
+  HarpStrata,
+  getHarpStrata,
+} from 'harpstrata'
+import { act } from '@testing-library/react-native'
 
 import { setup } from './testSetup'
 
@@ -28,7 +37,7 @@ test('that the global state is defined', () => {
 })
 
 test('that the global state is not redefined if it already exists', () => {
-  const blankState = {activeHarpStrata: differentHarpStrata} as State
+  const blankState = { activeHarpStrata: differentHarpStrata } as State
   act(() => {
     setGlobal(blankState)
   })
