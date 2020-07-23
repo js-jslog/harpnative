@@ -15,11 +15,11 @@ export const espyGlobalTuple = (): Record<'globalTuple', GlobalTuple<State>> => 
   const globalWrapper = {
     globalTuple: [blankState, blankSetState],
   } as Record<'globalTuple', GlobalTuple<State>>
-  const TestComponent = (): null => {
+  const StateInformantComponent = (): null => {
     const globalTuple: GlobalTuple<State> = useGlobal()
     globalWrapper.globalTuple = globalTuple
     return null
   }
-  render(<TestComponent />)
+  render(<StateInformantComponent />)
   return globalWrapper
 }
