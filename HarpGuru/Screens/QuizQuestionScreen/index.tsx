@@ -1,6 +1,7 @@
 import React, { useGlobal, useEffect, useDispatch } from 'reactn'
 import { ReactElement, useState } from 'react'
 
+import { ExperienceModes } from '../../helpers/setGlobalReactNState'
 import { AnimatedMenuContainer, QuizQuestionDisplay } from '../../Menus'
 
 type QuizQuestionScreenProps = {
@@ -12,6 +13,7 @@ export const QuizQuestionScreen = (
 ): ReactElement => {
   const [displayPeriod, setDisplayPeriod] = useState<boolean>(true)
   const [quizQuestion] = useGlobal('quizQuestion')
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const { screenFree } = props
   const requestNextQuestion = useDispatch('requestNextQuestion')
   useEffect(() => {
@@ -28,7 +30,13 @@ export const QuizQuestionScreen = (
     }
   }, [quizQuestion])
   return (
-    <AnimatedMenuContainer onScreen={screenFree && displayPeriod}>
+    <AnimatedMenuContainer
+      onScreen={
+        screenFree &&
+        displayPeriod &&
+        activeExperienceMode === ExperienceModes.Quiz
+      }
+    >
       <QuizQuestionDisplay />
     </AnimatedMenuContainer>
   )
