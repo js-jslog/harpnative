@@ -18,7 +18,10 @@ const harpStrataProps: HarpStrataProps = {
   activeIds: [] as ActiveIds,
 }
 const harpStrata = getHarpStrata(harpStrataProps)
-mockUseGlobal.mockReturnValue([harpStrata])
+mockUseGlobal.mockImplementation((stateItem: string) => {
+  if (stateItem === 'activeHarpStrata') return [harpStrata]
+  return undefined
+})
 
 test('LayoutMenu renders a component with a major diatonic layout selected', () => {
   const menuProps = {
