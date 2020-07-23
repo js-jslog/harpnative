@@ -4,15 +4,16 @@ import { useGlobal } from 'reactn'
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
+// This component is only designed to give non component contexts a
+// way to call the useGlobal hook and inspect the global state.
 export const setup = (): Record<'globalTuple', GlobalTuple<State>> => {
   const blankState = {} as State
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const blankSetState = (_arg0: State) => {
+    return
+  }
   const globalWrapper = {
-    globalTuple: [
-      blankState,
-      (arg0: State) => {
-        console.log(arg0)
-      },
-    ],
+    globalTuple: [blankState, blankSetState],
   } as Record<'globalTuple', GlobalTuple<State>>
   const TestComponent = (): null => {
     const globalTuple: GlobalTuple<State> = useGlobal()
