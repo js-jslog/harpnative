@@ -21,13 +21,13 @@ const [initialPozitionId] = getPozitionIds()
 const [initialPitchId] = getPitchIds()
 const initialActiveIds: ActiveIds = [PitchIds.A]
 
-const differentHarpStrataProps: HarpStrataProps = {
+const harpStrataProps: HarpStrataProps = {
   apparatusId: initialApparatusId,
   pozitionId: initialPozitionId,
   harpKeyId: initialPitchId,
   activeIds: initialActiveIds,
 }
-const differentHarpStrata: HarpStrata = getHarpStrata(differentHarpStrataProps)
+const harpStrata: HarpStrata = getHarpStrata(harpStrataProps)
 
 test('that the global state is defined', () => {
   setGlobalReactNState()
@@ -37,9 +37,9 @@ test('that the global state is defined', () => {
 })
 
 test('that the global state is not redefined if it already exists', () => {
-  const blankState = { activeHarpStrata: differentHarpStrata } as State
+  const preexistingState = { activeHarpStrata: harpStrata } as State
   act(() => {
-    setGlobal(blankState)
+    setGlobal(preexistingState)
   })
   setGlobalReactNState()
   const { globalTuple } = espyGlobalTuple()
