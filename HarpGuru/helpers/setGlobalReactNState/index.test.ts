@@ -12,7 +12,7 @@ import {
 } from 'harpstrata'
 import { act } from '@testing-library/react-native'
 
-import { setup } from './testSetup'
+import { espyGlobalTuple } from './testSetup'
 
 import { setGlobalReactNState } from './index'
 
@@ -31,7 +31,7 @@ const differentHarpStrata: HarpStrata = getHarpStrata(differentHarpStrataProps)
 
 test('that the global state is defined', () => {
   setGlobalReactNState()
-  const { globalTuple } = setup()
+  const { globalTuple } = espyGlobalTuple()
   const [global] = globalTuple
   expect(global.activeHarpStrata.isActiveComplex.activePitchIds.length).toBe(0)
 })
@@ -42,7 +42,7 @@ test('that the global state is not redefined if it already exists', () => {
     setGlobal(blankState)
   })
   setGlobalReactNState()
-  const { globalTuple } = setup()
+  const { globalTuple } = espyGlobalTuple()
   const [global] = globalTuple
   expect(global.activeHarpStrata.isActiveComplex.activePitchIds.length).toBe(1)
 })
