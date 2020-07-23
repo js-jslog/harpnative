@@ -6,7 +6,10 @@ import { render } from '@testing-library/react-native'
 
 // This component is only designed to give non component contexts a
 // way to call the useGlobal hook and inspect the global state.
-export const espyGlobalTuple = (): Record<'globalTuple', GlobalTuple<State>> => {
+export const espyGlobalTuple = (): Record<
+  'globalTuple',
+  GlobalTuple<State>
+> => {
   const blankState = {} as State
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const blankSetState = (_arg0: State) => {
