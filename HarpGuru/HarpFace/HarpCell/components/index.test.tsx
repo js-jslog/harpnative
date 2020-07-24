@@ -20,6 +20,7 @@ test('A component is rendered with the Degree or Pitch value in its text view de
     if (stateItem === 'activeHarpStrata')
       return [inactiveCellsHarpFaceProps.activeHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     return undefined
   })
   const harpCellProps = {
@@ -42,6 +43,7 @@ test('A component is rendered with an a11y role of button', () => {
     if (stateItem === 'activeHarpStrata')
       return [inactiveCellsHarpFaceProps.activeHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     return undefined
   })
   const harpCellProps = {
@@ -58,6 +60,7 @@ test('A component is rendered without an a11y role of button if it has no conten
     if (stateItem === 'activeHarpStrata')
       return [inactiveCellsHarpFaceProps.activeHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     return undefined
   })
   const harpCellProps = {
@@ -107,6 +110,7 @@ test('A snapshot of a populated cell', () => {
     if (stateItem === 'activeHarpStrata')
       return [inactiveCellsHarpFaceProps.activeHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     return undefined
   })
   const harpCellProps = {
@@ -123,6 +127,7 @@ test('A snapshot of an active cell', () => {
     if (stateItem === 'activeHarpStrata')
       return [activeCellsHarpFaceProps.activeHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     return undefined
   })
   const harpCellProps = {
@@ -139,6 +144,7 @@ test('A snapshot of an empty cell', () => {
     if (stateItem === 'activeHarpStrata')
       return [inactiveCellsHarpFaceProps.activeHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     return undefined
   })
   const harpFaceProps = {
@@ -155,6 +161,7 @@ test('A snapshot of an inactive cell in Explore mode', () => {
     if (stateItem === 'activeHarpStrata')
       return [inactiveCellsHarpFaceProps.activeHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     return undefined
   })
   const harpCellProps = {
@@ -173,6 +180,7 @@ test('A snapshot of an inactive cell in Quiz mode', () => {
     if (stateItem === 'activeHarpStrata')
       return [inactiveCellsHarpFaceProps.activeHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Quiz]
+    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     return undefined
   })
   const harpCellProps = {
