@@ -3,6 +3,8 @@ import type { HarpStrata } from 'harpstrata'
 
 import type { ExperienceModes } from './helpers/setGlobalReactNState'
 
+import type { DisplayModes } from './types'
+
 // All of the `dispatch: any` lines in here are
 // required because of a typescript complaint
 // about circular references on the `useDispatch`
@@ -16,9 +18,15 @@ declare module 'reactn/default' {
     quizAnswerGiven: (
       global: State,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      dispatch: any
+      dispatch: any,
+      displayMode: DisplayModes
     ) => void
-    requestNextQuestion: (global: State) => State
+    requestNextQuestion: (
+      global: State,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      dispatch: any,
+      displayMode: DisplayModes
+    ) => Pick<State, 'quizQuestion' | 'activeHarpStrata'>
   }
 
   export interface State {

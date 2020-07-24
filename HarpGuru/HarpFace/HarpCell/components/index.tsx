@@ -27,6 +27,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
     setActiveHarpStrata,
     activeExperienceMode,
   }
+  const { activeDisplayMode } = props
   const positionFacts = analysePosition(harpCellProps)
   const { thisDegree, thisPitch } = positionFacts
   const { id: degreeId } = thisDegree || { id: undefined }
@@ -56,7 +57,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
           cellId: quizQuestion,
         })
       )
-      quizAnswerGiven()
+      quizAnswerGiven(activeDisplayMode)
     }
   }
 
