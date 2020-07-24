@@ -1,8 +1,13 @@
-import { DegreeIds, ApparatusIds, PozitionIds, PitchIds, getHarpStrata } from 'harpstrata'
+import {
+  DegreeIds,
+  ApparatusIds,
+  PozitionIds,
+  PitchIds,
+  getHarpStrata,
+} from 'harpstrata'
 import type { HarpStrataProps, ActiveIds } from 'harpstrata'
 
 import { ensureCellIsActive } from './index'
-
 
 const allActiveDegrees = [
   DegreeIds.Root,
@@ -34,7 +39,10 @@ const inactiveCellsHarpStrata = getHarpStrata(inactiveCellsHarpStrataProps)
 const activeCellsHarpStrata = getHarpStrata(activeCellsHarpStrataProps)
 
 test('that a harpstrata with a deactivated cell will have that cell activated when given its degree', () => {
-  const expectedHarpStrata = getHarpStrata({...inactiveCellsHarpStrataProps, activeIds: [DegreeIds.Root]})
+  const expectedHarpStrata = getHarpStrata({
+    ...inactiveCellsHarpStrataProps,
+    activeIds: [DegreeIds.Root],
+  })
   const props = {
     harpStrata: inactiveCellsHarpStrata,
     cellId: DegreeIds.Root,
@@ -55,7 +63,10 @@ test('that a harpstrata with an active cell will remain the same when given its 
 })
 
 test('that a harpstrata with a deactivated cell will have that cell activated when given its pitch', () => {
-  const expectedHarpStrata = getHarpStrata({...inactiveCellsHarpStrataProps, activeIds: [PitchIds.F]})
+  const expectedHarpStrata = getHarpStrata({
+    ...inactiveCellsHarpStrataProps,
+    activeIds: [PitchIds.F],
+  })
   const props = {
     harpStrata: inactiveCellsHarpStrata,
     cellId: PitchIds.F,

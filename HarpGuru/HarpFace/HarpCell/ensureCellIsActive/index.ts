@@ -11,23 +11,26 @@ type Props = {
 export const ensureCellIsActive = (props: Props): HarpStrata => {
   const { harpStrata, cellId } = props
   if (isPitchId(cellId)) {
-    const harpStrataProps = getPropsForHarpStrata(harpStrata, DisplayModes.Pitch)
+    const harpStrataProps = getPropsForHarpStrata(
+      harpStrata,
+      DisplayModes.Pitch
+    )
     const { activeIds } = harpStrataProps
-    const newActiveIds = [ ...activeIds, cellId ].filter((item, index, self) => {
+    const newActiveIds = [...activeIds, cellId].filter((item, index, self) => {
       return self.indexOf(item) === index
     }) as PitchIds[]
     return getHarpStrata({
       ...harpStrataProps,
-      activeIds: newActiveIds
+      activeIds: newActiveIds,
     })
   }
   const harpStrataProps = getPropsForHarpStrata(harpStrata, DisplayModes.Degree)
   const { activeIds } = harpStrataProps
-  const newActiveIds = [ ...activeIds, cellId ].filter((item, index, self) => {
+  const newActiveIds = [...activeIds, cellId].filter((item, index, self) => {
     return self.indexOf(item) === index
   }) as DegreeIds[]
   return getHarpStrata({
     ...harpStrataProps,
-    activeIds: newActiveIds
+    activeIds: newActiveIds,
   })
 }
