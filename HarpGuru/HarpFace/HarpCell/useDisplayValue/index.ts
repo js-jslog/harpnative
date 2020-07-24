@@ -12,8 +12,7 @@ type DisplayValueTuple =
 export const useDisplayValue = (yxCoord: YXCoord): DisplayValueTuple => {
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
 
-  const positionFacts = usePositionAnalysis(yxCoord)
-  const { thisDegreeId, thisPitchId } = positionFacts
+  const { thisDegreeId, thisPitchId } = usePositionAnalysis(yxCoord)
 
   if (thisDegreeId === undefined || thisPitchId === undefined)
     return [undefined, undefined]
