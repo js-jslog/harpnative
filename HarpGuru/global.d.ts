@@ -15,11 +15,6 @@ import type { DisplayModes } from './types'
 
 declare module 'reactn/default' {
   export interface Reducers {
-    quizAnswerGiven: (
-      global: State,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      dispatch: any
-    ) => void
     requestNextQuestion: (
       global: State
       // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler'
 
-import type { State as GlobalState, Dispatch } from 'reactn/default'
+import type { State as GlobalState } from 'reactn/default'
 import { addReducer, useDispatch, useGlobal } from 'reactn'
 import {
   PanGestureHandler,
@@ -31,9 +31,6 @@ import {
 
 setGlobalReactNState()
 
-addReducer('quizAnswerGiven', (_global: GlobalState, dispatch: Dispatch) => {
-  setTimeout(dispatch.requestNextQuestion, 1000)
-})
 addReducer('requestNextQuestion', (global: GlobalState) => {
   const { activeHarpStrata, quizQuestion, activeDisplayMode } = global
   const nextQuizQuestion = getNextQuizQuestion(quizQuestion, activeDisplayMode)
