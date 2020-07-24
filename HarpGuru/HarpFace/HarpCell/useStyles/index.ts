@@ -20,8 +20,8 @@ const { pageColor, degreeColors, inertOutline: borderColor } = themeColors
 export const useStyles = (yxCoord: YXCoord): HarpCellStyles => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const positionFacts = usePositionAnalysis(yxCoord)
-  const { thisDegreeId, thisIsActive } = positionFacts
-  const isActive = thisIsActive === IsActiveIds.Active
+  const { thisDegreeId, thisIsActiveId } = positionFacts
+  const isActive = thisIsActiveId === IsActiveIds.Active
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
   const cellColor =
     isActive && thisDegreeId ? degreeColors[thisDegreeId] : pageColor

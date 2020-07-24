@@ -6,7 +6,7 @@ import { YXCoord } from '../types'
 export type PositionFacts = {
   readonly thisDegreeId: DegreeIds | undefined
   readonly thisPitchId: PitchIds | undefined
-  readonly thisIsActive: IsActiveIds | undefined
+  readonly thisIsActiveId: IsActiveIds | undefined
 }
 
 export const usePositionAnalysis = (yxCoord: YXCoord): PositionFacts => {
@@ -24,13 +24,13 @@ export const usePositionAnalysis = (yxCoord: YXCoord): PositionFacts => {
     [yCoord]: { [xCoord]: thisPitch },
   } = pitchMatrix
   const {
-    [yCoord]: { [xCoord]: thisIsActive },
+    [yCoord]: { [xCoord]: thisIsActiveId },
   } = isActiveMatrix
   const { id: thisDegreeId } = thisDegree || { id: undefined }
   const { id: thisPitchId } = thisPitch || { id: undefined }
   return {
     thisDegreeId,
     thisPitchId,
-    thisIsActive,
+    thisIsActiveId,
   }
 }
