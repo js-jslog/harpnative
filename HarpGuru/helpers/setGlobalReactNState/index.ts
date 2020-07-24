@@ -36,11 +36,12 @@ export const setGlobalReactNState = (): void => {
   const { globalTuple } = espyGlobalTuple()
   if (globalTuple[0].activeHarpStrata !== undefined) return
 
+  const { Degree: initialDisplayMode } = DisplayModes
   const state = {
     activeHarpStrata: initialHarpStrata,
-    quizQuestion: getNextQuizQuestion(PitchIds.A, DisplayModes.Pitch),
+    quizQuestion: getNextQuizQuestion(PitchIds.A, initialDisplayMode),
     activeExperienceMode: explore,
-    activeDisplayMode: DisplayModes.Degree,
+    activeDisplayMode: initialDisplayMode,
   }
   setGlobal(state)
 }
