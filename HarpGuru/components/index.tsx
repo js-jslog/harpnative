@@ -31,25 +31,31 @@ import {
 
 setGlobalReactNState()
 
-addReducer('quizAnswerGiven', (_global: GlobalState, dispatch: Dispatch) => {
-  setTimeout(dispatch.requestNextQuestion, 1000)
-})
-addReducer('requestNextQuestion', (global: GlobalState) => {
-  const { activeHarpStrata, quizQuestion } = global
-  const nextQuizQuestion = getNextQuizQuestion(quizQuestion)
-  const harpStrataProps = getPropsForHarpStrata(
-    activeHarpStrata,
-    DisplayModes.Degree
-  )
-  const resetActiveHarpStrata = getHarpStrata({
-    ...harpStrataProps,
-    activeIds: [],
-  })
-  return {
-    activeHarpStrata: resetActiveHarpStrata,
-    quizQuestion: nextQuizQuestion,
+addReducer(
+  'quizAnswerGiven',
+  (_global: GlobalState, dispatch: Dispatch, displayMode: DisplayModes) => {
+    setTimeout(() => dispatch.requestNextQuestion(displayMode), 1000)
   }
-})
+)
+addReducer(
+  'requestNextQuestion',
+  (global: GlobalState, _dispatch: Dispatch, displayMode: DisplayModes) => {
+    const { activeHarpStrata, quizQuestion } = global
+    const nextQuizQuestion = getNextQuizQuestion(quizQuestion, displayMode)
+    const harpStrataProps = getPropsForHarpStrata(
+      activeHarpStrata,
+      DisplayModes.Degree
+    )
+    const resetActiveHarpStrata = getHarpStrata({
+      ...harpStrataProps,
+      activeIds: [],
+    })
+    return {
+      activeHarpStrata: resetActiveHarpStrata,
+      quizQuestion: nextQuizQuestion,
+    }
+  }
+)
 
 const { 8: swipeThreshold } = themeSizes
 
@@ -88,6 +94,7 @@ export const HarpGuru = (): ReactElement => {
   }
   const quizQuestionScreenProps = {
     screenFree: menuState === MenuStates.NoMenu,
+    activeDisplayMode,
   }
 
   const handleSwipe = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
@@ -114,7 +121,7 @@ export const HarpGuru = (): ReactElement => {
     previousMenuState !== MenuStates.NoMenu &&
     activeExperienceMode === ExperienceModes.Quiz
   )
-    requestNextQuestion()
+    requestNextQuestion(activeDisplayMode)
 
   return (
     <PanGestureHandler

@@ -14,6 +14,7 @@ export enum ExperienceModes {
 }
 
 import { getNextQuizQuestion } from '../getNextQuizQuestion'
+import { DisplayModes } from '../../types'
 
 import { espyGlobalTuple } from './stateInformant'
 
@@ -37,7 +38,10 @@ export const setGlobalReactNState = (): void => {
 
   const state = {
     activeHarpStrata: initialHarpStrata,
-    quizQuestion: getNextQuizQuestion(PitchIds.A),
+    // TODO: the display mode here should be determined by the actual
+    // app display mode. The best time to fix this will be when the display
+    // mode is actually set here in global state.
+    quizQuestion: getNextQuizQuestion(PitchIds.A, DisplayModes.Pitch),
     activeExperienceMode: explore,
   }
   setGlobal(state)

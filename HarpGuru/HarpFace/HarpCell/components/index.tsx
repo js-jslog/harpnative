@@ -13,17 +13,21 @@ import { toggleDegreeIdInHarpStrata } from '../toggleDegreeIdInHarpStrata'
 import { getStyles } from '../styles'
 import { setPozitionRootAtCell } from '../setPozitionRootAtCell'
 import { getDisplayValue } from '../getDisplayValue'
+import { ensureCellIsActive } from '../ensureCellIsActive'
 import { analysePosition } from '../analysePosition'
 import { ExperienceModes } from '../../../helpers/setGlobalReactNState'
 
 export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const [quizQuestion] = useGlobal('quizQuestion')
   const harpCellProps = {
     ...props,
     activeHarpStrata,
     setActiveHarpStrata,
+    activeExperienceMode,
   }
+  const { activeDisplayMode } = props
   const positionFacts = analysePosition(harpCellProps)
   const { thisDegree, thisPitch } = positionFacts
   const { id: degreeId } = thisDegree || { id: undefined }
@@ -41,8 +45,20 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
     if (nativeEvent.state !== State.END) return
     if (degreeId === undefined) return
 
-    setActiveHarpStrata(toggleDegreeIdInHarpStrata(activeHarpStrata, degreeId))
-    if (activeExperienceMode === ExperienceModes.Quiz) quizAnswerGiven()
+    const withUserSelectionUpdated = toggleDegreeIdInHarpStrata(
+      activeHarpStrata,
+      degreeId
+    )
+    setActiveHarpStrata(withUserSelectionUpdated)
+    if (activeExperienceMode === ExperienceModes.Quiz) {
+      setActiveHarpStrata(
+        ensureCellIsActive({
+          harpStrata: withUserSelectionUpdated,
+          cellId: quizQuestion,
+        })
+      )
+      quizAnswerGiven(activeDisplayMode)
+    }
   }
 
   const handleLongPressStateChange = ({

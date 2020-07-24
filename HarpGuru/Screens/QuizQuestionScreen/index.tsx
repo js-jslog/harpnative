@@ -1,11 +1,13 @@
 import React, { useGlobal, useEffect, useDispatch } from 'reactn'
 import { ReactElement, useState } from 'react'
 
+import type { DisplayModes } from '../../types'
 import { ExperienceModes } from '../../helpers/setGlobalReactNState'
 import { AnimatedMenuContainer, QuizQuestionDisplay } from '../../Menus'
 
 type QuizQuestionScreenProps = {
   readonly screenFree: boolean
+  readonly activeDisplayMode: DisplayModes
 }
 
 export const QuizQuestionScreen = (
@@ -14,12 +16,13 @@ export const QuizQuestionScreen = (
   const [displayPeriod, setDisplayPeriod] = useState<boolean>(true)
   const [quizQuestion] = useGlobal('quizQuestion')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const { screenFree } = props
+  const { screenFree, activeDisplayMode } = props
   const requestNextQuestion = useDispatch('requestNextQuestion')
   useEffect(() => {
     setDisplayPeriod(true)
     const nextQuestionTimer = setTimeout(() => {
-      if (activeExperienceMode === ExperienceModes.Quiz) requestNextQuestion()
+      if (activeExperienceMode === ExperienceModes.Quiz)
+        requestNextQuestion(activeDisplayMode)
     }, 5000)
     const hideQuestionTimer = setTimeout(() => {
       setDisplayPeriod(false)
