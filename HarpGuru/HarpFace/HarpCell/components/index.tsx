@@ -8,11 +8,11 @@ import {
 import { Text, View } from 'react-native'
 import React from 'react'
 
+import { useDisplayValue } from '../useDisplayValue'
 import { HarpCellProps } from '../types'
 import { toggleDegreeIdInHarpStrata } from '../toggleDegreeIdInHarpStrata'
 import { getStyles } from '../styles'
 import { setPozitionRootAtCell } from '../setPozitionRootAtCell'
-import { getDisplayValue } from '../getDisplayValue'
 import { ensureCellIsActive } from '../ensureCellIsActive'
 import { analysePosition } from '../analysePosition'
 import { ExperienceModes } from '../../../helpers/setGlobalReactNState'
@@ -36,7 +36,8 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
 
   const quizAnswerGiven = useDispatch('quizAnswerGiven')
 
-  const displayValue = getDisplayValue(harpCellProps)
+  const { yxCoord } = props
+  const displayValue = useDisplayValue(yxCoord)
 
   const styles = getStyles(harpCellProps)
 

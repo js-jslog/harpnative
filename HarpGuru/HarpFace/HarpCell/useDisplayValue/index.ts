@@ -1,22 +1,22 @@
-import type { HarpStrata } from 'harpstrata'
+import { useGlobal } from 'reactn'
 
-import { HarpCellProps } from '../types'
-import { analysePosition } from '../analysePosition'
-import { DisplayModes } from '../../../types'
+import type { YXCoord } from '../types'
+import {analysePosition} from '../analysePosition'
+import {DisplayModes} from '../../../types'
 
 type DisplayValueTuple =
   | [string, string]
   | [string, undefined]
   | [undefined, undefined]
 
-type Props = HarpCellProps & {
-  readonly activeHarpStrata: HarpStrata
-  readonly activeDisplayMode: DisplayModes
-}
+export const useDisplayValue = (yxCoord: YXCoord): DisplayValueTuple => {
+  const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
 
-export const getDisplayValue = (props: Props): DisplayValueTuple => {
-  const positionFacts = analysePosition(props)
-  const { activeDisplayMode } = props
+  const analysePositionProps = {
+    yxCoord, activeHarpStrata, activeDisplayMode
+  }
+  const positionFacts = analysePosition(analysePositionProps)
   const { thisDegree, thisPitch } = positionFacts
   const { id: degreeId } = thisDegree || { id: undefined }
   const { id: pitchId } = thisPitch || { id: undefined }
