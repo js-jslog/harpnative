@@ -1,12 +1,17 @@
 import { getPitchIds } from 'harpstrata'
-import type { PitchIds } from 'harpstrata'
+import type { PitchIds, DegreeIds } from 'harpstrata'
 
-export const getNextQuizQuestion = (previous: PitchIds): PitchIds => {
+import type { DisplayModes } from '../../types'
+
+export const getNextQuizQuestion = (
+  previous: PitchIds | DegreeIds,
+  displayMode: DisplayModes
+): PitchIds | DegreeIds => {
   const pitchIds = getPitchIds()
   const max = pitchIds.length - 1
   const random = Math.floor(Math.random() * max)
   const { [random]: next } = pitchIds
 
-  if (next === previous) return getNextQuizQuestion(previous)
+  if (next === previous) return getNextQuizQuestion(previous, displayMode)
   return next
 }

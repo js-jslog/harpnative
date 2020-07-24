@@ -36,7 +36,10 @@ addReducer('quizAnswerGiven', (_global: GlobalState, dispatch: Dispatch) => {
 })
 addReducer('requestNextQuestion', (global: GlobalState) => {
   const { activeHarpStrata, quizQuestion } = global
-  const nextQuizQuestion = getNextQuizQuestion(quizQuestion)
+  // TODO: This needs to actually be set to the display mode which the app is
+  // actually set to. This can be passed as a parameter to the reducer even
+  // before we get round to putting the display mode in the global state.
+  const nextQuizQuestion = getNextQuizQuestion(quizQuestion, DisplayModes.Pitch)
   const harpStrataProps = getPropsForHarpStrata(
     activeHarpStrata,
     DisplayModes.Degree

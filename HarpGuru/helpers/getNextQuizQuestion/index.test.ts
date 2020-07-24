@@ -1,5 +1,7 @@
 import { PitchIds } from 'harpstrata'
 
+import { DisplayModes } from '../../types'
+
 import { getNextQuizQuestion } from './index'
 
 // The purpose of running the same test multiple times is to try and
@@ -9,49 +11,139 @@ import { getNextQuizQuestion } from './index'
 test('that a different pitch question is chosen from the previous one', () => {
   const { A: previousQuizQuestion } = PitchIds
 
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
-  expect(getNextQuizQuestion(previousQuizQuestion)).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
+  expect(
+    getNextQuizQuestion(previousQuizQuestion, DisplayModes.Pitch)
+  ).not.toBe(previousQuizQuestion)
 })
