@@ -26,15 +26,6 @@ const {
   },
 } = activeHarpStrata
 
-test('leftmost is true if the provided coord has is 0 in the x axis and false otherwise', () => {
-  const yxCoordLeftmostTrue: YXCoord = [0, 0]
-  const yxCoordLeftmostFalse: YXCoord = [0, 1]
-  const { leftmost: leftmostTrue } = usePositionAnalysis(yxCoordLeftmostTrue)
-  const { leftmost: leftmostFalse } = usePositionAnalysis(yxCoordLeftmostFalse)
-  expect(leftmostTrue).toBeTruthy()
-  expect(leftmostFalse).toBeFalsy()
-})
-
 test('thisDegree, thisPitch, thisInteraction, & thisIsActive provide the degree, pitch, interaction and isActive at this position', () => {
   const ourCoord: YXCoord = [3, 3]
   const {

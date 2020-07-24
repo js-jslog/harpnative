@@ -8,7 +8,6 @@ export type PositionFacts = {
   readonly thisPitch: Pitch | undefined
   readonly thisInteraction: Interaction | undefined
   readonly thisIsActive: IsActiveIds | undefined
-  readonly leftmost: boolean
 }
 
 export const usePositionAnalysis = (yxCoord: YXCoord): PositionFacts => {
@@ -34,12 +33,10 @@ export const usePositionAnalysis = (yxCoord: YXCoord): PositionFacts => {
   const {
     [yCoord]: { [xCoord]: thisIsActive },
   } = isActiveMatrix
-  const leftmost = xCoord === 0
   return {
     thisDegree,
     thisPitch,
     thisInteraction,
     thisIsActive,
-    leftmost,
   }
 }
