@@ -1,8 +1,16 @@
-import { PitchIds } from 'harpstrata'
+import { PitchIds, isPitchId } from 'harpstrata'
 
 import { DisplayModes } from '../../types'
 
 import { getNextQuizQuestion } from './index'
+
+test('that a degree question is chosen even if the previous question was a pitch when the display mode is degree', () => {
+  const { B: previousQuizQuestion } = PitchIds
+
+  expect(
+    isPitchId(getNextQuizQuestion(previousQuizQuestion, DisplayModes.Degree))
+  ).toBeFalsy()
+})
 
 // The purpose of running the same test multiple times is to try and
 // account for the randomness inherent in the function. It could avoid
