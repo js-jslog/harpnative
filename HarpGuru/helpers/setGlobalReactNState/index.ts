@@ -19,6 +19,9 @@ import { DisplayModes } from '../../types'
 import { espyGlobalTuple } from './stateInformant'
 
 export const setGlobalReactNState = (): void => {
+  const { globalTuple } = espyGlobalTuple()
+  if (globalTuple[0].activeHarpStrata !== undefined) return
+
   const [initialApparatusId] = getApparatusIds()
   const [initialPozitionId] = getPozitionIds()
   const [initialPitchId] = getPitchIds()
@@ -31,16 +34,13 @@ export const setGlobalReactNState = (): void => {
     activeIds: initialActiveIds,
   }
   const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
-  const { Explore: explore } = ExperienceModes
-
-  const { globalTuple } = espyGlobalTuple()
-  if (globalTuple[0].activeHarpStrata !== undefined) return
-
+  const { Explore: initialExperienceMode } = ExperienceModes
   const { Degree: initialDisplayMode } = DisplayModes
+
   const state = {
     activeHarpStrata: initialHarpStrata,
     quizQuestion: getNextQuizQuestion(PitchIds.A, initialDisplayMode),
-    activeExperienceMode: explore,
+    activeExperienceMode: initialExperienceMode,
     activeDisplayMode: initialDisplayMode,
   }
   setGlobal(state)
