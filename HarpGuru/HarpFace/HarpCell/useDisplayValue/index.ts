@@ -1,8 +1,8 @@
 import { useGlobal } from 'reactn'
 
+import { usePositionAnalysis } from '../usePositionAnalysis'
 import type { YXCoord } from '../types'
-import {analysePosition} from '../analysePosition'
-import {DisplayModes} from '../../../types'
+import { DisplayModes } from '../../../types'
 
 type DisplayValueTuple =
   | [string, string]
@@ -10,13 +10,9 @@ type DisplayValueTuple =
   | [undefined, undefined]
 
 export const useDisplayValue = (yxCoord: YXCoord): DisplayValueTuple => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
 
-  const analysePositionProps = {
-    yxCoord, activeHarpStrata, activeDisplayMode
-  }
-  const positionFacts = analysePosition(analysePositionProps)
+  const positionFacts = usePositionAnalysis(yxCoord)
   const { thisDegree, thisPitch } = positionFacts
   const { id: degreeId } = thisDegree || { id: undefined }
   const { id: pitchId } = thisPitch || { id: undefined }
