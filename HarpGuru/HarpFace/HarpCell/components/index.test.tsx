@@ -4,8 +4,8 @@ import { PitchIds, DegreeIds } from 'harpstrata'
 import { render, fireEvent } from '@testing-library/react-native'
 
 import {
-  inactiveCellsHarpFaceProps,
-  activeCellsHarpFaceProps,
+  inactiveCellsHarpStrata,
+  activeCellsHarpStrata,
 } from '../../testResources'
 import { DisplayModes } from '../../../types'
 import { ExperienceModes } from '../../../helpers/setGlobalReactNState'
@@ -17,8 +17,7 @@ const mockUseGlobal = useGlobal as jest.Mock
 
 test('A component is rendered with the Degree or Pitch value in its text view depending on the DisplayMode selected', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata')
-      return [inactiveCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
@@ -31,8 +30,7 @@ test('A component is rendered with the Degree or Pitch value in its text view de
 
   expect(getByText(DegreeIds.Second)).toBeTruthy()
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata')
-      return [inactiveCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Pitch]
@@ -46,8 +44,7 @@ test('A component is rendered with the Degree or Pitch value in its text view de
 
 test('A component is rendered with an a11y role of button', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata')
-      return [inactiveCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
@@ -63,8 +60,7 @@ test('A component is rendered with an a11y role of button', () => {
 
 test('A component is rendered without an a11y role of button if it has no content', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata')
-      return [inactiveCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
@@ -81,7 +77,7 @@ test('A component is rendered without an a11y role of button if it has no conten
 test.skip('A press of the componenet results in toggled active ids in the harpstrata passed to the paramaterised setter', () => {
   const setActiveHarpStrata = jest.fn()
   const harpCellProps = {
-    ...inactiveCellsHarpFaceProps,
+    activeHarpStrata: inactiveCellsHarpStrata,
     activeDisplayMode: DisplayModes.Degree,
     setActiveHarpStrata,
     yxCoord: [3, 0] as [3, 0],
@@ -113,8 +109,7 @@ test.skip('A press of the componenet results in toggled active ids in the harpst
 
 test('A snapshot of a populated cell', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata')
-      return [inactiveCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
@@ -130,8 +125,7 @@ test('A snapshot of a populated cell', () => {
 
 test('A snapshot of an active cell', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata')
-      return [activeCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeHarpStrata') return [activeCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
@@ -147,8 +141,7 @@ test('A snapshot of an active cell', () => {
 
 test('A snapshot of an empty cell', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata')
-      return [inactiveCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
@@ -164,8 +157,7 @@ test('A snapshot of an empty cell', () => {
 
 test('A snapshot of an inactive cell in Explore mode', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata')
-      return [inactiveCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
@@ -183,8 +175,7 @@ test('A snapshot of an inactive cell in Explore mode', () => {
 // the contents of the cells should be hidden in Quiz mode.
 test('A snapshot of an inactive cell in Quiz mode', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata')
-      return [inactiveCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Quiz]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
