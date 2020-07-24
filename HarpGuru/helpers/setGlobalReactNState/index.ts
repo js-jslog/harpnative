@@ -38,9 +38,6 @@ export const setGlobalReactNState = (): void => {
 
   const state = {
     activeHarpStrata: initialHarpStrata,
-    // TODO: the display mode here should be determined by the actual
-    // app display mode. The best time to fix this will be when the display
-    // mode is actually set here in global state.
     quizQuestion: getNextQuizQuestion(PitchIds.A, DisplayModes.Pitch),
     activeExperienceMode: explore,
   }
