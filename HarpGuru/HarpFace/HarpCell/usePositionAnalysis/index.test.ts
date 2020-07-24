@@ -1,5 +1,5 @@
 import { useGlobal } from 'reactn'
-import type { Degree, IsActiveIds, Pitch, Interaction } from 'harpstrata'
+import type { Degree, IsActiveIds, Pitch } from 'harpstrata'
 
 import type { YXCoord } from '../types'
 import { inactiveCellsHarpStrata as activeHarpStrata } from '../../testResources'
@@ -21,37 +21,20 @@ const {
     isActiveMatrix: [, , , [, , , y3x3IsActive]],
   },
 } = activeHarpStrata
-const {
-  apparatus: {
-    interactionMatrix: [, , , [, , , y3x3Interaction]],
-  },
-} = activeHarpStrata
 
 const ourDegree = <Degree>y3x3Degree
 const ourPitch = <Pitch>y3x3Pitch
 const ourIsActive = <IsActiveIds>y3x3IsActive
-const ourInteraction = <Interaction>y3x3Interaction
 
-test('thisDegree, thisPitch, thisInteraction, & thisIsActive provide the degree, pitch, interaction and isActive at this position', () => {
+test('thisIsActive provide the isActive at this position', () => {
   const ourCoord: YXCoord = [3, 3]
-  const {
-    thisDegree,
-    thisPitch,
-    thisInteraction,
-    thisIsActive,
-  } = usePositionAnalysis(ourCoord)
-  expect(thisDegree).toBe(ourDegree)
-  expect(thisPitch).toBe(ourPitch)
-  expect(thisInteraction).toBe(ourInteraction)
+  const { thisIsActive } = usePositionAnalysis(ourCoord)
   expect(thisIsActive).toBe(ourIsActive)
 })
 
 test('thisDegreeId returns an id when available and undefined otherwise', () => {
   const ourCoord: YXCoord = [3, 3]
-  const {
-    thisDegreeId,
-    thisPitchId,
-  } = usePositionAnalysis(ourCoord)
+  const { thisDegreeId, thisPitchId } = usePositionAnalysis(ourCoord)
   expect(ourDegree).not.toBe(undefined)
   expect(ourDegree.id).toBeTruthy()
   expect(thisDegreeId).toBe(ourDegree.id)

@@ -31,7 +31,6 @@ export const HarpCell = ({ yxCoord }: Props): React.ReactElement => {
 
   const quizAnswerGiven = useDispatch('quizAnswerGiven')
 
-
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {

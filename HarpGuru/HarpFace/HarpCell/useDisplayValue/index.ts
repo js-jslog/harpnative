@@ -13,17 +13,15 @@ export const useDisplayValue = (yxCoord: YXCoord): DisplayValueTuple => {
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
 
   const positionFacts = usePositionAnalysis(yxCoord)
-  const { thisDegree, thisPitch } = positionFacts
-  const { id: degreeId } = thisDegree || { id: undefined }
-  const { id: pitchId } = thisPitch || { id: undefined }
+  const { thisDegreeId, thisPitchId } = positionFacts
 
-  if (degreeId === undefined || pitchId === undefined)
+  if (thisDegreeId === undefined || thisPitchId === undefined)
     return [undefined, undefined]
 
   const [note, ...modifiers] =
     activeDisplayMode === DisplayModes.Degree
-      ? degreeId.split('')
-      : pitchId.split('')
+      ? thisDegreeId.split('')
+      : thisPitchId.split('')
 
   return [note, modifiers.join('')]
 }
