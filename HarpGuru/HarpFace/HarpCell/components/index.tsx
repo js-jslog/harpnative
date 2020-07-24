@@ -8,38 +8,29 @@ import {
 import { Text, View } from 'react-native'
 import React from 'react'
 
+import { useStyles } from '../useStyles'
+import { usePositionAnalysis } from '../usePositionAnalysis'
 import { useDisplayValue } from '../useDisplayValue'
 import { HarpCellProps } from '../types'
 import { toggleDegreeIdInHarpStrata } from '../toggleDegreeIdInHarpStrata'
-import { getStyles } from '../styles'
 import { setPozitionRootAtCell } from '../setPozitionRootAtCell'
 import { ensureCellIsActive } from '../ensureCellIsActive'
-import { analysePosition } from '../analysePosition'
 import { ExperienceModes } from '../../../helpers/setGlobalReactNState'
 
-export const HarpCell = (props: HarpCellProps): React.ReactElement => {
+export const HarpCell = ({yxCoord}: HarpCellProps): React.ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [quizQuestion] = useGlobal('quizQuestion')
-  const harpCellProps = {
-    ...props,
-    activeHarpStrata,
-    setActiveHarpStrata,
-    activeExperienceMode,
-    activeDisplayMode,
-  }
-  const positionFacts = analysePosition(harpCellProps)
+  const positionFacts = usePositionAnalysis(yxCoord)
+  const displayValue = useDisplayValue(yxCoord)
+  const styles = useStyles(yxCoord)
+
+  const quizAnswerGiven = useDispatch('quizAnswerGiven')
+
   const { thisDegree, thisPitch } = positionFacts
   const { id: degreeId } = thisDegree || { id: undefined }
   const { id: pitchId } = thisPitch || { id: undefined }
 
-  const quizAnswerGiven = useDispatch('quizAnswerGiven')
-
-  const { yxCoord } = props
-  const displayValue = useDisplayValue(yxCoord)
-
-  const styles = getStyles(harpCellProps)
 
   const handleTapStateChange = ({
     nativeEvent,
