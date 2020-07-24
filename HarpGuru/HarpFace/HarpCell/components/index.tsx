@@ -11,13 +11,17 @@ import React from 'react'
 import { useStyles } from '../useStyles'
 import { usePositionAnalysis } from '../usePositionAnalysis'
 import { useDisplayValue } from '../useDisplayValue'
-import { HarpCellProps } from '../types'
+import { YXCoord } from '../types'
 import { toggleDegreeIdInHarpStrata } from '../toggleDegreeIdInHarpStrata'
 import { setPozitionRootAtCell } from '../setPozitionRootAtCell'
 import { ensureCellIsActive } from '../ensureCellIsActive'
 import { ExperienceModes } from '../../../helpers/setGlobalReactNState'
 
-export const HarpCell = ({yxCoord}: HarpCellProps): React.ReactElement => {
+type Props = {
+  readonly yxCoord: YXCoord
+}
+
+export const HarpCell = ({ yxCoord }: Props): React.ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const [quizQuestion] = useGlobal('quizQuestion')
@@ -30,7 +34,6 @@ export const HarpCell = ({yxCoord}: HarpCellProps): React.ReactElement => {
   const { thisDegree, thisPitch } = positionFacts
   const { id: degreeId } = thisDegree || { id: undefined }
   const { id: pitchId } = thisPitch || { id: undefined }
-
 
   const handleTapStateChange = ({
     nativeEvent,
