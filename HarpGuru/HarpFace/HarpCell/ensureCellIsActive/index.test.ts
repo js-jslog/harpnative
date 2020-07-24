@@ -53,3 +53,24 @@ test('that a harpstrata with an active cell will remain the same when given its 
 
   expect(actualHarpStrata).toStrictEqual(activeCellsHarpStrata)
 })
+
+test('that a harpstrata with a deactivated cell will have that cell activated when given its pitch', () => {
+  const expectedHarpStrata = getHarpStrata({...inactiveCellsHarpStrataProps, activeIds: [PitchIds.F]})
+  const props = {
+    harpStrata: inactiveCellsHarpStrata,
+    cellId: PitchIds.F,
+  }
+  const actualHarpStrata = ensureCellIsActive(props)
+
+  expect(actualHarpStrata).toStrictEqual(expectedHarpStrata)
+})
+
+test('that a harpstrata with an active cell will remain the same when given its pitch', () => {
+  const props = {
+    harpStrata: activeCellsHarpStrata,
+    cellId: PitchIds.G,
+  }
+  const actualHarpStrata = ensureCellIsActive(props)
+
+  expect(actualHarpStrata).toStrictEqual(activeCellsHarpStrata)
+})
