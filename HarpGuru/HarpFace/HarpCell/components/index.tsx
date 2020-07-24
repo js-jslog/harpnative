@@ -23,6 +23,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
     ...props,
     activeHarpStrata,
     setActiveHarpStrata,
+    activeExperienceMode,
   }
   const positionFacts = analysePosition(harpCellProps)
   const { thisDegree, thisPitch } = positionFacts
