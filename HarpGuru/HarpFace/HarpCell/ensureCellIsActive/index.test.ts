@@ -43,3 +43,13 @@ test('that a harpstrata with a deactivated cell will have that cell activated wh
 
   expect(actualHarpStrata).toStrictEqual(expectedHarpStrata)
 })
+
+test('that a harpstrata with an active cell will remain the same when given its degree', () => {
+  const props = {
+    harpStrata: activeCellsHarpStrata,
+    cellId: DegreeIds.Third,
+  }
+  const actualHarpStrata = ensureCellIsActive(props)
+
+  expect(actualHarpStrata).toStrictEqual(activeCellsHarpStrata)
+})
