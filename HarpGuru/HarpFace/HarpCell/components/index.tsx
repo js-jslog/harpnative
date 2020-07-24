@@ -25,25 +25,22 @@ export const HarpCell = ({ yxCoord }: Props): React.ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const [quizQuestion] = useGlobal('quizQuestion')
-  const positionFacts = usePositionAnalysis(yxCoord)
+  const { thisDegreeId, thisPitchId } = usePositionAnalysis(yxCoord)
   const displayValue = useDisplayValue(yxCoord)
   const styles = useStyles(yxCoord)
 
   const quizAnswerGiven = useDispatch('quizAnswerGiven')
 
-  const { thisDegree, thisPitch } = positionFacts
-  const { id: degreeId } = thisDegree || { id: undefined }
-  const { id: pitchId } = thisPitch || { id: undefined }
 
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
     if (nativeEvent.state !== State.END) return
-    if (degreeId === undefined) return
+    if (thisDegreeId === undefined) return
 
     const withUserSelectionUpdated = toggleDegreeIdInHarpStrata(
       activeHarpStrata,
-      degreeId
+      thisDegreeId
     )
     setActiveHarpStrata(withUserSelectionUpdated)
     if (activeExperienceMode === ExperienceModes.Quiz) {
@@ -61,9 +58,9 @@ export const HarpCell = ({ yxCoord }: Props): React.ReactElement => {
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
     if (nativeEvent.state !== State.ACTIVE) return
-    if (pitchId === undefined) return
+    if (thisPitchId === undefined) return
 
-    setActiveHarpStrata(setPozitionRootAtCell(activeHarpStrata, pitchId))
+    setActiveHarpStrata(setPozitionRootAtCell(activeHarpStrata, thisPitchId))
   }
 
   const accessibleContent = (
@@ -84,7 +81,7 @@ export const HarpCell = ({ yxCoord }: Props): React.ReactElement => {
   )
 
   const content =
-    thisDegree === undefined ? inAccessibleContent : accessibleContent
+    thisDegreeId === undefined ? inAccessibleContent : accessibleContent
 
   return content
 }
