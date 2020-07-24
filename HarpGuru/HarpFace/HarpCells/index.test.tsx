@@ -4,12 +4,21 @@ import { render } from '@testing-library/react-native'
 
 import { harpFaceProps } from '../testResources'
 import type { HarpRowProps } from '../HarpRow'
+import { DisplayModes } from '../../types'
+import { ExperienceModes } from '../../helpers/setGlobalReactNState'
 
 import { getHarpCells } from './index'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
-mockUseGlobal.mockReturnValue([harpFaceProps.activeHarpStrata])
+mockUseGlobal.mockImplementation((stateItem: string) => {
+  if (stateItem === 'activeHarpStrata')
+    return [harpFaceProps.activeHarpStrata, jest.fn()]
+  if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+  if (stateItem === 'quizQuestion') return [DegreeIds.Root]
+  if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+  return undefined
+})
 
 test('getHarpCells returns an array of HarpCells, the length of the range supplied', () => {
   const harpRowProps: HarpRowProps = {

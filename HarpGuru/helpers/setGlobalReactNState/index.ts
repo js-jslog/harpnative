@@ -40,6 +40,7 @@ export const setGlobalReactNState = (): void => {
     activeHarpStrata: initialHarpStrata,
     quizQuestion: getNextQuizQuestion(PitchIds.A, DisplayModes.Pitch),
     activeExperienceMode: explore,
+    activeDisplayMode: DisplayModes.Degree,
   }
   setGlobal(state)
 }

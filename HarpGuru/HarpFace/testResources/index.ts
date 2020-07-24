@@ -7,8 +7,6 @@ import {
 } from 'harpstrata'
 import type { HarpStrata, HarpStrataProps, ActiveIds } from 'harpstrata'
 
-import { DisplayModes } from '../../types'
-
 const allActiveDegrees = [
   DegreeIds.Root,
   DegreeIds.Flat2,
@@ -23,7 +21,6 @@ const allActiveDegrees = [
   DegreeIds.Flat7,
   DegreeIds.Seventh,
 ]
-const { Degree: activeDisplayMode } = DisplayModes
 // TODO: If I add a jest.fn() here rather than this nonesense function
 // the gradle build fails. I need to figure out to make the testResources
 // folders ignored in the build
@@ -46,14 +43,13 @@ const activeCellsHarpStrataProps = {
 const inactiveCellsHarpStrata = getHarpStrata(inactiveCellsHarpStrataProps)
 const activeCellsHarpStrata = getHarpStrata(activeCellsHarpStrataProps)
 
+// TODO: I think these can probably be remove too
 export const inactiveCellsHarpFaceProps = {
   activeHarpStrata: inactiveCellsHarpStrata,
-  activeDisplayMode,
   setActiveHarpStrata,
 }
 export const activeCellsHarpFaceProps = {
   activeHarpStrata: activeCellsHarpStrata,
-  activeDisplayMode,
   setActiveHarpStrata,
 }
 export const harpFaceProps = inactiveCellsHarpFaceProps

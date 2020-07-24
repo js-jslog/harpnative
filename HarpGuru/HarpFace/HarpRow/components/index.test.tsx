@@ -5,12 +5,20 @@ import { DegreeIds } from 'harpstrata'
 import { render } from '@testing-library/react-native'
 
 import { harpFaceProps } from '../../testResources'
+import { DisplayModes } from '../../../types'
+import { ExperienceModes } from '../../../helpers/setGlobalReactNState'
 
 import { HarpRow } from './index'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
-mockUseGlobal.mockReturnValue([harpFaceProps.activeHarpStrata])
+mockUseGlobal.mockImplementation((stateItem: string) => {
+  if (stateItem === 'activeHarpStrata') return [harpFaceProps.activeHarpStrata]
+  if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+  if (stateItem === 'quizQuestion') return [DegreeIds.Root]
+  if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+  return undefined
+})
 
 test('The first 3 holes of a blow row from a major diatonic harmonica can be rendered', () => {
   const { getByText } = render(
