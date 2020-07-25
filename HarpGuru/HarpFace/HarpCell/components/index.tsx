@@ -15,7 +15,6 @@ import { useDisplayValue } from '../useDisplayValue'
 import { YXCoord } from '../types'
 import { toggleDegreeIdInHarpStrata } from '../toggleDegreeIdInHarpStrata'
 import { setPozitionRootAtCell } from '../setPozitionRootAtCell'
-import { ensureCellIsActive } from '../ensureCellIsActive'
 import { ExperienceModes } from '../../../helpers/setGlobalReactNState'
 import { usePrevious } from '../../../helpers'
 
@@ -35,19 +34,34 @@ export const HarpCell = ({ yxCoord }: Props): React.ReactElement => {
   const previousIsActiveId = usePrevious(thisIsActiveId, IsActiveIds.Inactive)
 
   const requestNextQuestion = useDispatch('requestNextQuestion')
+  const revealAnswer = useDispatch('revealAnswer')
 
   useEffect(() => {
     if (
       thisIsActiveId === IsActiveIds.Active &&
-      previousIsActiveId === IsActiveIds.Inactive
+      previousIsActiveId === IsActiveIds.Inactive &&
+      activeExperienceMode === ExperienceModes.Quiz
     ) {
-      const timer = setTimeout(() => {
+      const revealTimer = setTimeout(() => {
         // TODO: why does the test fail if I don't test for
         // requestNextQuestion first? Is it just because I
         // haven't mocked that global reducer in the test?
-        if (requestNextQuestion) requestNextQuestion()
-      }, 1000)
-      return () => clearTimeout(timer)
+        if (revealAnswer) {
+          revealAnswer()
+        }
+      }, 200)
+      const nextQuestionTimer = setTimeout(() => {
+        // TODO: why does the test fail if I don't test for
+        // requestNextQuestion first? Is it just because I
+        // haven't mocked that global reducer in the test?
+        if (requestNextQuestion) {
+          requestNextQuestion()
+        }
+      }, 1500)
+      return () => {
+        clearTimeout(revealTimer)
+        clearTimeout(nextQuestionTimer)
+      }
     }
     return undefined
   }, [quizQuestion, thisIsActiveId])
@@ -63,14 +77,6 @@ export const HarpCell = ({ yxCoord }: Props): React.ReactElement => {
       thisDegreeId
     )
     setActiveHarpStrata(withUserSelectionUpdated)
-    if (activeExperienceMode === ExperienceModes.Quiz) {
-      setActiveHarpStrata(
-        ensureCellIsActive({
-          harpStrata: withUserSelectionUpdated,
-          cellId: quizQuestion,
-        })
-      )
-    }
   }
 
   const handleLongPressStateChange = ({
