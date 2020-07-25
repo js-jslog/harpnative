@@ -2,7 +2,7 @@ import { useGlobal } from 'reactn'
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
-import { ExperienceModes } from '../../../../helpers/setGlobalReactNState'
+import { ExperienceModes } from '../../../../types'
 
 import { ExperienceModeOption } from './index'
 

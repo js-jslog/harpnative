@@ -4,7 +4,7 @@ import { IsActiveIds } from 'harpstrata'
 
 import { usePositionAnalysis } from '../usePositionAnalysis'
 import { HarpCellStyles, YXCoord } from '../types'
-import { ExperienceModes } from '../../../helpers/setGlobalReactNState'
+import { ExperienceModes } from '../../../types'
 import { themeSizes, themeColors } from '../../../Theme'
 
 const {

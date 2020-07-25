@@ -12,9 +12,8 @@ import {
 } from 'harpstrata'
 import { act } from '@testing-library/react-native'
 
-import { espyGlobalTuple } from './stateInformant'
-
-import { setGlobalReactNState } from './index'
+import { espyGlobalTuple } from './state-informant'
+import { setGlobalState } from './set-global-state'
 
 const [initialApparatusId] = getApparatusIds()
 const [initialPozitionId] = getPozitionIds()
@@ -30,7 +29,7 @@ const harpStrataProps: HarpStrataProps = {
 const harpStrata: HarpStrata = getHarpStrata(harpStrataProps)
 
 test('that the global state is defined', () => {
-  setGlobalReactNState()
+  setGlobalState()
   const { globalTuple } = espyGlobalTuple()
   const [global] = globalTuple
   expect(global.activeHarpStrata.isActiveComplex.activePitchIds.length).toBe(0)
@@ -41,7 +40,7 @@ test('that the global state is not redefined if it already exists', () => {
   act(() => {
     setGlobal(preexistingState)
   })
-  setGlobalReactNState()
+  setGlobalState()
   const { globalTuple } = espyGlobalTuple()
   const [global] = globalTuple
   expect(global.activeHarpStrata.isActiveComplex.activePitchIds.length).toBe(1)

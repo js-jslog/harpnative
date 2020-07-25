@@ -1,9 +1,9 @@
 import { useGlobal, useDispatch } from 'reactn'
 import { useEffect } from 'react'
 
-import { MenuStates } from '../useSwipeMenus'
-import { ExperienceModes } from '../../helpers/setGlobalReactNState'
-import { usePrevious } from '../../helpers'
+import { ExperienceModes } from '../../../../types/'
+import { MenuStates } from '../../../../types'
+import { usePrevious } from '../../../../helpers'
 
 export const useQuizCycle = (menuState: MenuStates): void => {
   const previousMenuState = usePrevious(menuState, menuState)

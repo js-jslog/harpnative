@@ -5,8 +5,7 @@ import { DegreeIds } from 'harpstrata'
 import { render } from '@testing-library/react-native'
 
 import { inactiveCellsHarpStrata } from '../testResources'
-import { DisplayModes } from '../../types'
-import { ExperienceModes } from '../../helpers/setGlobalReactNState'
+import { DisplayModes, ExperienceModes } from '../../types'
 
 import { HarpFace } from './index'
 

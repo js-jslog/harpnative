@@ -1,9 +1,7 @@
 import 'reactn'
 import type { HarpStrata } from 'harpstrata'
 
-import type { ExperienceModes } from './helpers/setGlobalReactNState'
-
-import type { DisplayModes } from './types'
+import type { DisplayModes, ExperienceModes } from './types'
 
 // All of the `dispatch: any` lines in here are
 // required because of a typescript complaint

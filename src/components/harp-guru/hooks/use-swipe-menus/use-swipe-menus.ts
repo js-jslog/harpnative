@@ -3,13 +3,8 @@ import { State } from 'react-native-gesture-handler'
 import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler'
 import { useState } from 'react'
 
-import { usePrevious } from '../../helpers'
-
-export enum MenuStates {
-  LayoutMenu,
-  CovariantMenu,
-  NoMenu,
-}
+import { MenuStates } from '../../../../types'
+import { usePrevious } from '../../../../helpers'
 
 type HandleSwipe = (arg0: PanGestureHandlerGestureEvent) => void
 

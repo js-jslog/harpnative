@@ -1,4 +1,4 @@
-import { ExperienceModes } from '../../../../helpers/setGlobalReactNState'
+import { ExperienceModes } from '../../../../types'
 
 import { nudgeExperienceMode } from './index'
 

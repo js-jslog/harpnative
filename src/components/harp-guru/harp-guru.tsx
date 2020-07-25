@@ -5,21 +5,21 @@ import { View } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
-import { styles } from '../styles'
-import { setGlobalReactNState, setGlobalReactNReducers } from '../helpers'
-import { themeSizes } from '../Theme'
+import { setGlobalState, setGlobalReducers } from '../../utils'
+import { MenuStates } from '../../types'
+import { themeSizes } from '../../Theme'
 import {
   HomeScreen,
   CovariantMenuScreen,
   LayoutMenuScreen,
   QuizQuestionScreen,
-} from '../Screens'
+} from '../../Screens'
 
-import { useSwipeMenus, MenuStates } from './useSwipeMenus'
-import { useQuizCycle } from './useQuizCycle'
+import { useSwipeMenus, useQuizCycle } from './hooks'
+import { styles } from './harp-guru-styles'
 
-setGlobalReactNState()
-setGlobalReactNReducers()
+setGlobalState()
+setGlobalReducers()
 
 const { 8: swipeThreshold } = themeSizes
 

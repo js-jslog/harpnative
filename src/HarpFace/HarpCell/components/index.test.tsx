@@ -7,8 +7,7 @@ import {
   inactiveCellsHarpStrata,
   activeCellsHarpStrata,
 } from '../../testResources'
-import { DisplayModes } from '../../../types'
-import { ExperienceModes } from '../../../helpers/setGlobalReactNState'
+import { DisplayModes, ExperienceModes } from '../../../types'
 
 import { HarpCell } from './index'
 

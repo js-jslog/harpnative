@@ -8,17 +8,12 @@ import {
 } from 'harpstrata'
 import type { ActiveIds, HarpStrataProps, HarpStrata } from 'harpstrata'
 
-export enum ExperienceModes {
-  Explore = 'EXPLORE',
-  Quiz = 'QUIZ',
-}
+import { DisplayModes, ExperienceModes } from '../../types'
+import { getNextQuizQuestion } from '../../helpers'
 
-import { getNextQuizQuestion } from '../getNextQuizQuestion'
-import { DisplayModes } from '../../types'
+import { espyGlobalTuple } from './state-informant'
 
-import { espyGlobalTuple } from './stateInformant'
-
-export const setGlobalReactNState = (): void => {
+export const setGlobalState = (): void => {
   const { globalTuple } = espyGlobalTuple()
   if (globalTuple[0].activeHarpStrata !== undefined) return
 
@@ -45,5 +40,3 @@ export const setGlobalReactNState = (): void => {
   }
   setGlobal(state)
 }
-
-export type SetActiveHarpStrata = (arg0: HarpStrata) => void

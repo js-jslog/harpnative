@@ -1,4 +1,4 @@
-import { ExperienceModes } from '../../../../helpers/setGlobalReactNState'
+import { ExperienceModes } from '../../../../types'
 
 type Props = {
   readonly activeExperienceMode: ExperienceModes

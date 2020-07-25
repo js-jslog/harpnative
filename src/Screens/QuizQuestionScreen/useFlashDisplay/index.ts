@@ -1,7 +1,7 @@
 import { useGlobal } from 'reactn'
 import { useEffect, useState } from 'react'
 
-import { ExperienceModes } from '../../../helpers/setGlobalReactNState'
+import { ExperienceModes } from '../../../types'
 
 export const useFlashDisplay = (screenFree: boolean): boolean => {
   const [displayPeriod, setDisplayPeriod] = useState<boolean>(true)

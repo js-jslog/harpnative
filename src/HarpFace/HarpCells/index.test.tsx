@@ -4,8 +4,7 @@ import { render } from '@testing-library/react-native'
 
 import { inactiveCellsHarpStrata } from '../testResources'
 import type { HarpRowProps } from '../HarpRow'
-import { DisplayModes } from '../../types'
-import { ExperienceModes } from '../../helpers/setGlobalReactNState'
+import { DisplayModes, ExperienceModes } from '../../types'
 
 import { getHarpCells } from './index'
 

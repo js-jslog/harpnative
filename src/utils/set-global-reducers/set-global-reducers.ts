@@ -2,12 +2,14 @@ import type { State } from 'reactn/default'
 import { addReducer } from 'reactn'
 import { getHarpStrata } from 'harpstrata'
 
-import { getPropsForHarpStrata } from '../getPropsForHarpStrata'
-import { getNextQuizQuestion } from '../getNextQuizQuestion'
-import { activateHarpCell } from '../activateHarpCell'
 import { DisplayModes } from '../../types'
+import {
+  getPropsForHarpStrata,
+  getNextQuizQuestion,
+  activateHarpCell,
+} from '../../helpers'
 
-export const setGlobalReactNReducers = (): void => {
+export const setGlobalReducers = (): void => {
   addReducer('requestNextQuestion', (global: State) => {
     const { activeHarpStrata, quizQuestion, activeDisplayMode } = global
     const nextQuizQuestion = getNextQuizQuestion(

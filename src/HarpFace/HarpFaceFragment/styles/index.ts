@@ -5,7 +5,7 @@ import type { HarpFaceFragmentProps, HarpFaceFragmentStyles } from '../types'
 import { getFragmentFacts } from '../getFragmentFacts'
 import { columnWidth, rowHeight } from '../../styles'
 import { getHarpFaceFacts } from '../../helpers'
-import type { SetActiveHarpStrata } from '../../../helpers'
+import type { SetActiveHarpStrata } from '../../../types'
 
 type Props = HarpFaceFragmentProps & {
   readonly activeHarpStrata: HarpStrata
