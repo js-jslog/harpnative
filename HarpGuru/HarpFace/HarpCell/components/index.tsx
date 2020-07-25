@@ -45,8 +45,8 @@ export const HarpCell = ({ yxCoord }: Props): React.ReactElement => {
         // TODO: why does the test fail if I don't test for
         // requestNextQuestion first? Is it just because I
         // haven't mocked that global reducer in the test?
-        if (requestNextQuestion) requestNextQuestion(), 1000
-      })
+        if (requestNextQuestion) requestNextQuestion()
+      }, 1000)
       return () => clearTimeout(timer)
     }
     return undefined
