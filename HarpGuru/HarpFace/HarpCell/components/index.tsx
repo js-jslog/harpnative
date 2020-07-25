@@ -1,4 +1,4 @@
-import { useGlobal, useDispatch } from 'reactn'
+import { useGlobal } from 'reactn'
 import {
   TapGestureHandler,
   TapGestureHandlerStateChangeEvent,
@@ -6,8 +6,7 @@ import {
   LongPressGestureHandler,
 } from 'react-native-gesture-handler'
 import { Text, View } from 'react-native'
-import React, { useEffect } from 'react'
-import { IsActiveIds } from 'harpstrata'
+import React from 'react'
 
 import { useStyles } from '../useStyles'
 import { useQuizCycle } from '../useQuizCycle'
