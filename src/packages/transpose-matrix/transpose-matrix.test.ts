@@ -1,4 +1,4 @@
-import { transposeMatrix } from './index'
+import { transposeMatrix } from './transpose-matrix'
 
 test('transposes a sinlge row to a column and back again', () => {
   const singleRow = [[1, 2, 3, 4, 5, 6]]

@@ -3,9 +3,9 @@ import type { HarpStrata } from 'harpstrata'
 
 import type { HarpFaceFragmentProps, HarpFaceFragmentStyles } from '../types'
 import { getFragmentFacts } from '../getFragmentFacts'
-import { columnWidth, rowHeight } from '../../styles'
-import { getHarpFaceFacts } from '../../helpers'
+import { getHarpFaceFacts } from '../../../utils'
 import type { SetActiveHarpStrata } from '../../../types'
+import { columnWidth, rowHeight } from '../../../styles'
 
 type Props = HarpFaceFragmentProps & {
   readonly activeHarpStrata: HarpStrata

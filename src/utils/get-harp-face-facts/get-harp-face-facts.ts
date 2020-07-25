@@ -1,9 +1,10 @@
 import type { DegreeMatrix, HarpStrata } from 'harpstrata'
 
-import { transposeMatrix } from '../transposeMatrix'
-import { getOctaveColumnGroups } from '../getOctaveColumnGroups'
-import type { ColumnRanges } from '../getOctaveColumnGroups'
-import { arrayHasRoot } from '../arrayHasRoot'
+import { transposeMatrix } from '../../packages/transpose-matrix'
+
+import { getOctaveColumnGroups } from './get-octave-column-groups'
+import type { ColumnRanges } from './get-octave-column-groups'
+import { arrayHasRoot } from './array-has-root'
 
 type HarpFaceFacts = {
   readonly rowCount: number

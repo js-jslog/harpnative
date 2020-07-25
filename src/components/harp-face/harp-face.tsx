@@ -2,9 +2,10 @@ import { useGlobal } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
 
-import { getStyles } from '../styles'
-import { getHarpFaceFacts } from '../helpers'
-import { HarpFaceFragment } from '../HarpFaceFragment'
+import { getHarpFaceFacts } from '../../utils'
+import { HarpFaceFragment } from '../../HarpFace/HarpFaceFragment'
+
+import { getStyles } from './harp-face-styles'
 
 export const HarpFace = (): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')

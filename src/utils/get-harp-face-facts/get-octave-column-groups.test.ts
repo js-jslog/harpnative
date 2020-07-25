@@ -1,4 +1,4 @@
-import { getOctaveColumnGroups } from './index'
+import { getOctaveColumnGroups } from './get-octave-column-groups'
 
 test('groups column indexes for a simple root columns mask', () => {
   const hasRootArray = [true, false, false, true, false, false]

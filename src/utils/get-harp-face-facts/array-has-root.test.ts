@@ -1,6 +1,6 @@
 import { DegreeIds } from 'harpstrata'
 
-import { arrayHasRoot } from './index'
+import { arrayHasRoot } from './array-has-root'
 
 test('Reduce a single row matrix to identify whether it contains any roots', () => {
   const degreeMatrix = [

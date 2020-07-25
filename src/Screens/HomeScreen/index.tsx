@@ -1,8 +1,8 @@
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
 
+import { HarpFace } from '../../components/harp-face'
 import { themeColors } from '../../Theme'
-import { HarpFace } from '../../HarpFace'
 
 const { pageColor } = themeColors
 

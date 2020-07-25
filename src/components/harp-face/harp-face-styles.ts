@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 import type { HarpStrata } from 'harpstrata'
 
-import { getHarpFaceFacts } from '../helpers'
+import { getHarpFaceFacts } from '../../utils'
 import { themeSizes } from '../../Theme'
 
 type HarpFaceStyles = {
