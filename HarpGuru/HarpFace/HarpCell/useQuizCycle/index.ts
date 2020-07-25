@@ -22,20 +22,10 @@ export const useQuizCycle = (yxCoord: YXCoord): void => {
       activeExperienceMode === ExperienceModes.Quiz
     ) {
       const revealTimer = setTimeout(() => {
-        // TODO: why does the test fail if I don't test for
-        // requestNextQuestion first? Is it just because I
-        // haven't mocked that global reducer in the test?
-        if (revealAnswer) {
-          revealAnswer()
-        }
+        revealAnswer()
       }, 200)
       const nextQuestionTimer = setTimeout(() => {
-        // TODO: why does the test fail if I don't test for
-        // requestNextQuestion first? Is it just because I
-        // haven't mocked that global reducer in the test?
-        if (requestNextQuestion) {
-          requestNextQuestion()
-        }
+        requestNextQuestion()
       }, 1500)
       return () => {
         clearTimeout(revealTimer)
