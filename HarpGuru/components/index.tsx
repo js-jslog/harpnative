@@ -20,7 +20,7 @@ import {
   getPropsForHarpStrata,
   getNextQuizQuestion,
   setGlobalReactNState,
-  activateHarpCell
+  activateHarpCell,
 } from '../helpers'
 import { themeSizes } from '../Theme'
 import {

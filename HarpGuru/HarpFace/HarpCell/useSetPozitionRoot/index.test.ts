@@ -15,7 +15,6 @@ import { useSetPozitionRoot } from './index'
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
 
-
 const baseHarpStrataProps: HarpStrataProps = {
   apparatusId: ApparatusIds.MajorDiatonic,
   pozitionId: PozitionIds.First,
@@ -38,7 +37,6 @@ export const cHarpSecondPozHarpStrata: HarpStrata = getHarpStrata(
 
 const setActiveHarpStrata = jest.fn()
 mockUseGlobal.mockReturnValue([keyCHarpStrata, setActiveHarpStrata])
-
 
 test('The function returns a harpstrata with the pozition shifted to meet the root pitch requirement', () => {
   const { G: newRootPitchId } = PitchIds
