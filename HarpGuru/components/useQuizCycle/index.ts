@@ -1,9 +1,6 @@
 import { useGlobal, useDispatch } from 'reactn'
 import { useEffect } from 'react'
 
-// TODO: I don't think I should be importing from a
-// hooks file. The enum probably needs to be defined
-// elsewhere.
 import { MenuStates } from '../useSwipeMenus'
 import { ExperienceModes } from '../../helpers/setGlobalReactNState'
 import { usePrevious } from '../../helpers'
