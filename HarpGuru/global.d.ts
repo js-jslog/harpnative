@@ -18,9 +18,7 @@ declare module 'reactn/default' {
     requestNextQuestion: (
       global: State
     ) => Pick<State, 'quizQuestion' | 'activeHarpStrata'>
-    revealAnswer: (
-      global: State
-    ) => Pick<State, 'activeHarpStrata'>
+    revealAnswer: (global: State) => Pick<State, 'activeHarpStrata'>
   }
 
   export interface State {

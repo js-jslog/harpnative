@@ -28,7 +28,7 @@ import {
   LayoutMenuScreen,
   QuizQuestionScreen,
 } from '../Screens'
-import {ensureCellIsActive} from '../HarpFace/HarpCell/ensureCellIsActive'
+import { ensureCellIsActive } from '../HarpFace/HarpCell/ensureCellIsActive'
 
 setGlobalReactNState()
 
@@ -53,10 +53,10 @@ addReducer('revealAnswer', (global: GlobalState) => {
   const { activeHarpStrata, quizQuestion } = global
   const props = {
     harpStrata: activeHarpStrata,
-    cellId: quizQuestion
+    cellId: quizQuestion,
   }
   return {
-    activeHarpStrata: ensureCellIsActive(props)
+    activeHarpStrata: ensureCellIsActive(props),
   }
 })
 
