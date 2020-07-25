@@ -5,9 +5,9 @@ import type { HarpStrata } from 'harpstrata'
 import { HarpRows } from '../types'
 import { mapRowToBlowDrawIds } from '../mapRowToBlowDrawIds'
 import { HarpRow } from '../../HarpRow'
-import type { HarpFaceFragmentProps } from '../../HarpFaceFragment'
+import type { HarpRowProps } from '../../HarpRow'
 
-type Props = HarpFaceFragmentProps & {
+type Props = Pick<HarpRowProps, 'xRange'> & {
   readonly activeHarpStrata: HarpStrata
 }
 

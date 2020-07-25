@@ -2,8 +2,8 @@ import { useGlobal } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
 
+import { HarpFaceFragment } from '../harp-face-fragment'
 import { getHarpFaceFacts } from '../../utils'
-import { HarpFaceFragment } from '../../HarpFace/HarpFaceFragment'
 
 import { getStyles } from './harp-face-styles'
 

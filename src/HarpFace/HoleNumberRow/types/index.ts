@@ -1,8 +1,8 @@
 import type { ViewStyle } from 'react-native'
 
-import type { HarpFaceFragmentProps } from '../../HarpFaceFragment'
+import type { HarpRowProps } from '../../HarpRow'
 
-export type HoleNumberRowProps = Pick<HarpFaceFragmentProps, 'xRange'>
+export type HoleNumberRowProps = Pick<HarpRowProps, 'xRange'>
 
 export type HoleNumberRowStyles = {
   readonly row: ViewStyle
