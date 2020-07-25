@@ -8,12 +8,12 @@ import {
 import { Text, View } from 'react-native'
 import React from 'react'
 
+import { useToggleHarpCell } from '../useToggleHarpCell'
 import { useStyles } from '../useStyles'
 import { useQuizCycle } from '../useQuizCycle'
 import { usePositionAnalysis } from '../usePositionAnalysis'
 import { useDisplayValue } from '../useDisplayValue'
 import { YXCoord } from '../types'
-import { toggleDegreeIdInHarpStrata } from '../toggleDegreeIdInHarpStrata'
 import { setPozitionRootAtCell } from '../setPozitionRootAtCell'
 
 type Props = {
@@ -22,6 +22,7 @@ type Props = {
 
 export const HarpCell = ({ yxCoord }: Props): React.ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
+  const toggleHarpCell = useToggleHarpCell()
   const { thisDegreeId, thisPitchId } = usePositionAnalysis(yxCoord)
   const displayValue = useDisplayValue(yxCoord)
   const styles = useStyles(yxCoord)
@@ -32,13 +33,8 @@ export const HarpCell = ({ yxCoord }: Props): React.ReactElement => {
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
     if (nativeEvent.state !== State.END) return
-    if (thisDegreeId === undefined) return
 
-    const withUserSelectionUpdated = toggleDegreeIdInHarpStrata(
-      activeHarpStrata,
-      thisDegreeId
-    )
-    setActiveHarpStrata(withUserSelectionUpdated)
+    toggleHarpCell(thisDegreeId)
   }
 
   const handleLongPressStateChange = ({
