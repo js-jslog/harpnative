@@ -1,5 +1,6 @@
 import { useEffect } from 'reactn'
 import { State } from 'react-native-gesture-handler'
+import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler'
 import { useState } from 'react'
 
 import { usePrevious } from '../../helpers'
@@ -10,9 +11,9 @@ export enum MenuStates {
   NoMenu,
 }
 
-type SetGestureStates = (arg0: State, arg1: number) => void
+type HandleSwipe = (arg0: PanGestureHandlerGestureEvent) => void
 
-export const useSwipeMenus = (): [MenuStates, SetGestureStates] => {
+export const useSwipeMenus = (): [MenuStates, HandleSwipe] => {
   const [panState, setPanState] = useState<State>(State.UNDETERMINED)
   const [menuState, setMenuState] = useState<MenuStates>(MenuStates.NoMenu)
   const [translationX, setTranslationX] = useState<number>(0)
@@ -34,9 +35,9 @@ export const useSwipeMenus = (): [MenuStates, SetGestureStates] => {
     }
   }, [panState])
 
-  const setGestureStates = (panState: State, translationX: number): void => {
-    setPanState(panState)
-    setTranslationX(translationX)
+  const handleSwipe = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
+    setPanState(nativeEvent.state)
+    setTranslationX(nativeEvent.translationX)
   }
-  return [menuState, setGestureStates]
+  return [menuState, handleSwipe]
 }

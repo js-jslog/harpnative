@@ -2,10 +2,7 @@ import 'react-native-gesture-handler'
 
 import type { State as GlobalState } from 'reactn/default'
 import { addReducer } from 'reactn'
-import {
-  PanGestureHandler,
-  PanGestureHandlerGestureEvent,
-} from 'react-native-gesture-handler'
+import { PanGestureHandler } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
@@ -63,23 +60,9 @@ addReducer('revealAnswer', (global: GlobalState) => {
 const { 8: swipeThreshold } = themeSizes
 
 export const HarpGuru = (): ReactElement => {
-  const [menuState, setGestureStates] = useSwipeMenus()
+  const [menuState, handleSwipe] = useSwipeMenus()
 
   useQuizCycle(menuState)
-
-  const covariantMenuScreenProps = {
-    onScreen: menuState === MenuStates.CovariantMenu,
-  }
-  const layoutMenuScreenProps = {
-    onScreen: menuState === MenuStates.LayoutMenu,
-  }
-  const quizQuestionScreenProps = {
-    screenFree: menuState === MenuStates.NoMenu,
-  }
-
-  const handleSwipe = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
-    setGestureStates(nativeEvent.state, nativeEvent.translationX)
-  }
 
   return (
     <PanGestureHandler
@@ -88,9 +71,11 @@ export const HarpGuru = (): ReactElement => {
     >
       <View style={styles.overlay}>
         <HomeScreen />
-        <CovariantMenuScreen {...covariantMenuScreenProps} />
-        <LayoutMenuScreen {...layoutMenuScreenProps} />
-        <QuizQuestionScreen {...quizQuestionScreenProps} />
+        <CovariantMenuScreen
+          onScreen={menuState === MenuStates.CovariantMenu}
+        />
+        <LayoutMenuScreen onScreen={menuState === MenuStates.LayoutMenu} />
+        <QuizQuestionScreen screenFree={menuState === MenuStates.NoMenu} />
       </View>
     </PanGestureHandler>
   )
