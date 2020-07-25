@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler'
 
 import type { State as GlobalState } from 'reactn/default'
-import { addReducer, useDispatch, useGlobal } from 'reactn'
+import { addReducer } from 'reactn'
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
@@ -13,13 +13,11 @@ import { getHarpStrata } from 'harpstrata'
 
 import { DisplayModes } from '../types'
 import { styles } from '../styles'
-import { ExperienceModes } from '../helpers/setGlobalReactNState'
 import {
   getPropsForHarpStrata,
   getNextQuizQuestion,
   setGlobalReactNState,
   activateHarpCell,
-  usePrevious,
 } from '../helpers'
 import { themeSizes } from '../Theme'
 import {
@@ -30,6 +28,7 @@ import {
 } from '../Screens'
 
 import { useSwipeMenus, MenuStates } from './useSwipeMenus'
+import { useQuizCycle } from './useQuizCycle'
 
 setGlobalReactNState()
 
@@ -65,10 +64,8 @@ const { 8: swipeThreshold } = themeSizes
 
 export const HarpGuru = (): ReactElement => {
   const [menuState, setGestureStates] = useSwipeMenus()
-  const previousMenuState = usePrevious(menuState, menuState)
 
-  const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const requestNextQuestion = useDispatch('requestNextQuestion')
+  useQuizCycle(menuState)
 
   const covariantMenuScreenProps = {
     onScreen: menuState === MenuStates.CovariantMenu,
@@ -83,13 +80,6 @@ export const HarpGuru = (): ReactElement => {
   const handleSwipe = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
     setGestureStates(nativeEvent.state, nativeEvent.translationX)
   }
-
-  if (
-    menuState === MenuStates.NoMenu &&
-    previousMenuState !== MenuStates.NoMenu &&
-    activeExperienceMode === ExperienceModes.Quiz
-  )
-    requestNextQuestion()
 
   return (
     <PanGestureHandler
