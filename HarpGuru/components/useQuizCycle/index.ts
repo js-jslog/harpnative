@@ -18,16 +18,28 @@ export const useQuizCycle = (menuState: MenuStates): void => {
   } = activeHarpStrata
   const answerGiven = activeDegreeIds.length > 0
 
+  const isQuizMode = (): boolean => {
+    return activeExperienceMode === ExperienceModes.Quiz
+  }
+
+  const menuOnScreen = (): boolean => {
+    return menuState !== MenuStates.NoMenu
+  }
+
   const screenBecomesFree = (): boolean => {
-    return menuState === MenuStates.NoMenu && previousMenuState !== menuState
+    return (
+      menuState === MenuStates.NoMenu &&
+      previousMenuState !== menuState &&
+      activeExperienceMode === ExperienceModes.Quiz
+    )
   }
 
   const quizAnswerHasBeenGiven = (): boolean => {
-    return answerGiven && activeExperienceMode === ExperienceModes.Quiz
+    return answerGiven
   }
 
   const deadlineReached = (): boolean => {
-    return activeExperienceMode === ExperienceModes.Quiz
+    return true
   }
 
   type CancelEffect = () => void
@@ -53,6 +65,8 @@ export const useQuizCycle = (menuState: MenuStates): void => {
   }
 
   useEffect(() => {
+    if (!isQuizMode()) return
+    if (menuOnScreen()) return
     if (screenBecomesFree()) {
       requestNextQuestion()
     }
