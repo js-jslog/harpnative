@@ -5,10 +5,9 @@ import { addReducer, useDispatch, useGlobal } from 'reactn'
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
-  State,
 } from 'react-native-gesture-handler'
 import { View } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 import type { ReactElement } from 'react'
 import { getHarpStrata } from 'harpstrata'
 
@@ -16,11 +15,11 @@ import { DisplayModes } from '../types'
 import { styles } from '../styles'
 import { ExperienceModes } from '../helpers/setGlobalReactNState'
 import {
-  usePrevious,
   getPropsForHarpStrata,
   getNextQuizQuestion,
   setGlobalReactNState,
   activateHarpCell,
+  usePrevious,
 } from '../helpers'
 import { themeSizes } from '../Theme'
 import {
@@ -29,6 +28,8 @@ import {
   LayoutMenuScreen,
   QuizQuestionScreen,
 } from '../Screens'
+
+import { useSwipeMenus, MenuStates } from './useSwipeMenus'
 
 setGlobalReactNState()
 
@@ -62,21 +63,12 @@ addReducer('revealAnswer', (global: GlobalState) => {
 
 const { 8: swipeThreshold } = themeSizes
 
-enum MenuStates {
-  LayoutMenu,
-  CovariantMenu,
-  NoMenu,
-}
-
 export const HarpGuru = (): ReactElement => {
+  const [menuState, setGestureStates] = useSwipeMenus()
+  const previousMenuState = usePrevious(menuState, menuState)
+
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const requestNextQuestion = useDispatch('requestNextQuestion')
-
-  const [panState, setPanState] = useState<State>(State.UNDETERMINED)
-  const [menuState, setMenuState] = useState<MenuStates>(MenuStates.NoMenu)
-  const [translationX, setTranslationX] = useState<number>(0)
-  const previousPanState = usePrevious(panState, State.UNDETERMINED)
-  const previousMenuState = usePrevious(menuState, MenuStates.NoMenu)
 
   const covariantMenuScreenProps = {
     onScreen: menuState === MenuStates.CovariantMenu,
@@ -89,22 +81,7 @@ export const HarpGuru = (): ReactElement => {
   }
 
   const handleSwipe = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
-    setPanState(nativeEvent.state)
-    setTranslationX(nativeEvent.translationX)
-  }
-
-  if (panState === State.END && previousPanState === State.ACTIVE) {
-    if (menuState === MenuStates.NoMenu && translationX < 0) {
-      setMenuState(MenuStates.LayoutMenu)
-    } else if (menuState === MenuStates.NoMenu && translationX > 0) {
-      setMenuState(MenuStates.CovariantMenu)
-    } else if (menuState === MenuStates.CovariantMenu && translationX < 0) {
-      setMenuState(MenuStates.NoMenu)
-    } else if (menuState === MenuStates.LayoutMenu && translationX > 0) {
-      setMenuState(MenuStates.NoMenu)
-    }
-    setPanState(State.UNDETERMINED)
-    setTranslationX(0)
+    setGestureStates(nativeEvent.state, nativeEvent.translationX)
   }
 
   if (
