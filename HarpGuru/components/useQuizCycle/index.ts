@@ -13,38 +13,28 @@ export const useQuizCycle = (menuState: MenuStates): void => {
   const requestNextQuestion = useDispatch('requestNextQuestion')
   const revealAnswer = useDispatch('revealAnswer')
 
+  const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
+
+  const isMenuVisible = menuState !== MenuStates.NoMenu
+
+  const screenBecameFree =
+    menuState === MenuStates.NoMenu &&
+    previousMenuState !== menuState &&
+    activeExperienceMode === ExperienceModes.Quiz
+
   const {
     isActiveComplex: { activeDegreeIds },
   } = activeHarpStrata
+
   const answerGiven = activeDegreeIds.length > 0
-
-  const isQuizMode = (): boolean => {
-    return activeExperienceMode === ExperienceModes.Quiz
-  }
-
-  const menuOnScreen = (): boolean => {
-    return menuState !== MenuStates.NoMenu
-  }
-
-  const screenBecomesFree = (): boolean => {
-    return (
-      menuState === MenuStates.NoMenu &&
-      previousMenuState !== menuState &&
-      activeExperienceMode === ExperienceModes.Quiz
-    )
-  }
-
-  const quizAnswerHasBeenGiven = (): boolean => {
-    return answerGiven
-  }
-
-  const deadlineReached = (): boolean => {
-    return true
-  }
 
   type CancelEffect = () => void
 
-  const requestQuestionBeforeDeadline = (): CancelEffect => {
+  const immmediatelyRequestQuestion = (): void => {
+    requestNextQuestion()
+  }
+
+  const requestQuestionAheadOfDeadline = (): CancelEffect => {
     const revealTimer = setTimeout(() => {
       revealAnswer()
     }, 200)
@@ -65,17 +55,10 @@ export const useQuizCycle = (menuState: MenuStates): void => {
   }
 
   useEffect(() => {
-    if (!isQuizMode()) return
-    if (menuOnScreen()) return
-    if (screenBecomesFree()) {
-      requestNextQuestion()
-    }
-    if (quizAnswerHasBeenGiven()) {
-      return requestQuestionBeforeDeadline()
-    }
-    if (deadlineReached()) {
-      return setNextQuestionDeadline()
-    }
-    return
-  }, [quizQuestion, activeExperienceMode, menuState, answerGiven])
+    if (!isQuizMode) return
+    if (isMenuVisible) return
+    if (screenBecameFree) return immmediatelyRequestQuestion()
+    if (answerGiven) return requestQuestionAheadOfDeadline()
+    return setNextQuestionDeadline()
+  }, [quizQuestion, screenBecameFree, answerGiven])
 }
