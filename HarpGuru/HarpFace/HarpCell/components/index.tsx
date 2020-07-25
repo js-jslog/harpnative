@@ -1,4 +1,3 @@
-import { useGlobal } from 'reactn'
 import {
   TapGestureHandler,
   TapGestureHandlerStateChangeEvent,
@@ -10,19 +9,19 @@ import React from 'react'
 
 import { useToggleHarpCell } from '../useToggleHarpCell'
 import { useStyles } from '../useStyles'
+import { useSetPozitionRoot } from '../useSetPozitionRoot'
 import { useQuizCycle } from '../useQuizCycle'
 import { usePositionAnalysis } from '../usePositionAnalysis'
 import { useDisplayValue } from '../useDisplayValue'
 import { YXCoord } from '../types'
-import { setPozitionRootAtCell } from '../setPozitionRootAtCell'
 
 type Props = {
   readonly yxCoord: YXCoord
 }
 
 export const HarpCell = ({ yxCoord }: Props): React.ReactElement => {
-  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const toggleHarpCell = useToggleHarpCell()
+  const setPozitionRoot = useSetPozitionRoot()
   const { thisDegreeId, thisPitchId } = usePositionAnalysis(yxCoord)
   const displayValue = useDisplayValue(yxCoord)
   const styles = useStyles(yxCoord)
@@ -41,9 +40,8 @@ export const HarpCell = ({ yxCoord }: Props): React.ReactElement => {
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
     if (nativeEvent.state !== State.ACTIVE) return
-    if (thisPitchId === undefined) return
 
-    setActiveHarpStrata(setPozitionRootAtCell(activeHarpStrata, thisPitchId))
+    setPozitionRoot(thisPitchId)
   }
 
   const accessibleContent = (
