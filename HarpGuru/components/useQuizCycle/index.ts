@@ -13,30 +13,54 @@ export const useQuizCycle = (menuState: MenuStates): void => {
   const requestNextQuestion = useDispatch('requestNextQuestion')
   const revealAnswer = useDispatch('revealAnswer')
 
-  const { isActiveComplex: {activeDegreeIds} } = activeHarpStrata
-  const answerGiven = (activeDegreeIds.length > 0)
+  const {
+    isActiveComplex: { activeDegreeIds },
+  } = activeHarpStrata
+  const answerGiven = activeDegreeIds.length > 0
+
+  const screenBecomesFree = (): boolean => {
+    return menuState === MenuStates.NoMenu && previousMenuState !== menuState
+  }
+
+  const quizAnswerHasBeenGiven = (): boolean => {
+    return answerGiven && activeExperienceMode === ExperienceModes.Quiz
+  }
+
+  const deadlineReached = (): boolean => {
+    return activeExperienceMode === ExperienceModes.Quiz
+  }
+
+  type CancelEffect = () => void
+
+  const requestQuestionBeforeDeadline = (): CancelEffect => {
+    const revealTimer = setTimeout(() => {
+      revealAnswer()
+    }, 200)
+    const nextQuestionTimer = setTimeout(() => {
+      requestNextQuestion()
+    }, 1500)
+    return () => {
+      clearTimeout(revealTimer)
+      clearTimeout(nextQuestionTimer)
+    }
+  }
+
+  const setNextQuestionDeadline = (): CancelEffect => {
+    const nextQuestionTimer = setTimeout(() => {
+      requestNextQuestion()
+    }, 5000)
+    return () => clearTimeout(nextQuestionTimer)
+  }
 
   useEffect(() => {
-    if (menuState === MenuStates.NoMenu && previousMenuState !== menuState) {
+    if (screenBecomesFree()) {
       requestNextQuestion()
     }
-    if (answerGiven && activeExperienceMode === ExperienceModes.Quiz) {
-      const revealTimer = setTimeout(() => {
-        revealAnswer()
-      }, 200)
-      const nextQuestionTimer = setTimeout(() => {
-        requestNextQuestion()
-      }, 1500)
-      return () => {
-        clearTimeout(revealTimer)
-        clearTimeout(nextQuestionTimer)
-      }
+    if (quizAnswerHasBeenGiven()) {
+      return requestQuestionBeforeDeadline()
     }
-    if (activeExperienceMode === ExperienceModes.Quiz) {
-      const nextQuestionTimer = setTimeout(() => {
-        requestNextQuestion()
-      }, 5000)
-      return () => clearTimeout(nextQuestionTimer)
+    if (deadlineReached()) {
+      return setNextQuestionDeadline()
     }
     return
   }, [quizQuestion, activeExperienceMode, menuState, answerGiven])
