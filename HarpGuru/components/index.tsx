@@ -20,6 +20,7 @@ import {
   getPropsForHarpStrata,
   getNextQuizQuestion,
   setGlobalReactNState,
+  activateHarpCell
 } from '../helpers'
 import { themeSizes } from '../Theme'
 import {
@@ -28,7 +29,6 @@ import {
   LayoutMenuScreen,
   QuizQuestionScreen,
 } from '../Screens'
-import { ensureCellIsActive } from '../HarpFace/HarpCell/ensureCellIsActive'
 
 setGlobalReactNState()
 
@@ -56,7 +56,7 @@ addReducer('revealAnswer', (global: GlobalState) => {
     cellId: quizQuestion,
   }
   return {
-    activeHarpStrata: ensureCellIsActive(props),
+    activeHarpStrata: activateHarpCell(props),
   }
 })
 
