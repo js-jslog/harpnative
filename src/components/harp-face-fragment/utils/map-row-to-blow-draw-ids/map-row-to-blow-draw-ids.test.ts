@@ -1,8 +1,8 @@
 import { InteractionIds } from 'harpstrata'
 
-import { inactiveCellsHarpStrata } from '../../testResources'
+import { inactiveCellsHarpStrata } from '../../../../test-resources'
 
-import { mapRowToBlowDrawIds } from './index'
+import { mapRowToBlowDrawIds } from './map-row-to-blow-draw-ids'
 
 const { Blow, Draw } = InteractionIds
 

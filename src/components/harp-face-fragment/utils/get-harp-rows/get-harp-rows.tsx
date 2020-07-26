@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { InteractionIds } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
 
-import { HarpRows } from '../types'
-import { mapRowToBlowDrawIds } from '../mapRowToBlowDrawIds'
-import { HarpRow } from '../../HarpRow'
-import type { HarpRowProps } from '../../HarpRow'
+import { mapRowToBlowDrawIds } from '../map-row-to-blow-draw-ids'
+import { HarpRow } from '../../../../HarpFace/HarpRow'
 
-type Props = Pick<HarpRowProps, 'xRange'> & {
+type Props = {
+  readonly xRange: ReadonlyArray<number>
   readonly activeHarpStrata: HarpStrata
+}
+
+type HarpRows = {
+  readonly top: ReactElement[]
+  readonly bottom: ReactElement[]
 }
 
 export const getHarpRows = (props: Props): HarpRows => {

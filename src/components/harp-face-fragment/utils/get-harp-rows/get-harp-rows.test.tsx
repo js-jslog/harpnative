@@ -1,6 +1,6 @@
-import { inactiveCellsHarpStrata as activeHarpStrata } from '../../testResources'
+import { inactiveCellsHarpStrata as activeHarpStrata } from '../../../../test-resources'
 
-import { getHarpRows } from './index'
+import { getHarpRows } from './get-harp-rows'
 
 test('getHarpRows returns an object with the major diatonic rows split between the blow / draw holes', () => {
   const harpRowProps = {

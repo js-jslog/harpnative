@@ -5,11 +5,11 @@ import type { HarpStrata } from 'harpstrata'
 import { getHarpFaceFacts } from '../../utils'
 import type { SetActiveHarpStrata } from '../../types'
 import { columnWidth, rowHeight } from '../../styles'
-import { HarpRowProps } from '../../HarpFace/HarpRow'
 
 import { getFragmentFacts } from './utils'
 
-type Props = Pick<HarpRowProps, 'xRange'> & {
+type Props = {
+  readonly xRange: ReadonlyArray<number>
   readonly activeHarpStrata: HarpStrata
   readonly setActiveHarpStrata: SetActiveHarpStrata
 }

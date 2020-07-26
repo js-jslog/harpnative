@@ -3,9 +3,9 @@ import { View } from 'react-native'
 import React from 'react'
 
 import { HoleNumberRow } from '../hole-number-row'
-import { getHarpRows } from '../../HarpFace/HarpRows'
 import type { HarpRowProps } from '../../HarpFace/HarpRow'
 
+import { getHarpRows } from './utils'
 import { getStyles } from './harp-face-fragment-styles'
 
 type Props = Pick<HarpRowProps, 'xRange'>
