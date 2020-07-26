@@ -2,15 +2,12 @@ import React from 'react'
 import type { ReactElement } from 'react'
 
 import type { HoleNumberRowProps } from '../types'
-import { HoleNumber } from '../../HoleNumber'
-import type { HoleNumberProps } from '../../HoleNumber'
+import { HoleNumber } from '../../../components/hole-number'
 
 export const getHoleNumbers = ({
   xRange,
 }: HoleNumberRowProps): ReactElement[] => {
   return xRange.map((xCoord) => {
-    const holeNumberProps: HoleNumberProps = { xCoord }
-
-    return <HoleNumber key={xCoord} {...holeNumberProps} />
+    return <HoleNumber key={xCoord} xCoord={xCoord} />
   })
 }

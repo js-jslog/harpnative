@@ -10,8 +10,6 @@ type FragmentFacts = {
   readonly columnCount: number
 }
 
-export const getFragmentFacts = ({
-  xRange,
-}: Props): FragmentFacts => {
+export const getFragmentFacts = ({ xRange }: Props): FragmentFacts => {
   return { columnCount: xRange.length }
 }

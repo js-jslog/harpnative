@@ -18,3 +18,5 @@ export enum MenuStates {
   CovariantMenu,
   NoMenu,
 }
+
+export type Coord = number
