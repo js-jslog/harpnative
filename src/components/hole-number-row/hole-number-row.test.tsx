@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
-import { HoleNumberRow } from './index'
+import { HoleNumberRow } from './hole-number-row'
 
 test('HoleNumberRow returns a 10 hole sequence', () => {
   const { queryByText, getByText } = render(

@@ -1,6 +1,9 @@
+import type { ViewStyle } from 'react-native'
 import { StyleSheet } from 'react-native'
 
-import type { HoleNumberRowStyles } from '../types'
+type HoleNumberRowStyles = {
+  readonly row: ViewStyle
+}
 
 export const getStyles = (): HoleNumberRowStyles => {
   const styles = StyleSheet.create<HoleNumberRowStyles>({

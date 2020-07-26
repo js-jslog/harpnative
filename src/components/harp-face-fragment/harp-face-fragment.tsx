@@ -2,7 +2,7 @@ import { useGlobal } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
 
-import { HoleNumberRow } from '../../HarpFace/HoleNumberRow'
+import { HoleNumberRow } from '../hole-number-row'
 import { getHarpRows } from '../../HarpFace/HarpRows'
 import type { HarpRowProps } from '../../HarpFace/HarpRow'
 
