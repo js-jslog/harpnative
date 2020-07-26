@@ -16,6 +16,7 @@ type Props = {
   readonly activeHarpStrata: HarpStrata
 }
 
+// TODO: the props here don't need to be an object
 export const getHarpFaceFacts = (props: Props): HarpFaceFacts => {
   const {
     activeHarpStrata: { degreeMatrix },

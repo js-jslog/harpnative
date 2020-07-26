@@ -1,15 +1,22 @@
 import { StyleSheet } from 'react-native'
+import type { ViewStyle } from 'react-native'
 import type { HarpStrata } from 'harpstrata'
 
-import type { HarpRowProps, HarpRowStyles } from '../types'
-import { isBlowOrDrawRow, isBlowRow, isDrawRow } from '../isBlowOrDrawRow'
-import { themeSizes, themeColors } from '../../../Theme'
+import type { Coord } from '../../types'
+import { themeSizes, themeColors } from '../../Theme'
+
+import { isBlowOrDrawRow, isBlowRow, isDrawRow } from './utils'
 
 const { 1: borderWidth, 6: borderRadius } = themeSizes
 const { homeRowsColor, inertOutline } = themeColors
 
-type Props = Pick<HarpRowProps, 'yCoord'> & {
+type Props = {
+  readonly yCoord: Coord
   readonly activeHarpStrata: HarpStrata
+}
+
+type HarpRowStyles = {
+  readonly row: ViewStyle
 }
 
 export const getStyles = (props: Props): HarpRowStyles => {

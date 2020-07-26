@@ -1,10 +1,8 @@
 import { getFragmentFacts } from './index'
 
 test('Recovers the column count from the fragment props', () => {
-  const fragmentFactProps = {
-    xRange: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-  }
-  const fragmentFacts = getFragmentFacts(fragmentFactProps)
+  const xRange = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  const fragmentFacts = getFragmentFacts(xRange)
 
   const { columnCount } = fragmentFacts
 
@@ -12,10 +10,8 @@ test('Recovers the column count from the fragment props', () => {
 })
 
 test('Recovers the column count from a smaller fragment props', () => {
-  const fragmentFactProps = {
-    xRange: [4, 5, 6, 7],
-  }
-  const fragmentFacts = getFragmentFacts(fragmentFactProps)
+  const xRange = [4, 5, 6, 7]
+  const fragmentFacts = getFragmentFacts(xRange)
 
   const { columnCount } = fragmentFacts
 

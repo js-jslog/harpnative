@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native'
 import type { HarpStrata } from 'harpstrata'
 
 import { getHarpFaceFacts } from '../../utils'
-import type { SetActiveHarpStrata } from '../../types'
 import { columnWidth, rowHeight } from '../../styles'
 
 import { getFragmentFacts } from './utils'
@@ -11,18 +10,18 @@ import { getFragmentFacts } from './utils'
 type Props = {
   readonly xRange: ReadonlyArray<number>
   readonly activeHarpStrata: HarpStrata
-  readonly setActiveHarpStrata: SetActiveHarpStrata
 }
 
 type HarpFaceFragmentStyles = {
   readonly fragment: ViewStyle
 }
 
-export const getStyles = (props: Props): HarpFaceFragmentStyles => {
-  const { activeHarpStrata } = props
-  const { columnCount } = getFragmentFacts(props)
+export const getStyles = ({
+  activeHarpStrata,
+  xRange,
+}: Props): HarpFaceFragmentStyles => {
+  const { columnCount } = getFragmentFacts(xRange)
   const { rowCount } = getHarpFaceFacts({
-    ...props,
     activeHarpStrata,
   })
 

@@ -4,10 +4,10 @@ import React from 'react'
 import { DegreeIds } from 'harpstrata'
 import { render } from '@testing-library/react-native'
 
-import { inactiveCellsHarpStrata } from '../../testResources'
-import { DisplayModes, ExperienceModes } from '../../../types'
+import { DisplayModes, ExperienceModes } from '../../types'
+import { inactiveCellsHarpStrata } from '../../test-resources'
 
-import { HarpRow } from './index'
+import { HarpRow } from './harp-row'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock

@@ -3,7 +3,6 @@ import { DegreeIds } from 'harpstrata'
 import { render } from '@testing-library/react-native'
 
 import { inactiveCellsHarpStrata } from '../testResources'
-import type { HarpRowProps } from '../HarpRow'
 import { DisplayModes, ExperienceModes } from '../../types'
 
 import { getHarpCells } from './index'
@@ -20,7 +19,7 @@ mockUseGlobal.mockImplementation((stateItem: string) => {
 })
 
 test('getHarpCells returns an array of HarpCells, the length of the range supplied', () => {
-  const harpRowProps: HarpRowProps = {
+  const harpRowProps = {
     yCoord: 0,
     xRange: [0, 1, 2, 3, 4, 5, 6, 7, 8],
   }
@@ -30,7 +29,7 @@ test('getHarpCells returns an array of HarpCells, the length of the range suppli
 
 test('getHarpCells returns an array of HarpCells, with a sample containing the expected values', () => {
   // This test should be covering the blow row holes 2, 3 and 4 of a major diatonic tuned c harp
-  const harpRowProps: HarpRowProps = {
+  const harpRowProps = {
     yCoord: 2,
     xRange: [1, 2, 3],
   }

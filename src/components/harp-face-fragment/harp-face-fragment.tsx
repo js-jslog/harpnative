@@ -3,25 +3,23 @@ import { View } from 'react-native'
 import React from 'react'
 
 import { HoleNumberRow } from '../hole-number-row'
-import type { HarpRowProps } from '../../HarpFace/HarpRow'
 
 import { getHarpRows } from './utils'
 import { getStyles } from './harp-face-fragment-styles'
 
-type Props = Pick<HarpRowProps, 'xRange'>
+type Props = {
+  readonly xRange: ReadonlyArray<number>
+}
 
-export const HarpFaceFragment = (props: Props): React.ReactElement => {
-  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
-  const harpRows = getHarpRows({ ...props, activeHarpStrata })
-  const styles = getStyles({ ...props, activeHarpStrata, setActiveHarpStrata })
-  const holeNumberRowProps = {
-    xRange: props.xRange,
-  }
+export const HarpFaceFragment = ({ xRange }: Props): React.ReactElement => {
+  const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const harpRows = getHarpRows({ xRange, activeHarpStrata })
+  const styles = getStyles({ xRange, activeHarpStrata })
 
   return (
     <View style={styles.fragment}>
       {harpRows.top}
-      <HoleNumberRow {...holeNumberRowProps} />
+      <HoleNumberRow xRange={xRange} />
       {harpRows.bottom}
     </View>
   )

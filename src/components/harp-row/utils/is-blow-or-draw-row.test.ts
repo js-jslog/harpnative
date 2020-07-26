@@ -1,6 +1,6 @@
 import { getHarpStrata, ApparatusIds, PozitionIds, PitchIds } from 'harpstrata'
 
-import { isBlowOrDrawRow, isBlowRow, isDrawRow } from './index'
+import { isBlowOrDrawRow, isBlowRow, isDrawRow } from './is-blow-or-draw-row'
 
 const harpStrataProps = {
   apparatusId: ApparatusIds.MajorDiatonic,

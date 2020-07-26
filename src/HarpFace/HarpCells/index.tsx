@@ -1,10 +1,14 @@
 import React from 'react'
 
-import type { HarpRowProps } from '../HarpRow'
 import { HarpCell } from '../HarpCell'
-import type { YXCoord } from '../HarpCell'
+import type { Coord, YXCoord } from '../HarpCell'
 
-export const getHarpCells = (props: HarpRowProps): React.ReactElement[] => {
+type Props = {
+  readonly yCoord: Coord
+  readonly xRange: ReadonlyArray<number>
+}
+
+export const getHarpCells = (props: Props): React.ReactElement[] => {
   const { yCoord, ...harpCellPropsPart } = props
   const { xRange } = harpCellPropsPart
 

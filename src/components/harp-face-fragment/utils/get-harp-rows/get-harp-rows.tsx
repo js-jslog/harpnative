@@ -3,7 +3,7 @@ import { InteractionIds } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
 
 import { mapRowToBlowDrawIds } from '../map-row-to-blow-draw-ids'
-import { HarpRow } from '../../../../HarpFace/HarpRow'
+import { HarpRow } from '../../../harp-row'
 
 type Props = {
   readonly xRange: ReadonlyArray<number>
