@@ -4,7 +4,7 @@ import { ApparatusIds, PozitionIds, PitchIds, getHarpStrata } from 'harpstrata'
 import type { HarpStrataProps, ActiveIds } from 'harpstrata'
 import { render } from '@testing-library/react-native'
 
-import { DisplayModes, ExperienceModes } from '../../../../types'
+import { DisplayModes, ExperienceModes } from '../../types'
 
 import { LayoutMenu } from './index'
 

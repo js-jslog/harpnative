@@ -1,8 +1,8 @@
 import React from 'reactn'
 import { ReactElement } from 'react'
 
+import { QuizQuestionDisplay } from '../../components/quiz-question-display'
 import { AnimatedMenuContainer } from '../../components/animated-menu-container'
-import { QuizQuestionDisplay } from '../../Menus'
 
 import { useFlashDisplay } from './useFlashDisplay'
 

@@ -2,8 +2,8 @@ import { useGlobal } from 'reactn'
 import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
-import { MenuContainer } from '../../MenuContainer'
-import { themeSizes } from '../../../../Theme'
+import { MenuContainer } from '../menu-container'
+import { themeSizes } from '../../Theme'
 
 const styles = StyleSheet.create({
   view: {

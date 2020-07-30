@@ -6,12 +6,6 @@ import { themeSizes, themeColors } from '../../Theme'
 const { 7: variableSize, 8: titleSize } = themeSizes
 
 export const styles = StyleSheet.create({
-  // MenuContainer
-  menuContainer: {
-    ...StyleSheet.absoluteFillObject,
-    flexDirection: 'row',
-    backgroundColor: themeColors.inertOutline,
-  },
   // OptionContainer
   optionContainer: {
     flex: 1,

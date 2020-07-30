@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { MenuContainer } from '../../MenuContainer'
+import { MenuContainer } from '../menu-container'
 import {
   ApparatusOption,
   DisplayModeOption,
   ExperienceModeOption,
-} from '../../../Options'
+} from '../../Menus/Options'
 
 export const LayoutMenu = (): React.ReactElement => {
   return (

@@ -10,7 +10,7 @@ import {
 } from 'harpstrata'
 import { render } from '@testing-library/react-native'
 
-import { DisplayModes } from '../../../../types'
+import { DisplayModes } from '../../types'
 
 import { CovariantMenu } from './index'
 

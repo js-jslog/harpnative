@@ -1,8 +1,8 @@
 import React from 'react'
 import type { ReactElement } from 'react'
 
+import { LayoutMenu } from '../../components/layout-menu'
 import { AnimatedMenuContainer } from '../../components/animated-menu-container'
-import { LayoutMenu } from '../../Menus'
 
 type LayoutMenuScreenProps = {
   readonly onScreen: boolean

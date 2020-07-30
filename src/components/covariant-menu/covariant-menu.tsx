@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { MenuContainer } from '../../MenuContainer'
+import { MenuContainer } from '../menu-container'
 import {
   DisplayModeOption,
   HarpKeyOption,
   RootPitchOption,
   PozitionOption,
-} from '../../../Options'
+} from '../../Menus/Options'
 
 export const CovariantMenu = (): React.ReactElement => {
   return (
