@@ -3,8 +3,8 @@ import { View } from 'react-native'
 import React from 'react'
 
 import type { Coord } from '../../types'
-import { getHarpCells } from '../../HarpFace/HarpCells'
 
+import { getHarpCells } from './utils'
 import { getStyles } from './harp-row-styles'
 
 type Props = {
