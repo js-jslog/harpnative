@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
   animatedMenuContainer: {
     ...StyleSheet.absoluteFillObject,
     opacity: 0.5,
-  }
+  },
 })
 
 type MenuContainerProps = {
