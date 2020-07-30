@@ -1,7 +1,8 @@
 import React from 'react'
 import type { ReactElement } from 'react'
 
-import { AnimatedMenuContainer, CovariantMenu } from '../../Menus'
+import { AnimatedMenuContainer } from '../../components/animated-menu-container'
+import { CovariantMenu } from '../../Menus'
 
 type CovariantMenuScreenProps = {
   readonly onScreen: boolean

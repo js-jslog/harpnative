@@ -1,9 +1,18 @@
 import Animated from 'react-native-reanimated'
-import { Dimensions } from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
 import React from 'react'
 
-import type { MenuContainerProps } from '../types'
-import { styles } from '../../styles'
+const styles = StyleSheet.create({
+  animatedMenuContainer: {
+    ...StyleSheet.absoluteFillObject,
+    opacity: 0.5,
+  }
+})
+
+type MenuContainerProps = {
+  readonly onScreen: boolean
+  readonly children: React.ReactNode
+}
 
 export const AnimatedMenuContainer = (
   props: MenuContainerProps

@@ -2,7 +2,7 @@ import { Text } from 'react-native'
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
-import { AnimatedMenuContainer } from './index'
+import { AnimatedMenuContainer } from './animated-menu-container'
 
 test('AnimatedMenuContainer renders a component with children', () => {
   const testText = 'Test text'

@@ -6,11 +6,6 @@ import { themeSizes, themeColors } from '../../Theme'
 const { 7: variableSize, 8: titleSize } = themeSizes
 
 export const styles = StyleSheet.create({
-  // AnimatedMenuContainer
-  animatedMenuContainer: {
-    ...StyleSheet.absoluteFillObject,
-    opacity: 0.5,
-  },
   // MenuContainer
   menuContainer: {
     ...StyleSheet.absoluteFillObject,
