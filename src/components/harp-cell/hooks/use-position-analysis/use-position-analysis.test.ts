@@ -1,8 +1,8 @@
 import { useGlobal } from 'reactn'
 import type { Degree, IsActiveIds, Pitch } from 'harpstrata'
 
-import type { YXCoord } from '../types'
-import { inactiveCellsHarpStrata as activeHarpStrata } from '../../testResources'
+import type { YXCoord } from '../../harp-cell'
+import { inactiveCellsHarpStrata as activeHarpStrata } from '../../../../test-resources'
 
 import { usePositionAnalysis } from './index'
 

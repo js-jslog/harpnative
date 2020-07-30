@@ -1,7 +1,7 @@
 import { useGlobal } from 'reactn'
 import type { IsActiveIds, DegreeIds, PitchIds } from 'harpstrata'
 
-import { YXCoord } from '../types'
+import type { YXCoord } from '../../harp-cell'
 
 export type PositionFacts = {
   readonly thisDegreeId: DegreeIds | undefined

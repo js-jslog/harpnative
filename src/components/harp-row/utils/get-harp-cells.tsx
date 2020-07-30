@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { HarpCell } from '../../../HarpFace/HarpCell'
-import type { Coord, YXCoord } from '../../../HarpFace/HarpCell'
+import { HarpCell } from '../../harp-cell'
+import type { Coord, YXCoord } from '../../harp-cell'
 
 type Props = {
   readonly yCoord: Coord

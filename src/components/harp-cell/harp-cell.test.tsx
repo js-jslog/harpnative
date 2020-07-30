@@ -3,11 +3,11 @@ import React from 'react'
 import { PitchIds, DegreeIds } from 'harpstrata'
 import { render, fireEvent } from '@testing-library/react-native'
 
+import { DisplayModes, ExperienceModes } from '../../types'
 import {
   inactiveCellsHarpStrata,
   activeCellsHarpStrata,
-} from '../../testResources'
-import { DisplayModes, ExperienceModes } from '../../../types'
+} from '../../test-resources'
 
 import { HarpCell } from './index'
 

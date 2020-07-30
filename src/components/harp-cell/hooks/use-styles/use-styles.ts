@@ -2,10 +2,10 @@ import { useGlobal } from 'reactn'
 import { StyleSheet } from 'react-native'
 import { IsActiveIds } from 'harpstrata'
 
-import { usePositionAnalysis } from '../usePositionAnalysis'
-import { HarpCellStyles, YXCoord } from '../types'
-import { ExperienceModes } from '../../../types'
-import { themeSizes, themeColors } from '../../../Theme'
+import { usePositionAnalysis } from '../use-position-analysis'
+import { HarpCellStyles, YXCoord } from '../../harp-cell'
+import { ExperienceModes } from '../../../../types'
+import { themeSizes, themeColors } from '../../../../Theme'
 
 const {
   1: borderWidth,

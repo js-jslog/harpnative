@@ -1,8 +1,8 @@
 import { useGlobal } from 'reactn'
 
-import { usePositionAnalysis } from '../usePositionAnalysis'
-import type { YXCoord } from '../types'
-import { DisplayModes } from '../../../types'
+import { usePositionAnalysis } from '../use-position-analysis'
+import type { YXCoord } from '../../harp-cell'
+import { DisplayModes } from '../../../../types'
 
 type DisplayValueTuple =
   | [string, string]

@@ -1,7 +1,7 @@
 import { getHarpStrata } from 'harpstrata'
 import type { HarpStrata, HarpStrataProps, DegreeIds } from 'harpstrata'
 
-import { getToggledActiveDegreeIds } from '../getToggledActiveDegreeIds'
+import { getToggledActiveDegreeIds } from '../get-toggled-active-degree-ids'
 
 export const toggleDegreeIdInHarpStrata = (
   activeHarpStrata: HarpStrata,

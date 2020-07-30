@@ -5,14 +5,26 @@ import {
   LongPressGestureHandler,
 } from 'react-native-gesture-handler'
 import { Text, View } from 'react-native'
+import type { TextStyle, ViewStyle } from 'react-native'
 import React from 'react'
 
-import { useToggleHarpCell } from '../useToggleHarpCell'
-import { useStyles } from '../useStyles'
-import { useSetPozitionRoot } from '../useSetPozitionRoot'
-import { usePositionAnalysis } from '../usePositionAnalysis'
-import { useDisplayValue } from '../useDisplayValue'
-import { YXCoord } from '../types'
+import {
+  useToggleHarpCell,
+  useStyles,
+  useSetPozitionRoot,
+  usePositionAnalysis,
+  useDisplayValue,
+} from './hooks'
+
+export type Coord = number
+
+export type YXCoord = [Coord, Coord]
+
+export type HarpCellStyles = {
+  readonly cell: ViewStyle
+  readonly note: TextStyle
+  readonly modifier: TextStyle
+}
 
 type Props = {
   readonly yxCoord: YXCoord

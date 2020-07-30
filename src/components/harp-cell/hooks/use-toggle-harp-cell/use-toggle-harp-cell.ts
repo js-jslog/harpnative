@@ -1,7 +1,7 @@
 import { useGlobal } from 'reactn'
 import { DegreeIds } from 'harpstrata'
 
-import { toggleDegreeIdInHarpStrata } from '../toggleDegreeIdInHarpStrata'
+import { toggleDegreeIdInHarpStrata } from '../../utils'
 
 type ToggleHarpCell = (arg0: DegreeIds | undefined) => void
 
