@@ -3,7 +3,7 @@ import React from 'react'
 
 import { nudgeHarpStrataByRootPitch } from '../nudgeHarpStrataByRootPitch'
 import { partiallyApplyNudgeFunction } from '../../helpers'
-import { OptionContainer } from '../../OptionContainer'
+import { OptionContainer } from '../../../../components/option'
 
 export const RootPitchOption = (): React.ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')

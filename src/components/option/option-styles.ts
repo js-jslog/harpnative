@@ -6,7 +6,6 @@ import { themeSizes, themeColors } from '../../Theme'
 const { 7: variableSize, 8: titleSize } = themeSizes
 
 export const styles = StyleSheet.create({
-  // OptionContainer
   optionContainer: {
     flex: 1,
     flexDirection: 'column',
@@ -21,7 +20,6 @@ export const styles = StyleSheet.create({
   },
 })
 
-// Dynamic styles for OptionContainer
 export const getDynamicStyles = (
   state: State
 ): { readonly activeSwipeStyle: ViewStyle } => {

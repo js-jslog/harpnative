@@ -3,21 +3,34 @@ import {
   PanGestureHandlerGestureEvent,
   State,
 } from 'react-native-gesture-handler'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 import React, { useState } from 'react'
 
-import type { OptionContainerProps } from '../types'
-import { styles, getDynamicStyles } from '../../../styles'
-import { usePrevious } from '../../../../helpers'
-import { themeSizes } from '../../../../Theme'
+import { usePrevious } from '../../helpers'
+import { themeSizes } from '../../Theme'
 
-import { Title, Option } from './OptionContents'
+import { styles, getDynamicStyles } from './option-styles'
 
 const { 8: swipeThreshold } = themeSizes
 
-export const OptionContainer = (
-  props: OptionContainerProps
-): React.ReactElement => {
+type ChildProps = {
+  readonly children: React.ReactNode
+}
+
+const Title = ({ children }: ChildProps): React.ReactElement => {
+  return <Text style={styles.title}>{children}</Text>
+}
+const Option = ({ children }: ChildProps): React.ReactElement => {
+  return <Text style={styles.option}>{children}</Text>
+}
+
+type OptionProps = {
+  readonly title: string
+  readonly optionId: string
+  readonly nudgeFunction: (arg0: 'UP' | 'DOWN') => void
+}
+
+export const OptionContainer = (props: OptionProps): React.ReactElement => {
   const [state, setState] = useState(State.UNDETERMINED)
   const [translationY, setTranslationY] = useState(0)
   const previousState = usePrevious(state, State.UNDETERMINED)

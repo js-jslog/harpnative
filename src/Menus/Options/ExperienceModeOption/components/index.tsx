@@ -3,7 +3,7 @@ import React from 'react'
 
 import { nudgeExperienceMode } from '../nudgeExperienceMode'
 import { partiallyApplyNudgeFunction } from '../../helpers'
-import { OptionContainer } from '../../OptionContainer'
+import { OptionContainer } from '../../../../components/option'
 
 export const ExperienceModeOption = (): React.ReactElement => {
   const [activeExperienceMode, setActiveExperienceMode] = useGlobal(

@@ -3,7 +3,7 @@ import React from 'react'
 
 import { nudgeDisplayMode } from '../nudgeDisplayMode'
 import { partiallyApplyNudgeFunction } from '../../helpers'
-import { OptionContainer } from '../../OptionContainer'
+import { OptionContainer } from '../../../../components/option'
 
 export const DisplayModeOption = (): React.ReactElement => {
   const [activeDisplayMode, setActiveDisplayMode] = useGlobal(
