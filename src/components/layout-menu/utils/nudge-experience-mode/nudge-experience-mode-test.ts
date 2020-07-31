@@ -1,6 +1,6 @@
 import { ExperienceModes } from '../../../../types'
 
-import { nudgeExperienceMode } from './index'
+import { nudgeExperienceMode } from './nudge-experience-mode'
 
 test('sets the opposite explore mode when active explore mode is Quiz', () => {
   const { Quiz: activeExperienceMode } = ExperienceModes

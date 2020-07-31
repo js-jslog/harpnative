@@ -1,6 +1,6 @@
 import { ApparatusIds, PozitionIds, PitchIds, getHarpStrata } from 'harpstrata'
 
-import { nudgeHarpStrataByApparatus } from './index'
+import { nudgeHarpStrataByApparatus } from './nudge-harp-strata-by-apparatus'
 
 const baseHarpStrataProps = {
   apparatusId: ApparatusIds.MajorDiatonic,
