@@ -1,3 +1,4 @@
+import { useGlobal } from 'reactn'
 import {
   getCovariantSet,
   getHarpStrata,
@@ -6,27 +7,41 @@ import {
 } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
 
-import { DisplayModes } from '../../../../types'
+import { partiallyApplyNudgeFunction } from '../../../layout-menu/utils'
 import type { SetActiveHarpStrata } from '../../../../types'
+import { DisplayModes } from '../../../../types'
 import { getPropsForHarpStrata } from '../../../../helpers'
+
+export const useNudgeHarpStrataByHarpKey = (): ((
+  arg0: 'UP' | 'DOWN'
+) => void) => {
+  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+
+  return partiallyApplyNudgeFunction(nudgeHarpStrataByHarpKey, {
+    activeHarpStrata,
+    setActiveHarpStrata,
+    activeDisplayMode,
+  })
+}
 
 const getNextId = (rootId: PitchIds, direction: 'UP' | 'DOWN'): PitchIds => {
   if (direction === 'UP') {
     const [, nextPitchId] = getPitchIds(rootId)
     return nextPitchId
   }
-  const [previousRootPitchId] = getPitchIds(rootId).slice(-1)
-  return previousRootPitchId
+  const [previousHarpKeyId] = getPitchIds(rootId).slice(-1)
+  return previousHarpKeyId
 }
 
-type Props = {
+type PartialParams = {
   readonly activeHarpStrata: HarpStrata
   readonly setActiveHarpStrata: SetActiveHarpStrata
   readonly activeDisplayMode: DisplayModes
 }
 
-export const nudgeHarpStrataByRootPitch = (
-  partialParams: Props,
+const nudgeHarpStrataByHarpKey = (
+  partialParams: PartialParams,
   direction: 'UP' | 'DOWN'
 ): void => {
   const {
@@ -37,8 +52,8 @@ export const nudgeHarpStrataByRootPitch = (
   const { rootPitchId, harpKeyId } = activeHarpStrata
 
   const covariantGroup = getCovariantSet({
-    rootPitchId: getNextId(rootPitchId, direction),
-    harpKeyId,
+    rootPitchId,
+    harpKeyId: getNextId(harpKeyId, direction),
   })
 
   const nextHarpStrataProps = getPropsForHarpStrata(

@@ -1,8 +1,12 @@
+import { useGlobal } from 'reactn'
 import { ApparatusIds, PozitionIds, PitchIds, getHarpStrata } from 'harpstrata'
 
 import { DisplayModes } from '../../../../types'
 
-import { nudgeHarpStrataByHarpKey } from './index'
+import { useNudgeHarpStrataByHarpKey } from './use-nudge-harp-strata-by-harp-key'
+
+jest.mock('reactn')
+const mockUseGlobal = useGlobal as jest.Mock
 
 const baseHarpStrataProps = {
   apparatusId: ApparatusIds.MajorDiatonic,
@@ -23,12 +27,14 @@ const dbHarpFirstPozition = getHarpStrata(dbHarpFirstPozitionProps)
 
 test('provides incremented HarpStrata by harp key along with pozition id', () => {
   const setActiveHarpStrata = jest.fn()
-  const partialParams = {
-    activeHarpStrata: cHarpFirstPozition,
-    setActiveHarpStrata,
-    activeDisplayMode: DisplayModes.Degree,
-  }
-  nudgeHarpStrataByHarpKey(partialParams, 'UP')
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata')
+      return [cHarpFirstPozition, setActiveHarpStrata]
+    if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+    return undefined
+  })
+  const nudgeHarpStrataByHarpKey = useNudgeHarpStrataByHarpKey()
+  nudgeHarpStrataByHarpKey('UP')
 
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(
     dbHarpFirstPozition
@@ -37,12 +43,14 @@ test('provides incremented HarpStrata by harp key along with pozition id', () =>
 
 test('provides decremented HarpStrata by harp key along with pozition id', () => {
   const setActiveHarpStrata = jest.fn()
-  const partialParams = {
-    activeHarpStrata: dbHarpFirstPozition,
-    setActiveHarpStrata,
-    activeDisplayMode: DisplayModes.Degree,
-  }
-  nudgeHarpStrataByHarpKey(partialParams, 'DOWN')
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata')
+      return [dbHarpFirstPozition, setActiveHarpStrata]
+    if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+    return undefined
+  })
+  const nudgeHarpStrataByHarpKey = useNudgeHarpStrataByHarpKey()
+  nudgeHarpStrataByHarpKey('DOWN')
 
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(cHarpFirstPozition)
 })

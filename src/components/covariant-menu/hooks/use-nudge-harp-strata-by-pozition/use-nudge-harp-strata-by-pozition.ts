@@ -1,3 +1,4 @@
+import { useGlobal } from 'reactn'
 import {
   getPozitionIds,
   getCovariantSet,
@@ -6,9 +7,23 @@ import {
 } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
 
+import { partiallyApplyNudgeFunction } from '../../../layout-menu/utils'
 import { DisplayModes } from '../../../../types'
 import type { SetActiveHarpStrata } from '../../../../types'
 import { getPropsForHarpStrata } from '../../../../helpers'
+
+export const useNudgeHarpStrataByPozition = (): ((
+  arg0: 'UP' | 'DOWN'
+) => void) => {
+  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+
+  return partiallyApplyNudgeFunction(nudgeHarpStrataByPozition, {
+    activeHarpStrata,
+    setActiveHarpStrata,
+    activeDisplayMode,
+  })
+}
 
 const getNextId = (
   rootId: PozitionIds,
@@ -22,14 +37,14 @@ const getNextId = (
   return previousPozitionId
 }
 
-type Props = {
+type PartialParams = {
   readonly activeHarpStrata: HarpStrata
   readonly setActiveHarpStrata: SetActiveHarpStrata
   readonly activeDisplayMode: DisplayModes
 }
 
-export const nudgeHarpStrataByPozition = (
-  partialParams: Props,
+const nudgeHarpStrataByPozition = (
+  partialParams: PartialParams,
   direction: 'UP' | 'DOWN'
 ): void => {
   const {
