@@ -5,14 +5,10 @@ import { OptionContainer } from '../option'
 import { MenuContainer } from '../menu-container'
 import { useNudgeDisplayMode } from '../../hooks'
 
-import { useNudgeExperienceMode, useNudgeHarpStrataByApparatus } from './hooks'
+import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode } from './hooks'
 
 export const LayoutMenu = (): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const nudgeDisplayMode = useNudgeDisplayMode()
-  const nudgeExperienceMode = useNudgeExperienceMode()
   const nudgeHarpStrataByApparatus = useNudgeHarpStrataByApparatus()
   const {
     apparatus: { id: apparatusId },
@@ -22,12 +18,17 @@ export const LayoutMenu = (): React.ReactElement => {
     optionId: apparatusId,
     nudgeFunction: nudgeHarpStrataByApparatus,
   }
+
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const nudgeExperienceMode = useNudgeExperienceMode()
   const experienceModeOptionProps = {
     title: 'Experience',
     optionId: activeExperienceMode,
     nudgeFunction: nudgeExperienceMode,
   }
 
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const nudgeDisplayMode = useNudgeDisplayMode()
   const displayModeOptionProps = {
     title: 'Display',
     optionId: activeDisplayMode,

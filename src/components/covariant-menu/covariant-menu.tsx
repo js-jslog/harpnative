@@ -13,13 +13,6 @@ import {
 
 export const CovariantMenu = (): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const nudgeDisplayMode = useNudgeDisplayMode()
-  const displayModeOptionProps = {
-    title: 'Display',
-    optionId: activeDisplayMode,
-    nudgeFunction: nudgeDisplayMode,
-  }
 
   const { harpKeyId } = activeHarpStrata
   const nudgeHarpStrataByHarpKey = useNudgeHarpStrataByHarpKey()
@@ -43,6 +36,14 @@ export const CovariantMenu = (): React.ReactElement => {
     title: 'Position Key',
     optionId: rootPitchId,
     nudgeFunction: nudgeHarpStrataByRootPitch,
+  }
+
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const nudgeDisplayMode = useNudgeDisplayMode()
+  const displayModeOptionProps = {
+    title: 'Display',
+    optionId: activeDisplayMode,
+    nudgeFunction: nudgeDisplayMode,
   }
 
   return (
