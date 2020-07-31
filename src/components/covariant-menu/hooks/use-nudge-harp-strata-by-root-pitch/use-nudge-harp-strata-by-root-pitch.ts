@@ -7,7 +7,7 @@ import {
 } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
 
-import { partiallyApplyNudgeFunction } from '../../../layout-menu/utils'
+import { partiallyApplyNudgeFunction } from '../../../../utils'
 import { DisplayModes } from '../../../../types'
 import type { SetActiveHarpStrata } from '../../../../types'
 import { getPropsForHarpStrata } from '../../../../helpers'

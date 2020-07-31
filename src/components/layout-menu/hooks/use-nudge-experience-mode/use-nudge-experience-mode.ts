@@ -1,6 +1,6 @@
 import { useGlobal } from 'reactn'
 
-import { partiallyApplyNudgeFunction } from '../../utils'
+import { partiallyApplyNudgeFunction } from '../../../../utils'
 import { ExperienceModes } from '../../../../types'
 
 export const useNudgeExperienceMode = (): ((arg0: 'UP' | 'DOWN') => void) => {

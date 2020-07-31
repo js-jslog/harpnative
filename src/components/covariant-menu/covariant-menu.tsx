@@ -3,7 +3,7 @@ import React from 'react'
 
 import { OptionContainer } from '../option'
 import { MenuContainer } from '../menu-container'
-import { useNudgeDisplayMode } from '../layout-menu/hooks'
+import { useNudgeDisplayMode } from '../../hooks'
 
 import {
   useNudgeHarpStrataByHarpKey,

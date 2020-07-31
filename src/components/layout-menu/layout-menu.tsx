@@ -3,12 +3,9 @@ import React from 'react'
 
 import { OptionContainer } from '../option'
 import { MenuContainer } from '../menu-container'
+import { useNudgeDisplayMode } from '../../hooks'
 
-import {
-  useNudgeDisplayMode,
-  useNudgeExperienceMode,
-  useNudgeHarpStrataByApparatus,
-} from './hooks'
+import { useNudgeExperienceMode, useNudgeHarpStrataByApparatus } from './hooks'
 
 export const LayoutMenu = (): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')

@@ -1,7 +1,7 @@
 import { useGlobal } from 'reactn'
 
 import { partiallyApplyNudgeFunction } from '../../utils'
-import { DisplayModes } from '../../../../types'
+import { DisplayModes } from '../../types'
 
 export const useNudgeDisplayMode = (): ((arg0: 'UP' | 'DOWN') => void) => {
   const [activeDisplayMode, setActiveDisplayMode] = useGlobal(

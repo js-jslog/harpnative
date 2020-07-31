@@ -1,6 +1,6 @@
 import { useGlobal } from 'reactn'
 
-import { DisplayModes } from '../../../../types'
+import { DisplayModes } from '../../types'
 
 import { useNudgeDisplayMode } from './use-nudge-display-mode'
 
