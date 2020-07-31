@@ -5,59 +5,36 @@ import { OptionContainer } from '../option'
 import { MenuContainer } from '../menu-container'
 
 import {
-  nudgeHarpStrataByApparatus,
-  nudgeExperienceMode,
-  nudgeDisplayMode,
-  partiallyApplyNudgeFunction,
-} from './utils'
+  useNudgeDisplayMode,
+  useNudgeExperienceMode,
+  useNudgeHarpStrataByApparatus,
+} from './hooks'
 
 export const LayoutMenu = (): React.ReactElement => {
-  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
-  const [activeExperienceMode, setActiveExperienceMode] = useGlobal(
-    'activeExperienceMode'
-  )
-  const [activeDisplayMode, setActiveDisplayMode] = useGlobal(
-    'activeDisplayMode'
-  )
+  const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const nudgeDisplayMode = useNudgeDisplayMode()
+  const nudgeExperienceMode = useNudgeExperienceMode()
+  const nudgeHarpStrataByApparatus = useNudgeHarpStrataByApparatus()
   const {
     apparatus: { id: apparatusId },
   } = activeHarpStrata
-  const apparatusPartialParams = {
-    activeHarpStrata,
-    setActiveHarpStrata,
-  }
   const apparatusOptionProps = {
     title: 'Layout',
     optionId: apparatusId,
-    nudgeFunction: partiallyApplyNudgeFunction(
-      nudgeHarpStrataByApparatus,
-      apparatusPartialParams
-    ),
-  }
-  const experienceModPartialParams = {
-    activeExperienceMode,
-    setActiveExperienceMode,
+    nudgeFunction: nudgeHarpStrataByApparatus,
   }
   const experienceModeOptionProps = {
     title: 'Experience',
     optionId: activeExperienceMode,
-    nudgeFunction: partiallyApplyNudgeFunction(
-      nudgeExperienceMode,
-      experienceModPartialParams
-    ),
-  }
-  const displayModePartialParams = {
-    activeDisplayMode,
-    setActiveDisplayMode,
+    nudgeFunction: nudgeExperienceMode,
   }
 
   const displayModeOptionProps = {
     title: 'Display',
     optionId: activeDisplayMode,
-    nudgeFunction: partiallyApplyNudgeFunction(
-      nudgeDisplayMode,
-      displayModePartialParams
-    ),
+    nudgeFunction: nudgeDisplayMode,
   }
 
   return (
