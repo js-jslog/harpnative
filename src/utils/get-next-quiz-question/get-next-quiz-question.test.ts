@@ -2,7 +2,7 @@ import { PitchIds, isPitchId } from 'harpstrata'
 
 import { DisplayModes } from '../../types'
 
-import { getNextQuizQuestion } from './index'
+import { getNextQuizQuestion } from './get-next-quiz-question'
 
 test('that a degree question is chosen even if the previous question was a pitch when the display mode is degree', () => {
   const { B: previousQuizQuestion } = PitchIds

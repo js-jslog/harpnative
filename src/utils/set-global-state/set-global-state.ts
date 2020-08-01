@@ -8,8 +8,8 @@ import {
 } from 'harpstrata'
 import type { ActiveIds, HarpStrataProps, HarpStrata } from 'harpstrata'
 
+import { getNextQuizQuestion } from '../get-next-quiz-question'
 import { DisplayModes, ExperienceModes } from '../../types'
-import { getNextQuizQuestion } from '../../helpers'
 
 import { espyGlobalTuple } from './state-informant'
 

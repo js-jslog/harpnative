@@ -2,10 +2,10 @@ import type { State } from 'reactn/default'
 import { addReducer } from 'reactn'
 import { getHarpStrata } from 'harpstrata'
 
+import { getNextQuizQuestion } from '../get-next-quiz-question'
 import { DisplayModes } from '../../types'
 import {
   getPropsForHarpStrata,
-  getNextQuizQuestion,
 } from '../../helpers'
 
 import { activateHarpCell } from './utils'
