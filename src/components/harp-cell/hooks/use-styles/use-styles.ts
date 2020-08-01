@@ -5,7 +5,7 @@ import { IsActiveIds } from 'harpstrata'
 import { usePositionAnalysis } from '../use-position-analysis'
 import { HarpCellStyles, YXCoord } from '../../harp-cell'
 import { ExperienceModes } from '../../../../types'
-import { themeSizes, themeColors } from '../../../../Theme'
+import { sizes, colors } from '../../../../styles'
 
 const {
   1: borderWidth,
@@ -13,9 +13,9 @@ const {
   8: height,
   8: width,
   2: elevation,
-} = themeSizes
-const { 7: noteFontSize, 6: modifierFontSize } = themeSizes
-const { pageColor, degreeColors, inertOutline: borderColor } = themeColors
+} = sizes
+const { 7: noteFontSize, 6: modifierFontSize } = sizes
+const { pageColor, degreeColors, inertOutline: borderColor } = colors
 
 export const useStyles = (yxCoord: YXCoord): HarpCellStyles => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')

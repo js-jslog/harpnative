@@ -7,7 +7,7 @@ import type { ReactElement } from 'react'
 
 import { setGlobalState, setGlobalReducers } from '../../utils'
 import { MenuStates } from '../../types'
-import { themeSizes } from '../../Theme'
+import { sizes } from '../../styles'
 import {
   HomeScreen,
   CovariantMenuScreen,
@@ -21,7 +21,7 @@ import { styles } from './harp-guru-styles'
 setGlobalState()
 setGlobalReducers()
 
-const { 8: swipeThreshold } = themeSizes
+const { 8: swipeThreshold } = sizes
 
 export const HarpGuru = (): ReactElement => {
   const [menuState, handleSwipe] = useSwipeMenus()

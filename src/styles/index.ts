@@ -1,1 +1,1 @@
-export { columnWidth, rowHeight } from './app-styles'
+export { colors, sizes, columnWidth, rowHeight } from './styles'

@@ -6,12 +6,12 @@ import {
 import { View, Text } from 'react-native'
 import React, { useState } from 'react'
 
+import { sizes } from '../../styles'
 import { usePrevious } from '../../hooks'
-import { themeSizes } from '../../Theme'
 
 import { styles, getDynamicStyles } from './option-styles'
 
-const { 8: swipeThreshold } = themeSizes
+const { 8: swipeThreshold } = sizes
 
 type OptionProps = {
   readonly title: string

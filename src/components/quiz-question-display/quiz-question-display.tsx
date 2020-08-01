@@ -3,7 +3,7 @@ import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
 import { MenuContainer } from '../menu-container'
-import { themeSizes } from '../../Theme'
+import { sizes } from '../../styles'
 
 const styles = StyleSheet.create({
   view: {
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   question: {
-    fontSize: themeSizes['8'],
+    fontSize: sizes['8'],
   },
 })
 

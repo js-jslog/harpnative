@@ -3,12 +3,12 @@ import type { ViewStyle } from 'react-native'
 import type { HarpStrata } from 'harpstrata'
 
 import type { Coord } from '../../types'
-import { themeSizes, themeColors } from '../../Theme'
+import { sizes, colors } from '../../styles'
 
 import { isBlowOrDrawRow, isBlowRow, isDrawRow } from './utils'
 
-const { 1: borderWidth, 6: borderRadius } = themeSizes
-const { homeRowsColor, inertOutline } = themeColors
+const { 1: borderWidth, 6: borderRadius } = sizes
+const { homeRowsColor, inertOutline } = colors
 
 type Props = {
   readonly yCoord: Coord

@@ -1,13 +1,13 @@
 import { View, StyleSheet } from 'react-native'
 import React, { ReactNode, ReactElement } from 'react'
 
-import { themeColors } from '../../Theme'
+import { colors } from '../../styles'
 
 export const styles = StyleSheet.create({
   menuContainer: {
     ...StyleSheet.absoluteFillObject,
     flexDirection: 'row',
-    backgroundColor: themeColors.inertOutline,
+    backgroundColor: colors.inertOutline,
   },
 })
 

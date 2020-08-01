@@ -3,16 +3,16 @@ import type { ViewStyle } from 'react-native'
 import type { HarpStrata } from 'harpstrata'
 
 import { getHarpFaceFacts } from '../../utils'
-import { themeSizes } from '../../Theme'
+import { sizes } from '../../styles'
 
 type HarpFaceStyles = {
   readonly facewrapper: ViewStyle
   readonly face: ViewStyle
 }
 
-const { 7: boundaryWidth } = themeSizes
-export const { 9: columnWidth } = themeSizes
-export const { 9: rowHeight } = themeSizes
+const { 7: boundaryWidth } = sizes
+export const { 9: columnWidth } = sizes
+export const { 9: rowHeight } = sizes
 
 type Props = {
   readonly activeHarpStrata: HarpStrata

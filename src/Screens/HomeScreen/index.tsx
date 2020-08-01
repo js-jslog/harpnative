@@ -1,10 +1,10 @@
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
 
+import { colors } from '../../styles'
 import { HarpFace } from '../../components/harp-face'
-import { themeColors } from '../../Theme'
 
-const { pageColor } = themeColors
+const { pageColor } = colors
 
 const styles = StyleSheet.create({
   guruhome: {
