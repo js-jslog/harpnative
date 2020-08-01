@@ -6,16 +6,16 @@ import { themeSizes, themeColors } from '../../Theme'
 const { 7: variableSize, 8: titleSize } = themeSizes
 
 export const styles = StyleSheet.create({
-  optionContainer: {
+  option: {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-evenly',
   },
-  title: {
+  optionTitle: {
     fontSize: titleSize,
   },
-  option: {
+  optionValue: {
     fontSize: variableSize,
   },
 })

@@ -50,7 +50,7 @@ export const Option = (props: OptionProps): React.ReactElement => {
       activeOffsetY={[swipeThreshold * -1, swipeThreshold]}
       onHandlerStateChange={handlePozitionSwipe}
     >
-      <View style={[styles.optionContainer, dynamicStyles.activeSwipeStyle]}>
+      <View style={[styles.option, dynamicStyles.activeSwipeStyle]}>
         <OptionTitle>{title}</OptionTitle>
         <OptionValue>{optionId}</OptionValue>
       </View>
@@ -63,8 +63,8 @@ type ChildProps = {
 }
 
 const OptionTitle = ({ children }: ChildProps): React.ReactElement => {
-  return <Text style={styles.title}>{children}</Text>
+  return <Text style={styles.optionTitle}>{children}</Text>
 }
 const OptionValue = ({ children }: ChildProps): React.ReactElement => {
-  return <Text style={styles.option}>{children}</Text>
+  return <Text style={styles.optionValue}>{children}</Text>
 }
