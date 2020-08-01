@@ -6,8 +6,9 @@ import { DisplayModes } from '../../types'
 import {
   getPropsForHarpStrata,
   getNextQuizQuestion,
-  activateHarpCell,
 } from '../../helpers'
+
+import { activateHarpCell } from './utils'
 
 export const setGlobalReducers = (): void => {
   addReducer('requestNextQuestion', (global: State) => {

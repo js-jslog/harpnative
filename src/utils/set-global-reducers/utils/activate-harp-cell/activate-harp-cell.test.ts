@@ -7,7 +7,7 @@ import {
 } from 'harpstrata'
 import type { HarpStrataProps, ActiveIds } from 'harpstrata'
 
-import { activateHarpCell } from './index'
+import { activateHarpCell } from './activate-harp-cell'
 
 const allActiveDegrees = [
   DegreeIds.Root,
