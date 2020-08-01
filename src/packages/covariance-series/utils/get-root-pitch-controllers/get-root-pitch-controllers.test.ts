@@ -1,9 +1,9 @@
 import { PitchIds, PozitionIds } from 'harpstrata'
 import type { RootPitchControllers } from 'harpstrata'
 
-import { CovariantMembers } from '../types'
+import { CovariantMembers } from '../../covariance-series-types'
 
-import { getRootPitchControllers } from './index'
+import { getRootPitchControllers } from './get-root-pitch-controllers'
 
 test('getRootPitchControllers returns a RootPitchControllers for a locked harp key', () => {
   const { HarpKey: lockedType } = CovariantMembers

@@ -6,8 +6,8 @@ import {
   isPozitionId,
 } from 'harpstrata'
 
-import type { CovariancePrimer } from '../types'
-import { getCovariantControllers } from '../getCovariantControllers'
+import { getCovariantControllers } from '../get-covariant-controllers'
+import type { CovariancePrimer } from '../../covariance-series-types'
 
 export const getSeriesControllers = (
   props: CovariancePrimer

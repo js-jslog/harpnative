@@ -1,10 +1,10 @@
-import { CovariantMembers } from '../types'
+import { CovariantMembers } from './covariance-series-types'
 import type {
   CovariancePrimer,
   HarpKeyCovariancePrimer,
   PozitionCovariancePrimer,
   RootPitchCovariancePrimer,
-} from '../types'
+} from './covariance-series-types'
 
 const containsSpecificCovariantMembers = (
   covariancePrimer: CovariancePrimer,
