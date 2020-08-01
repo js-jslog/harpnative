@@ -1,7 +1,7 @@
 import { useGlobal } from 'reactn'
 import React from 'react'
 
-import { OptionContainer } from '../option'
+import { Option } from '../option'
 import { MenuContainer } from '../menu-container'
 import { useNudgeDisplayMode } from '../../hooks'
 
@@ -37,9 +37,9 @@ export const LayoutMenu = (): React.ReactElement => {
 
   return (
     <MenuContainer>
-      <OptionContainer {...apparatusOptionProps} />
-      <OptionContainer {...experienceModeOptionProps} />
-      <OptionContainer {...displayModeOptionProps} />
+      <Option {...apparatusOptionProps} />
+      <Option {...experienceModeOptionProps} />
+      <Option {...displayModeOptionProps} />
     </MenuContainer>
   )
 }

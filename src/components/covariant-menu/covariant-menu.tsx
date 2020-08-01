@@ -1,7 +1,7 @@
 import { useGlobal } from 'reactn'
 import React from 'react'
 
-import { OptionContainer } from '../option'
+import { Option } from '../option'
 import { MenuContainer } from '../menu-container'
 import { useNudgeDisplayMode } from '../../hooks'
 
@@ -48,10 +48,10 @@ export const CovariantMenu = (): React.ReactElement => {
 
   return (
     <MenuContainer>
-      <OptionContainer {...harpKeyOptionProps} />
-      <OptionContainer {...pozitionOptionProps} />
-      <OptionContainer {...rootPitchOptionProps} />
-      <OptionContainer {...displayModeOptionProps} />
+      <Option {...harpKeyOptionProps} />
+      <Option {...pozitionOptionProps} />
+      <Option {...rootPitchOptionProps} />
+      <Option {...displayModeOptionProps} />
     </MenuContainer>
   )
 }

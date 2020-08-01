@@ -1,1 +1,1 @@
-export { OptionContainer } from './option'
+export { Option } from './option'

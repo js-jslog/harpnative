@@ -20,7 +20,7 @@ type OptionProps = {
   readonly nudgeFunction: (arg0: 'UP' | 'DOWN') => void
 }
 
-export const OptionContainer = (props: OptionProps): React.ReactElement => {
+export const Option = (props: OptionProps): React.ReactElement => {
   const [state, setState] = useState(State.UNDETERMINED)
   const [translationY, setTranslationY] = useState(0)
   const previousState = usePrevious(state, State.UNDETERMINED)
