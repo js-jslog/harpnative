@@ -1,6 +1,10 @@
 import { PitchIds, PozitionIds } from 'harpstrata'
 
-import { CovarianceSeries, CovariancePrimer, CovariantMembers } from '../../covariance-series-types'
+import {
+  CovarianceSeries,
+  CovariancePrimer,
+  CovariantMembers,
+} from '../../covariance-series-types'
 
 import { getCovarianceSeries } from './index'
 

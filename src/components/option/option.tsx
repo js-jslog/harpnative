@@ -13,7 +13,6 @@ import { styles, getDynamicStyles } from './option-styles'
 
 const { 8: swipeThreshold } = themeSizes
 
-
 type OptionProps = {
   readonly title: string
   readonly optionId: string
