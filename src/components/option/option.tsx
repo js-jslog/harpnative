@@ -13,16 +13,6 @@ import { styles, getDynamicStyles } from './option-styles'
 
 const { 8: swipeThreshold } = themeSizes
 
-type ChildProps = {
-  readonly children: React.ReactNode
-}
-
-const Title = ({ children }: ChildProps): React.ReactElement => {
-  return <Text style={styles.title}>{children}</Text>
-}
-const Option = ({ children }: ChildProps): React.ReactElement => {
-  return <Text style={styles.option}>{children}</Text>
-}
 
 type OptionProps = {
   readonly title: string
@@ -61,9 +51,20 @@ export const OptionContainer = (props: OptionProps): React.ReactElement => {
       onHandlerStateChange={handlePozitionSwipe}
     >
       <View style={[styles.optionContainer, dynamicStyles.activeSwipeStyle]}>
-        <Title>{title}</Title>
-        <Option>{optionId}</Option>
+        <OptionTitle>{title}</OptionTitle>
+        <OptionValue>{optionId}</OptionValue>
       </View>
     </PanGestureHandler>
   )
+}
+
+type ChildProps = {
+  readonly children: React.ReactNode
+}
+
+const OptionTitle = ({ children }: ChildProps): React.ReactElement => {
+  return <Text style={styles.title}>{children}</Text>
+}
+const OptionValue = ({ children }: ChildProps): React.ReactElement => {
+  return <Text style={styles.option}>{children}</Text>
 }
