@@ -4,7 +4,7 @@ import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler
 import { useState } from 'react'
 
 import { MenuStates } from '../../../../types'
-import { usePrevious } from '../../../../helpers'
+import { usePrevious } from '../../../../hooks'
 
 type HandleSwipe = (arg0: PanGestureHandlerGestureEvent) => void
 

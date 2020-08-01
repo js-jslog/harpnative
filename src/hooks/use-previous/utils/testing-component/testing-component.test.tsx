@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
-import { TestingComponent } from './index'
+import { TestingComponent } from './testing-component'
 
 test('A component is rendered with its prop value displayed as well as its previous prop value', () => {
   const { getByText, rerender } = render(

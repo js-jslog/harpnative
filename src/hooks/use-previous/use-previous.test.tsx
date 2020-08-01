@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
-import { TestingComponent } from './TestingComponent'
+import { TestingComponent } from './utils'
 
 test('Use of same hook from different components results in totally isolated ref values', () => {
   const { getByText: getByText_1, rerender: rerender_1 } = render(

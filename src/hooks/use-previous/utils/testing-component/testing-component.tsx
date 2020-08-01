@@ -1,7 +1,7 @@
 import { Text } from 'react-native'
 import React from 'react'
 
-import { usePrevious } from '../index'
+import { usePrevious } from '../../use-previous'
 
 type Props = {
   readonly value: unknown

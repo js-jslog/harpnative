@@ -6,7 +6,7 @@ import {
 import { View, Text } from 'react-native'
 import React, { useState } from 'react'
 
-import { usePrevious } from '../../helpers'
+import { usePrevious } from '../../hooks'
 import { themeSizes } from '../../Theme'
 
 import { styles, getDynamicStyles } from './option-styles'

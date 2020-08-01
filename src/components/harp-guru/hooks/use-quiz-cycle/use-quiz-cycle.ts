@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 import { ExperienceModes } from '../../../../types/'
 import { MenuStates } from '../../../../types'
-import { usePrevious } from '../../../../helpers'
+import { usePrevious } from '../../../../hooks'
 
 export const useQuizCycle = (menuState: MenuStates): void => {
   const previousMenuState = usePrevious(menuState, menuState)
