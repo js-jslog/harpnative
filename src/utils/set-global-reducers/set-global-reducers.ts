@@ -3,10 +3,10 @@ import { addReducer } from 'reactn'
 import { getHarpStrata } from 'harpstrata'
 
 import { getNextQuizQuestion } from '../get-next-quiz-question'
-import { DisplayModes } from '../../types'
 import {
   getPropsForHarpStrata,
-} from '../../helpers'
+} from '../../utils'
+import { DisplayModes } from '../../types'
 
 import { activateHarpCell } from './utils'
 

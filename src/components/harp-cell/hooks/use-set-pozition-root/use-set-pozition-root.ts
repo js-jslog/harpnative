@@ -2,8 +2,8 @@ import { useGlobal } from 'reactn'
 import { getHarpStrata, getCovariantSet } from 'harpstrata'
 import type { PitchIds } from 'harpstrata'
 
+import { getPropsForHarpStrata } from '../../../../utils'
 import { DisplayModes } from '../../../../types'
-import { getPropsForHarpStrata } from '../../../../helpers'
 
 type SetPozitionRoot = (arg0: PitchIds | undefined) => void
 

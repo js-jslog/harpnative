@@ -7,10 +7,9 @@ import {
 } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
 
-import { partiallyApplyNudgeFunction } from '../../../../utils'
+import { partiallyApplyNudgeFunction, getPropsForHarpStrata } from '../../../../utils'
 import type { SetActiveHarpStrata } from '../../../../types'
 import { DisplayModes } from '../../../../types'
-import { getPropsForHarpStrata } from '../../../../helpers'
 
 export const useNudgeHarpStrataByHarpKey = (): ((
   arg0: 'UP' | 'DOWN'

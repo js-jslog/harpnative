@@ -9,7 +9,7 @@ import type { HarpStrataProps, ActiveIds, HarpStrata } from 'harpstrata'
 
 import { DisplayModes } from '../../types'
 
-import { getPropsForHarpStrata } from './index'
+import { getPropsForHarpStrata } from './get-props-for-harp-strata'
 
 const baseHarpStrataProps: HarpStrataProps = {
   apparatusId: ApparatusIds.MajorDiatonic,

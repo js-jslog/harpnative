@@ -1,8 +1,8 @@
 import { getHarpStrata, isPitchId } from 'harpstrata'
 import type { HarpStrata, DegreeIds, PitchIds } from 'harpstrata'
 
+import { getPropsForHarpStrata } from '../../../../utils'
 import { DisplayModes } from '../../../../types'
-import { getPropsForHarpStrata } from '../../../../helpers'
 
 type Props = {
   readonly harpStrata: HarpStrata
