@@ -2,8 +2,8 @@ import type { State } from 'reactn/default'
 import { addReducer } from 'reactn'
 import { getHarpStrata } from 'harpstrata'
 
+import { getPropsForHarpStrata } from '../get-props-for-harp-strata'
 import { getNextQuizQuestion } from '../get-next-quiz-question'
-import { getPropsForHarpStrata } from '../../utils'
 import { DisplayModes } from '../../types'
 
 import { activateHarpCell } from './utils'

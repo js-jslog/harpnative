@@ -1,7 +1,7 @@
 import { getHarpStrata, isPitchId } from 'harpstrata'
 import type { HarpStrata, DegreeIds, PitchIds } from 'harpstrata'
 
-import { getPropsForHarpStrata } from '../../../../utils'
+import { getPropsForHarpStrata } from '../../../get-props-for-harp-strata'
 import { DisplayModes } from '../../../../types'
 
 type Props = {
