@@ -4,8 +4,6 @@ import { useGlobal } from 'reactn'
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
-// TODO: this probably belongs higher up in a packages directory
-
 // This component is only designed to give non component contexts a
 // way to call the useGlobal hook and inspect the global state.
 export const espyGlobalTuple = (): Record<
