@@ -3,7 +3,10 @@ import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
 import { MenuContainer } from '../menu-container'
+import { AnimatedMenuContainer } from '../animated-menu-container'
 import { sizes } from '../../styles'
+
+import { useFlashDisplay } from './utils'
 
 const styles = StyleSheet.create({
   view: {
@@ -17,13 +20,22 @@ const styles = StyleSheet.create({
   },
 })
 
-export const QuizQuestionDisplay = (): React.ReactElement => {
+type QuizQuestionDisplayProps = {
+  readonly screenFree: boolean
+}
+
+export const QuizQuestionDisplay = ({
+  screenFree,
+}: QuizQuestionDisplayProps): React.ReactElement => {
   const [quizQuestion] = useGlobal('quizQuestion')
+  const shouldDisplay = useFlashDisplay(screenFree)
   return (
-    <MenuContainer>
-      <View style={styles.view}>
-        <Text style={styles.question}>{quizQuestion}</Text>
-      </View>
-    </MenuContainer>
+    <AnimatedMenuContainer onScreen={shouldDisplay}>
+      <MenuContainer>
+        <View style={styles.view}>
+          <Text style={styles.question}>{quizQuestion}</Text>
+        </View>
+      </MenuContainer>
+    </AnimatedMenuContainer>
   )
 }

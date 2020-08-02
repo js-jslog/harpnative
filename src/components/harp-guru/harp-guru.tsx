@@ -5,6 +5,7 @@ import { View } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
+import { QuizQuestionDisplay } from '../quiz-question-display'
 import { setGlobalState, setGlobalReducers } from '../../utils'
 import { MenuStates } from '../../types'
 import { sizes } from '../../styles'
@@ -12,7 +13,6 @@ import {
   HomeScreen,
   CovariantMenuScreen,
   LayoutMenuScreen,
-  QuizQuestionScreen,
 } from '../../Screens'
 
 import { useSwipeMenus, useQuizCycle } from './hooks'
@@ -39,7 +39,7 @@ export const HarpGuru = (): ReactElement => {
           onScreen={menuState === MenuStates.CovariantMenu}
         />
         <LayoutMenuScreen onScreen={menuState === MenuStates.LayoutMenu} />
-        <QuizQuestionScreen screenFree={menuState === MenuStates.NoMenu} />
+        <QuizQuestionDisplay screenFree={menuState === MenuStates.NoMenu} />
       </View>
     </PanGestureHandler>
   )
