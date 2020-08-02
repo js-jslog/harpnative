@@ -9,13 +9,13 @@ const styles = StyleSheet.create({
   },
 })
 
-type MenuContainerProps = {
+type AnimatedMenuContainerProps = {
   readonly onScreen: boolean
   readonly children: React.ReactNode
 }
 
 export const AnimatedMenuContainer = (
-  props: MenuContainerProps
+  props: AnimatedMenuContainerProps
 ): React.ReactElement => {
   const { children, onScreen } = props
 
