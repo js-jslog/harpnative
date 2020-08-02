@@ -1,6 +1,8 @@
+import { SizeScheme } from '../styles-types'
+
 const seedSize = 1.1
 
-export const sizes = {
+export const sizes: SizeScheme = {
   1: seedSize * 1,
   2: seedSize * 1.618,
   3: seedSize * 2.618,

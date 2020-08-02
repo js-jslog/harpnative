@@ -1,5 +1,7 @@
 import { DegreeIds } from 'harpstrata'
 
+import type { ColorSheme } from '../styles-types'
+
 const degreeColors = {
   [DegreeIds.Root]: '#0f9d58',
   [DegreeIds.Flat2]: '#8ac926',
@@ -20,7 +22,7 @@ const homeRowsColor = '#eee' as const
 const inertOutline = '#ddd' as const
 const holeNumbersColor = '#495057' as const
 
-export const colors = {
+export const colors: ColorSheme = {
   pageColor,
   degreeColors,
   homeRowsColor,
