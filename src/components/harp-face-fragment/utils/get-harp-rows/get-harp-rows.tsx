@@ -4,6 +4,7 @@ import type { HarpStrata } from 'harpstrata'
 
 import { mapRowToBlowDrawIds } from '../map-row-to-blow-draw-ids'
 import { HarpRow } from '../../../harp-row'
+import type { XRange } from '../../../../types'
 
 type HarpRows = {
   readonly top: ReactElement[]
@@ -11,7 +12,7 @@ type HarpRows = {
 }
 
 export const getHarpRows = (
-  xRange: ReadonlyArray<number>,
+  xRange: XRange,
   activeHarpStrata: HarpStrata
 ): HarpRows => {
   const {

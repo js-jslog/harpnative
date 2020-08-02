@@ -19,3 +19,4 @@ export enum MenuStates {
 export type SetActiveHarpStrata = (arg0: HarpStrata) => void
 export type SetActiveDisplayMode = (arg0: DisplayModes) => void
 export type Coord = number
+export type XRange = ReadonlyArray<number>

@@ -3,12 +3,13 @@ import { View } from 'react-native'
 import React from 'react'
 
 import { HoleNumberRow } from '../hole-number-row'
+import type { XRange } from '../../types'
 
 import { getHarpRows } from './utils'
 import { getStyles } from './harp-face-fragment-styles'
 
 type HarpFaceFragmentProps = {
-  readonly xRange: ReadonlyArray<number>
+  readonly xRange: XRange
 }
 
 export const HarpFaceFragment = ({

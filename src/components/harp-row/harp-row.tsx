@@ -2,14 +2,14 @@ import { useGlobal } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
 
-import type { Coord } from '../../types'
+import type { Coord, XRange } from '../../types'
 
 import { getHarpCells } from './utils'
 import { getStyles } from './harp-row-styles'
 
 type HarpRowProps = {
   readonly yCoord: Coord
-  readonly xRange: ReadonlyArray<number>
+  readonly xRange: XRange
 }
 
 export const HarpRow = ({

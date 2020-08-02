@@ -1,5 +1,7 @@
+import type { XRange } from '../../types'
+
 type RootColumnsMask = ReadonlyArray<boolean>
-type ColumnRange = ReadonlyArray<number>
+type ColumnRange = XRange
 export type ColumnRanges = ReadonlyArray<ColumnRange>
 
 export const getOctaveColumnGroups = (
