@@ -3,6 +3,7 @@ import React from 'react'
 
 import { Option } from '../option'
 import { MenuContainer } from '../menu-container'
+import { AnimatedMenuContainer } from '../animated-menu-container'
 import { useNudgeDisplayMode } from '../../hooks'
 
 import {
@@ -11,7 +12,13 @@ import {
   useNudgeHarpStrataByRootPitch,
 } from './hooks'
 
-export const CovariantMenu = (): React.ReactElement => {
+type CovariantMenuProps = {
+  readonly onScreen: boolean
+}
+
+export const CovariantMenu = ({
+  onScreen,
+}: CovariantMenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
 
   const { harpKeyId } = activeHarpStrata
@@ -47,11 +54,13 @@ export const CovariantMenu = (): React.ReactElement => {
   }
 
   return (
-    <MenuContainer>
-      <Option {...harpKeyOptionProps} />
-      <Option {...pozitionOptionProps} />
-      <Option {...rootPitchOptionProps} />
-      <Option {...displayModeOptionProps} />
-    </MenuContainer>
+    <AnimatedMenuContainer onScreen={onScreen}>
+      <MenuContainer>
+        <Option {...harpKeyOptionProps} />
+        <Option {...pozitionOptionProps} />
+        <Option {...rootPitchOptionProps} />
+        <Option {...displayModeOptionProps} />
+      </MenuContainer>
+    </AnimatedMenuContainer>
   )
 }

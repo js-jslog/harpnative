@@ -3,11 +3,18 @@ import React from 'react'
 
 import { Option } from '../option'
 import { MenuContainer } from '../menu-container'
+import { AnimatedMenuContainer } from '../animated-menu-container'
 import { useNudgeDisplayMode } from '../../hooks'
 
 import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode } from './hooks'
 
-export const LayoutMenu = (): React.ReactElement => {
+type LayoutMenuProps = {
+  readonly onScreen: boolean
+}
+
+export const LayoutMenu = ({
+  onScreen,
+}: LayoutMenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const nudgeHarpStrataByApparatus = useNudgeHarpStrataByApparatus()
   const {
@@ -36,10 +43,12 @@ export const LayoutMenu = (): React.ReactElement => {
   }
 
   return (
-    <MenuContainer>
-      <Option {...apparatusOptionProps} />
-      <Option {...experienceModeOptionProps} />
-      <Option {...displayModeOptionProps} />
-    </MenuContainer>
+    <AnimatedMenuContainer onScreen={onScreen}>
+      <MenuContainer>
+        <Option {...apparatusOptionProps} />
+        <Option {...experienceModeOptionProps} />
+        <Option {...displayModeOptionProps} />
+      </MenuContainer>
+    </AnimatedMenuContainer>
   )
 }

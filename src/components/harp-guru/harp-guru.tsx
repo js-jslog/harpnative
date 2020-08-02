@@ -6,14 +6,12 @@ import React from 'react'
 import type { ReactElement } from 'react'
 
 import { QuizQuestionDisplay } from '../quiz-question-display'
+import { LayoutMenu } from '../layout-menu'
+import { CovariantMenu } from '../covariant-menu'
 import { setGlobalState, setGlobalReducers } from '../../utils'
 import { MenuStates } from '../../types'
 import { sizes } from '../../styles'
-import {
-  HomeScreen,
-  CovariantMenuScreen,
-  LayoutMenuScreen,
-} from '../../Screens'
+import { HomeScreen } from '../../Screens'
 
 import { useSwipeMenus, useQuizCycle } from './hooks'
 import { styles } from './harp-guru-styles'
@@ -35,10 +33,8 @@ export const HarpGuru = (): ReactElement => {
     >
       <View style={styles.overlay}>
         <HomeScreen />
-        <CovariantMenuScreen
-          onScreen={menuState === MenuStates.CovariantMenu}
-        />
-        <LayoutMenuScreen onScreen={menuState === MenuStates.LayoutMenu} />
+        <CovariantMenu onScreen={menuState === MenuStates.CovariantMenu} />
+        <LayoutMenu onScreen={menuState === MenuStates.LayoutMenu} />
         <QuizQuestionDisplay screenFree={menuState === MenuStates.NoMenu} />
       </View>
     </PanGestureHandler>
