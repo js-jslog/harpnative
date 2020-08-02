@@ -12,15 +12,10 @@ type HarpFaceFacts = {
   readonly octaveColumnGroups: ColumnRanges
 }
 
-type Props = {
-  readonly activeHarpStrata: HarpStrata
-}
-
-// TODO: the props here don't need to be an object
-export const getHarpFaceFacts = (props: Props): HarpFaceFacts => {
-  const {
-    activeHarpStrata: { degreeMatrix },
-  } = props
+export const getHarpFaceFacts = (
+  activeHarpStrata: HarpStrata
+): HarpFaceFacts => {
+  const { degreeMatrix } = activeHarpStrata
 
   const { length: rowCount } = degreeMatrix
   const {

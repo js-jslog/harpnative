@@ -3,15 +3,10 @@ import type { HarpStrata } from 'harpstrata'
 
 import type { Coord } from '../../../../types'
 
-type Props = {
-  readonly yCoord: Coord
-  readonly activeHarpStrata: HarpStrata
-}
-
-const getInteractionId = ({
-  activeHarpStrata,
-  yCoord,
-}: Props): InteractionIds | undefined => {
+const getInteractionId = (
+  yCoord: Coord,
+  activeHarpStrata: HarpStrata
+): InteractionIds | undefined => {
   const {
     apparatus: { interactionMatrix },
   } = activeHarpStrata
@@ -23,20 +18,31 @@ const getInteractionId = ({
   return interactionId
 }
 
-export const isBlowRow = (props: Props): boolean => {
-  const interactionId = getInteractionId(props)
+export const isBlowRow = (
+  yCoord: Coord,
+  activeHarpStrata: HarpStrata
+): boolean => {
+  const interactionId = getInteractionId(yCoord, activeHarpStrata)
   const isBlow = interactionId === InteractionIds.Blow
 
   return isBlow
 }
 
-export const isDrawRow = (props: Props): boolean => {
-  const interactionId = getInteractionId(props)
+export const isDrawRow = (
+  yCoord: Coord,
+  activeHarpStrata: HarpStrata
+): boolean => {
+  const interactionId = getInteractionId(yCoord, activeHarpStrata)
   const isDraw = interactionId === InteractionIds.Draw
 
   return isDraw
 }
 
-export const isBlowOrDrawRow = (props: Props): boolean => {
-  return isBlowRow(props) || isDrawRow(props)
+export const isBlowOrDrawRow = (
+  yCoord: Coord,
+  activeHarpStrata: HarpStrata
+): boolean => {
+  return (
+    isBlowRow(yCoord, activeHarpStrata) || isDrawRow(yCoord, activeHarpStrata)
+  )
 }

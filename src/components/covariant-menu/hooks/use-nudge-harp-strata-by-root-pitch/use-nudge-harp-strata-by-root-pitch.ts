@@ -36,14 +36,14 @@ const getNextId = (rootId: PitchIds, direction: 'UP' | 'DOWN'): PitchIds => {
   return previousRootPitchId
 }
 
-type Props = {
+type PartialParams = {
   readonly activeHarpStrata: HarpStrata
   readonly setActiveHarpStrata: SetActiveHarpStrata
   readonly activeDisplayMode: DisplayModes
 }
 
 const nudgeHarpStrataByRootPitch = (
-  partialParams: Props,
+  partialParams: PartialParams,
   direction: 'UP' | 'DOWN'
 ): void => {
   const {

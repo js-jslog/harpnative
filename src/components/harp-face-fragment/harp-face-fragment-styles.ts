@@ -7,23 +7,16 @@ import { columnWidth, rowHeight } from '../../styles'
 
 import { getFragmentFacts } from './utils'
 
-type Props = {
-  readonly xRange: ReadonlyArray<number>
-  readonly activeHarpStrata: HarpStrata
-}
-
 type HarpFaceFragmentStyles = {
   readonly fragment: ViewStyle
 }
 
-export const getStyles = ({
-  activeHarpStrata,
-  xRange,
-}: Props): HarpFaceFragmentStyles => {
+export const getStyles = (
+  xRange: ReadonlyArray<number>,
+  activeHarpStrata: HarpStrata
+): HarpFaceFragmentStyles => {
   const { columnCount } = getFragmentFacts(xRange)
-  const { rowCount } = getHarpFaceFacts({
-    activeHarpStrata,
-  })
+  const { rowCount } = getHarpFaceFacts(activeHarpStrata)
 
   const styles = StyleSheet.create<HarpFaceFragmentStyles>({
     fragment: {

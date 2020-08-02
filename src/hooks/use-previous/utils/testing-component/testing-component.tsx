@@ -3,7 +3,7 @@ import React from 'react'
 
 import { usePrevious } from '../../use-previous'
 
-type Props = {
+type TestingComponentProps = {
   readonly value: unknown
   readonly initial: unknown
 }
@@ -11,7 +11,7 @@ type Props = {
 export const TestingComponent = ({
   value,
   initial,
-}: Props): React.ReactElement => {
+}: TestingComponentProps): React.ReactElement => {
   const previousValue = usePrevious(value, initial)
   return (
     <>

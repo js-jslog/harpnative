@@ -23,7 +23,7 @@ export enum HoleNumberIds {
   Sixteen = '16',
 }
 
-type Props = {
+type HoleNumberProps = {
   readonly xCoord: Coord
 }
 
@@ -31,7 +31,7 @@ import { getStyles } from './hole-number-styles'
 
 const styles = getStyles()
 
-export function HoleNumber({ xCoord }: Props): ReactElement {
+export function HoleNumber({ xCoord }: HoleNumberProps): ReactElement {
   const holeNumber: HoleNumberIds = `${xCoord + 1}` as HoleNumberIds
 
   return (

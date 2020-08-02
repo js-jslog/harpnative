@@ -26,11 +26,11 @@ export type HarpCellStyles = {
   readonly modifier: TextStyle
 }
 
-type Props = {
+type HarpCellProps = {
   readonly yxCoord: YXCoord
 }
 
-export const HarpCell = ({ yxCoord }: Props): React.ReactElement => {
+export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const toggleHarpCell = useToggleHarpCell()
   const setPozitionRoot = useSetPozitionRoot()
   const { thisDegreeId, thisPitchId } = usePositionAnalysis(yxCoord)

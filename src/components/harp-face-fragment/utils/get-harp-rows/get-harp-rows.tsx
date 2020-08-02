@@ -5,22 +5,18 @@ import type { HarpStrata } from 'harpstrata'
 import { mapRowToBlowDrawIds } from '../map-row-to-blow-draw-ids'
 import { HarpRow } from '../../../harp-row'
 
-type Props = {
-  readonly xRange: ReadonlyArray<number>
-  readonly activeHarpStrata: HarpStrata
-}
-
 type HarpRows = {
   readonly top: ReactElement[]
   readonly bottom: ReactElement[]
 }
 
-export const getHarpRows = (props: Props): HarpRows => {
+export const getHarpRows = (
+  xRange: ReadonlyArray<number>,
+  activeHarpStrata: HarpStrata
+): HarpRows => {
   const {
-    activeHarpStrata: {
-      apparatus: { interactionMatrix },
-    },
-  } = props
+    apparatus: { interactionMatrix },
+  } = activeHarpStrata
   const blowDrawIdsMap = interactionMatrix.map(mapRowToBlowDrawIds)
 
   const drawIndex = blowDrawIdsMap.indexOf(InteractionIds.Draw)
@@ -28,11 +24,11 @@ export const getHarpRows = (props: Props): HarpRows => {
   const bottomRowsPrimer = blowDrawIdsMap.slice(drawIndex)
 
   const topHarpRows = topRowsPrimer.map((_, index) => {
-    return <HarpRow key={index} {...props} yCoord={index} />
+    return <HarpRow key={index} xRange={xRange} yCoord={index} />
   })
   const bottomHarpRows = bottomRowsPrimer.map((_, index) => {
     const amendedIndex = index + topHarpRows.length
-    return <HarpRow key={amendedIndex} {...props} yCoord={amendedIndex} />
+    return <HarpRow key={amendedIndex} xRange={xRange} yCoord={amendedIndex} />
   })
 
   const harpRows = {

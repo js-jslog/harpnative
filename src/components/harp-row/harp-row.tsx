@@ -7,14 +7,17 @@ import type { Coord } from '../../types'
 import { getHarpCells } from './utils'
 import { getStyles } from './harp-row-styles'
 
-type Props = {
+type HarpRowProps = {
   readonly yCoord: Coord
   readonly xRange: ReadonlyArray<number>
 }
 
-export const HarpRow = (props: Props): React.ReactElement => {
+export const HarpRow = ({
+  yCoord,
+  xRange,
+}: HarpRowProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const styles = getStyles({ ...props, activeHarpStrata })
+  const styles = getStyles(yCoord, activeHarpStrata)
 
-  return <View style={styles.row}>{getHarpCells(props)}</View>
+  return <View style={styles.row}>{getHarpCells(yCoord, xRange)}</View>
 }

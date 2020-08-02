@@ -4,18 +4,13 @@ import { HarpCell } from '../../../harp-cell'
 import type { YXCoord } from '../../../harp-cell'
 import type { Coord } from '../../../../types'
 
-type Props = {
-  readonly yCoord: Coord
-  readonly xRange: ReadonlyArray<number>
-}
-
-export const getHarpCells = (props: Props): React.ReactElement[] => {
-  const { yCoord, ...harpCellPropsPart } = props
-  const { xRange } = harpCellPropsPart
-
+export const getHarpCells = (
+  yCoord: Coord,
+  xRange: ReadonlyArray<number>
+): React.ReactElement[] => {
   const harpCells = xRange.map((xCoord) => {
     const yxCoord: YXCoord = [yCoord, xCoord]
-    return <HarpCell key={xCoord} {...harpCellPropsPart} yxCoord={yxCoord} />
+    return <HarpCell key={xCoord} yxCoord={yxCoord} />
   })
 
   return harpCells

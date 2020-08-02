@@ -12,31 +12,31 @@ const harpStrataProps = {
 const activeHarpStrata = getHarpStrata(harpStrataProps)
 
 test('isBlowRow returns true for a blow row and false otherwise', () => {
-  const harpRowPropsBlow = { activeHarpStrata, yCoord: 2 }
-  const harpRowPropsDraw = { activeHarpStrata, yCoord: 3 }
-  const harpRowPropsBend = { activeHarpStrata, yCoord: 4 }
+  const forBlowRow = isBlowRow(2, activeHarpStrata)
+  const forDrawRow = isBlowRow(3, activeHarpStrata)
+  const forBendRow = isBlowRow(4, activeHarpStrata)
 
-  expect(isBlowRow(harpRowPropsBlow)).toBeTruthy()
-  expect(isBlowRow(harpRowPropsDraw)).toBeFalsy()
-  expect(isBlowRow(harpRowPropsBend)).toBeFalsy()
+  expect(forBlowRow).toBeTruthy()
+  expect(forDrawRow).toBeFalsy()
+  expect(forBendRow).toBeFalsy()
 })
 
 test('isDrawRow returns true for a blow row and false otherwise', () => {
-  const harpRowPropsBlow = { activeHarpStrata, yCoord: 2 }
-  const harpRowPropsDraw = { activeHarpStrata, yCoord: 3 }
-  const harpRowPropsBend = { activeHarpStrata, yCoord: 4 }
+  const forBlowRow = isDrawRow(2, activeHarpStrata)
+  const forDrawRow = isDrawRow(3, activeHarpStrata)
+  const forBendRow = isDrawRow(4, activeHarpStrata)
 
-  expect(isDrawRow(harpRowPropsBlow)).toBeFalsy()
-  expect(isDrawRow(harpRowPropsDraw)).toBeTruthy()
-  expect(isDrawRow(harpRowPropsBend)).toBeFalsy()
+  expect(forBlowRow).toBeFalsy()
+  expect(forDrawRow).toBeTruthy()
+  expect(forBendRow).toBeFalsy()
 })
 
 test('isBlowOrDrawRow returns true for a blow or draw row and false otherwise', () => {
-  const harpRowPropsBlow = { activeHarpStrata, yCoord: 2 }
-  const harpRowPropsDraw = { activeHarpStrata, yCoord: 3 }
-  const harpRowPropsBend = { activeHarpStrata, yCoord: 4 }
+  const forBlowRow = isBlowOrDrawRow(2, activeHarpStrata)
+  const forDrawRow = isBlowOrDrawRow(3, activeHarpStrata)
+  const forBendRow = isBlowOrDrawRow(4, activeHarpStrata)
 
-  expect(isBlowOrDrawRow(harpRowPropsBlow)).toBeTruthy()
-  expect(isBlowOrDrawRow(harpRowPropsDraw)).toBeTruthy()
-  expect(isBlowOrDrawRow(harpRowPropsBend)).toBeFalsy()
+  expect(forBlowRow).toBeTruthy()
+  expect(forDrawRow).toBeTruthy()
+  expect(forBendRow).toBeFalsy()
 })

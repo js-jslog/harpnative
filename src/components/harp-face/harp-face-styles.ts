@@ -13,11 +13,10 @@ const { 7: boundaryWidth } = sizes
 export const { 9: columnWidth } = sizes
 export const { 9: rowHeight } = sizes
 
-type Props = {
-  readonly activeHarpStrata: HarpStrata
-}
-export const getStyles = (props: Props): HarpFaceStyles => {
-  const { columnCount, rowCount, octaveColumnGroups } = getHarpFaceFacts(props)
+export const getStyles = (activeHarpStrata: HarpStrata): HarpFaceStyles => {
+  const { columnCount, rowCount, octaveColumnGroups } = getHarpFaceFacts(
+    activeHarpStrata
+  )
   const { length: groupCount } = octaveColumnGroups
 
   const styles = StyleSheet.create({

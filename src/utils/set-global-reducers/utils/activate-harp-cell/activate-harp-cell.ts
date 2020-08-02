@@ -4,12 +4,10 @@ import type { HarpStrata, DegreeIds, PitchIds } from 'harpstrata'
 import { getPropsForHarpStrata } from '../../../get-props-for-harp-strata'
 import { DisplayModes } from '../../../../types'
 
-type Props = {
-  readonly harpStrata: HarpStrata
-  readonly cellId: DegreeIds | PitchIds
-}
-export const activateHarpCell = (props: Props): HarpStrata => {
-  const { harpStrata, cellId } = props
+export const activateHarpCell = (
+  harpStrata: HarpStrata,
+  cellId: DegreeIds | PitchIds
+): HarpStrata => {
   if (isPitchId(cellId)) {
     const harpStrataProps = getPropsForHarpStrata(
       harpStrata,

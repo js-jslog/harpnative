@@ -31,12 +31,8 @@ export const setGlobalReducers = (): void => {
 
   addReducer('revealAnswer', (global: State) => {
     const { activeHarpStrata, quizQuestion } = global
-    const props = {
-      harpStrata: activeHarpStrata,
-      cellId: quizQuestion,
-    }
     return {
-      activeHarpStrata: activateHarpCell(props),
+      activeHarpStrata: activateHarpCell(activeHarpStrata, quizQuestion),
     }
   })
 }

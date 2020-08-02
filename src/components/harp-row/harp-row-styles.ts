@@ -10,16 +10,14 @@ import { isBlowOrDrawRow, isBlowRow, isDrawRow } from './utils'
 const { 1: borderWidth, 6: borderRadius } = sizes
 const { homeRowsColor, inertOutline } = colors
 
-type Props = {
-  readonly yCoord: Coord
-  readonly activeHarpStrata: HarpStrata
-}
-
 type HarpRowStyles = {
   readonly row: ViewStyle
 }
 
-export const getStyles = (props: Props): HarpRowStyles => {
+export const getStyles = (
+  yCoord: Coord,
+  activeHarpStrata: HarpStrata
+): HarpRowStyles => {
   const styles = StyleSheet.create<HarpRowStyles>({
     row: {
       flex: 1,
@@ -27,15 +25,29 @@ export const getStyles = (props: Props): HarpRowStyles => {
       justifyContent: 'space-around',
       alignItems: 'center',
       borderColor: inertOutline,
-      borderTopWidth: isBlowRow(props) ? borderWidth : 0,
-      borderBottomWidth: isDrawRow(props) ? borderWidth : 0,
-      borderRightWidth: isBlowOrDrawRow(props) ? borderWidth : 0,
-      borderLeftWidth: isBlowOrDrawRow(props) ? borderWidth : 0,
-      backgroundColor: isBlowOrDrawRow(props) ? homeRowsColor : 'transparent',
-      borderTopLeftRadius: isBlowRow(props) ? borderRadius : 0,
-      borderTopRightRadius: isBlowRow(props) ? borderRadius : 0,
-      borderBottomLeftRadius: isDrawRow(props) ? borderRadius : 0,
-      borderBottomRightRadius: isDrawRow(props) ? borderRadius : 0,
+      borderTopWidth: isBlowRow(yCoord, activeHarpStrata) ? borderWidth : 0,
+      borderBottomWidth: isDrawRow(yCoord, activeHarpStrata) ? borderWidth : 0,
+      borderRightWidth: isBlowOrDrawRow(yCoord, activeHarpStrata)
+        ? borderWidth
+        : 0,
+      borderLeftWidth: isBlowOrDrawRow(yCoord, activeHarpStrata)
+        ? borderWidth
+        : 0,
+      backgroundColor: isBlowOrDrawRow(yCoord, activeHarpStrata)
+        ? homeRowsColor
+        : 'transparent',
+      borderTopLeftRadius: isBlowRow(yCoord, activeHarpStrata)
+        ? borderRadius
+        : 0,
+      borderTopRightRadius: isBlowRow(yCoord, activeHarpStrata)
+        ? borderRadius
+        : 0,
+      borderBottomLeftRadius: isDrawRow(yCoord, activeHarpStrata)
+        ? borderRadius
+        : 0,
+      borderBottomRightRadius: isDrawRow(yCoord, activeHarpStrata)
+        ? borderRadius
+        : 0,
     },
   })
 

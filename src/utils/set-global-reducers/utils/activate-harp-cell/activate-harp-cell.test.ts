@@ -43,21 +43,19 @@ test('that a harpstrata with a deactivated cell will have that cell activated wh
     ...inactiveCellsHarpStrataProps,
     activeIds: [DegreeIds.Root],
   })
-  const props = {
-    harpStrata: inactiveCellsHarpStrata,
-    cellId: DegreeIds.Root,
-  }
-  const actualHarpStrata = activateHarpCell(props)
+  const actualHarpStrata = activateHarpCell(
+    inactiveCellsHarpStrata,
+    DegreeIds.Root
+  )
 
   expect(actualHarpStrata).toStrictEqual(expectedHarpStrata)
 })
 
 test('that a harpstrata with an active cell will remain the same when given its degree', () => {
-  const props = {
-    harpStrata: activeCellsHarpStrata,
-    cellId: DegreeIds.Third,
-  }
-  const actualHarpStrata = activateHarpCell(props)
+  const actualHarpStrata = activateHarpCell(
+    activeCellsHarpStrata,
+    DegreeIds.Third
+  )
 
   expect(actualHarpStrata).toStrictEqual(activeCellsHarpStrata)
 })
@@ -67,21 +65,13 @@ test('that a harpstrata with a deactivated cell will have that cell activated wh
     ...inactiveCellsHarpStrataProps,
     activeIds: [PitchIds.F],
   })
-  const props = {
-    harpStrata: inactiveCellsHarpStrata,
-    cellId: PitchIds.F,
-  }
-  const actualHarpStrata = activateHarpCell(props)
+  const actualHarpStrata = activateHarpCell(inactiveCellsHarpStrata, PitchIds.F)
 
   expect(actualHarpStrata).toStrictEqual(expectedHarpStrata)
 })
 
 test('that a harpstrata with an active cell will remain the same when given its pitch', () => {
-  const props = {
-    harpStrata: activeCellsHarpStrata,
-    cellId: PitchIds.G,
-  }
-  const actualHarpStrata = activateHarpCell(props)
+  const actualHarpStrata = activateHarpCell(activeCellsHarpStrata, PitchIds.G)
 
   expect(actualHarpStrata).toStrictEqual(activeCellsHarpStrata)
 })
