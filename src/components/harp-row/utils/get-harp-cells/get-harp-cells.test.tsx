@@ -2,8 +2,8 @@ import { useGlobal } from 'reactn'
 import { DegreeIds } from 'harpstrata'
 import { render } from '@testing-library/react-native'
 
-import { DisplayModes, ExperienceModes } from '../../../types'
-import { inactiveCellsHarpStrata } from '../../../test-resources'
+import { DisplayModes, ExperienceModes } from '../../../../types'
+import { inactiveCellsHarpStrata } from '../../../../test-resources'
 
 import { getHarpCells } from './get-harp-cells'
 

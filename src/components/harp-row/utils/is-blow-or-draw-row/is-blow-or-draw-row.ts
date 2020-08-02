@@ -1,7 +1,7 @@
 import { InteractionIds } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
 
-import type { Coord } from '../../../types'
+import type { Coord } from '../../../../types'
 
 type Props = {
   readonly yCoord: Coord
