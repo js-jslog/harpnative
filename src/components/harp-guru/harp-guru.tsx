@@ -7,11 +7,12 @@ import type { ReactElement } from 'react'
 
 import { QuizQuestionDisplay } from '../quiz-question-display'
 import { LayoutMenu } from '../layout-menu'
+import { HarpFace } from '../harp-face'
 import { CovariantMenu } from '../covariant-menu'
 import { setGlobalState, setGlobalReducers } from '../../utils'
 import { MenuStates } from '../../types'
+import { colors } from '../../styles'
 import { sizes } from '../../styles'
-import { HomeScreen } from '../../Screens'
 
 import { useSwipeMenus, useQuizCycle } from './hooks'
 
@@ -23,6 +24,9 @@ const { 8: swipeThreshold } = sizes
 const styles = StyleSheet.create({
   fillScreen: {
     ...StyleSheet.absoluteFillObject,
+    backgroundColor: colors.pageColor,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 })
 
@@ -37,7 +41,7 @@ export const HarpGuru = (): ReactElement => {
       onHandlerStateChange={handleSwipe}
     >
       <View style={styles.fillScreen}>
-        <HomeScreen />
+        <HarpFace />
         <CovariantMenu onScreen={menuState === MenuStates.CovariantMenu} />
         <LayoutMenu onScreen={menuState === MenuStates.LayoutMenu} />
         <QuizQuestionDisplay screenFree={menuState === MenuStates.NoMenu} />

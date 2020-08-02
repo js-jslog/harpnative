@@ -22,9 +22,5 @@ export const HarpFace = (): React.ReactElement => {
     return <HarpFaceFragment key={index} {...harpFaceFragmentProps} />
   })
 
-  return (
-    <View style={styles.facewrapper}>
-      <View style={styles.face}>{fragments}</View>
-    </View>
-  )
+  return <View style={styles.face}>{fragments}</View>
 }
