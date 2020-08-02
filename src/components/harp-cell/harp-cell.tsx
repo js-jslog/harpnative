@@ -8,6 +8,8 @@ import { Text, View } from 'react-native'
 import type { TextStyle, ViewStyle } from 'react-native'
 import React from 'react'
 
+import type { Coord } from '../../types'
+
 import {
   useToggleHarpCell,
   useStyles,
@@ -15,8 +17,6 @@ import {
   usePositionAnalysis,
   useDisplayValue,
 } from './hooks'
-
-export type Coord = number
 
 export type YXCoord = [Coord, Coord]
 
