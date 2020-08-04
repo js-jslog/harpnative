@@ -1,8 +1,8 @@
 import { useGlobal } from 'reactn'
 import React from 'react'
 
+import { OverlayContainer } from '../overlay-container'
 import { Option } from '../option'
-import { MenuContainer } from '../menu-container'
 import { AnimatedMenuContainer } from '../animated-menu-container'
 import { useNudgeDisplayMode } from '../../hooks'
 
@@ -55,12 +55,12 @@ export const CovariantMenu = ({
 
   return (
     <AnimatedMenuContainer onScreen={onScreen}>
-      <MenuContainer>
+      <OverlayContainer>
         <Option {...harpKeyOptionProps} />
         <Option {...pozitionOptionProps} />
         <Option {...rootPitchOptionProps} />
         <Option {...displayModeOptionProps} />
-      </MenuContainer>
+      </OverlayContainer>
     </AnimatedMenuContainer>
   )
 }
