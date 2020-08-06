@@ -2,9 +2,9 @@
   "name": "harpnative",
   "version": "0.1.0",
   "description": "A React Native implementation of the HarpGuru concept; a UI to aid the understanding of harmonica music theory",
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "__generated__/AppEntry.js",
   "scripts": {
-    "start": "expo start",
+    "start": "expo start --clear",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
@@ -12,7 +12,8 @@
     "test": "jest",
     "lint": "eslint --ext .ts,.tsx .",
     "ci": "yarn lint && yarn tsc",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "postinstall": "expo-yarn-workspaces postinstall"
   },
   "dependencies": {
     "expo": "^38.0.0",
@@ -43,6 +44,7 @@
     "eslint-plugin-jest": "^23.13.2",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-native": "^3.8.1",
+    "expo-yarn-workspaces": "^1.2.1",
     "jest": "24.9.0",
     "prettier": "^2.0.5",
     "react-test-renderer": "16.11.0",
