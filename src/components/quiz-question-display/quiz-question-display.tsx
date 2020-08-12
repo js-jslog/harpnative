@@ -52,9 +52,7 @@ export const QuizQuestionDisplay = ({
       style={[
         styles.animated,
         {
-          transform: [
-            { translateX: translateX },
-          ],
+          transform: [{ translateX: translateX }],
         },
       ]}
     >
