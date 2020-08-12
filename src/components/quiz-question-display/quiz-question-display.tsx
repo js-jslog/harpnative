@@ -11,6 +11,7 @@ import { useFlashDisplay } from './utils'
 const styles = StyleSheet.create({
   animated: {
     ...StyleSheet.absoluteFillObject,
+    zIndex: 10,
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
