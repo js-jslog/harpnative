@@ -1,6 +1,6 @@
 import { useGlobal } from 'reactn'
 import { useTimingTransition } from 'react-native-redash'
-import Animated, { Easing, multiply } from 'react-native-reanimated'
+import Animated, { Easing, multiply, add } from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import { StyleSheet, View, Text, Dimensions } from 'react-native'
@@ -18,6 +18,7 @@ import {
 
 type CovariantMenuProps = {
   readonly onScreen: boolean
+  readonly hideTab: boolean
   readonly tapHandler: (arg0: TapGestureHandlerStateChangeEvent) => void
 }
 
@@ -59,6 +60,7 @@ const styles = StyleSheet.create({
 })
 
 export const CovariantMenu = ({
+  hideTab,
   onScreen,
   tapHandler,
 }: CovariantMenuProps): React.ReactElement => {
@@ -96,14 +98,23 @@ export const CovariantMenu = ({
     nudgeFunction: nudgeDisplayMode,
   }
 
-  const transitionVal = useTimingTransition(!onScreen, {
-    duration: 400,
-    easing: Easing.inOut(Easing.ease),
-  })
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const guaranteeOffScreenWidth =
     windowWidth > windowHeight ? windowWidth : windowHeight
-  const translateX = multiply(transitionVal, guaranteeOffScreenWidth * -1)
+  const hideMenuVal = useTimingTransition(!onScreen, {
+    duration: 400,
+    easing: Easing.inOut(Easing.ease),
+  })
+  const hideTabVal = useTimingTransition(hideTab, {
+    duration: 400,
+    easing: Easing.inOut(Easing.ease),
+  })
+  const hideMenuTranslation = multiply(
+    hideMenuVal,
+    guaranteeOffScreenWidth * -1
+  )
+  const hideTabTranslation = multiply(hideTabVal, labelProtrusion * -1)
+  const translateX = add(hideMenuTranslation, hideTabTranslation)
 
   return (
     <Animated.View

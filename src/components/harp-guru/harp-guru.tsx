@@ -51,10 +51,18 @@ export const HarpGuru = (): ReactElement => {
         <HarpFace />
         <CovariantMenu
           onScreen={menuState === MenuStates.CovariantMenu}
+          hideTab={
+            menuState !== MenuStates.CovariantMenu &&
+            menuState !== MenuStates.NoMenu
+          }
           tapHandler={covariantTapHandler}
         />
         <LayoutMenu
           onScreen={menuState === MenuStates.LayoutMenu}
+          hideTab={
+            menuState !== MenuStates.LayoutMenu &&
+            menuState !== MenuStates.NoMenu
+          }
           tapHandler={layoutTapHandler}
         />
         <QuizQuestionDisplay screenFree={menuState === MenuStates.NoMenu} />
