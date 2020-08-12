@@ -1,6 +1,6 @@
 import { useGlobal } from 'reactn'
 import { useTimingTransition } from 'react-native-redash'
-import Animated, { Easing, multiply, add } from 'react-native-reanimated'
+import Animated, { Easing, multiply, add, interpolate } from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import { StyleSheet, View, Text, Dimensions } from 'react-native'
@@ -28,8 +28,7 @@ const styles = StyleSheet.create({
     left: labelProtrusion * -1,
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    backgroundColor: colors.inertOutline,
-    opacity: 0.5,
+    backgroundColor: colors.pageColor,
   },
   mainContents: {
     ...StyleSheet.absoluteFillObject,
@@ -89,9 +88,10 @@ export const LayoutMenu = ({
     duration: 400,
     easing: Easing.inOut(Easing.ease),
   })
-  const hideLabelTranslation = multiply(hideLabelVal, labelProtrusion)
   const hideMenuTranslation = multiply(hideMenuVal, guaranteeOffScreenWidth)
+  const hideLabelTranslation = multiply(hideLabelVal, labelProtrusion)
   const translateX = add(hideMenuTranslation, hideLabelTranslation)
+  const opacity = interpolate(hideMenuVal, { inputRange: [0, 1], outputRange: [0.7, 0.4] })
 
   return (
     <Animated.View
@@ -99,6 +99,7 @@ export const LayoutMenu = ({
         styles.animated,
         {
           transform: [{ translateX: translateX }],
+          opacity: opacity,
         },
       ]}
     >
