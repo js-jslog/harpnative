@@ -8,7 +8,6 @@ import React from 'react'
 
 import { Option } from '../option'
 import { colors, sizes } from '../../styles'
-import { useNudgeDisplayMode } from '../../hooks'
 
 import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode } from './hooks'
 

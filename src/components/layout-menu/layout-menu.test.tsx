@@ -35,14 +35,6 @@ test('LayoutMenu renders a component with a major diatonic layout selected', () 
   expect(getByText(ApparatusIds.MajorDiatonic)).toBeTruthy()
 })
 
-test('LayoutMenu renders a component with Degree DisplayMode selected', () => {
-  const { getByText } = render(
-    <LayoutMenu hideMenu={false} hideLabel={false} tapHandler={tapHandler} />
-  )
-
-  expect(getByText(DisplayModes.Degree)).toBeTruthy()
-})
-
 test('LayoutMenu renders a component with Explore ExperienceMode selected', () => {
   const { getByText } = render(
     <LayoutMenu hideMenu={false} hideLabel={false} tapHandler={tapHandler} />
