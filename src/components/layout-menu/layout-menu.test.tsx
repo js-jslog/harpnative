@@ -25,20 +25,28 @@ mockUseGlobal.mockImplementation((stateItem: string) => {
   return undefined
 })
 
+const tapHandler = jest.fn()
+
 test('LayoutMenu renders a component with a major diatonic layout selected', () => {
-  const { getByText } = render(<LayoutMenu onScreen={true} />)
+  const { getByText } = render(
+    <LayoutMenu onScreen={true} tapHandler={tapHandler} />
+  )
 
   expect(getByText(ApparatusIds.MajorDiatonic)).toBeTruthy()
 })
 
 test('LayoutMenu renders a component with Degree DisplayMode selected', () => {
-  const { getByText } = render(<LayoutMenu onScreen={true} />)
+  const { getByText } = render(
+    <LayoutMenu onScreen={true} tapHandler={tapHandler} />
+  )
 
   expect(getByText(DisplayModes.Degree)).toBeTruthy()
 })
 
 test('LayoutMenu renders a component with Explore ExperienceMode selected', () => {
-  const { getByText } = render(<LayoutMenu onScreen={true} />)
+  const { getByText } = render(
+    <LayoutMenu onScreen={true} tapHandler={tapHandler} />
+  )
 
   expect(getByText(ExperienceModes.Explore)).toBeTruthy()
 })

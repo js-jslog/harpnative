@@ -1,6 +1,8 @@
 import { useGlobal } from 'reactn'
-import {useTimingTransition} from 'react-native-redash'
-import Animated, {Easing, multiply} from 'react-native-reanimated'
+import { useTimingTransition } from 'react-native-redash'
+import Animated, { Easing, multiply } from 'react-native-reanimated'
+import { TapGestureHandler } from 'react-native-gesture-handler'
+import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import { StyleSheet, View, Text, Dimensions } from 'react-native'
 import React from 'react'
 
@@ -12,6 +14,7 @@ import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode } from './hooks'
 
 type LayoutMenuProps = {
   readonly onScreen: boolean
+  readonly tapHandler: (arg0: TapGestureHandlerStateChangeEvent) => void
 }
 
 const { 9: labelProtrusion, 7: fontSize } = sizes
@@ -40,19 +43,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: labelProtrusion,
     width: labelProtrusion,
-    transform: [{rotate: '90deg'}],
+    transform: [{ rotate: '90deg' }],
   },
   labelAligner: {
     alignItems: 'center',
     width: 500,
   },
   text: {
-    fontSize
-  }
+    fontSize,
+  },
 })
 
 export const LayoutMenu = ({
   onScreen,
+  tapHandler,
 }: LayoutMenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const nudgeHarpStrataByApparatus = useNudgeHarpStrataByApparatus()
@@ -83,7 +87,7 @@ export const LayoutMenu = ({
 
   const transitionVal = useTimingTransition(!onScreen, {
     duration: 400,
-    easing: Easing.inOut(Easing.ease)
+    easing: Easing.inOut(Easing.ease),
   })
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const guaranteeOffScreenWidth =
@@ -95,24 +99,24 @@ export const LayoutMenu = ({
       style={[
         styles.animated,
         {
-          transform: [
-            { translateX: translateX },
-          ],
+          transform: [{ translateX: translateX }],
         },
       ]}
     >
-      <View style={styles.overlay}>
-        <View style={styles.mainContents}>
-          <Option {...apparatusOptionProps} />
-          <Option {...experienceModeOptionProps} />
-          <Option {...displayModeOptionProps} />
-        </View>
-        <View style={styles.rotatedLabel}>
-          <View style={styles.labelAligner}>
-            <Text style={styles.text}>Setup Menu</Text>
+      <TapGestureHandler onHandlerStateChange={tapHandler}>
+        <View style={styles.overlay}>
+          <View style={styles.mainContents}>
+            <Option {...apparatusOptionProps} />
+            <Option {...experienceModeOptionProps} />
+            <Option {...displayModeOptionProps} />
+          </View>
+          <View style={styles.rotatedLabel}>
+            <View style={styles.labelAligner}>
+              <Text style={styles.text}>Setup Menu</Text>
+            </View>
           </View>
         </View>
-      </View>
+      </TapGestureHandler>
     </Animated.View>
   )
 }

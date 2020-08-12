@@ -1,6 +1,8 @@
 import { useGlobal } from 'reactn'
-import {useTimingTransition} from 'react-native-redash'
-import Animated, {Easing, multiply} from 'react-native-reanimated'
+import { useTimingTransition } from 'react-native-redash'
+import Animated, { Easing, multiply } from 'react-native-reanimated'
+import { TapGestureHandler } from 'react-native-gesture-handler'
+import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import { StyleSheet, View, Text, Dimensions } from 'react-native'
 import React from 'react'
 
@@ -16,6 +18,7 @@ import {
 
 type CovariantMenuProps = {
   readonly onScreen: boolean
+  readonly tapHandler: (arg0: TapGestureHandlerStateChangeEvent) => void
 }
 
 const { 9: labelProtrusion, 7: fontSize } = sizes
@@ -44,19 +47,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: labelProtrusion,
     width: labelProtrusion,
-    transform: [{rotate: '-90deg'}],
+    transform: [{ rotate: '-90deg' }],
   },
   labelAligner: {
     alignItems: 'center',
     width: 500,
   },
   text: {
-    fontSize
-  }
+    fontSize,
+  },
 })
 
 export const CovariantMenu = ({
   onScreen,
+  tapHandler,
 }: CovariantMenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
 
@@ -94,38 +98,37 @@ export const CovariantMenu = ({
 
   const transitionVal = useTimingTransition(!onScreen, {
     duration: 400,
-    easing: Easing.inOut(Easing.ease)
+    easing: Easing.inOut(Easing.ease),
   })
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const guaranteeOffScreenWidth =
     windowWidth > windowHeight ? windowWidth : windowHeight
   const translateX = multiply(transitionVal, guaranteeOffScreenWidth * -1)
 
-
   return (
     <Animated.View
       style={[
         styles.animated,
         {
-          transform: [
-            { translateX: translateX },
-          ],
+          transform: [{ translateX: translateX }],
         },
       ]}
     >
-      <View style={styles.overlay}>
-        <View style={styles.mainContents}>
-          <Option {...harpKeyOptionProps} />
-          <Option {...pozitionOptionProps} />
-          <Option {...rootPitchOptionProps} />
-          <Option {...displayModeOptionProps} />
-        </View>
-        <View style={styles.rotatedLabel}>
-          <View style={styles.labelAligner}>
-            <Text style={styles.text}>Tuning Menu</Text>
+      <TapGestureHandler onHandlerStateChange={tapHandler}>
+        <View style={styles.overlay}>
+          <View style={styles.mainContents}>
+            <Option {...harpKeyOptionProps} />
+            <Option {...pozitionOptionProps} />
+            <Option {...rootPitchOptionProps} />
+            <Option {...displayModeOptionProps} />
+          </View>
+          <View style={styles.rotatedLabel}>
+            <View style={styles.labelAligner}>
+              <Text style={styles.text}>Tuning Menu</Text>
+            </View>
           </View>
         </View>
-      </View>
+      </TapGestureHandler>
     </Animated.View>
   )
 }
