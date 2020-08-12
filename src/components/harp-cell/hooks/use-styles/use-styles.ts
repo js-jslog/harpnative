@@ -9,12 +9,13 @@ import { sizes, colors } from '../../../../styles'
 
 const {
   1: borderWidth,
-  5: borderRadius,
-  8: height,
-  8: width,
+  6: borderRadius,
   2: elevation,
+  8: noteFontSize,
+  7: modifierFontSize,
 } = sizes
-const { 7: noteFontSize, 6: modifierFontSize } = sizes
+const width = sizes['8'] + sizes['4']
+const height = sizes['8'] + sizes['4']
 const { pageColor, degreeColors, inertOutline: borderColor } = colors
 
 export const useStyles = (yxCoord: YXCoord): HarpCellStyles => {
