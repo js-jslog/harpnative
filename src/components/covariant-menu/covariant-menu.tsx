@@ -17,8 +17,8 @@ import {
 } from './hooks'
 
 type CovariantMenuProps = {
-  readonly onScreen: boolean
-  readonly hideTab: boolean
+  readonly hideMenu: boolean
+  readonly hideLabel: boolean
   readonly tapHandler: (arg0: TapGestureHandlerStateChangeEvent) => void
 }
 
@@ -60,8 +60,8 @@ const styles = StyleSheet.create({
 })
 
 export const CovariantMenu = ({
-  hideTab,
-  onScreen,
+  hideLabel,
+  hideMenu,
   tapHandler,
 }: CovariantMenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
@@ -101,11 +101,11 @@ export const CovariantMenu = ({
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const guaranteeOffScreenWidth =
     windowWidth > windowHeight ? windowWidth : windowHeight
-  const hideMenuVal = useTimingTransition(!onScreen, {
+  const hideMenuVal = useTimingTransition(hideMenu, {
     duration: 400,
     easing: Easing.inOut(Easing.ease),
   })
-  const hideTabVal = useTimingTransition(hideTab, {
+  const hideLabelVal = useTimingTransition(hideLabel, {
     duration: 400,
     easing: Easing.inOut(Easing.ease),
   })
@@ -113,8 +113,8 @@ export const CovariantMenu = ({
     hideMenuVal,
     guaranteeOffScreenWidth * -1
   )
-  const hideTabTranslation = multiply(hideTabVal, labelProtrusion * -1)
-  const translateX = add(hideMenuTranslation, hideTabTranslation)
+  const hideLabelTranslation = multiply(hideLabelVal, labelProtrusion * -1)
+  const translateX = add(hideMenuTranslation, hideLabelTranslation)
 
   return (
     <Animated.View

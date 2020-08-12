@@ -35,7 +35,7 @@ test('CovariantMenu renders a component with position and key information displa
   })
   const tapHandler = jest.fn()
   const { getByText } = render(
-    <CovariantMenu onScreen={true} hideTab={false} tapHandler={tapHandler} />
+    <CovariantMenu hideMenu={false} hideLabel={false} tapHandler={tapHandler} />
   )
 
   expect(getByText(PitchIds.C)).toBeTruthy()

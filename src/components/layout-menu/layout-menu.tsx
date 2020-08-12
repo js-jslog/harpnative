@@ -13,8 +13,8 @@ import { useNudgeDisplayMode } from '../../hooks'
 import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode } from './hooks'
 
 type LayoutMenuProps = {
-  readonly onScreen: boolean
-  readonly hideTab: boolean
+  readonly hideMenu: boolean
+  readonly hideLabel: boolean
   readonly tapHandler: (arg0: TapGestureHandlerStateChangeEvent) => void
 }
 
@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
 })
 
 export const LayoutMenu = ({
-  onScreen,
-  hideTab,
+  hideMenu,
+  hideLabel,
   tapHandler,
 }: LayoutMenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
@@ -90,17 +90,17 @@ export const LayoutMenu = ({
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const guaranteeOffScreenWidth =
     windowWidth > windowHeight ? windowWidth : windowHeight
-  const hideMenuVal = useTimingTransition(!onScreen, {
+  const hideMenuVal = useTimingTransition(hideMenu, {
     duration: 400,
     easing: Easing.inOut(Easing.ease),
   })
-  const hideTabVal = useTimingTransition(hideTab, {
+  const hideLabelVal = useTimingTransition(hideLabel, {
     duration: 400,
     easing: Easing.inOut(Easing.ease),
   })
-  const hideTabTranslation = multiply(hideTabVal, labelProtrusion)
+  const hideLabelTranslation = multiply(hideLabelVal, labelProtrusion)
   const hideMenuTranslation = multiply(hideMenuVal, guaranteeOffScreenWidth)
-  const translateX = add(hideMenuTranslation, hideTabTranslation)
+  const translateX = add(hideMenuTranslation, hideLabelTranslation)
 
   return (
     <Animated.View
