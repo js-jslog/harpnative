@@ -79,14 +79,6 @@ export const LayoutMenu = ({
     nudgeFunction: nudgeExperienceMode,
   }
 
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const nudgeDisplayMode = useNudgeDisplayMode()
-  const displayModeOptionProps = {
-    title: 'Display',
-    optionId: activeDisplayMode,
-    nudgeFunction: nudgeDisplayMode,
-  }
-
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const guaranteeOffScreenWidth =
     windowWidth > windowHeight ? windowWidth : windowHeight
@@ -116,7 +108,6 @@ export const LayoutMenu = ({
           <View style={styles.mainContents}>
             <Option {...apparatusOptionProps} />
             <Option {...experienceModeOptionProps} />
-            <Option {...displayModeOptionProps} />
           </View>
           <View style={styles.rotatedLabel}>
             <View style={styles.labelAligner}>
