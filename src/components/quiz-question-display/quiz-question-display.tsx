@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
   overlay: {
     ...StyleSheet.absoluteFillObject,
     flexDirection: 'row',
-    backgroundColor: colors.inertOutline,
-    opacity: 0.5,
+    backgroundColor: colors.pageColor,
+    opacity: 0.7,
   },
   mainContents: {
     ...StyleSheet.absoluteFillObject,
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   text: {
-    fontSize: sizes['8'],
+    fontSize: sizes['10'],
   },
 })
 
