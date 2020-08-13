@@ -11,8 +11,9 @@ const {
   1: borderWidth,
   6: borderRadius,
   2: elevation,
-  8: noteFontSize,
-  7: modifierFontSize,
+  7: noteFontSize,
+  4: modifierTopMargin,
+  6: modifierFontSize,
 } = sizes
 const width = sizes['8'] + sizes['4']
 const height = sizes['8'] + sizes['4']
@@ -46,6 +47,7 @@ export const useStyles = (yxCoord: YXCoord): HarpCellStyles => {
       fontSize: noteFontSize,
     },
     modifier: {
+      top: modifierTopMargin,
       display: isQuizMode && !isActive ? 'none' : 'flex',
       alignSelf: 'flex-start',
       color: isActive ? pageColor : borderColor,
