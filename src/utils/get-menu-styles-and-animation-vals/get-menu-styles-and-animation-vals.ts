@@ -77,7 +77,6 @@ export const getMenuStylesAndAnimationVals = (
     },
   })
 
-
   // Animation values
   const hideMenuVal = useTimingTransition(hideMenu, {
     duration: 400,
