@@ -25,8 +25,7 @@ export const getDynamicStyles = (
 ): { readonly activeSwipeStyle: ViewStyle } => {
   return StyleSheet.create({
     activeSwipeStyle: {
-      opacity:
-        state === State.ACTIVE ? 0.5 : 1,
+      opacity: state === State.ACTIVE ? 0.5 : 1,
     },
   })
 }

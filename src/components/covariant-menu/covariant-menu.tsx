@@ -1,6 +1,11 @@
 import { useGlobal } from 'reactn'
 import { useTimingTransition } from 'react-native-redash'
-import Animated, { Easing, multiply, add, interpolate } from 'react-native-reanimated'
+import Animated, {
+  Easing,
+  multiply,
+  add,
+  interpolate,
+} from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import { StyleSheet, View, Text, Dimensions } from 'react-native'
@@ -115,7 +120,10 @@ export const CovariantMenu = ({
   )
   const hideLabelTranslation = multiply(hideLabelVal, labelProtrusion * -1)
   const translateX = add(hideMenuTranslation, hideLabelTranslation)
-  const opacity = interpolate(hideMenuVal, { inputRange: [0, 1], outputRange: [0.7, 0.4] })
+  const opacity = interpolate(hideMenuVal, {
+    inputRange: [0, 1],
+    outputRange: [0.7, 0.4],
+  })
 
   return (
     <Animated.View
