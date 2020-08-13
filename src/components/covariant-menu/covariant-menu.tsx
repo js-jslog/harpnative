@@ -106,7 +106,7 @@ export const CovariantMenu = ({
               ]}
             >
               <View style={styles.labelAligner}>
-                <Text style={styles.text}>Tuning Menu</Text>
+                <Text style={styles.text}>Tuning</Text>
               </View>
             </Animated.View>
           </View>

@@ -84,7 +84,7 @@ export const LayoutMenu = ({
               ]}
             >
               <View style={styles.labelAligner}>
-                <Text style={styles.text}>Setup Menu</Text>
+                <Text style={styles.text}>Settings</Text>
               </View>
             </Animated.View>
           </View>
