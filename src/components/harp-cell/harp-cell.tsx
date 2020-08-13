@@ -1,3 +1,4 @@
+import Animated from 'react-native-reanimated'
 import {
   TapGestureHandler,
   TapGestureHandlerStateChangeEvent,
@@ -36,7 +37,7 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const setPozitionRoot = useSetPozitionRoot()
   const { thisDegreeId, thisPitchId } = usePositionAnalysis(yxCoord)
   const displayValue = useDisplayValue(yxCoord)
-  const styles = useStyles(yxCoord)
+  const [styles, animatedCellColor] = useStyles(yxCoord)
 
   const handleTapStateChange = ({
     nativeEvent,
@@ -57,14 +58,23 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const accessibleContent = (
     <LongPressGestureHandler onHandlerStateChange={handleLongPressStateChange}>
       <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-        <View accessible={true} accessibilityRole="button" style={styles.cell}>
+        <Animated.View
+          accessible={true}
+          accessibilityRole="button"
+          style={[
+            styles.cell,
+            {
+              backgroundColor: animatedCellColor,
+            },
+          ]}
+        >
           <View style={styles.contentsWrapper}>
             <Text style={styles.note}>{displayValue[0]}</Text>
           </View>
           <View style={styles.contentsWrapper}>
             <Text style={styles.modifier}>{displayValue[1]}</Text>
           </View>
-        </View>
+        </Animated.View>
       </TapGestureHandler>
     </LongPressGestureHandler>
   )

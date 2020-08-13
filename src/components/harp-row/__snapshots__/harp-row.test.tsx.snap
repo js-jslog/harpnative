@@ -35,18 +35,24 @@ exports[`A snapshot of a blow home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -107,18 +113,24 @@ exports[`A snapshot of a blow home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -179,18 +191,24 @@ exports[`A snapshot of a blow home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -251,18 +269,24 @@ exports[`A snapshot of a blow home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -323,18 +347,24 @@ exports[`A snapshot of a blow home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -395,18 +425,24 @@ exports[`A snapshot of a blow home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -467,18 +503,24 @@ exports[`A snapshot of a blow home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -539,18 +581,24 @@ exports[`A snapshot of a blow home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -611,18 +659,24 @@ exports[`A snapshot of a blow home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -683,18 +737,24 @@ exports[`A snapshot of a blow home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -789,18 +849,24 @@ exports[`A snapshot of a draw home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -861,18 +927,24 @@ exports[`A snapshot of a draw home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -933,18 +1005,24 @@ exports[`A snapshot of a draw home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -1005,18 +1083,24 @@ exports[`A snapshot of a draw home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -1077,18 +1161,24 @@ exports[`A snapshot of a draw home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -1149,18 +1239,24 @@ exports[`A snapshot of a draw home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -1221,18 +1317,24 @@ exports[`A snapshot of a draw home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -1293,18 +1395,24 @@ exports[`A snapshot of a draw home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -1365,18 +1473,24 @@ exports[`A snapshot of a draw home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -1437,18 +1551,24 @@ exports[`A snapshot of a draw home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
@@ -1543,7 +1663,6 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#fefefe",
           "borderColor": "#aaa",
           "borderRadius": 12.199000000000002,
           "borderWidth": 0,
@@ -1559,7 +1678,6 @@ exports[`A snapshot of a non-home row 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderColor": "#aaa",
             "borderRadius": 12.199000000000002,
             "borderWidth": 0,
@@ -1577,7 +1695,6 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#fefefe",
           "borderColor": "#aaa",
           "borderRadius": 12.199000000000002,
           "borderWidth": 0,
@@ -1593,7 +1710,6 @@ exports[`A snapshot of a non-home row 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderColor": "#aaa",
             "borderRadius": 12.199000000000002,
             "borderWidth": 0,
@@ -1611,7 +1727,6 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#fefefe",
           "borderColor": "#aaa",
           "borderRadius": 12.199000000000002,
           "borderWidth": 0,
@@ -1627,7 +1742,6 @@ exports[`A snapshot of a non-home row 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderColor": "#aaa",
             "borderRadius": 12.199000000000002,
             "borderWidth": 0,
@@ -1645,7 +1759,6 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#fefefe",
           "borderColor": "#aaa",
           "borderRadius": 12.199000000000002,
           "borderWidth": 0,
@@ -1661,7 +1774,6 @@ exports[`A snapshot of a non-home row 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderColor": "#aaa",
             "borderRadius": 12.199000000000002,
             "borderWidth": 0,
@@ -1679,7 +1791,6 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#fefefe",
           "borderColor": "#aaa",
           "borderRadius": 12.199000000000002,
           "borderWidth": 0,
@@ -1695,7 +1806,6 @@ exports[`A snapshot of a non-home row 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderColor": "#aaa",
             "borderRadius": 12.199000000000002,
             "borderWidth": 0,
@@ -1713,7 +1823,6 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#fefefe",
           "borderColor": "#aaa",
           "borderRadius": 12.199000000000002,
           "borderWidth": 0,
@@ -1729,7 +1838,6 @@ exports[`A snapshot of a non-home row 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderColor": "#aaa",
             "borderRadius": 12.199000000000002,
             "borderWidth": 0,
@@ -1747,7 +1855,6 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#fefefe",
           "borderColor": "#aaa",
           "borderRadius": 12.199000000000002,
           "borderWidth": 0,
@@ -1763,7 +1870,6 @@ exports[`A snapshot of a non-home row 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderColor": "#aaa",
             "borderRadius": 12.199000000000002,
             "borderWidth": 0,
@@ -1781,7 +1887,6 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#fefefe",
           "borderColor": "#aaa",
           "borderRadius": 12.199000000000002,
           "borderWidth": 0,
@@ -1797,7 +1902,6 @@ exports[`A snapshot of a non-home row 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderColor": "#aaa",
             "borderRadius": 12.199000000000002,
             "borderWidth": 0,
@@ -1815,7 +1919,6 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#fefefe",
           "borderColor": "#aaa",
           "borderRadius": 12.199000000000002,
           "borderWidth": 0,
@@ -1831,7 +1934,6 @@ exports[`A snapshot of a non-home row 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderColor": "#aaa",
             "borderRadius": 12.199000000000002,
             "borderWidth": 0,
@@ -1849,18 +1951,24 @@ exports[`A snapshot of a non-home row 1`] = `
       accessible={true}
       collapsable={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          },
+          Object {
+            "backgroundColor": AnimatedValue {
+              " __value": NaN,
+            },
+          },
+        ]
       }
     >
       <View
