@@ -47,7 +47,7 @@ export const LayoutMenu = ({
     menuBackgroundColor,
     labelOpacity,
     labelCounterScale,
-  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel)
+  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'RIGHT')
 
   return (
     <Animated.View

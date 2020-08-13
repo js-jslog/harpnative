@@ -32,9 +32,11 @@ type StyleAndAnimationVals = {
 
 export const getMenuStylesAndAnimationVals = (
   hideMenu: boolean,
-  hideLabel: boolean
+  hideLabel: boolean,
+  stashDirection: 'RIGHT' | 'LEFT'
 ): StyleAndAnimationVals => {
   const { 10: labelProtrusion, 9: fontSize, 7: borderRadius } = sizes
+  const directionMultiplier = stashDirection === 'RIGHT' ? -1 : 1
 
   const styles = StyleSheet.create({
     animated: {
@@ -43,7 +45,7 @@ export const getMenuStylesAndAnimationVals = (
     },
     overlay: {
       ...StyleSheet.absoluteFillObject,
-      left: labelProtrusion * -1,
+      left: labelProtrusion * directionMultiplier,
       flexDirection: 'row',
       justifyContent: 'flex-start',
       borderRadius,
