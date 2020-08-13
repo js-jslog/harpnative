@@ -6,7 +6,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 
 import { Option } from '../option'
-import { getMenuStylesAndAnimationVals } from '../layout-menu/utils'
+import { getMenuStylesAndAnimationVals } from '../../utils'
 import { useNudgeDisplayMode } from '../../hooks'
 
 import {
@@ -14,7 +14,6 @@ import {
   useNudgeHarpStrataByPozition,
   useNudgeHarpStrataByRootPitch,
 } from './hooks'
-
 
 type CovariantMenuProps = {
   readonly hideMenu: boolean

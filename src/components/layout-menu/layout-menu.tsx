@@ -6,8 +6,8 @@ import { View, Text } from 'react-native'
 import React from 'react'
 
 import { Option } from '../option'
+import { getMenuStylesAndAnimationVals } from '../../utils'
 
-import { getMenuStylesAndAnimationVals } from './utils'
 import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode } from './hooks'
 
 type LayoutMenuProps = {

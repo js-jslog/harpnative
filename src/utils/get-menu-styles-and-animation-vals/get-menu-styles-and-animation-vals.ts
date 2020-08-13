@@ -10,7 +10,7 @@ import {
 import { StyleSheet, Dimensions } from 'react-native'
 import type { TextStyle, ViewStyle } from 'react-native'
 
-import { sizes, colors } from '../../../../styles'
+import { sizes, colors } from '../../styles'
 
 type MenuStyles = {
   readonly animated: ViewStyle
