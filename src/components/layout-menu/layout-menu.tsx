@@ -1,5 +1,5 @@
 import { useGlobal } from 'reactn'
-import { useTimingTransition } from 'react-native-redash'
+import { useTimingTransition, interpolateColor } from 'react-native-redash'
 import Animated, {
   Easing,
   multiply,
@@ -35,9 +35,8 @@ const styles = StyleSheet.create({
     left: labelProtrusion * -1,
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    backgroundColor: colors.pageColor,
-    borderWidth: 1,
     borderRadius,
+    opacity: 0.7,
   },
   mainContents: {
     ...StyleSheet.absoluteFillObject,
@@ -97,6 +96,8 @@ export const LayoutMenu = ({
     duration: 400,
     easing: Easing.inOut(Easing.ease),
   })
+
+  // Menu animation values
   const hideMenuTranslation = interpolate(hideMenuVal, {
     inputRange: [0, 1],
     outputRange: [
@@ -109,13 +110,19 @@ export const LayoutMenu = ({
     outputRange: [0, labelProtrusion],
   })
   const translateX = add(hideMenuTranslation, hideLabelTranslation)
-  const opacity = interpolate(hideMenuVal, {
-    inputRange: [0, 1],
-    outputRange: [0.7, 0.4],
-  })
   const scale = interpolate(hideMenuVal, {
     inputRange: [0, 1],
     outputRange: [1, 0.5],
+  })
+  const backgroundColor = interpolateColor(hideMenuVal, {
+    inputRange: [0, 1],
+    outputRange: [colors.pageColor, colors.homeRowsColor],
+  })
+
+  // Label animation values
+  const opacity = interpolate(hideMenuVal, {
+    inputRange: [0, 1],
+    outputRange: [0, 1],
   })
   const reverseScale = interpolate(scale, {
     inputRange: [0.5, 1],
@@ -128,30 +135,37 @@ export const LayoutMenu = ({
         styles.animated,
         {
           transform: [{ translateX: translateX }, { scale: scale }],
-          opacity: opacity,
         },
       ]}
     >
       <TapGestureHandler onHandlerStateChange={tapHandler}>
-        <View style={styles.overlay}>
+        <Animated.View
+          style={[
+            styles.overlay,
+            {
+              backgroundColor,
+            },
+          ]}
+        >
           <View style={styles.mainContents}>
             <Option {...apparatusOptionProps} />
             <Option {...experienceModeOptionProps} />
           </View>
           <View style={styles.rotatedLabel}>
-            <View style={styles.labelAligner}>
-              <Animated.View
-                style={[
-                  {
-                    transform: [{ scale: reverseScale }],
-                  },
-                ]}
-              >
+            <Animated.View
+              style={[
+                {
+                  transform: [{ scale: reverseScale }],
+                  opacity: opacity,
+                },
+              ]}
+            >
+              <View style={styles.labelAligner}>
                 <Text style={styles.text}>Setup Menu</Text>
-              </Animated.View>
-            </View>
+              </View>
+            </Animated.View>
           </View>
-        </View>
+        </Animated.View>
       </TapGestureHandler>
     </Animated.View>
   )
