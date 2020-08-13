@@ -1,5 +1,5 @@
 import { useGlobal } from 'reactn'
-import Animated from 'react-native-reanimated'
+import Animated, {Easing, interpolate, cond, eq, greaterThan} from 'react-native-reanimated'
 import { StyleSheet, View, Text, Dimensions } from 'react-native'
 import React from 'react'
 
@@ -7,6 +7,7 @@ import { colors } from '../../styles'
 import { sizes } from '../../styles'
 
 import { useFlashDisplay } from './utils'
+import {useTimingTransition} from 'react-native-redash'
 
 const styles = StyleSheet.create({
   animated: {
@@ -17,7 +18,6 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     flexDirection: 'row',
     backgroundColor: colors.pageColor,
-    opacity: 0.7,
   },
   mainContents: {
     ...StyleSheet.absoluteFillObject,
@@ -47,13 +47,25 @@ export const QuizQuestionDisplay = ({
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const guaranteeOffScreenWidth =
     windowWidth > windowHeight ? windowWidth : windowHeight
-  const translateX = shouldDisplay ? 0 : guaranteeOffScreenWidth
+
+  const displayVal = useTimingTransition(shouldDisplay, {
+    duration: 200,
+    easing: Easing.inOut(Easing.ease),
+  })
+
+  const displayOpacity = interpolate(displayVal, {
+    inputRange: [0, 1],
+    outputRange: [0, 0.7],
+  })
+  const translateX = cond(greaterThan(displayVal, 0), 0, guaranteeOffScreenWidth)
+
   return (
     <Animated.View
       style={[
         styles.animated,
         {
           transform: [{ translateX: translateX }],
+          opacity: displayOpacity,
         },
       ]}
     >
