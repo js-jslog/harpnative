@@ -1,7 +1,5 @@
 import { useGlobal } from 'reactn'
-import { useTimingTransition } from 'react-native-redash'
 import Animated, {
-  Easing,
   interpolate,
   cond,
   greaterThan,
@@ -47,23 +45,18 @@ export const QuizQuestionDisplay = ({
   screenFree,
 }: QuizQuestionDisplayProps): React.ReactElement => {
   const [quizQuestion] = useGlobal('quizQuestion')
-  const shouldDisplay = useFlashDisplay(screenFree)
+  const flashAnimationValue = useFlashDisplay(screenFree)
 
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const guaranteeOffScreenWidth =
     windowWidth > windowHeight ? windowWidth : windowHeight
 
-  const displayVal = useTimingTransition(shouldDisplay, {
-    duration: 200,
-    easing: Easing.inOut(Easing.ease),
-  })
-
-  const displayOpacity = interpolate(displayVal, {
+  const displayOpacity = interpolate(flashAnimationValue, {
     inputRange: [0, 1],
     outputRange: [0, 0.7],
   })
   const translateX = cond(
-    greaterThan(displayVal, 0),
+    greaterThan(flashAnimationValue, 0),
     0,
     guaranteeOffScreenWidth
   )
