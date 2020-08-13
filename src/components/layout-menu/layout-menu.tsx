@@ -117,6 +117,10 @@ export const LayoutMenu = ({
     inputRange: [0, 1],
     outputRange: [1, 0.5],
   })
+  const reverseScale = interpolate(scale, {
+    inputRange: [0.5, 1],
+    outputRange: [1, 0.5],
+  })
 
   return (
     <Animated.View
@@ -136,7 +140,15 @@ export const LayoutMenu = ({
           </View>
           <View style={styles.rotatedLabel}>
             <View style={styles.labelAligner}>
-              <Text style={styles.text}>Setup Menu</Text>
+              <Animated.View
+                style={[
+                  {
+                    transform: [{ scale: reverseScale }],
+                  },
+                ]}
+              >
+                <Text style={styles.text}>Setup Menu</Text>
+              </Animated.View>
             </View>
           </View>
         </View>
