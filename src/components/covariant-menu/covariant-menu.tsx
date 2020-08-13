@@ -1,18 +1,12 @@
 import { useGlobal } from 'reactn'
-import { useTimingTransition } from 'react-native-redash'
-import Animated, {
-  Easing,
-  multiply,
-  add,
-  interpolate,
-} from 'react-native-reanimated'
+import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
-import { StyleSheet, View, Text, Dimensions } from 'react-native'
+import { View, Text } from 'react-native'
 import React from 'react'
 
 import { Option } from '../option'
-import { colors, sizes } from '../../styles'
+import { getMenuStylesAndAnimationVals } from '../layout-menu/utils'
 import { useNudgeDisplayMode } from '../../hooks'
 
 import {
@@ -21,48 +15,12 @@ import {
   useNudgeHarpStrataByRootPitch,
 } from './hooks'
 
+
 type CovariantMenuProps = {
   readonly hideMenu: boolean
   readonly hideLabel: boolean
   readonly tapHandler: (arg0: TapGestureHandlerStateChangeEvent) => void
 }
-
-const { 9: labelProtrusion, 7: fontSize } = sizes
-
-const styles = StyleSheet.create({
-  animated: {
-    ...StyleSheet.absoluteFillObject,
-    zIndex: 10,
-  },
-  overlay: {
-    ...StyleSheet.absoluteFillObject,
-    right: labelProtrusion * -1,
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    backgroundColor: colors.pageColor,
-  },
-  mainContents: {
-    ...StyleSheet.absoluteFillObject,
-    flexDirection: 'row',
-    right: labelProtrusion,
-  },
-  rotatedLabel: {
-    overflow: 'visible',
-    alignSelf: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: labelProtrusion,
-    width: labelProtrusion,
-    transform: [{ rotate: '-90deg' }],
-  },
-  labelAligner: {
-    alignItems: 'center',
-    width: 500,
-  },
-  text: {
-    fontSize,
-  },
-})
 
 export const CovariantMenu = ({
   hideLabel,
@@ -103,40 +61,36 @@ export const CovariantMenu = ({
     nudgeFunction: nudgeDisplayMode,
   }
 
-  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
-  const guaranteeOffScreenWidth =
-    windowWidth > windowHeight ? windowWidth : windowHeight
-  const hideMenuVal = useTimingTransition(hideMenu, {
-    duration: 400,
-    easing: Easing.inOut(Easing.ease),
-  })
-  const hideLabelVal = useTimingTransition(hideLabel, {
-    duration: 400,
-    easing: Easing.inOut(Easing.ease),
-  })
-  const hideMenuTranslation = multiply(
-    hideMenuVal,
-    guaranteeOffScreenWidth * -1
-  )
-  const hideLabelTranslation = multiply(hideLabelVal, labelProtrusion * -1)
-  const translateX = add(hideMenuTranslation, hideLabelTranslation)
-  const opacity = interpolate(hideMenuVal, {
-    inputRange: [0, 1],
-    outputRange: [0.7, 0.4],
-  })
+  const {
+    styles,
+    menuSlideTranslation,
+    menuScale,
+    menuBackgroundColor,
+    labelOpacity,
+    labelCounterScale,
+  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'LEFT')
 
   return (
     <Animated.View
       style={[
         styles.animated,
         {
-          transform: [{ translateX: translateX }],
-          opacity: opacity,
+          transform: [
+            { translateX: menuSlideTranslation },
+            { scale: menuScale },
+          ],
         },
       ]}
     >
       <TapGestureHandler onHandlerStateChange={tapHandler}>
-        <View style={styles.overlay}>
+        <Animated.View
+          style={[
+            styles.overlay,
+            {
+              backgroundColor: menuBackgroundColor,
+            },
+          ]}
+        >
           <View style={styles.mainContents}>
             <Option {...harpKeyOptionProps} />
             <Option {...pozitionOptionProps} />
@@ -144,11 +98,20 @@ export const CovariantMenu = ({
             <Option {...displayModeOptionProps} />
           </View>
           <View style={styles.rotatedLabel}>
-            <View style={styles.labelAligner}>
-              <Text style={styles.text}>Tuning Menu</Text>
-            </View>
+            <Animated.View
+              style={[
+                {
+                  transform: [{ scale: labelCounterScale }],
+                  opacity: labelOpacity,
+                },
+              ]}
+            >
+              <View style={styles.labelAligner}>
+                <Text style={styles.text}>Tuning Menu</Text>
+              </View>
+            </Animated.View>
           </View>
-        </View>
+        </Animated.View>
       </TapGestureHandler>
     </Animated.View>
   )

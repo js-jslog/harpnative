@@ -36,7 +36,7 @@ export const getMenuStylesAndAnimationVals = (
   stashDirection: 'RIGHT' | 'LEFT'
 ): StyleAndAnimationVals => {
   const { 10: labelProtrusion, 9: fontSize, 7: borderRadius } = sizes
-  const directionMultiplier = stashDirection === 'RIGHT' ? -1 : 1
+  const outwardDirectionMultiplier = stashDirection === 'RIGHT' ? 1 : -1
 
   const styles = StyleSheet.create({
     animated: {
@@ -45,16 +45,18 @@ export const getMenuStylesAndAnimationVals = (
     },
     overlay: {
       ...StyleSheet.absoluteFillObject,
-      left: labelProtrusion * directionMultiplier,
+      left: stashDirection === 'RIGHT' ? labelProtrusion * -1 : 0,
+      right: stashDirection === 'LEFT' ? labelProtrusion * -1 : 0,
       flexDirection: 'row',
-      justifyContent: 'flex-start',
+      justifyContent: stashDirection === 'RIGHT' ? 'flex-start' : 'flex-end',
       borderRadius,
       opacity: 0.7,
     },
     mainContents: {
       ...StyleSheet.absoluteFillObject,
       flexDirection: 'row',
-      left: labelProtrusion,
+      left: stashDirection === 'RIGHT' ? labelProtrusion : 0,
+      right: stashDirection === 'LEFT' ? labelProtrusion : 0,
     },
     rotatedLabel: {
       overflow: 'visible',
@@ -91,12 +93,15 @@ export const getMenuStylesAndAnimationVals = (
     inputRange: [0, 1],
     outputRange: [
       0,
-      sub(guaranteeOffScreenWidth, multiply(guaranteeOffScreenWidth, 0.25)),
+      multiply(
+        sub(guaranteeOffScreenWidth, multiply(guaranteeOffScreenWidth, 0.25)),
+        outwardDirectionMultiplier
+      ),
     ],
   })
   const hideLabelTranslation = interpolate(hideLabelVal, {
     inputRange: [0, 1],
-    outputRange: [0, labelProtrusion],
+    outputRange: [0, multiply(labelProtrusion, outwardDirectionMultiplier)],
   })
   const menuSlideTranslation = add(hideMenuTranslation, hideLabelTranslation)
   const menuScale = interpolate(hideMenuVal, {
