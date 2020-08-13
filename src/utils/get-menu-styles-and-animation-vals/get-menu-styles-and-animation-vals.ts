@@ -37,6 +37,7 @@ export const getMenuStylesAndAnimationVals = (
 ): StyleAndAnimationVals => {
   const { 10: labelProtrusion, 9: fontSize, 7: borderRadius } = sizes
   const outwardDirectionMultiplier = stashDirection === 'RIGHT' ? 1 : -1
+  const labelRotation = stashDirection === 'RIGHT' ? '90deg' : '-90deg'
 
   const styles = StyleSheet.create({
     animated: {
@@ -65,7 +66,7 @@ export const getMenuStylesAndAnimationVals = (
       justifyContent: 'center',
       height: labelProtrusion,
       width: labelProtrusion,
-      transform: [{ rotate: '90deg' }],
+      transform: [{ rotate: labelRotation }],
     },
     labelAligner: {
       alignItems: 'center',
