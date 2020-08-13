@@ -1,12 +1,12 @@
 import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
-import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import { View, Text } from 'react-native'
 import React from 'react'
 
 import { Option } from '../option'
 import { getMenuStylesAndAnimationVals } from '../../utils'
+import type { MenuProps } from '../../types'
 import { useNudgeDisplayMode } from '../../hooks'
 
 import {
@@ -15,17 +15,11 @@ import {
   useNudgeHarpStrataByRootPitch,
 } from './hooks'
 
-type CovariantMenuProps = {
-  readonly hideMenu: boolean
-  readonly hideLabel: boolean
-  readonly tapHandler: (arg0: TapGestureHandlerStateChangeEvent) => void
-}
-
 export const CovariantMenu = ({
   hideLabel,
   hideMenu,
   tapHandler,
-}: CovariantMenuProps): React.ReactElement => {
+}: MenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
 
   const { harpKeyId } = activeHarpStrata

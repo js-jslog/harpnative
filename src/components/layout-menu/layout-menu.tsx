@@ -1,26 +1,20 @@
 import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
-import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import { View, Text } from 'react-native'
 import React from 'react'
 
 import { Option } from '../option'
 import { getMenuStylesAndAnimationVals } from '../../utils'
+import type { MenuProps } from '../../types'
 
 import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode } from './hooks'
-
-type LayoutMenuProps = {
-  readonly hideMenu: boolean
-  readonly hideLabel: boolean
-  readonly tapHandler: (arg0: TapGestureHandlerStateChangeEvent) => void
-}
 
 export const LayoutMenu = ({
   hideMenu,
   hideLabel,
   tapHandler,
-}: LayoutMenuProps): React.ReactElement => {
+}: MenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const nudgeHarpStrataByApparatus = useNudgeHarpStrataByApparatus()
   const {
