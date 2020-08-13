@@ -1,20 +1,14 @@
 import { useGlobal } from 'reactn'
-import { useTimingTransition, interpolateColor } from 'react-native-redash'
-import Animated, {
-  Easing,
-  multiply,
-  add,
-  sub,
-  interpolate,
-} from 'react-native-reanimated'
+import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
-import { StyleSheet, View, Text, Dimensions } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
 import { Option } from '../option'
-import { colors, sizes } from '../../styles'
+import { sizes } from '../../styles'
 
+import { createMenuAnimationValues } from './utils'
 import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode } from './hooks'
 
 type LayoutMenuProps = {
@@ -85,49 +79,13 @@ export const LayoutMenu = ({
     nudgeFunction: nudgeExperienceMode,
   }
 
-  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
-  const guaranteeOffScreenWidth =
-    windowWidth > windowHeight ? windowWidth : windowHeight
-  const hideMenuVal = useTimingTransition(hideMenu, {
-    duration: 400,
-    easing: Easing.inOut(Easing.ease),
-  })
-  const hideLabelVal = useTimingTransition(hideLabel, {
-    duration: 400,
-    easing: Easing.inOut(Easing.ease),
-  })
-
-  // Menu animation values
-  const hideMenuTranslation = interpolate(hideMenuVal, {
-    inputRange: [0, 1],
-    outputRange: [
-      0,
-      sub(guaranteeOffScreenWidth, multiply(guaranteeOffScreenWidth, 0.25)),
-    ],
-  })
-  const hideLabelTranslation = interpolate(hideLabelVal, {
-    inputRange: [0, 1],
-    outputRange: [0, labelProtrusion],
-  })
-  const translateX = add(hideMenuTranslation, hideLabelTranslation)
-  const scale = interpolate(hideMenuVal, {
-    inputRange: [0, 1],
-    outputRange: [1, 0.5],
-  })
-  const backgroundColor = interpolateColor(hideMenuVal, {
-    inputRange: [0, 1],
-    outputRange: [colors.pageColor, colors.homeRowsColor],
-  })
-
-  // Label animation values
-  const opacity = interpolate(hideMenuVal, {
-    inputRange: [0, 1],
-    outputRange: [0, 1],
-  })
-  const reverseScale = interpolate(scale, {
-    inputRange: [0.5, 1],
-    outputRange: [1, 0.5],
-  })
+  const {
+    translateX,
+    scale,
+    backgroundColor,
+    opacity,
+    reverseScale,
+  } = createMenuAnimationValues(hideMenu, hideLabel, labelProtrusion)
 
   return (
     <Animated.View
