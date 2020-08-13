@@ -76,6 +76,9 @@ export const getMenuStylesAndAnimationVals = (
       fontSize,
     },
   })
+
+
+  // Animation values
   const hideMenuVal = useTimingTransition(hideMenu, {
     duration: 400,
     easing: Easing.inOut(Easing.ease),
