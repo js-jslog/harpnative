@@ -10,7 +10,7 @@ import React from 'react'
 import { colors } from '../../styles'
 import { sizes } from '../../styles'
 
-import { useFlashDisplay } from './utils'
+import { useFlashDisplay } from './hooks'
 
 const styles = StyleSheet.create({
   animated: {
