@@ -1,5 +1,11 @@
 import { useGlobal } from 'reactn'
-import Animated, {Easing, interpolate, cond, eq, greaterThan} from 'react-native-reanimated'
+import { useTimingTransition } from 'react-native-redash'
+import Animated, {
+  Easing,
+  interpolate,
+  cond,
+  greaterThan,
+} from 'react-native-reanimated'
 import { StyleSheet, View, Text, Dimensions } from 'react-native'
 import React from 'react'
 
@@ -7,7 +13,6 @@ import { colors } from '../../styles'
 import { sizes } from '../../styles'
 
 import { useFlashDisplay } from './utils'
-import {useTimingTransition} from 'react-native-redash'
 
 const styles = StyleSheet.create({
   animated: {
@@ -57,7 +62,11 @@ export const QuizQuestionDisplay = ({
     inputRange: [0, 1],
     outputRange: [0, 0.7],
   })
-  const translateX = cond(greaterThan(displayVal, 0), 0, guaranteeOffScreenWidth)
+  const translateX = cond(
+    greaterThan(displayVal, 0),
+    0,
+    guaranteeOffScreenWidth
+  )
 
   return (
     <Animated.View

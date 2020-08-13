@@ -58,10 +58,10 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
     <LongPressGestureHandler onHandlerStateChange={handleLongPressStateChange}>
       <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
         <View accessible={true} accessibilityRole="button" style={styles.cell}>
-          <View style={styles.contentsWrapper} >
+          <View style={styles.contentsWrapper}>
             <Text style={styles.note}>{displayValue[0]}</Text>
           </View>
-          <View style={styles.contentsWrapper} >
+          <View style={styles.contentsWrapper}>
             <Text style={styles.modifier}>{displayValue[1]}</Text>
           </View>
         </View>
