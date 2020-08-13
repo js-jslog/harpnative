@@ -7,11 +7,22 @@ import {
   add,
   Node,
 } from 'react-native-reanimated'
-import { Dimensions } from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
+import type { TextStyle, ViewStyle } from 'react-native'
 
-import { colors } from '../../../../styles'
+import { sizes, colors } from '../../../../styles'
 
-type ManuAnimationValues = {
+type MenuStyles = {
+  readonly animated: ViewStyle
+  readonly overlay: ViewStyle
+  readonly mainContents: ViewStyle
+  readonly rotatedLabel: ViewStyle
+  readonly labelAligner: ViewStyle
+  readonly text: TextStyle
+}
+
+type StyleAndAnimationVals = {
+  readonly styles: MenuStyles
   readonly translateX: Node<number>
   readonly scale: Node<number>
   readonly backgroundColor: Node<number>
@@ -19,11 +30,47 @@ type ManuAnimationValues = {
   readonly reverseScale: Node<number>
 }
 
-export const createMenuAnimationValues = (
+export const getMenuStylesAndAnimationVals = (
   hideMenu: boolean,
-  hideLabel: boolean,
-  labelProtrusion: number
-): ManuAnimationValues => {
+  hideLabel: boolean
+): StyleAndAnimationVals => {
+  const { 10: labelProtrusion, 9: fontSize, 7: borderRadius } = sizes
+
+  const styles = StyleSheet.create({
+    animated: {
+      ...StyleSheet.absoluteFillObject,
+      zIndex: 10,
+    },
+    overlay: {
+      ...StyleSheet.absoluteFillObject,
+      left: labelProtrusion * -1,
+      flexDirection: 'row',
+      justifyContent: 'flex-start',
+      borderRadius,
+      opacity: 0.7,
+    },
+    mainContents: {
+      ...StyleSheet.absoluteFillObject,
+      flexDirection: 'row',
+      left: labelProtrusion,
+    },
+    rotatedLabel: {
+      overflow: 'visible',
+      alignSelf: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: labelProtrusion,
+      width: labelProtrusion,
+      transform: [{ rotate: '90deg' }],
+    },
+    labelAligner: {
+      alignItems: 'center',
+      width: 500,
+    },
+    text: {
+      fontSize,
+    },
+  })
   const hideMenuVal = useTimingTransition(hideMenu, {
     duration: 400,
     easing: Easing.inOut(Easing.ease),
@@ -70,6 +117,7 @@ export const createMenuAnimationValues = (
   })
 
   return {
+    styles,
     translateX,
     scale,
     backgroundColor,

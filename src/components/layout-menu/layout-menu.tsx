@@ -2,13 +2,12 @@ import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
-import { StyleSheet, View, Text } from 'react-native'
+import { View, Text } from 'react-native'
 import React from 'react'
 
 import { Option } from '../option'
-import { sizes } from '../../styles'
 
-import { createMenuAnimationValues } from './utils'
+import { getMenuStylesAndAnimationVals } from './utils'
 import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode } from './hooks'
 
 type LayoutMenuProps = {
@@ -16,44 +15,6 @@ type LayoutMenuProps = {
   readonly hideLabel: boolean
   readonly tapHandler: (arg0: TapGestureHandlerStateChangeEvent) => void
 }
-
-const { 10: labelProtrusion, 9: fontSize, 7: borderRadius } = sizes
-
-const styles = StyleSheet.create({
-  animated: {
-    ...StyleSheet.absoluteFillObject,
-    zIndex: 10,
-  },
-  overlay: {
-    ...StyleSheet.absoluteFillObject,
-    left: labelProtrusion * -1,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    borderRadius,
-    opacity: 0.7,
-  },
-  mainContents: {
-    ...StyleSheet.absoluteFillObject,
-    flexDirection: 'row',
-    left: labelProtrusion,
-  },
-  rotatedLabel: {
-    overflow: 'visible',
-    alignSelf: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: labelProtrusion,
-    width: labelProtrusion,
-    transform: [{ rotate: '90deg' }],
-  },
-  labelAligner: {
-    alignItems: 'center',
-    width: 500,
-  },
-  text: {
-    fontSize,
-  },
-})
 
 export const LayoutMenu = ({
   hideMenu,
@@ -80,12 +41,13 @@ export const LayoutMenu = ({
   }
 
   const {
+    styles,
     translateX,
     scale,
     backgroundColor,
     opacity,
     reverseScale,
-  } = createMenuAnimationValues(hideMenu, hideLabel, labelProtrusion)
+  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel)
 
   return (
     <Animated.View
