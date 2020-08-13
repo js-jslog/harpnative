@@ -42,11 +42,11 @@ export const LayoutMenu = ({
 
   const {
     styles,
-    translateX,
-    scale,
-    backgroundColor,
-    opacity,
-    reverseScale,
+    menuSlideTranslation,
+    menuScale,
+    menuBackgroundColor,
+    labelOpacity,
+    labelCounterScale,
   } = getMenuStylesAndAnimationVals(hideMenu, hideLabel)
 
   return (
@@ -54,7 +54,10 @@ export const LayoutMenu = ({
       style={[
         styles.animated,
         {
-          transform: [{ translateX: translateX }, { scale: scale }],
+          transform: [
+            { translateX: menuSlideTranslation },
+            { scale: menuScale },
+          ],
         },
       ]}
     >
@@ -63,7 +66,7 @@ export const LayoutMenu = ({
           style={[
             styles.overlay,
             {
-              backgroundColor,
+              backgroundColor: menuBackgroundColor,
             },
           ]}
         >
@@ -75,8 +78,8 @@ export const LayoutMenu = ({
             <Animated.View
               style={[
                 {
-                  transform: [{ scale: reverseScale }],
-                  opacity: opacity,
+                  transform: [{ scale: labelCounterScale }],
+                  opacity: labelOpacity,
                 },
               ]}
             >
