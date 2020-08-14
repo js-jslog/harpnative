@@ -1,6 +1,4 @@
 import { useGlobal } from 'reactn'
-import { useTimingTransition, interpolateColor } from 'react-native-redash'
-import { Easing, Node } from 'react-native-reanimated'
 import { StyleSheet } from 'react-native'
 import { IsActiveIds } from 'harpstrata'
 
@@ -21,33 +19,25 @@ const width = sizes['8'] + sizes['4']
 const height = sizes['8'] + sizes['4']
 const { pageColor, degreeColors, inertOutline: borderColor } = colors
 
-export const useStyles = (yxCoord: YXCoord): [HarpCellStyles, Node<number>] => {
+export const useStyles = (yxCoord: YXCoord): HarpCellStyles => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const positionFacts = usePositionAnalysis(yxCoord)
   const { thisDegreeId, thisIsActiveId } = positionFacts
   const isActive = thisIsActiveId === IsActiveIds.Active
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
-  const activeCellColor = thisDegreeId ? degreeColors[thisDegreeId] : pageColor
-  const inactiveCellColor = pageColor
-
-  const activityTransAnimationVal = useTimingTransition(isActive, {
-    duration: 400,
-    easing: Easing.inOut(Easing.ease),
-  })
-  const animatedCellColor = interpolateColor(activityTransAnimationVal, {
-    inputRange: [0, 1],
-    outputRange: [inactiveCellColor, activeCellColor],
-  })
+  const cellColor =
+    isActive && thisDegreeId ? degreeColors[thisDegreeId] : pageColor
 
   const styles = StyleSheet.create<HarpCellStyles>({
     cell: {
       flexDirection: 'row',
+      backgroundColor: cellColor,
       justifyContent: 'center',
       alignItems: 'center',
       elevation: isActive ? elevation : 0,
       borderRadius,
       borderWidth: thisDegreeId ? borderWidth : 0,
-      borderColor: isActive ? 'transparent' : borderColor,
+      borderColor: isActive ? cellColor : borderColor,
       width,
       height,
     },
@@ -70,5 +60,5 @@ export const useStyles = (yxCoord: YXCoord): [HarpCellStyles, Node<number>] => {
     },
   })
 
-  return [styles, animatedCellColor]
+  return styles
 }

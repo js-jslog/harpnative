@@ -15,24 +15,18 @@ exports[`A snapshot of a populated cell 1`] = `
     accessible={true}
     collapsable={false}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        },
-        Object {
-          "backgroundColor": AnimatedValue {
-            " __value": NaN,
-          },
-        },
-      ]
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fefefe",
+        "borderColor": "#aaa",
+        "borderRadius": 12.199000000000002,
+        "borderWidth": 1.1,
+        "elevation": 0,
+        "flexDirection": "row",
+        "height": 36.597,
+        "justifyContent": "center",
+        "width": 36.597,
+      }
     }
   >
     <View
@@ -106,24 +100,18 @@ exports[`A snapshot of an active cell 1`] = `
     accessible={true}
     collapsable={false}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "borderColor": "transparent",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 1.7798000000000003,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        },
-        Object {
-          "backgroundColor": AnimatedValue {
-            " __value": NaN,
-          },
-        },
-      ]
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#323031",
+        "borderColor": "#323031",
+        "borderRadius": 12.199000000000002,
+        "borderWidth": 1.1,
+        "elevation": 1.7798000000000003,
+        "flexDirection": "row",
+        "height": 36.597,
+        "justifyContent": "center",
+        "width": 36.597,
+      }
     }
   >
     <View
@@ -197,6 +185,7 @@ exports[`A snapshot of an empty cell 1`] = `
     style={
       Object {
         "alignItems": "center",
+        "backgroundColor": "#fefefe",
         "borderColor": "#aaa",
         "borderRadius": 12.199000000000002,
         "borderWidth": 0,
@@ -212,6 +201,7 @@ exports[`A snapshot of an empty cell 1`] = `
       style={
         Object {
           "alignItems": "center",
+          "backgroundColor": "#fefefe",
           "borderColor": "#aaa",
           "borderRadius": 12.199000000000002,
           "borderWidth": 0,
@@ -242,24 +232,18 @@ exports[`A snapshot of an inactive cell in Explore mode 1`] = `
     accessible={true}
     collapsable={false}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        },
-        Object {
-          "backgroundColor": AnimatedValue {
-            " __value": NaN,
-          },
-        },
-      ]
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fefefe",
+        "borderColor": "#aaa",
+        "borderRadius": 12.199000000000002,
+        "borderWidth": 1.1,
+        "elevation": 0,
+        "flexDirection": "row",
+        "height": 36.597,
+        "justifyContent": "center",
+        "width": 36.597,
+      }
     }
   >
     <View
@@ -333,24 +317,18 @@ exports[`A snapshot of an inactive cell in Quiz mode 1`] = `
     accessible={true}
     collapsable={false}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "borderColor": "#aaa",
-          "borderRadius": 12.199000000000002,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 36.597,
-          "justifyContent": "center",
-          "width": 36.597,
-        },
-        Object {
-          "backgroundColor": AnimatedValue {
-            " __value": NaN,
-          },
-        },
-      ]
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fefefe",
+        "borderColor": "#aaa",
+        "borderRadius": 12.199000000000002,
+        "borderWidth": 1.1,
+        "elevation": 0,
+        "flexDirection": "row",
+        "height": 36.597,
+        "justifyContent": "center",
+        "width": 36.597,
+      }
     }
   >
     <View

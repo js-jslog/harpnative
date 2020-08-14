@@ -53,6 +53,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -68,6 +69,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -85,6 +87,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -100,6 +103,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -117,6 +121,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -132,6 +137,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -170,24 +176,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -248,6 +248,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -263,6 +264,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -280,6 +282,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -295,6 +298,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -333,24 +337,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -411,24 +409,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -489,24 +481,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -663,24 +649,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -741,24 +721,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -819,24 +793,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -918,24 +886,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -996,24 +958,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -1074,24 +1030,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -1173,6 +1123,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -1188,6 +1139,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -1205,24 +1157,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -1283,24 +1229,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -1382,6 +1322,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -1397,6 +1338,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -1414,6 +1356,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -1429,6 +1372,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -1446,24 +1390,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -1554,6 +1492,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -1569,6 +1508,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -1586,6 +1526,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -1601,6 +1542,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -1618,6 +1560,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -1633,6 +1576,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -1671,24 +1615,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -1749,24 +1687,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -1827,24 +1759,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -1926,24 +1852,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -2004,24 +1924,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -2082,24 +1996,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -2256,24 +2164,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -2334,24 +2236,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -2412,24 +2308,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -2511,24 +2401,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -2589,6 +2473,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -2604,6 +2489,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -2621,24 +2507,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -2720,6 +2600,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -2735,6 +2616,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -2752,6 +2634,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -2767,6 +2650,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -2784,6 +2668,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -2799,6 +2684,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -2837,6 +2723,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -2852,6 +2739,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -2869,6 +2757,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -2884,6 +2773,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -2901,6 +2791,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -2916,6 +2807,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -2963,6 +2855,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -2978,6 +2871,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -2995,6 +2889,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -3010,6 +2905,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -3027,6 +2923,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -3042,6 +2939,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -3080,6 +2978,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -3095,6 +2994,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -3112,24 +3012,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -3190,24 +3084,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -3289,24 +3177,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -3367,24 +3249,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -3445,24 +3321,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -3619,24 +3489,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -3697,24 +3561,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -3775,24 +3633,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -3874,24 +3726,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -3952,6 +3798,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -3967,6 +3814,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -3984,24 +3832,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -4083,6 +3925,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -4098,6 +3941,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -4115,6 +3959,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -4130,6 +3975,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -4147,6 +3993,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -4162,6 +4009,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -4200,6 +4048,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -4215,6 +4064,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -4232,6 +4082,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -4247,6 +4098,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -4264,6 +4116,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -4279,6 +4132,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -4326,24 +4180,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -4425,24 +4273,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -4524,24 +4366,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -4656,24 +4492,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -4755,24 +4585,18 @@ exports[`A component is rendered 1`] = `
           accessible={true}
           collapsable={false}
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "flexDirection": "row",
-                "height": 36.597,
-                "justifyContent": "center",
-                "width": 36.597,
-              },
-              Object {
-                "backgroundColor": AnimatedValue {
-                  " __value": NaN,
-                },
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
           }
         >
           <View
@@ -4854,6 +4678,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -4869,6 +4694,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
@@ -4907,6 +4733,7 @@ exports[`A component is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
               "borderRadius": 12.199000000000002,
               "borderWidth": 0,
@@ -4922,6 +4749,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
                 "borderRadius": 12.199000000000002,
                 "borderWidth": 0,
