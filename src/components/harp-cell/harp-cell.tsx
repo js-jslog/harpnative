@@ -8,16 +8,11 @@ import {
 import { Text, View } from 'react-native'
 import type { TextStyle, ViewStyle } from 'react-native'
 import React from 'react'
+import type { DegreeIds, PitchIds, IsActiveIds } from 'harpstrata'
 
-import type { Coord } from '../../types'
+import type { Coord, ExperienceModes } from '../../types'
 
-import {
-  useToggleHarpCell,
-  useStyles,
-  useSetPozitionRoot,
-  usePositionAnalysis,
-  useDisplayValue,
-} from './hooks'
+import { getStyles } from './utils'
 
 export type YXCoord = [Coord, Coord]
 
@@ -28,16 +23,24 @@ export type HarpCellStyles = {
   readonly modifier: TextStyle
 }
 
+type DisplayValueTuple =
+  | [string, string]
+  | [string, undefined]
+  | [undefined, undefined]
+
 type HarpCellProps = {
   readonly yxCoord: YXCoord
+  readonly thisDegreeId: DegreeIds | undefined
+  readonly thisPitchId: PitchIds | undefined
+  readonly thisIsActiveId: IsActiveIds | undefined
+  readonly displayValue: DisplayValueTuple
+  readonly activeExperienceMode: ExperienceModes
+  readonly toggleHarpCell: (arg0: DegreeIds | undefined) => void
+  readonly setPozitionRoot: (arg0: PitchIds | undefined) => void
 }
 
-export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
-  const toggleHarpCell = useToggleHarpCell()
-  const setPozitionRoot = useSetPozitionRoot()
-  const { thisDegreeId, thisPitchId } = usePositionAnalysis(yxCoord)
-  const displayValue = useDisplayValue(yxCoord)
-  const [styles, animatedCellColor] = useStyles(yxCoord)
+export const HarpCell = ({ thisDegreeId, thisPitchId, thisIsActiveId, displayValue, activeExperienceMode, toggleHarpCell, setPozitionRoot }: HarpCellProps): React.ReactElement => {
+  const [styles, animatedCellColor] = getStyles({thisDegreeId, thisIsActiveId, activeExperienceMode})
 
   const handleTapStateChange = ({
     nativeEvent,
