@@ -27,7 +27,9 @@ const relativeFragmentBoundary = 7
 const relativeLabelProtrusion = 10
 
 export const getSizes = (): SizeScheme => {
-  const { width, height } = Dimensions.get('window')
+  const { width: orientationWidth, height: orientationHeight } = Dimensions.get('window')
+  const width = orientationWidth > orientationHeight ? orientationWidth : orientationHeight
+  const height = orientationHeight < orientationWidth ? orientationHeight : orientationWidth
 
   const {
     [relativeColumnWidth]: columnWidth,
