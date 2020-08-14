@@ -9,7 +9,7 @@ import {
   activeCellsHarpStrata,
 } from '../../test-resources'
 
-import { HarpCell } from './index'
+import { HarpCell } from './harp-cell'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
