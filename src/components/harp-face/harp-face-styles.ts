@@ -21,7 +21,6 @@ export const getStyles = (activeHarpStrata: HarpStrata): HarpFaceStyles => {
     face: {
       flexDirection: 'row',
       justifyContent: 'space-around',
-      // TODO: use columnCount in the getSizes function itself. Probably needs to turn it in to a hook
       width: columnWidth * columnCount + (fragmentGutter * groupCount + 1),
       height: rowHeight * rowCount,
     },
