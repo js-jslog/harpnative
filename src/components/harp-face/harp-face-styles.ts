@@ -12,9 +12,9 @@ type HarpFaceStyles = {
 export const getStyles = (activeHarpStrata: HarpStrata): HarpFaceStyles => {
   const sizes = getSizes()
   const {
-    harpFaceColumnWidth: columnWidth,
-    harpFaceRowHeight: rowHeight,
-    harpFaceFragmentBoundary: boundaryWidth,
+    columnWidth,
+    rowHeight,
+    fragmentGutter,
   } = sizes
   const { columnCount, rowCount, octaveColumnGroups } = getHarpFaceFacts(
     activeHarpStrata
@@ -26,7 +26,7 @@ export const getStyles = (activeHarpStrata: HarpStrata): HarpFaceStyles => {
       flexDirection: 'row',
       justifyContent: 'space-around',
       // TODO: use columnCount in the getSizes function itself. Probably needs to turn it in to a hook
-      width: columnWidth * columnCount + (boundaryWidth * groupCount + 1),
+      width: columnWidth * columnCount + (fragmentGutter * groupCount + 1),
       height: rowHeight * rowCount,
     },
   })

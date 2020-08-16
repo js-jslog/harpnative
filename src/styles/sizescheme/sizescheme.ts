@@ -4,10 +4,10 @@ import { SizeScheme } from '../styles-types'
 
 const relativeSizes: Omit<
   SizeScheme,
-  | 'harpFaceColumnWidth'
-  | 'harpFaceRowHeight'
-  | 'harpFaceFragmentBoundary'
-  | 'menuLabelProtrusion'
+  | 'columnWidth'
+  | 'rowHeight'
+  | 'fragmentGutter'
+  | 'labelProtrusion'
 > = {
   0: 0,
   1: 1,
@@ -23,7 +23,7 @@ const relativeSizes: Omit<
 } as const
 
 const relativeColumnWidth = 9
-const relativeFragmentBoundary = 7
+const relativeFragmentGutterWidth = 7
 const relativeLabelProtrusion = 10
 
 export const getSizes = (): SizeScheme => {
@@ -33,16 +33,16 @@ export const getSizes = (): SizeScheme => {
 
   const {
     [relativeColumnWidth]: columnWidth,
-    [relativeFragmentBoundary]: fragmentBoundary,
+    [relativeFragmentGutterWidth]: fragmentGutter,
     [relativeLabelProtrusion]: labelProtrusion,
   } = relativeSizes
   const rowHeight = columnWidth
-  const labelGrace = fragmentBoundary
+  const labelGrace = fragmentGutter
 
   const widthRequirements =
     deviceWidth /
     (columnWidth * 10 +
-      fragmentBoundary * 3 +
+      fragmentGutter * 3 +
       labelProtrusion * 2 +
       labelGrace * 2)
   const heightRequirements = deviceHeight / (rowHeight * 7)
@@ -64,10 +64,10 @@ export const getSizes = (): SizeScheme => {
     8: seedSize * relativeSizes[8],
     9: seedSize * relativeSizes[9],
     10: seedSize * relativeSizes[10],
-    harpFaceColumnWidth: seedSize * columnWidth,
-    harpFaceRowHeight: seedSize * columnWidth,
-    harpFaceFragmentBoundary: seedSize * fragmentBoundary,
-    menuLabelProtrusion: seedSize * labelProtrusion,
+    columnWidth: seedSize * columnWidth,
+    rowHeight: seedSize * columnWidth,
+    fragmentGutterWidth: seedSize * fragmentGutter,
+    labelProtrusion: seedSize * labelProtrusion,
   } as const
 
   return absoluteSizes

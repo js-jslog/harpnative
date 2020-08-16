@@ -37,7 +37,7 @@ export const getMenuStylesAndAnimationVals = (
 ): StyleAndAnimationVals => {
   const sizes = getSizes()
   const {
-    menuLabelProtrusion: labelProtrusion,
+    labelProtrusion,
     9: fontSize,
     7: borderRadius,
   } = sizes

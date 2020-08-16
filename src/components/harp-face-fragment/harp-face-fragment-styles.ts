@@ -17,8 +17,8 @@ export const getStyles = (
   activeHarpStrata: HarpStrata
 ): HarpFaceFragmentStyles => {
   const {
-    harpFaceColumnWidth: columnWidth,
-    harpFaceRowHeight: rowHeight,
+    columnWidth,
+    rowHeight,
   } = getSizes()
   const { columnCount } = getFragmentFacts(xRange)
   const { rowCount } = getHarpFaceFacts(activeHarpStrata)
