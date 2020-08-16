@@ -4,10 +4,7 @@ import { SizeScheme } from '../styles-types'
 
 const relativeSizes: Omit<
   SizeScheme,
-  | 'columnWidth'
-  | 'rowHeight'
-  | 'fragmentGutter'
-  | 'labelProtrusion'
+  'columnWidth' | 'rowHeight' | 'fragmentGutter' | 'labelProtrusion'
 > = {
   0: 0,
   1: 1,

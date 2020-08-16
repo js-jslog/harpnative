@@ -36,11 +36,7 @@ export const getMenuStylesAndAnimationVals = (
   stashDirection: 'RIGHT' | 'LEFT'
 ): StyleAndAnimationVals => {
   const sizes = getSizes()
-  const {
-    labelProtrusion,
-    9: fontSize,
-    7: borderRadius,
-  } = sizes
+  const { labelProtrusion, 9: fontSize, 7: borderRadius } = sizes
   const outwardDirectionMultiplier = stashDirection === 'RIGHT' ? 1 : -1
   const labelRotation = stashDirection === 'RIGHT' ? '90deg' : '-90deg'
 
