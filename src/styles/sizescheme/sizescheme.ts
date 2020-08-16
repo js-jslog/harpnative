@@ -66,7 +66,7 @@ export const getSizes = (): SizeScheme => {
     10: seedSize * relativeSizes[10],
     columnWidth: seedSize * columnWidth,
     rowHeight: seedSize * columnWidth,
-    fragmentGutterWidth: seedSize * fragmentGutter,
+    fragmentGutter: seedSize * fragmentGutter,
     labelProtrusion: seedSize * labelProtrusion,
   } as const
 
