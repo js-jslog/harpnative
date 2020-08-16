@@ -25,6 +25,7 @@ export const getStyles = (
       justifyContent: 'space-around',
       alignItems: 'center',
       borderColor: inertOutline,
+      top: isBlowRow(yCoord, activeHarpStrata) ? 1 : 0,
       borderTopWidth: isBlowRow(yCoord, activeHarpStrata) ? borderWidth : 0,
       borderBottomWidth: isDrawRow(yCoord, activeHarpStrata) ? borderWidth : 0,
       borderRightWidth: isBlowOrDrawRow(yCoord, activeHarpStrata)
