@@ -27,9 +27,9 @@ const relativeFragmentBoundary = 7
 const relativeLabelProtrusion = 10
 
 export const getSizes = (): SizeScheme => {
-  const { width: orientationWidth, height: orientationHeight } = Dimensions.get('window')
-  const width = orientationWidth > orientationHeight ? orientationWidth : orientationHeight
-  const height = orientationHeight < orientationWidth ? orientationHeight : orientationWidth
+  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
+  const deviceWidth = windowWidth > windowHeight ? windowWidth : windowHeight
+  const deviceHeight = windowHeight < windowWidth ? windowHeight : windowWidth
 
   const {
     [relativeColumnWidth]: columnWidth,
@@ -39,12 +39,12 @@ export const getSizes = (): SizeScheme => {
   const rowHeight = columnWidth
   const labelGrace = fragmentBoundary
   const widthRequirements =
-    width /
+    deviceWidth /
     (columnWidth * 10 +
       fragmentBoundary * 3 +
       labelProtrusion * 2 +
       labelGrace * 2)
-  const heightRequirements = height / (rowHeight * 7)
+  const heightRequirements = deviceHeight / (rowHeight * 7)
 
   const seedSize =
     widthRequirements > heightRequirements
