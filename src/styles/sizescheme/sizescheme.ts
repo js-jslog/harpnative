@@ -38,6 +38,7 @@ export const getSizes = (): SizeScheme => {
   } = relativeSizes
   const rowHeight = columnWidth
   const labelGrace = fragmentBoundary
+
   const widthRequirements =
     deviceWidth /
     (columnWidth * 10 +
