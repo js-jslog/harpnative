@@ -16,6 +16,8 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
+      "bundleIdentifier": "com.jslog.harpguru",
+      "buildNumber": "0.1.0",
       "supportsTablet": true
     },
     "android": {
