@@ -13,6 +13,8 @@
     "lint": "eslint --ext .ts,.tsx .",
     "ci": "yarn lint && yarn tsc",
     "prettier": "prettier --write .",
+    "build-ios-archive": "expo build:ios -t archive",
+    "build-ios-simulator": "expo build:ios -t simulator",
     "build-android-aad": "expo build:android -t app-bundle",
     "build-android-apk": "expo build:android -t apk"
   },
