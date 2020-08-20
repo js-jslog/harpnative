@@ -1,5 +1,11 @@
 import { useGlobal } from 'reactn'
-import type { IsActiveIds, DegreeIds, PitchIds, Pitch, Degree } from 'harpstrata'
+import type {
+  IsActiveIds,
+  DegreeIds,
+  PitchIds,
+  Pitch,
+  Degree,
+} from 'harpstrata'
 
 import type { YXCoord } from '../../harp-cell'
 

@@ -47,6 +47,20 @@ export const useStyles = (yxCoord: YXCoord): HarpCellStyles => {
       justifyContent: 'center',
       alignItems: 'center',
     },
+    contentsWrapperUpperLeft: {
+      ...StyleSheet.absoluteFillObject,
+      justifyContent: 'center',
+      alignItems: 'center',
+      bottom: sizes['5'],
+      right: sizes['7'],
+    },
+    contentsWrapperLowerRight: {
+      ...StyleSheet.absoluteFillObject,
+      justifyContent: 'center',
+      alignItems: 'center',
+      top: sizes['5'],
+      left: sizes['6'],
+    },
     note: {
       display: isQuizMode && !isActive ? 'none' : 'flex',
       color: isActive ? pageColor : borderColor,
