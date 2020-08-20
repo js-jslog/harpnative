@@ -20,8 +20,8 @@ export const useStyles = (yxCoord: YXCoord): HarpCellStyles => {
     5: modifierTopMargin,
     6: modifierFontSize,
   } = sizes
-  const width = sizes['8'] + sizes['4']
-  const height = sizes['8'] + sizes['4']
+  const width = sizes['8'] + sizes['5']
+  const height = sizes['8'] + sizes['5']
   const { pageColor, degreeColors, inertOutline: borderColor } = colors
   const { thisDegreeId, thisIsActiveId } = positionFacts
   const isActive = thisIsActiveId === IsActiveIds.Active
