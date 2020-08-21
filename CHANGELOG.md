@@ -22,6 +22,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - INITIAL-DEVELOPMENT: Add context dependant sizing
 
 ### Changed
+
 - INITIAL-DEVELOPMENT: Enhance menu UX
 - INITIAL-DEVELOPMENT: Present both sharp and flat version of Pitch
 
