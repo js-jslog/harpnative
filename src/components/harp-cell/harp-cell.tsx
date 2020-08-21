@@ -22,9 +22,9 @@ export type YXCoord = [Coord, Coord]
 
 export type HarpCellStyles = {
   readonly cell: ViewStyle
-  readonly contentsWrapper: ViewStyle
-  readonly contentsWrapperUpperLeft: ViewStyle
-  readonly contentsWrapperLowerRight: ViewStyle
+  readonly naturalContentsWrapper: ViewStyle
+  readonly sharpContentsWrapper: ViewStyle
+  readonly flatContentsWrapper: ViewStyle
   readonly note: TextStyle
   readonly modifier: TextStyle
 }
@@ -59,25 +59,25 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const contentFragment =
     displayValue.length === 2 ? (
       <>
-        <View style={styles.contentsWrapperUpperLeft}>
+        <View style={styles.sharpContentsWrapper}>
           <Text style={styles.note}>{displayValue[0][0]}</Text>
         </View>
-        <View style={styles.contentsWrapperUpperLeft}>
+        <View style={styles.sharpContentsWrapper}>
           <Text style={styles.modifier}>{displayValue[0][1]}</Text>
         </View>
-        <View style={styles.contentsWrapperLowerRight}>
+        <View style={styles.flatContentsWrapper}>
           <Text style={styles.note}>{displayValue[1][0]}</Text>
         </View>
-        <View style={styles.contentsWrapperLowerRight}>
+        <View style={styles.flatContentsWrapper}>
           <Text style={styles.modifier}>{displayValue[1][1]}</Text>
         </View>
       </>
     ) : (
       <>
-        <View style={styles.contentsWrapper}>
+        <View style={styles.naturalContentsWrapper}>
           <Text style={styles.note}>{displayValue[0][0]}</Text>
         </View>
-        <View style={styles.contentsWrapper}>
+        <View style={styles.naturalContentsWrapper}>
           <Text style={styles.modifier}>{displayValue[0][1]}</Text>
         </View>
       </>

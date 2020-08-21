@@ -42,19 +42,19 @@ export const useStyles = (yxCoord: YXCoord): HarpCellStyles => {
       width,
       height,
     },
-    contentsWrapper: {
+    naturalContentsWrapper: {
       ...StyleSheet.absoluteFillObject,
       justifyContent: 'center',
       alignItems: 'center',
     },
-    contentsWrapperUpperLeft: {
+    sharpContentsWrapper: {
       ...StyleSheet.absoluteFillObject,
       justifyContent: 'center',
       alignItems: 'center',
       bottom: sizes['5'],
       right: sizes['7'],
     },
-    contentsWrapperLowerRight: {
+    flatContentsWrapper: {
       ...StyleSheet.absoluteFillObject,
       justifyContent: 'center',
       alignItems: 'center',
