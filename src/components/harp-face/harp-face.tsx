@@ -22,3 +22,14 @@ export const HarpFace = (): React.ReactElement => {
 
   return <View style={styles.face}>{fragments}</View>
 }
+
+export const HarpFaceMemo = (): React.ReactElement => {
+  const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  return React.useMemo(() => <HarpFace />, [
+    activeHarpStrata,
+    activeDisplayMode,
+    activeExperienceMode
+  ])
+}
