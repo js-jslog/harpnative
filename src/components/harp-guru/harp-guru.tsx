@@ -6,10 +6,10 @@ import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
-import { QuizQuestionDisplay } from '../quiz-question-display'
-import { LayoutMenu } from '../layout-menu'
+import { QuizQuestionDisplayMemo } from '../quiz-question-display'
+import { LayoutMenuMemo } from '../layout-menu'
 import { HarpFace } from '../harp-face'
-import { CovariantMenu } from '../covariant-menu'
+import { CovariantMenuMemo } from '../covariant-menu'
 import { setGlobalState, setGlobalReducers } from '../../utils'
 import { MenuStates } from '../../types'
 import { colors } from '../../styles'
@@ -50,7 +50,7 @@ export const HarpGuru = (): ReactElement => {
     >
       <View style={styles.fillScreen}>
         <HarpFace />
-        <CovariantMenu
+        <CovariantMenuMemo
           hideMenu={menuState !== MenuStates.CovariantMenu}
           hideLabel={
             menuState !== MenuStates.CovariantMenu &&
@@ -58,7 +58,7 @@ export const HarpGuru = (): ReactElement => {
           }
           tapHandler={covariantTapHandler}
         />
-        <LayoutMenu
+        <LayoutMenuMemo
           hideMenu={menuState !== MenuStates.LayoutMenu}
           hideLabel={
             menuState !== MenuStates.LayoutMenu &&
@@ -66,7 +66,7 @@ export const HarpGuru = (): ReactElement => {
           }
           tapHandler={layoutTapHandler}
         />
-        <QuizQuestionDisplay screenFree={menuState === MenuStates.NoMenu} />
+        <QuizQuestionDisplayMemo screenFree={menuState === MenuStates.NoMenu} />
       </View>
     </PanGestureHandler>
   )

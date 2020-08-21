@@ -1,1 +1,1 @@
-export { CovariantMenu } from './covariant-menu'
+export { CovariantMenu, CovariantMenuMemo } from './covariant-menu'

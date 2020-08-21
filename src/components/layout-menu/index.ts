@@ -1,1 +1,1 @@
-export { LayoutMenu } from './layout-menu'
+export { LayoutMenuMemo } from './layout-menu'

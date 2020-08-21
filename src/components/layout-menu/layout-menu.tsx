@@ -87,3 +87,28 @@ export const LayoutMenu = ({
     </Animated.View>
   )
 }
+
+export const LayoutMenuMemo = ({
+  hideMenu,
+  hideLabel,
+  tapHandler,
+}: MenuProps): React.ReactElement => {
+  const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const {
+    apparatus: { id: apparatusId },
+  } = activeHarpStrata
+  const props = {
+    hideMenu,
+    hideLabel,
+    tapHandler,
+  }
+
+  return React.useMemo(() => <LayoutMenu {...props} />, [
+    hideMenu,
+    hideLabel,
+    tapHandler,
+    apparatusId,
+    activeExperienceMode,
+  ])
+}

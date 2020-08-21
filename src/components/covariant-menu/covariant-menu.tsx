@@ -109,3 +109,28 @@ export const CovariantMenu = ({
     </Animated.View>
   )
 }
+
+export const CovariantMenuMemo = ({
+  hideMenu,
+  hideLabel,
+  tapHandler,
+}: MenuProps): React.ReactElement => {
+  const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const { rootPitchId, pozitionId, harpKeyId } = activeHarpStrata
+  const props = {
+    hideMenu,
+    hideLabel,
+    tapHandler,
+  }
+
+  return React.useMemo(() => <CovariantMenu {...props} />, [
+    hideMenu,
+    hideLabel,
+    tapHandler,
+    rootPitchId,
+    pozitionId,
+    harpKeyId,
+    activeDisplayMode,
+  ])
+}

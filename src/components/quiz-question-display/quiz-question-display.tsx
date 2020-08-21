@@ -83,3 +83,11 @@ export const QuizQuestionDisplay = ({
     </Animated.View>
   )
 }
+
+export const QuizQuestionDisplayMemo = ({
+  screenFree,
+}: QuizQuestionDisplayProps): React.ReactElement => {
+  return React.useMemo(() => <QuizQuestionDisplay screenFree={screenFree} />, [
+    screenFree,
+  ])
+}
